@@ -1,0 +1,6 @@
+{
+  "parent": "block/cube_all",
+  "textures": {
+    "all": "wallpapers:block/pink_wallpaper_block"
+  }
+}

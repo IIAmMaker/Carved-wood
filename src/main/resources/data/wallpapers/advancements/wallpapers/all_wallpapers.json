@@ -1,0 +1,310 @@
+{
+  "display": {
+    "icon": {
+      "item": "wallpapers:light_blue_wallpaper_block"
+    },
+    "title": {
+      "translate": "advancements.wallpapers.all_wallpapers.title"
+    },
+    "description": {
+      "translate": "advancements.wallpapers.all_wallpapers.description"
+    },
+    "frame": "challenge",
+    "show_toast": true,
+    "announce_to_chat": true,
+    "hidden": false
+  },
+  "parent": "wallpapers:wallpapers/wallpapering",
+  "criteria": {
+    "red": {
+      "trigger": "minecraft:item_used_on_block",
+      "conditions": {
+        "item": {
+          "items": [
+            "wallpapers:red_wallpaper_roll"
+          ]
+        },
+        "location": {
+          "block": {
+            "tag": "minecraft:planks"
+          }
+        }
+      }
+    },
+    "orange": {
+      "trigger": "minecraft:item_used_on_block",
+      "conditions": {
+        "item": {
+          "items": [
+            "wallpapers:orange_wallpaper_roll"
+          ]
+        },
+        "location": {
+          "block": {
+            "tag": "minecraft:planks"
+          }
+        }
+      }
+    },
+    "yellow": {
+      "trigger": "minecraft:item_used_on_block",
+      "conditions": {
+        "item": {
+          "items": [
+            "wallpapers:yellow_wallpaper_roll"
+          ]
+        },
+        "location": {
+          "block": {
+            "tag": "minecraft:planks"
+          }
+        }
+      }
+    },
+    "lime": {
+      "trigger": "minecraft:item_used_on_block",
+      "conditions": {
+        "item": {
+          "items": [
+            "wallpapers:lime_wallpaper_roll"
+          ]
+        },
+        "location": {
+          "block": {
+            "tag": "minecraft:planks"
+          }
+        }
+      }
+    },
+    "green": {
+      "trigger": "minecraft:item_used_on_block",
+      "conditions": {
+        "item": {
+          "items": [
+            "wallpapers:green_wallpaper_roll"
+          ]
+        },
+        "location": {
+          "block": {
+            "tag": "minecraft:planks"
+          }
+        }
+      }
+    },
+    "cyan": {
+      "trigger": "minecraft:item_used_on_block",
+      "conditions": {
+        "item": {
+          "items": [
+            "wallpapers:cyan_wallpaper_roll"
+          ]
+        },
+        "location": {
+          "block": {
+            "tag": "minecraft:planks"
+          }
+        }
+      }
+    },
+    "light_blue": {
+      "trigger": "minecraft:item_used_on_block",
+      "conditions": {
+        "item": {
+          "items": [
+            "wallpapers:light_blue_wallpaper_roll"
+          ]
+        },
+        "location": {
+          "block": {
+            "tag": "minecraft:planks"
+          }
+        }
+      }
+    },
+    "blue": {
+      "trigger": "minecraft:item_used_on_block",
+      "conditions": {
+        "item": {
+          "items": [
+            "wallpapers:blue_wallpaper_roll"
+          ]
+        },
+        "location": {
+          "block": {
+            "tag": "minecraft:planks"
+          }
+        }
+      }
+    },
+    "purple": {
+      "trigger": "minecraft:item_used_on_block",
+      "conditions": {
+        "item": {
+          "items": [
+            "wallpapers:purple_wallpaper_roll"
+          ]
+        },
+        "location": {
+          "block": {
+            "tag": "minecraft:planks"
+          }
+        }
+      }
+    },
+    "magenta": {
+      "trigger": "minecraft:item_used_on_block",
+      "conditions": {
+        "item": {
+          "items": [
+            "wallpapers:magenta_wallpaper_roll"
+          ]
+        },
+        "location": {
+          "block": {
+            "tag": "minecraft:planks"
+          }
+        }
+      }
+    },
+    "pink": {
+      "trigger": "minecraft:item_used_on_block",
+      "conditions": {
+        "item": {
+          "items": [
+            "wallpapers:pink_wallpaper_roll"
+          ]
+        },
+        "location": {
+          "block": {
+            "tag": "minecraft:planks"
+          }
+        }
+      }
+    },
+    "brown": {
+      "trigger": "minecraft:item_used_on_block",
+      "conditions": {
+        "item": {
+          "items": [
+            "wallpapers:brown_wallpaper_roll"
+          ]
+        },
+        "location": {
+          "block": {
+            "tag": "minecraft:planks"
+          }
+        }
+      }
+    },
+    "black": {
+      "trigger": "minecraft:item_used_on_block",
+      "conditions": {
+        "item": {
+          "items": [
+            "wallpapers:black_wallpaper_roll"
+          ]
+        },
+        "location": {
+          "block": {
+            "tag": "minecraft:planks"
+          }
+        }
+      }
+    },
+    "gray": {
+      "trigger": "minecraft:item_used_on_block",
+      "conditions": {
+        "item": {
+          "items": [
+            "wallpapers:gray_wallpaper_roll"
+          ]
+        },
+        "location": {
+          "block": {
+            "tag": "minecraft:planks"
+          }
+        }
+      }
+    },
+    "light_gray": {
+      "trigger": "minecraft:item_used_on_block",
+      "conditions": {
+        "item": {
+          "items": [
+            "wallpapers:light_gray_wallpaper_roll"
+          ]
+        },
+        "location": {
+          "block": {
+            "tag": "minecraft:planks"
+          }
+        }
+      }
+    },
+    "white": {
+      "trigger": "minecraft:item_used_on_block",
+      "conditions": {
+        "item": {
+          "items": [
+            "wallpapers:white_wallpaper_roll"
+          ]
+        },
+        "location": {
+          "block": {
+            "tag": "minecraft:planks"
+          }
+        }
+      }
+    }
+  },
+  "requirements": [
+    [
+      "red"
+    ],
+    [
+      "orange"
+    ],
+    [
+      "yellow"
+    ],
+    [
+      "lime"
+    ],
+    [
+      "green"
+    ],
+    [
+      "cyan"
+    ],
+    [
+      "light_blue"
+    ],
+    [
+      "blue"
+    ],
+    [
+      "purple"
+    ],
+    [
+      "magenta"
+    ],
+    [
+      "pink"
+    ],
+    [
+      "brown"
+    ],
+    [
+      "black"
+    ],
+    [
+      "gray"
+    ],
+    [
+      "light_gray"
+    ],
+    [
+      "white"
+    ]
+  ]
+}
