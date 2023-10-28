@@ -1,4 +1,4 @@
-package net.teamsoulcrystal.wallpapers.common.block_values;
+package net.teamsoulcrystal.wallpapers.common.block.block_values;
 
 import net.minecraft.world.level.block.state.properties.*;
 

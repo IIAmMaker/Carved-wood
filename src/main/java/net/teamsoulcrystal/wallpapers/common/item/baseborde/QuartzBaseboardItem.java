@@ -17,8 +17,8 @@ import net.minecraft.world.item.TooltipFlag;
 import net.minecraft.world.item.context.UseOnContext;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.state.BlockState;
-import net.teamsoulcrystal.wallpapers.common.block_values.Baseboard;
-import net.teamsoulcrystal.wallpapers.common.block_values.ModBlockStateProperties;
+import net.teamsoulcrystal.wallpapers.common.block.block_values.Baseboard;
+import net.teamsoulcrystal.wallpapers.common.block.block_values.ModBlockStateProperties;
 import net.teamsoulcrystal.wallpapers.common.tags.ModBlockTags;
 import org.jetbrains.annotations.Nullable;
 
