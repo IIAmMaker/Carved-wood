@@ -1,8 +1,10 @@
 package net.im_maker.wallpapers;
 
 import com.mojang.logging.LogUtils;
+import net.im_maker.wallpapers.common.sound.ModSounds;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.common.MinecraftForge;
+import net.minecraftforge.eventbus.EventBus;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod;
@@ -24,7 +26,9 @@ public class Wallpapers {
 
         ModItems.register(modEventBus);
         ModBlocks.register(modEventBus);
+        ModSounds.register(modEventBus);
         modEventBus.addListener(this::commonSetup);
+
 
         MinecraftForge.EVENT_BUS.register(this);
     }
