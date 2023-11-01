@@ -1,6 +1,7 @@
 package net.im_maker.wallpapers.common.item.baseborde;
 
 import com.mojang.blaze3d.platform.InputConstants;
+import net.im_maker.wallpapers.common.sound.ModSounds;
 import net.minecraft.advancements.CriteriaTriggers;
 import net.minecraft.client.Minecraft;
 import net.minecraft.core.BlockPos;
@@ -31,19 +32,19 @@ public class PrismarineBaseboardItem extends Item {
 
     @Override
     public InteractionResult useOn(UseOnContext context) {
-        Level level = context.getLevel();
+        Level world = context.getLevel();
         BlockPos blockpos = context.getClickedPos();
         Player player = context.getPlayer();
         ItemStack itemstack = context.getItemInHand();
-        BlockState blockstate = level.getBlockState(blockpos);
+        BlockState blockstate = world.getBlockState(blockpos);
         if (player instanceof ServerPlayer) {
             CriteriaTriggers.ITEM_USED_ON_BLOCK.trigger((ServerPlayer)player, blockpos, itemstack);
         }
         if (context.getClickedFace() != Direction.UP && blockstate.is(ModBlockTags.WALLPAPER_BLOCKS) && blockstate.getValue(ModBlockStateProperties.BASEBOARD) == Baseboard.NONE) {
             itemstack.shrink(1);
-            level.playSound((Player)null, blockpos, SoundEvents.STONE_PLACE, SoundSource.BLOCKS, 1.0F, 1.0F);
-            level.setBlockAndUpdate(blockpos, blockstate.setValue(ModBlockStateProperties.BASEBOARD, Baseboard.PRISMARINE));
-            return InteractionResult.sidedSuccess(level.isClientSide);
+            world.playSound((Player)null, blockpos, ModSounds.BASEBOARD_PLACE.get(), SoundSource.BLOCKS, 1.0F, 1.0F);
+            world.setBlockAndUpdate(blockpos, blockstate.setValue(ModBlockStateProperties.BASEBOARD, Baseboard.PRISMARINE));
+            return InteractionResult.sidedSuccess(world.isClientSide);
         } else {
             return InteractionResult.PASS;
         }
@@ -52,8 +53,8 @@ public class PrismarineBaseboardItem extends Item {
     @Override
     public void appendHoverText(ItemStack itemStack, @Nullable Level level, List<Component> tooltips, TooltipFlag tooltipFlag) {
         if (InputConstants.isKeyDown(Minecraft.getInstance().getWindow().getWindow(), Minecraft.getInstance().options.keyShift.getKey().getValue())) {
-            tooltips.add(Component.translatable("tooltip.wallpapers.baseboarding_line0"));
-            tooltips.add(Component.translatable("tooltip.wallpapers.baseboarding_line1"));
+            tooltips.add(Component.translatable("tooltip.wallpapers.baseboard_place_line0"));
+            tooltips.add(Component.translatable("tooltip.wallpapers.baseboard_place_line1"));
         } else {
             tooltips.add(Component.translatable("tooltip.wallpapers.shift"));
         }
