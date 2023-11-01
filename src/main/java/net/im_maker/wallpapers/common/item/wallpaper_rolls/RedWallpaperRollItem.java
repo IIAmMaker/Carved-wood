@@ -1,13 +1,12 @@
 package net.im_maker.wallpapers.common.item.wallpaper_rolls;
 
-import com.google.j2objc.annotations.LoopTranslation;
 import com.mojang.blaze3d.platform.InputConstants;
+import net.im_maker.wallpapers.common.sound.ModSounds;
 import net.minecraft.advancements.CriteriaTriggers;
 import net.minecraft.client.Minecraft;
 import net.minecraft.core.BlockPos;
 import net.minecraft.network.chat.Component;
 import net.minecraft.server.level.ServerPlayer;
-import net.minecraft.sounds.SoundEvents;
 import net.minecraft.sounds.SoundSource;
 import net.minecraft.tags.BlockTags;
 import net.minecraft.world.InteractionResult;
@@ -20,7 +19,6 @@ import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.state.BlockState;
 import net.im_maker.wallpapers.common.block.ModBlocks;
 import org.jetbrains.annotations.Nullable;
-
 import java.util.List;
 
 
@@ -31,19 +29,19 @@ public class RedWallpaperRollItem extends Item {
 
     @Override
     public InteractionResult useOn(UseOnContext context) {
-        Level level = context.getLevel();
+        Level world = context.getLevel();
         BlockPos blockpos = context.getClickedPos();
         Player player = context.getPlayer();
         ItemStack itemstack = context.getItemInHand();
-        BlockState blockstate = level.getBlockState(blockpos);
+        BlockState blockstate = world.getBlockState(blockpos);
         if (player instanceof ServerPlayer) {
             CriteriaTriggers.ITEM_USED_ON_BLOCK.trigger((ServerPlayer)player, blockpos, itemstack);
         }
         if (blockstate.is(BlockTags.PLANKS)) {
-            level.playSound((Player)null, blockpos, SoundEvents.BOOK_PAGE_TURN, SoundSource.BLOCKS, 1.0F, 1.0F);
+            world.playSound((Player)null, blockpos, ModSounds.WALLPAPER_ROLL_WALLPAPERING.get(), SoundSource.BLOCKS, 1.0F, 1.0F);
             itemstack.shrink(1);
-            level.setBlockAndUpdate(blockpos, ModBlocks.RED_WALLPAPER_BLOCK.get().defaultBlockState());
-            return InteractionResult.sidedSuccess(level.isClientSide);
+            world.setBlockAndUpdate(blockpos, ModBlocks.RED_WALLPAPER_BLOCK.get().defaultBlockState());
+            return InteractionResult.sidedSuccess(world.isClientSide);
         } else {
             return InteractionResult.PASS;
         }
