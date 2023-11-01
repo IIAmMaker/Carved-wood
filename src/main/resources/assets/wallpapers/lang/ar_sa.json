@@ -43,8 +43,8 @@
   "tooltip.wallpapers.shift": "اضغط على زر الـSHIFT للمزيد من المعلومات",
   "tooltip.wallpapers.wallpapering_line0": "انقر بزر الفأرة الأيمن على أي نوع من",
   "tooltip.wallpapers.wallpapering_line1": "الألواح الخشبية لإنشاء كتلة ورق الحائط!",
-  "tooltip.wallpapers.baseboarding_line0": "انقر بزر الفأرة الأيمن على أي",
-  "tooltip.wallpapers.baseboarding_line1": "كتلة ورق الحائط لإضافة قاعدة!",
+  "tooltip.wallpapers.baseboard_place_line0": "انقر بزر الفأرة الأيمن على أي",
+  "tooltip.wallpapers.baseboard_place_line1": "كتلة ورق الحائط لإضافة قاعدة!",
   "comment4": "الانجازات",
   "advancements.wallpapers.root.title": "خلفيات!",
   "advancements.wallpapers.root.description": "ملابس لجدرانك!",
@@ -60,6 +60,9 @@
   "advancements.wallpapers.beans.description": "صنع كتلة ورق حائط بنية",
   "advancements.wallpapers.all_wallpapers.title": "أحب أوراق الحائط",
   "advancements.wallpapers.all_wallpapers.description": "اصنع كل كتل ورق الحائط!!",
-  "id": "نص",
-  "author": "I_AmMaker"
+  "comment5": "شرائط الترجمة",
+  "subtitles.item.wallpaper_roll.wallpapering": "وضع لفافة ورق حائط",
+  "subtitles.item.baseboard.place": "وضع قاعدة",
+  "العنوان": "نص",
+  "المترجم": "I_AmMaker"
 }
