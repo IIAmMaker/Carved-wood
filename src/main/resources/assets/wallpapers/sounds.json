@@ -67,9 +67,7 @@
       "wallpapers:item/baseboard/place1",
       "wallpapers:item/baseboard/place2",
       "wallpapers:item/baseboard/place3",
-      "wallpapers:item/baseboard/place4",
-      "wallpapers:item/baseboard/place5",
-      "wallpapers:item/baseboard/place6"
+      "wallpapers:item/baseboard/place4"
     ],
     "subtitle": "subtitles.item.baseboard.place"
   }
