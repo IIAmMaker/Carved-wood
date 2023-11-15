@@ -1,6 +1,0 @@
-{
-  "parent": "block/cube_all",
-  "textures": {
-    "all": "wallpapers:block/magenta_wallpaper_block"
-  }
-}
