@@ -1,0 +1,79 @@
+{
+  "variants": {
+    "facing=east,paint_level=4": {
+      "model": "paint:block/paint_bucket/level4/light_blue_paint_bucket_level4"
+    },
+    "facing=north,paint_level=4": {
+      "model": "paint:block/paint_bucket/level4/light_blue_paint_bucket_level4",
+      "y": 270
+    },
+    "facing=south,paint_level=4": {
+      "model": "paint:block/paint_bucket/level4/light_blue_paint_bucket_level4",
+      "y": 90
+    },
+    "facing=west,paint_level=4": {
+      "model": "paint:block/paint_bucket/level4/light_blue_paint_bucket_level4",
+      "y": 180
+    },
+    "facing=east,paint_level=3": {
+      "model": "paint:block/paint_bucket/level3/light_blue_paint_bucket_level3"
+    },
+    "facing=north,paint_level=3": {
+      "model": "paint:block/paint_bucket/level3/light_blue_paint_bucket_level3",
+      "y": 270
+    },
+    "facing=south,paint_level=3": {
+      "model": "paint:block/paint_bucket/level3/light_blue_paint_bucket_level3",
+      "y": 90
+    },
+    "facing=west,paint_level=3": {
+      "model": "paint:block/paint_bucket/level3/light_blue_paint_bucket_level3",
+      "y": 180
+    },
+    "facing=east,paint_level=2": {
+      "model": "paint:block/paint_bucket/level2/light_blue_paint_bucket_level2"
+    },
+    "facing=north,paint_level=2": {
+      "model": "paint:block/paint_bucket/level2/light_blue_paint_bucket_level2",
+      "y": 270
+    },
+    "facing=south,paint_level=2": {
+      "model": "paint:block/paint_bucket/level2/light_blue_paint_bucket_level2",
+      "y": 90
+    },
+    "facing=west,paint_level=2": {
+      "model": "paint:block/paint_bucket/level2/light_blue_paint_bucket_level2",
+      "y": 180
+    },
+    "facing=east,paint_level=1": {
+      "model": "paint:block/paint_bucket/level1/light_blue_paint_bucket_level1"
+    },
+    "facing=north,paint_level=1": {
+      "model": "paint:block/paint_bucket/level1/light_blue_paint_bucket_level1",
+      "y": 270
+    },
+    "facing=south,paint_level=1": {
+      "model": "paint:block/paint_bucket/level1/light_blue_paint_bucket_level1",
+      "y": 90
+    },
+    "facing=west,paint_level=1": {
+      "model": "paint:block/paint_bucket/level1/light_blue_paint_bucket_level1",
+      "y": 180
+    },
+    "facing=east,paint_level=0": {
+      "model": "paint:block/paint_bucket/level0/light_blue_paint_bucket_level0"
+    },
+    "facing=north,paint_level=0": {
+      "model": "paint:block/paint_bucket/level0/light_blue_paint_bucket_level0",
+      "y": 270
+    },
+    "facing=south,paint_level=0": {
+      "model": "paint:block/paint_bucket/level0/light_blue_paint_bucket_level0",
+      "y": 90
+    },
+    "facing=west,paint_level=0": {
+      "model": "paint:block/paint_bucket/level0/light_blue_paint_bucket_level0",
+      "y": 180
+    }
+  }
+}

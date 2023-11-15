@@ -1,0 +1,7 @@
+{
+  "parent": "paint:block/template_paint_bucket",
+  "textures": {
+    "paint_bucket": "paint:block/gray_paint_bucket"
+  },
+  "render_type": "cutout"
+}

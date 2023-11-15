@@ -1,0 +1,6 @@
+{
+  "parent": "item/generated",
+  "textures": {
+      "layer0": "paint:item/white_paint_bucket"
+  }
+}

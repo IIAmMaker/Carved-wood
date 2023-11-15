@@ -1,0 +1,22 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    " # ",
+    "#P#",
+    " W "
+  ],
+  "key": {
+    "#": {
+      "item": "minecraft:light_gray_dye"
+    },
+    "P": {
+      "item": "paint:paint_bucket"
+    },
+    "W": {
+      "item": "minecraft:water_bucket"
+    }
+  },
+  "result": {
+    "item": "paint:light_gray_paint_bucket"
+  }
+}

@@ -1,0 +1,7 @@
+{
+  "parent": "paint:block/template_paint_bucket_level3",
+  "textures": {
+    "paint_bucket": "paint:block/orange_paint_bucket"
+  },
+  "render_type": "cutout"
+}
