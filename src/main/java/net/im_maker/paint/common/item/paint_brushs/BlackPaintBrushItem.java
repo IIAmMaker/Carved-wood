@@ -2,11 +2,15 @@ package net.im_maker.paint.common.item.paint_brushs;
 
 import net.im_maker.paint.common.block.ModBlocks;
 import net.im_maker.paint.common.item.ModItems;
+import net.minecraft.advancements.CriteriaTriggers;
 import net.minecraft.core.BlockPos;
+import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.sounds.SoundEvents;
 import net.minecraft.sounds.SoundSource;
 import net.minecraft.tags.BlockTags;
+import net.minecraft.world.InteractionHand;
 import net.minecraft.world.InteractionResult;
+import net.minecraft.world.entity.EquipmentSlot;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
@@ -27,7 +31,10 @@ public class BlackPaintBrushItem extends Item {
         Player player = context.getPlayer();
         ItemStack itemstack = context.getItemInHand();
         BlockState blockstate = world.getBlockState(blockpos);
-        if (blockstate.is(BlockTags.PLANKS)) {
+        if (blockstate.is(BlockTags.PLANKS) && !blockstate.is(ModBlocks.BLACK_PAINTED_PLANKS.get())) {
+            if (player instanceof ServerPlayer) {
+                CriteriaTriggers.ITEM_USED_ON_BLOCK.trigger((ServerPlayer)player, blockpos, itemstack);
+            }
             if (itemstack.getDamageValue() != 15) {
                 if (player != null) {
                     itemstack.hurtAndBreak(1, player, (player1) -> {
@@ -35,7 +42,7 @@ public class BlackPaintBrushItem extends Item {
                     });
                 }
             } else {
-                player.setItemInHand(player.getUsedItemHand(), new ItemStack(ModItems.PAINT_BRUSH.get()));
+                context.getPlayer().setItemInHand(context.getHand(), new ItemStack(ModItems.PAINT_BRUSH.get()));
                 world.playSound((Player)null, blockpos, SoundEvents.ITEM_PICKUP, SoundSource.BLOCKS, 1.0F, 1.0F);
             }
             world.playSound((Player)null, blockpos, SoundEvents.UI_CARTOGRAPHY_TABLE_TAKE_RESULT, SoundSource.BLOCKS, 1.0F, 1.0F);
@@ -50,7 +57,7 @@ public class BlackPaintBrushItem extends Item {
                     });
                 }
             } else {
-                player.setItemInHand(player.getUsedItemHand(), new ItemStack(ModItems.PAINT_BRUSH.get()));
+                context.getPlayer().setItemInHand(context.getHand(), new ItemStack(ModItems.PAINT_BRUSH.get()));
                 world.playSound((Player)null, blockpos, SoundEvents.ITEM_PICKUP, SoundSource.BLOCKS, 1.0F, 1.0F);
             }
             world.playSound((Player)null, blockpos, SoundEvents.UI_CARTOGRAPHY_TABLE_TAKE_RESULT, SoundSource.BLOCKS, 1.0F, 1.0F);

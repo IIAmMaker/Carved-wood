@@ -27,7 +27,7 @@ public class PinkPaintBrushItem extends Item {
         Player player = context.getPlayer();
         ItemStack itemstack = context.getItemInHand();
         BlockState blockstate = world.getBlockState(blockpos);
-        if (blockstate.is(BlockTags.PLANKS)) {
+        if (blockstate.is(BlockTags.PLANKS) && !blockstate.is(ModBlocks.PINK_PAINTED_PLANKS.get())) {
             if (itemstack.getDamageValue() != 15) {
                 if (player != null) {
                     itemstack.hurtAndBreak(1, player, (player1) -> {
@@ -35,7 +35,7 @@ public class PinkPaintBrushItem extends Item {
                     });
                 }
             } else {
-                player.setItemInHand(player.getUsedItemHand(), new ItemStack(ModItems.PAINT_BRUSH.get()));
+                context.getPlayer().setItemInHand(context.getHand(), new ItemStack(ModItems.PAINT_BRUSH.get()));
                 world.playSound((Player)null, blockpos, SoundEvents.ITEM_PICKUP, SoundSource.BLOCKS, 1.0F, 1.0F);
             }
             world.playSound((Player)null, blockpos, SoundEvents.UI_CARTOGRAPHY_TABLE_TAKE_RESULT, SoundSource.BLOCKS, 1.0F, 1.0F);
@@ -50,7 +50,7 @@ public class PinkPaintBrushItem extends Item {
                     });
                 }
             } else {
-                player.setItemInHand(player.getUsedItemHand(), new ItemStack(ModItems.PAINT_BRUSH.get()));
+                context.getPlayer().setItemInHand(context.getHand(), new ItemStack(ModItems.PAINT_BRUSH.get()));
                 world.playSound((Player)null, blockpos, SoundEvents.ITEM_PICKUP, SoundSource.BLOCKS, 1.0F, 1.0F);
             }
             world.playSound((Player)null, blockpos, SoundEvents.UI_CARTOGRAPHY_TABLE_TAKE_RESULT, SoundSource.BLOCKS, 1.0F, 1.0F);

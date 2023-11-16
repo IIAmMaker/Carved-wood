@@ -6,11 +6,12 @@ import net.minecraft.tags.ItemTags;
 import net.minecraft.tags.TagKey;
 import net.minecraft.world.item.Item;
 import net.im_maker.paint.Paint;
+import net.minecraft.world.level.block.Block;
 
 public class ModItemTags {
-    public static final TagKey<Item> WALLPAPER_ROLLS = tag("wallpaper_rolls");
-    public static final TagKey<Item> WALLPAPER_BLOCKS = tag("wallpaper_blocks");
-    public static final TagKey<Item> BASEBOARD = tag("baseboard");
+
+    public static final TagKey<Item> PAINTABLE_STRIPPED_LOG = tag("paintable_stripped_log");
+    public static final TagKey<Item> PAINTABLE_STRIPPED_WOOD = tag("paintable_stripped_wood");
 
     private static TagKey<Item> tag(String name) {
         return ItemTags.create(new ResourceLocation(Paint.MOD_ID, name));

@@ -72,7 +72,8 @@
   "comment4": "Advancements",
   "advancements.paint.root.title": "title",
   "comment5": "Subtitles",
-  "subtitles.item.name.event": "title",
+  "subtitles.item.paint_brush.dipping": "Dipping Paint Brush",
+  "subtitles.item.paint_brush.paint": "Paint With A Paint Brush",
   "id": "text",
   "author": "I_AmMaker"
 }
