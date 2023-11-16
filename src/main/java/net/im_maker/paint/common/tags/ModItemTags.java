@@ -12,6 +12,7 @@ public class ModItemTags {
 
     public static final TagKey<Item> PAINTABLE_STRIPPED_LOG = tag("paintable_stripped_log");
     public static final TagKey<Item> PAINTABLE_STRIPPED_WOOD = tag("paintable_stripped_wood");
+    public static final TagKey<Item> COLORED_PAINT_BRUSH = tag("colored_paint_brush");
 
     private static TagKey<Item> tag(String name) {
         return ItemTags.create(new ResourceLocation(Paint.MOD_ID, name));
