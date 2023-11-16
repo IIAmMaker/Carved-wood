@@ -1,74 +1,20 @@
 {
-  "block.wallpaper_block.break": {
+  "item.paint_brush.dipping": {
     "sounds": [
-      "wallpapers:block/wallpaper_block/break1",
-      "wallpapers:block/wallpaper_block/break2",
-      "wallpapers:block/wallpaper_block/break3",
-      "wallpapers:block/wallpaper_block/break4",
-      "wallpapers:block/wallpaper_block/break5"
+      "paint:item/paint_brush/dipping1",
+      "paint:item/paint_brush/dipping2",
+      "paint:item/paint_brush/dipping3",
+      "paint:item/paint_brush/dipping4"
     ],
-    "subtitle": "subtitles.block.generic.break"
+    "subtitle": "subtitles.item.paint_brush.dipping"
   },
-  "block.wallpaper_block.step": {
+  "item.paint_brush.paint": {
     "sounds": [
-      "wallpapers:block/wallpaper_block/step1",
-      "wallpapers:block/wallpaper_block/step2",
-      "wallpapers:block/wallpaper_block/step3",
-      "wallpapers:block/wallpaper_block/step4",
-      "wallpapers:block/wallpaper_block/step5",
-      "wallpapers:block/wallpaper_block/step6"
+      "paint:item/paint_brush/paint1",
+      "paint:item/paint_brush/paint2",
+      "paint:item/paint_brush/paint3",
+      "paint:item/paint_brush/paint4"
     ],
-    "subtitle": "subtitles.block.generic.footsteps"
-  },
-  "block.wallpaper_block.place": {
-    "sounds": [
-      "wallpapers:block/wallpaper_block/break1",
-      "wallpapers:block/wallpaper_block/break2",
-      "wallpapers:block/wallpaper_block/break3",
-      "wallpapers:block/wallpaper_block/break4",
-      "wallpapers:block/wallpaper_block/break5"
-    ],
-    "subtitle": "subtitles.block.generic.place"
-  },
-  "block.wallpaper_block.hit": {
-    "sounds": [
-      "wallpapers:block/wallpaper_block/step1",
-      "wallpapers:block/wallpaper_block/step2",
-      "wallpapers:block/wallpaper_block/step3",
-      "wallpapers:block/wallpaper_block/step4",
-      "wallpapers:block/wallpaper_block/step5",
-      "wallpapers:block/wallpaper_block/step6"
-    ],
-    "subtitle": "subtitles.block.generic.hit"
-  },
-  "block.wallpaper_block.fall": {
-    "sounds": [
-      "wallpapers:block/wallpaper_block/step1",
-      "wallpapers:block/wallpaper_block/step2",
-      "wallpapers:block/wallpaper_block/step3",
-      "wallpapers:block/wallpaper_block/step4",
-      "wallpapers:block/wallpaper_block/step5",
-      "wallpapers:block/wallpaper_block/step6"
-    ]
-  },
-  "item.wallpaper_roll.wallpapering": {
-    "sounds": [
-      "wallpapers:item/wallpaper_roll/wallpapering1",
-      "wallpapers:item/wallpaper_roll/wallpapering2",
-      "wallpapers:item/wallpaper_roll/wallpapering3",
-      "wallpapers:item/wallpaper_roll/wallpapering4",
-      "wallpapers:item/wallpaper_roll/wallpapering5",
-      "wallpapers:item/wallpaper_roll/wallpapering6"
-    ],
-    "subtitle": "subtitles.item.wallpaper_roll.wallpapering"
-  },
-  "item.baseboard.place": {
-    "sounds": [
-      "wallpapers:item/baseboard/place1",
-      "wallpapers:item/baseboard/place2",
-      "wallpapers:item/baseboard/place3",
-      "wallpapers:item/baseboard/place4"
-    ],
-    "subtitle": "subtitles.item.baseboard.place"
+    "subtitle": "subtitles.item.paint_brush.paint"
   }
 }
