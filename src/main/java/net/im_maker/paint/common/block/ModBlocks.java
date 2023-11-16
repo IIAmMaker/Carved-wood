@@ -90,39 +90,39 @@ public class ModBlocks {
             () -> new Block (BlockBehaviour.Properties.of(Material.STONE, MaterialColor.SNOW).strength(2.0F, 6.0F).sound(SoundType.STONE).requiresCorrectToolForDrops()), CreativeModeTab.TAB_BUILDING_BLOCKS);
     //Paint Bucket
     public static final RegistryObject<Block> PAINT_BUCKET = registryBlock("paint_bucket",
-            () -> new PaintBucketBlock(BlockBehaviour.Properties.of(Material.METAL, MaterialColor.METAL).strength(1.0F, 3.0F).sound(SoundType.LANTERN)), CreativeModeTab.TAB_BUILDING_BLOCKS);
+            () -> new PaintBucketBlock(BlockBehaviour.Properties.of(Material.METAL, MaterialColor.METAL).strength(1.0F, 3.0F).sound(SoundType.LANTERN)), CreativeModeTab.TAB_DECORATIONS);
     public static final RegistryObject<Block> RED_PAINT_BUCKET = registryBlock("red_paint_bucket",
-            () -> new ColoredPaintBucketBlock(BlockBehaviour.Properties.of(Material.METAL, MaterialColor.COLOR_RED).strength(1.0F, 4.0F).sound(SoundType.LANTERN)), CreativeModeTab.TAB_BUILDING_BLOCKS);
+            () -> new ColoredPaintBucketBlock(BlockBehaviour.Properties.of(Material.METAL, MaterialColor.COLOR_RED).strength(1.0F, 4.0F).sound(SoundType.LANTERN)), CreativeModeTab.TAB_DECORATIONS);
     public static final RegistryObject<Block> ORANGE_PAINT_BUCKET = registryBlock("orange_paint_bucket",
-            () -> new ColoredPaintBucketBlock(BlockBehaviour.Properties.of(Material.METAL, MaterialColor.COLOR_ORANGE).strength(1.0F, 4.0F).sound(SoundType.LANTERN)), CreativeModeTab.TAB_BUILDING_BLOCKS);
+            () -> new ColoredPaintBucketBlock(BlockBehaviour.Properties.of(Material.METAL, MaterialColor.COLOR_ORANGE).strength(1.0F, 4.0F).sound(SoundType.LANTERN)), CreativeModeTab.TAB_DECORATIONS);
     public static final RegistryObject<Block> YELLOW_PAINT_BUCKET = registryBlock("yellow_paint_bucket",
-            () -> new ColoredPaintBucketBlock(BlockBehaviour.Properties.of(Material.METAL, MaterialColor.COLOR_YELLOW).strength(1.0F, 4.0F).sound(SoundType.LANTERN)), CreativeModeTab.TAB_BUILDING_BLOCKS);
+            () -> new ColoredPaintBucketBlock(BlockBehaviour.Properties.of(Material.METAL, MaterialColor.COLOR_YELLOW).strength(1.0F, 4.0F).sound(SoundType.LANTERN)), CreativeModeTab.TAB_DECORATIONS);
     public static final RegistryObject<Block> LIME_PAINT_BUCKET = registryBlock("lime_paint_bucket",
-            () -> new ColoredPaintBucketBlock(BlockBehaviour.Properties.of(Material.METAL, MaterialColor.COLOR_LIGHT_GREEN).strength(1.0F, 4.0F).sound(SoundType.LANTERN)), CreativeModeTab.TAB_BUILDING_BLOCKS);
+            () -> new ColoredPaintBucketBlock(BlockBehaviour.Properties.of(Material.METAL, MaterialColor.COLOR_LIGHT_GREEN).strength(1.0F, 4.0F).sound(SoundType.LANTERN)), CreativeModeTab.TAB_DECORATIONS);
     public static final RegistryObject<Block> GREEN_PAINT_BUCKET = registryBlock("green_paint_bucket",
-            () -> new ColoredPaintBucketBlock(BlockBehaviour.Properties.of(Material.METAL, MaterialColor.COLOR_GREEN).strength(1.0F, 4.0F).sound(SoundType.LANTERN)), CreativeModeTab.TAB_BUILDING_BLOCKS);
+            () -> new ColoredPaintBucketBlock(BlockBehaviour.Properties.of(Material.METAL, MaterialColor.COLOR_GREEN).strength(1.0F, 4.0F).sound(SoundType.LANTERN)), CreativeModeTab.TAB_DECORATIONS);
     public static final RegistryObject<Block> CYAN_PAINT_BUCKET = registryBlock("cyan_paint_bucket",
-            () -> new ColoredPaintBucketBlock(BlockBehaviour.Properties.of(Material.METAL, MaterialColor.COLOR_CYAN).strength(1.0F, 4.0F).sound(SoundType.LANTERN)), CreativeModeTab.TAB_BUILDING_BLOCKS);
+            () -> new ColoredPaintBucketBlock(BlockBehaviour.Properties.of(Material.METAL, MaterialColor.COLOR_CYAN).strength(1.0F, 4.0F).sound(SoundType.LANTERN)), CreativeModeTab.TAB_DECORATIONS);
     public static final RegistryObject<Block> LIGHT_BLUE_PAINT_BUCKET = registryBlock("light_blue_paint_bucket",
-            () -> new ColoredPaintBucketBlock(BlockBehaviour.Properties.of(Material.METAL, MaterialColor.COLOR_LIGHT_BLUE).strength(1.0F, 4.0F).sound(SoundType.LANTERN)), CreativeModeTab.TAB_BUILDING_BLOCKS);
+            () -> new ColoredPaintBucketBlock(BlockBehaviour.Properties.of(Material.METAL, MaterialColor.COLOR_LIGHT_BLUE).strength(1.0F, 4.0F).sound(SoundType.LANTERN)), CreativeModeTab.TAB_DECORATIONS);
     public static final RegistryObject<Block> BLUE_PAINT_BUCKET = registryBlock("blue_paint_bucket",
-            () -> new ColoredPaintBucketBlock(BlockBehaviour.Properties.of(Material.METAL, MaterialColor.COLOR_BLUE).strength(1.0F, 4.0F).sound(SoundType.LANTERN)), CreativeModeTab.TAB_BUILDING_BLOCKS);
+            () -> new ColoredPaintBucketBlock(BlockBehaviour.Properties.of(Material.METAL, MaterialColor.COLOR_BLUE).strength(1.0F, 4.0F).sound(SoundType.LANTERN)), CreativeModeTab.TAB_DECORATIONS);
     public static final RegistryObject<Block> PURPLE_PAINT_BUCKET = registryBlock("purple_paint_bucket",
-            () -> new ColoredPaintBucketBlock(BlockBehaviour.Properties.of(Material.METAL, MaterialColor.COLOR_PURPLE).strength(1.0F, 4.0F).sound(SoundType.LANTERN)), CreativeModeTab.TAB_BUILDING_BLOCKS);
+            () -> new ColoredPaintBucketBlock(BlockBehaviour.Properties.of(Material.METAL, MaterialColor.COLOR_PURPLE).strength(1.0F, 4.0F).sound(SoundType.LANTERN)), CreativeModeTab.TAB_DECORATIONS);
     public static final RegistryObject<Block> MAGENTA_PAINT_BUCKET = registryBlock("magenta_paint_bucket",
-            () -> new ColoredPaintBucketBlock(BlockBehaviour.Properties.of(Material.METAL, MaterialColor.COLOR_MAGENTA).strength(1.0F, 4.0F).sound(SoundType.LANTERN)), CreativeModeTab.TAB_BUILDING_BLOCKS);
+            () -> new ColoredPaintBucketBlock(BlockBehaviour.Properties.of(Material.METAL, MaterialColor.COLOR_MAGENTA).strength(1.0F, 4.0F).sound(SoundType.LANTERN)), CreativeModeTab.TAB_DECORATIONS);
     public static final RegistryObject<Block> PINK_PAINT_BUCKET = registryBlock("pink_paint_bucket",
-            () -> new ColoredPaintBucketBlock(BlockBehaviour.Properties.of(Material.METAL, MaterialColor.COLOR_PINK).strength(1.0F, 4.0F).sound(SoundType.LANTERN)), CreativeModeTab.TAB_BUILDING_BLOCKS);
+            () -> new ColoredPaintBucketBlock(BlockBehaviour.Properties.of(Material.METAL, MaterialColor.COLOR_PINK).strength(1.0F, 4.0F).sound(SoundType.LANTERN)), CreativeModeTab.TAB_DECORATIONS);
     public static final RegistryObject<Block> BROWN_PAINT_BUCKET = registryBlock("brown_paint_bucket",
-            () -> new ColoredPaintBucketBlock(BlockBehaviour.Properties.of(Material.METAL, MaterialColor.COLOR_BROWN).strength(1.0F, 4.0F).sound(SoundType.LANTERN)), CreativeModeTab.TAB_BUILDING_BLOCKS);
+            () -> new ColoredPaintBucketBlock(BlockBehaviour.Properties.of(Material.METAL, MaterialColor.COLOR_BROWN).strength(1.0F, 4.0F).sound(SoundType.LANTERN)), CreativeModeTab.TAB_DECORATIONS);
     public static final RegistryObject<Block> BLACK_PAINT_BUCKET = registryBlock("black_paint_bucket",
-            () -> new ColoredPaintBucketBlock(BlockBehaviour.Properties.of(Material.METAL, MaterialColor.COLOR_BLACK).strength(1.0F, 4.0F).sound(SoundType.LANTERN)), CreativeModeTab.TAB_BUILDING_BLOCKS);
+            () -> new ColoredPaintBucketBlock(BlockBehaviour.Properties.of(Material.METAL, MaterialColor.COLOR_BLACK).strength(1.0F, 4.0F).sound(SoundType.LANTERN)), CreativeModeTab.TAB_DECORATIONS);
     public static final RegistryObject<Block> GRAY_PAINT_BUCKET = registryBlock("gray_paint_bucket",
-            () -> new ColoredPaintBucketBlock(BlockBehaviour.Properties.of(Material.METAL, MaterialColor.COLOR_GRAY).strength(1.0F, 4.0F).sound(SoundType.LANTERN)), CreativeModeTab.TAB_BUILDING_BLOCKS);
+            () -> new ColoredPaintBucketBlock(BlockBehaviour.Properties.of(Material.METAL, MaterialColor.COLOR_GRAY).strength(1.0F, 4.0F).sound(SoundType.LANTERN)), CreativeModeTab.TAB_DECORATIONS);
     public static final RegistryObject<Block> LIGHT_GRAY_PAINT_BUCKET = registryBlock("light_gray_paint_bucket",
-            () -> new ColoredPaintBucketBlock(BlockBehaviour.Properties.of(Material.METAL, MaterialColor.COLOR_LIGHT_GRAY).strength(1.0F, 4.0F).sound(SoundType.LANTERN)), CreativeModeTab.TAB_BUILDING_BLOCKS);
+            () -> new ColoredPaintBucketBlock(BlockBehaviour.Properties.of(Material.METAL, MaterialColor.COLOR_LIGHT_GRAY).strength(1.0F, 4.0F).sound(SoundType.LANTERN)), CreativeModeTab.TAB_DECORATIONS);
     public static final RegistryObject<Block> WHITE_PAINT_BUCKET = registryBlock("white_paint_bucket",
-            () -> new ColoredPaintBucketBlock(BlockBehaviour.Properties.of(Material.METAL, MaterialColor.SNOW).strength(1.0F, 4.0F).sound(SoundType.LANTERN)), CreativeModeTab.TAB_BUILDING_BLOCKS);
+            () -> new ColoredPaintBucketBlock(BlockBehaviour.Properties.of(Material.METAL, MaterialColor.SNOW).strength(1.0F, 4.0F).sound(SoundType.LANTERN)), CreativeModeTab.TAB_DECORATIONS);
 
     private static <T extends Block> RegistryObject<T> registryBlock(String name, Supplier<T> block, CreativeModeTab tab ) {
         RegistryObject<T> toReturn = BLOCKS.register(name, block);

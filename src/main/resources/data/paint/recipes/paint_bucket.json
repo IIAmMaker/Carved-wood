@@ -1,37 +1,19 @@
 {
-  "type": "minecraft:crafting_shapeless",
-  "group": "wallpaper_rolls",
-  "ingredients": [
-    {
-      "item": "minecraft:paper"
-    },
-    {
-      "item": "minecraft:slime_ball"
-    },
-    {
-      "item": "minecraft:paper"
-    },
-    {
-      "item": "minecraft:paper"
-    },
-    {
-      "item": "minecraft:black_dye"
-    },
-    {
-      "item": "minecraft:paper"
-    },
-    {
-      "item": "minecraft:paper"
-    },
-    {
-      "item": "minecraft:paper"
-    },
-    {
-      "item": "minecraft:paper"
-    }
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    " I ",
+    "I I",
+    " B "
   ],
+  "key": {
+    "I": {
+      "item": "minecraft:iron_nugget"
+    },
+    "B": {
+      "item": "minecraft:bucket"
+    }
+  },
   "result": {
-    "item": "wallpapers:black_wallpaper_roll",
-    "count": 14
+    "item": "paint:paint_bucket"
   }
 }
