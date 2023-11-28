@@ -1,0 +1,20 @@
+{
+  "values": [
+    "paintable:red_painted_fence_gate",
+    "paintable:orange_painted_fence_gate",
+    "paintable:yellow_painted_fence_gate",
+    "paintable:lime_painted_fence_gate",
+    "paintable:green_painted_fence_gate",
+    "paintable:cyan_painted_fence_gate",
+    "paintable:light_blue_painted_fence_gate",
+    "paintable:blue_painted_fence_gate",
+    "paintable:purple_painted_fence_gate",
+    "paintable:magenta_painted_fence_gate",
+    "paintable:pink_painted_fence_gate",
+    "paintable:brown_painted_fence_gate",
+    "paintable:black_painted_fence_gate",
+    "paintable:gray_painted_fence_gate",
+    "paintable:light_gray_painted_fence_gate",
+    "paintable:white_painted_fence_gate"
+  ]
+}

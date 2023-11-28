@@ -1,0 +1,20 @@
+{
+  "values": [
+    "paintable:red_painted_planks_slab",
+    "paintable:orange_painted_planks_slab",
+    "paintable:yellow_painted_planks_slab",
+    "paintable:lime_painted_planks_slab",
+    "paintable:green_painted_planks_slab",
+    "paintable:cyan_painted_planks_slab",
+    "paintable:light_blue_painted_planks_slab",
+    "paintable:blue_painted_planks_slab",
+    "paintable:purple_painted_planks_slab",
+    "paintable:magenta_painted_planks_slab",
+    "paintable:pink_painted_planks_slab",
+    "paintable:brown_painted_planks_slab",
+    "paintable:black_painted_planks_slab",
+    "paintable:gray_painted_planks_slab",
+    "paintable:light_gray_painted_planks_slab",
+    "paintable:white_painted_planks_slab"
+  ]
+}

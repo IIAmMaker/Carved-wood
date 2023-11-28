@@ -1,0 +1,20 @@
+{
+  "values": [
+    "paintable:red_painted_planks_stairs",
+    "paintable:orange_painted_planks_stairs",
+    "paintable:yellow_painted_planks_stairs",
+    "paintable:lime_painted_planks_stairs",
+    "paintable:green_painted_planks_stairs",
+    "paintable:cyan_painted_planks_stairs",
+    "paintable:light_blue_painted_planks_stairs",
+    "paintable:blue_painted_planks_stairs",
+    "paintable:purple_painted_planks_stairs",
+    "paintable:magenta_painted_planks_stairs",
+    "paintable:pink_painted_planks_stairs",
+    "paintable:brown_painted_planks_stairs",
+    "paintable:black_painted_planks_stairs",
+    "paintable:gray_painted_planks_stairs",
+    "paintable:light_gray_painted_planks_stairs",
+    "paintable:white_painted_planks_stairs"
+  ]
+}

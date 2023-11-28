@@ -1,0 +1,20 @@
+{
+  "values": [
+    "paintable:red_painted_fence",
+    "paintable:orange_painted_fence",
+    "paintable:yellow_painted_fence",
+    "paintable:lime_painted_fence",
+    "paintable:green_painted_fence",
+    "paintable:cyan_painted_fence",
+    "paintable:light_blue_painted_fence",
+    "paintable:blue_painted_fence",
+    "paintable:purple_painted_fence",
+    "paintable:magenta_painted_fence",
+    "paintable:pink_painted_fence",
+    "paintable:brown_painted_fence",
+    "paintable:black_painted_fence",
+    "paintable:gray_painted_fence",
+    "paintable:light_gray_painted_fence",
+    "paintable:white_painted_fence"
+  ]
+}
