@@ -1,0 +1,20 @@
+{
+  "values": [
+    "paintable:red_painted_trapdoor",
+    "paintable:orange_painted_trapdoor",
+    "paintable:yellow_painted_trapdoor",
+    "paintable:lime_painted_trapdoor",
+    "paintable:green_painted_trapdoor",
+    "paintable:cyan_painted_trapdoor",
+    "paintable:light_blue_painted_trapdoor",
+    "paintable:blue_painted_trapdoor",
+    "paintable:purple_painted_trapdoor",
+    "paintable:magenta_painted_trapdoor",
+    "paintable:pink_painted_trapdoor",
+    "paintable:brown_painted_trapdoor",
+    "paintable:black_painted_trapdoor",
+    "paintable:gray_painted_trapdoor",
+    "paintable:light_gray_painted_trapdoor",
+    "paintable:white_painted_trapdoor"
+  ]
+}

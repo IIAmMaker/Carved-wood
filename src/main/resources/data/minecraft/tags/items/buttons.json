@@ -1,0 +1,20 @@
+{
+  "values": [
+    "paintable:red_painted_button",
+    "paintable:orange_painted_button",
+    "paintable:yellow_painted_button",
+    "paintable:lime_painted_button",
+    "paintable:green_painted_button",
+    "paintable:cyan_painted_button",
+    "paintable:light_blue_painted_button",
+    "paintable:blue_painted_button",
+    "paintable:purple_painted_button",
+    "paintable:magenta_painted_button",
+    "paintable:pink_painted_button",
+    "paintable:brown_painted_button",
+    "paintable:black_painted_button",
+    "paintable:gray_painted_button",
+    "paintable:light_gray_painted_button",
+    "paintable:white_painted_button"
+  ]
+}
