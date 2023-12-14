@@ -143,6 +143,46 @@ public class RedPaintBrushItem extends Item {
                     .setValue(BlockStateProperties.OPEN, open));
 
             return InteractionResult.sidedSuccess(world.isClientSide);
+        } else if (blockstate.is(BlockTags.WOODEN_BUTTONS) && !blockstate.is(ModBlocks.RED_PAINTED_BUTTON.get())) {
+            if (itemstack.getDamageValue() != 15) {
+                if (player != null) {
+                    itemstack.hurtAndBreak(1, player, (player1) -> {
+                        player1.broadcastBreakEvent(context.getHand());
+                    });
+                }
+            } else {
+                context.getPlayer().setItemInHand(context.getHand(), new ItemStack(ModItems.PAINT_BRUSH.get()));
+                world.playSound((Player)null, blockpos, SoundEvents.ITEM_PICKUP, SoundSource.BLOCKS, 1.0F, 1.0F);
+            }
+            Direction facing = blockstate.getValue(HorizontalDirectionalBlock.FACING);
+            AttachFace face = blockstate.getValue(BlockStateProperties.ATTACH_FACE);
+            boolean powered = blockstate.getValue(BlockStateProperties.POWERED);
+
+            world.playSound((Player)null, blockpos, SoundEvents.UI_CARTOGRAPHY_TABLE_TAKE_RESULT, SoundSource.BLOCKS, 1.0F, 1.0F);
+            world.setBlockAndUpdate(blockpos, ModBlocks.RED_PAINTED_BUTTON.get().defaultBlockState()
+                    .setValue(HorizontalDirectionalBlock.FACING, facing)
+                    .setValue(BlockStateProperties.ATTACH_FACE, face)
+                    .setValue(BlockStateProperties.POWERED, powered));
+
+            return InteractionResult.sidedSuccess(world.isClientSide);
+        } else if (blockstate.is(BlockTags.WOODEN_PRESSURE_PLATES) && !blockstate.is(ModBlocks.RED_PAINTED_PRESSURE_PLATE.get())) {
+            if (itemstack.getDamageValue() != 15) {
+                if (player != null) {
+                    itemstack.hurtAndBreak(1, player, (player1) -> {
+                        player1.broadcastBreakEvent(context.getHand());
+                    });
+                }
+            } else {
+                context.getPlayer().setItemInHand(context.getHand(), new ItemStack(ModItems.PAINT_BRUSH.get()));
+                world.playSound((Player)null, blockpos, SoundEvents.ITEM_PICKUP, SoundSource.BLOCKS, 1.0F, 1.0F);
+            }
+            boolean powered = blockstate.getValue(BlockStateProperties.POWERED);
+
+            world.playSound((Player)null, blockpos, SoundEvents.UI_CARTOGRAPHY_TABLE_TAKE_RESULT, SoundSource.BLOCKS, 1.0F, 1.0F);
+            world.setBlockAndUpdate(blockpos, ModBlocks.RED_PAINTED_PRESSURE_PLATE.get().defaultBlockState()
+                    .setValue(BlockStateProperties.POWERED, powered));
+
+            return InteractionResult.sidedSuccess(world.isClientSide);
         } else if (blockstate.is(Blocks.BRICKS)) {
 
             if (itemstack.getDamageValue() != 15) {

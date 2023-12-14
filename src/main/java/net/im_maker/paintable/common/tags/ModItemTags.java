@@ -16,5 +16,4 @@ public class ModItemTags {
     private static TagKey<Item> tag(String name) {
         return ItemTags.create(new ResourceLocation(Paintable.MOD_ID, name));
     }
-
 }
