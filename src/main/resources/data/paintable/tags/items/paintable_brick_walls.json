@@ -1,0 +1,21 @@
+{
+  "values": [
+    "minecraft:brick_wall",
+    "paintable:red_painted_brick_wall",
+    "paintable:orange_painted_brick_wall",
+    "paintable:yellow_painted_brick_wall",
+    "paintable:lime_painted_brick_wall",
+    "paintable:green_painted_brick_wall",
+    "paintable:cyan_painted_brick_wall",
+    "paintable:light_blue_painted_brick_wall",
+    "paintable:blue_painted_brick_wall",
+    "paintable:purple_painted_brick_wall",
+    "paintable:magenta_painted_brick_wall",
+    "paintable:pink_painted_brick_wall",
+    "paintable:brown_painted_brick_wall",
+    "paintable:black_painted_brick_wall",
+    "paintable:gray_painted_brick_wall",
+    "paintable:light_gray_painted_brick_wall",
+    "paintable:white_painted_brick_wall"
+  ]
+}

@@ -1,16 +1,9 @@
 package net.im_maker.paintable.common.block.paint_buckets;
 
-import com.google.common.eventbus.Subscribe;
-import net.im_maker.paintable.common.block.ModBlocks;
-import net.im_maker.paintable.common.block.block_values.ModBlockStateProperties;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
-import net.minecraft.sounds.SoundEvents;
-import net.minecraft.sounds.SoundSource;
-import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.context.BlockPlaceContext;
 import net.minecraft.world.level.BlockGetter;
-import net.minecraft.world.level.Level;
 import net.minecraft.world.level.LevelAccessor;
 import net.minecraft.world.level.LevelReader;
 import net.minecraft.world.level.block.Block;
@@ -21,8 +14,6 @@ import net.minecraft.world.level.block.state.StateDefinition;
 import net.minecraft.world.level.block.state.properties.DirectionProperty;
 import net.minecraft.world.phys.shapes.CollisionContext;
 import net.minecraft.world.phys.shapes.VoxelShape;
-import net.minecraftforge.fml.common.Mod;
-
 import javax.annotation.Nullable;
 
 public class PaintBucketBlock extends Block {
