@@ -2,9 +2,10 @@ plugins {
     id 'eclipse'
     id 'maven-publish'
     id 'net.minecraftforge.gradle' version '5.1.+'
+    id 'org.parchmentmc.librarian.forgegradle' version '1.+'
 }
 
-version = '0.8a-1.19.2'
+version = '0.9a-1.19.2'
 group = 'net.im_maker.paintable' // http://maven.apache.org/guides/mini/guide-naming-conventions.html
 archivesBaseName = 'paintable'
 
@@ -26,7 +27,7 @@ minecraft {
     //
     // Use non-default mappings at your own risk. They may not always work.
     // Simply re-run your setup task after changing the mappings to update your workspace.
-    mappings channel: 'official', version: '1.19.2'
+    mappings channel: 'parchment', version: '2022.11.27-1.19.2'
 
     // accessTransformer = file('src/main/resources/META-INF/accesstransformer.cfg') // Currently, this location cannot be changed from the default.
 
@@ -50,6 +51,9 @@ minecraft {
 
             // Comma-separated list of namespaces to load gametests from. Empty = all namespaces.
             property 'forge.enabledGameTestNamespaces', 'paintable'
+
+            property "mixin.env.remapRefMap", "true"
+            property "mixin.env.refMapRemappingFile", "${projectDir}/build/createSrgToMcp/output.srg"
 
             mods {
                 paintable {
@@ -116,13 +120,9 @@ minecraft {
 sourceSets.main.resources { srcDir 'src/generated/resources' }
 
 repositories {
-    // Put repositories for dependencies here
-    // ForgeGradle automatically adds the Forge maven and Maven Central for you
-
-    // If you have mod jar dependencies in ./libs, you can declare them as a repository like so:
-    // flatDir {
-    //     dir 'libs'
-    // }
+    maven {
+        url = "https://maven.jaackson.me"
+    }
 }
 
 dependencies {
@@ -130,7 +130,8 @@ dependencies {
     // that the dep is a ForgeGradle 'patcher' dependency, and its patches will be applied.
     // The userdev artifact is a special name and will get all sorts of transformations applied to it.
     minecraft 'net.minecraftforge:forge:1.19.2-43.3.2'
-
+    implementation fg.deobf("com.teamabnormals:blueprint:1.19.2-6.2.0")
+    compileOnly fg.deobf("com.teamabnormals:boatload:1.19.2-4.2.2")
     // Real mod deobf dependency examples - these get remapped to your current mappings
     // compileOnly fg.deobf("mezz.jei:jei-${mc_version}:${jei_version}:api") // Adds JEI API as a compile dependency
     // runtimeOnly fg.deobf("mezz.jei:jei-${mc_version}:${jei_version}") // Adds the full JEI mod as a runtime dependency

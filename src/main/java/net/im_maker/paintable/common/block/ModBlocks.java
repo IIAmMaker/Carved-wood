@@ -1,8 +1,16 @@
 package net.im_maker.paintable.common.block;
 
+import com.mojang.datafixers.util.Pair;
+import com.teamabnormals.blueprint.common.block.sign.BlueprintStandingSignBlock;
+import com.teamabnormals.blueprint.common.block.sign.BlueprintWallSignBlock;
+import com.teamabnormals.blueprint.common.block.wood.PlanksBlock;
+import com.teamabnormals.blueprint.core.util.PropertyUtil;
+import net.im_maker.paintable.PaintableBlockSubRegistryHelper;
 import net.im_maker.paintable.common.block.paint_buckets.FulledPaintBucketBlock;
 import net.im_maker.paintable.common.block.paint_buckets.PaintBucketBlock;
-import net.minecraft.core.Direction;
+import net.im_maker.paintable.common.block.sign.ModStandingSignBlock;
+import net.im_maker.paintable.common.block.sign.ModWallSignBlock;
+import net.im_maker.paintable.common.util.ModWoodTypes;
 import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.CreativeModeTab;
 import net.minecraft.world.item.Item;
@@ -16,7 +24,6 @@ import net.minecraftforge.registries.ForgeRegistries;
 import net.minecraftforge.registries.RegistryObject;
 import net.im_maker.paintable.Paintable;
 import net.im_maker.paintable.common.item.ModItems;
-
 
 import java.util.function.Supplier;
 
@@ -42,6 +49,7 @@ public class ModBlocks {
     public static final RegistryObject<Block> LIGHT_GRAY_PAINT_BUCKET = registryBlock("light_gray_paint_bucket", () -> new FulledPaintBucketBlock(BlockBehaviour.Properties.of(Material.METAL, MaterialColor.COLOR_LIGHT_GRAY).strength(0.1F, 4.0F).sound(SoundType.LANTERN)), CreativeModeTab.TAB_DECORATIONS);
     public static final RegistryObject<Block> WHITE_PAINT_BUCKET = registryBlock("white_paint_bucket", () -> new FulledPaintBucketBlock(BlockBehaviour.Properties.of(Material.METAL, MaterialColor.SNOW).strength(0.1F, 4.0F).sound(SoundType.LANTERN)), CreativeModeTab.TAB_DECORATIONS);
     //Painted Planks
+    //public static final RegistryObject<Block> RED_PAINTED_PLANKS = HELPER.createBlock("red_painted_planks", () -> new PlanksBlock(PaintableProperties.RED_PAINTED.planks()), CreativeModeTab.TAB_BUILDING_BLOCKS);
     public static final RegistryObject<Block> RED_PAINTED_PLANKS = registryBlock("red_painted_planks", () -> new Block(BlockBehaviour.Properties.of(Material.WOOD, MaterialColor.COLOR_RED).strength(2.0F, 3.0F).sound(SoundType.WOOD)), CreativeModeTab.TAB_BUILDING_BLOCKS);
     public static final RegistryObject<Block> ORANGE_PAINTED_PLANKS = registryBlock("orange_painted_planks", () -> new Block(BlockBehaviour.Properties.of(Material.WOOD, MaterialColor.COLOR_ORANGE).strength(2.0F, 3.0F).sound(SoundType.WOOD)), CreativeModeTab.TAB_BUILDING_BLOCKS);
     public static final RegistryObject<Block> YELLOW_PAINTED_PLANKS = registryBlock("yellow_painted_planks", () -> new Block(BlockBehaviour.Properties.of(Material.WOOD, MaterialColor.COLOR_YELLOW).strength(2.0F, 3.0F).sound(SoundType.WOOD)), CreativeModeTab.TAB_BUILDING_BLOCKS);
@@ -296,7 +304,43 @@ public class ModBlocks {
     public static final RegistryObject<Block> STRIPPED_GRAY_PAINTED_WOOD = registryBlock("stripped_gray_painted_wood", () -> new RotatedPillarBlock(BlockBehaviour.Properties.of(Material.WOOD, MaterialColor.COLOR_GRAY).strength(2.0F, 2.0F).sound(SoundType.WOOD)), CreativeModeTab.TAB_BUILDING_BLOCKS);
     public static final RegistryObject<Block> STRIPPED_LIGHT_GRAY_PAINTED_WOOD = registryBlock("stripped_light_gray_painted_wood", () -> new RotatedPillarBlock(BlockBehaviour.Properties.of(Material.WOOD, MaterialColor.COLOR_LIGHT_GRAY).strength(2.0F, 2.0F).sound(SoundType.WOOD)), CreativeModeTab.TAB_BUILDING_BLOCKS);
     public static final RegistryObject<Block> STRIPPED_WHITE_PAINTED_WOOD = registryBlock("stripped_white_painted_wood", () -> new RotatedPillarBlock(BlockBehaviour.Properties.of(Material.WOOD, MaterialColor.SNOW).strength(2.0F, 2.0F).sound(SoundType.WOOD)), CreativeModeTab.TAB_BUILDING_BLOCKS);
-    
+
+    //public static final Pair<RegistryObject<BlueprintStandingSignBlock>, RegistryObject<BlueprintWallSignBlock>> RED_PAINTED_SIGN = HELPER.createSignBlock("red_painted", MaterialColor.COLOR_RED);
+
+    //signs
+    public static final RegistryObject<Block> RED_PAINTED_WALL_SIGN = BLOCKS.register("red_painted_wall_sign", () -> new ModWallSignBlock(BlockBehaviour.Properties.copy(Blocks.OAK_WALL_SIGN), ModWoodTypes.RED_PAINTED));
+    public static final RegistryObject<Block> RED_PAINTED_SIGN = BLOCKS.register("red_painted_sign", () -> new ModStandingSignBlock(BlockBehaviour.Properties.copy(Blocks.OAK_SIGN), ModWoodTypes.RED_PAINTED));
+    public static final RegistryObject<Block> ORANGE_PAINTED_WALL_SIGN = BLOCKS.register("orange_painted_wall_sign", () -> new ModWallSignBlock(BlockBehaviour.Properties.copy(Blocks.OAK_WALL_SIGN), ModWoodTypes.ORANGE_PAINTED));
+    public static final RegistryObject<Block> ORANGE_PAINTED_SIGN = BLOCKS.register("orange_painted_sign", () -> new ModStandingSignBlock(BlockBehaviour.Properties.copy(Blocks.OAK_SIGN), ModWoodTypes.ORANGE_PAINTED));
+    public static final RegistryObject<Block> YELLOW_PAINTED_WALL_SIGN = BLOCKS.register("yellow_painted_wall_sign", () -> new ModWallSignBlock(BlockBehaviour.Properties.copy(Blocks.OAK_WALL_SIGN), ModWoodTypes.YELLOW_PAINTED));
+    public static final RegistryObject<Block> YELLOW_PAINTED_SIGN = BLOCKS.register("yellow_painted_sign", () -> new ModStandingSignBlock(BlockBehaviour.Properties.copy(Blocks.OAK_SIGN), ModWoodTypes.YELLOW_PAINTED));
+    public static final RegistryObject<Block> LIME_PAINTED_WALL_SIGN = BLOCKS.register("lime_painted_wall_sign", () -> new ModWallSignBlock(BlockBehaviour.Properties.copy(Blocks.OAK_WALL_SIGN), ModWoodTypes.LIME_PAINTED));
+    public static final RegistryObject<Block> LIME_PAINTED_SIGN = BLOCKS.register("lime_painted_sign", () -> new ModStandingSignBlock(BlockBehaviour.Properties.copy(Blocks.OAK_SIGN), ModWoodTypes.LIME_PAINTED));
+    public static final RegistryObject<Block> GREEN_PAINTED_WALL_SIGN = BLOCKS.register("green_painted_wall_sign", () -> new ModWallSignBlock(BlockBehaviour.Properties.copy(Blocks.OAK_WALL_SIGN), ModWoodTypes.GREEN_PAINTED));
+    public static final RegistryObject<Block> GREEN_PAINTED_SIGN = BLOCKS.register("green_painted_sign", () -> new ModStandingSignBlock(BlockBehaviour.Properties.copy(Blocks.OAK_SIGN), ModWoodTypes.GREEN_PAINTED));
+    public static final RegistryObject<Block> CYAN_PAINTED_WALL_SIGN = BLOCKS.register("cyan_painted_wall_sign", () -> new ModWallSignBlock(BlockBehaviour.Properties.copy(Blocks.OAK_WALL_SIGN), ModWoodTypes.CYAN_PAINTED));
+    public static final RegistryObject<Block> CYAN_PAINTED_SIGN = BLOCKS.register("cyan_painted_sign", () -> new ModStandingSignBlock(BlockBehaviour.Properties.copy(Blocks.OAK_SIGN), ModWoodTypes.CYAN_PAINTED));
+    public static final RegistryObject<Block> LIGHT_BLUE_PAINTED_WALL_SIGN = BLOCKS.register("light_blue_painted_wall_sign", () -> new ModWallSignBlock(BlockBehaviour.Properties.copy(Blocks.OAK_WALL_SIGN), ModWoodTypes.LIGHT_BLUE_PAINTED));
+    public static final RegistryObject<Block> LIGHT_BLUE_PAINTED_SIGN = BLOCKS.register("light_blue_painted_sign", () -> new ModStandingSignBlock(BlockBehaviour.Properties.copy(Blocks.OAK_SIGN), ModWoodTypes.LIGHT_BLUE_PAINTED));
+    public static final RegistryObject<Block> BLUE_PAINTED_WALL_SIGN = BLOCKS.register("blue_painted_wall_sign", () -> new ModWallSignBlock(BlockBehaviour.Properties.copy(Blocks.OAK_WALL_SIGN), ModWoodTypes.BLUE_PAINTED));
+    public static final RegistryObject<Block> BLUE_PAINTED_SIGN = BLOCKS.register("blue_painted_sign", () -> new ModStandingSignBlock(BlockBehaviour.Properties.copy(Blocks.OAK_SIGN), ModWoodTypes.BLUE_PAINTED));
+    public static final RegistryObject<Block> PURPLE_PAINTED_WALL_SIGN = BLOCKS.register("purple_painted_wall_sign", () -> new ModWallSignBlock(BlockBehaviour.Properties.copy(Blocks.OAK_WALL_SIGN), ModWoodTypes.PURPLE_PAINTED));
+    public static final RegistryObject<Block> PURPLE_PAINTED_SIGN = BLOCKS.register("purple_painted_sign", () -> new ModStandingSignBlock(BlockBehaviour.Properties.copy(Blocks.OAK_SIGN), ModWoodTypes.PURPLE_PAINTED));
+    public static final RegistryObject<Block> MAGENTA_PAINTED_WALL_SIGN = BLOCKS.register("magenta_painted_wall_sign", () -> new ModWallSignBlock(BlockBehaviour.Properties.copy(Blocks.OAK_WALL_SIGN), ModWoodTypes.MAGENTA_PAINTED));
+    public static final RegistryObject<Block> MAGENTA_PAINTED_SIGN = BLOCKS.register("magenta_painted_sign", () -> new ModStandingSignBlock(BlockBehaviour.Properties.copy(Blocks.OAK_SIGN), ModWoodTypes.MAGENTA_PAINTED));
+    public static final RegistryObject<Block> PINK_PAINTED_WALL_SIGN = BLOCKS.register("pink_painted_wall_sign", () -> new ModWallSignBlock(BlockBehaviour.Properties.copy(Blocks.OAK_WALL_SIGN), ModWoodTypes.PINK_PAINTED));
+    public static final RegistryObject<Block> PINK_PAINTED_SIGN = BLOCKS.register("pink_painted_sign", () -> new ModStandingSignBlock(BlockBehaviour.Properties.copy(Blocks.OAK_SIGN), ModWoodTypes.PINK_PAINTED));
+    public static final RegistryObject<Block> BROWN_PAINTED_WALL_SIGN = BLOCKS.register("brown_painted_wall_sign", () -> new ModWallSignBlock(BlockBehaviour.Properties.copy(Blocks.OAK_WALL_SIGN), ModWoodTypes.BROWN_PAINTED));
+    public static final RegistryObject<Block> BROWN_PAINTED_SIGN = BLOCKS.register("brown_painted_sign", () -> new ModStandingSignBlock(BlockBehaviour.Properties.copy(Blocks.OAK_SIGN), ModWoodTypes.BROWN_PAINTED));
+    public static final RegistryObject<Block> LIGHT_GRAY_PAINTED_WALL_SIGN = BLOCKS.register("light_gray_painted_wall_sign", () -> new ModWallSignBlock(BlockBehaviour.Properties.copy(Blocks.OAK_WALL_SIGN), ModWoodTypes.LIGHT_GRAY_PAINTED));
+    public static final RegistryObject<Block> LIGHT_GRAY_PAINTED_SIGN = BLOCKS.register("light_gray_painted_sign", () -> new ModStandingSignBlock(BlockBehaviour.Properties.copy(Blocks.OAK_SIGN), ModWoodTypes.LIGHT_GRAY_PAINTED));
+    public static final RegistryObject<Block> GRAY_PAINTED_WALL_SIGN = BLOCKS.register("gray_painted_wall_sign", () -> new ModWallSignBlock(BlockBehaviour.Properties.copy(Blocks.OAK_WALL_SIGN), ModWoodTypes.GRAY_PAINTED));
+    public static final RegistryObject<Block> GRAY_PAINTED_SIGN = BLOCKS.register("gray_painted_sign", () -> new ModStandingSignBlock(BlockBehaviour.Properties.copy(Blocks.OAK_SIGN), ModWoodTypes.GRAY_PAINTED));
+    public static final RegistryObject<Block> BLACK_PAINTED_WALL_SIGN = BLOCKS.register("black_painted_wall_sign", () -> new ModWallSignBlock(BlockBehaviour.Properties.copy(Blocks.OAK_WALL_SIGN), ModWoodTypes.BLACK_PAINTED));
+    public static final RegistryObject<Block> BLACK_PAINTED_SIGN = BLOCKS.register("black_painted_sign", () -> new ModStandingSignBlock(BlockBehaviour.Properties.copy(Blocks.OAK_SIGN), ModWoodTypes.BLACK_PAINTED));
+    public static final RegistryObject<Block> WHITE_PAINTED_WALL_SIGN = BLOCKS.register("white_painted_wall_sign", () -> new ModWallSignBlock(BlockBehaviour.Properties.copy(Blocks.OAK_WALL_SIGN), ModWoodTypes.WHITE_PAINTED));
+    public static final RegistryObject<Block> WHITE_PAINTED_SIGN = BLOCKS.register("white_painted_sign", () -> new ModStandingSignBlock(BlockBehaviour.Properties.copy(Blocks.OAK_SIGN), ModWoodTypes.WHITE_PAINTED));
+
     private static <T extends Block> RegistryObject<T> registryBlock(String name, Supplier<T> block, CreativeModeTab tab ) {
         RegistryObject<T> toReturn = BLOCKS.register(name, block);
         registerBlockItem(name, toReturn, tab);
