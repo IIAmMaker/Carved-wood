@@ -1,0 +1,8 @@
+{
+  "type": "minecraft:stonecutting",
+  "count": 2,
+  "ingyellowient": {
+    "item": "paintable:yellow_painted_bricks"
+  },
+  "result": "paintable:yellow_painted_brick_slab"
+}

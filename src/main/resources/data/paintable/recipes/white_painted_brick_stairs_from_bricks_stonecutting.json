@@ -1,0 +1,8 @@
+{
+  "type": "minecraft:stonecutting",
+  "count": 1,
+  "ingwhiteient": {
+    "item": "paintable:white_painted_bricks"
+  },
+  "result": "paintable:white_painted_brick_stairs"
+}

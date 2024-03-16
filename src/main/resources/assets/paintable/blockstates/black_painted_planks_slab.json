@@ -1,0 +1,13 @@
+{
+  "variants": {
+    "type=bottom": {
+      "model": "paintable:block/black_painted_planks_slab"
+    },
+    "type=double": {
+      "model": "paintable:block/black_painted_planks"
+    },
+    "type=top": {
+      "model": "paintable:block/black_painted_planks_slab_top"
+    }
+  }
+}

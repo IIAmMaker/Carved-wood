@@ -1,0 +1,29 @@
+{
+  "values": [
+    "minecraft:stripped_oak_wood",
+    "minecraft:stripped_spruce_wood",
+    "minecraft:stripped_birch_wood",
+    "minecraft:stripped_jungle_wood",
+    "minecraft:stripped_acacia_wood",
+    "minecraft:stripped_dark_oak_wood",
+    "minecraft:stripped_mangrove_wood",
+    "minecraft:stripped_crimson_hyphae",
+    "minecraft:stripped_warped_hyphae",
+    "paintable:stripped_red_painted_wood",
+    "paintable:stripped_orange_painted_wood",
+    "paintable:stripped_yellow_painted_wood",
+    "paintable:stripped_lime_painted_wood",
+    "paintable:stripped_green_painted_wood",
+    "paintable:stripped_cyan_painted_wood",
+    "paintable:stripped_light_blue_painted_wood",
+    "paintable:stripped_blue_painted_wood",
+    "paintable:stripped_purple_painted_wood",
+    "paintable:stripped_magenta_painted_wood",
+    "paintable:stripped_pink_painted_wood",
+    "paintable:stripped_brown_painted_wood",
+    "paintable:stripped_black_painted_wood",
+    "paintable:stripped_gray_painted_wood",
+    "paintable:stripped_light_gray_painted_wood",
+    "paintable:stripped_white_painted_wood"
+  ]
+}

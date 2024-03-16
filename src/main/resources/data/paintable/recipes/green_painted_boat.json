@@ -1,0 +1,16 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "group": "boat",
+  "pattern": [
+    "# #",
+    "###"
+  ],
+  "key": {
+    "#": {
+      "item": "paintable:green_painted_planks"
+    }
+  },
+  "result": {
+    "item": "paintable:green_painted_boat"
+  }
+}

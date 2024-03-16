@@ -1,0 +1,11 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "tag": "paintable:colored_paint_brush"
+    }
+  ],
+  "result": {
+    "item": "paintable:paint_brush"
+  }
+}

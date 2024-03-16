@@ -1,0 +1,15 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "group": "chest_boat",
+  "ingredients": [
+    {
+      "tag": "forge:chests/wooden"
+    },
+    {
+      "item": "paintable:yellow_painted_boat"
+    }
+  ],
+  "result": {
+    "item": "paintable:yellow_painted_chest_boat"
+  }
+}

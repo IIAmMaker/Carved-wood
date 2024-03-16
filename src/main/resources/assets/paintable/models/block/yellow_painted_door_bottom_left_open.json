@@ -1,0 +1,8 @@
+{
+  "parent": "minecraft:block/door_bottom_left_open",
+  "textures": {
+    "bottom": "paintable:block/yellow_painted_door_bottom",
+    "top": "paintable:block/yellow_painted_door_top"
+  },
+  "render_type": "cutout"
+}

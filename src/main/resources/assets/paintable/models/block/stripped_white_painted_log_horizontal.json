@@ -1,0 +1,7 @@
+{
+  "parent": "minecraft:block/cube_column_horizontal",
+  "textures": {
+    "end": "paintable:block/stripped_white_painted_log_top",
+    "side": "paintable:block/stripped_white_painted_log"
+  }
+}

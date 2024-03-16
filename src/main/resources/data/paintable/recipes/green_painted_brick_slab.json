@@ -1,0 +1,18 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "building",
+  "group": "painted_brick_slab",
+  "key": {
+    "#": {
+      "item": "paintable:green_painted_bricks"
+    }
+  },
+  "pattern": [
+    "###"
+  ],
+  "result": {
+    "count": 6,
+    "item": "paintable:green_painted_brick_slab"
+  },
+  "show_notification": true
+}

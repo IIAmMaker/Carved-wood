@@ -1,0 +1,19 @@
+{
+  "variants": {
+    "facing=east": {
+      "model": "paintable:block/paint_bucket/paint_bucket"
+    },
+    "facing=north": {
+      "model": "paintable:block/paint_bucket/paint_bucket",
+      "y": 270
+    },
+    "facing=south": {
+      "model": "paintable:block/paint_bucket/paint_bucket",
+      "y": 90
+    },
+    "facing=west": {
+      "model": "paintable:block/paint_bucket/paint_bucket",
+      "y": 180
+    }
+  }
+}

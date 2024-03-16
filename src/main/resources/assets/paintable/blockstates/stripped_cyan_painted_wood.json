@@ -1,0 +1,16 @@
+{
+  "variants": {
+    "axis=x": {
+      "model": "paintable:block/stripped_cyan_painted_wood",
+      "x": 90,
+      "y": 90
+    },
+    "axis=y": {
+      "model": "paintable:block/stripped_cyan_painted_wood"
+    },
+    "axis=z": {
+      "model": "paintable:block/stripped_cyan_painted_wood",
+      "x": 90
+    }
+  }
+}

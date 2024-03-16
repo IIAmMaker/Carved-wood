@@ -1,0 +1,20 @@
+{
+  "values": [
+    "paintable:red_paint_brush",
+    "paintable:orange_paint_brush",
+    "paintable:yellow_paint_brush",
+    "paintable:lime_paint_brush",
+    "paintable:green_paint_brush",
+    "paintable:cyan_paint_brush",
+    "paintable:light_blue_paint_brush",
+    "paintable:blue_paint_brush",
+    "paintable:purple_paint_brush",
+    "paintable:magenta_paint_brush",
+    "paintable:pink_paint_brush",
+    "paintable:brown_paint_brush",
+    "paintable:black_paint_brush",
+    "paintable:gray_paint_brush",
+    "paintable:light_gray_paint_brush",
+    "paintable:white_paint_brush"
+  ]
+}

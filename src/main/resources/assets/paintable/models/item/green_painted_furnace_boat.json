@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:item/generated",
+  "textures": {
+    "layer0": "paintable:item/green_painted_chest_boat"
+  }
+}

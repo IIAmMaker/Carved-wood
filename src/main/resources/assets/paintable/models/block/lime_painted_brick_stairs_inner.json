@@ -1,0 +1,8 @@
+{
+  "parent": "minecraft:block/inner_stairs",
+  "textures": {
+    "bottom": "paintable:block/lime_painted_bricks",
+    "side": "paintable:block/lime_painted_bricks",
+    "top": "paintable:block/lime_painted_bricks"
+  }
+}
