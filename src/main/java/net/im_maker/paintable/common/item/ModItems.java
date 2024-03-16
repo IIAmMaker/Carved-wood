@@ -1,20 +1,14 @@
 package net.im_maker.paintable.common.item;
 
 import com.mojang.datafixers.util.Pair;
-import com.teamabnormals.blueprint.common.block.sign.BlueprintStandingSignBlock;
-import com.teamabnormals.blueprint.common.block.sign.BlueprintWallSignBlock;
 import com.teamabnormals.blueprint.core.util.registry.AbstractSubRegistryHelper;
 import com.teamabnormals.blueprint.core.util.registry.ItemSubRegistryHelper;
 import net.im_maker.paintable.Paintable;
-import net.im_maker.paintable.common.PaintableBoatTypes;
+import net.im_maker.paintable.common.util.PaintableBoatTypes;
 import net.im_maker.paintable.common.block.ModBlocks;
-//import net.im_maker.paintable.common.entity.ModBoatEntity;
 import net.im_maker.paintable.common.item.paint_brushs.*;
-import net.minecraft.world.entity.vehicle.Boat;
-import net.minecraft.world.item.BoatItem;
 import net.minecraft.world.item.CreativeModeTab;
 import net.minecraft.world.item.SignItem;
-import net.minecraft.world.level.material.MaterialColor;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.fml.ModList;
 import net.minecraftforge.registries.RegistryObject;

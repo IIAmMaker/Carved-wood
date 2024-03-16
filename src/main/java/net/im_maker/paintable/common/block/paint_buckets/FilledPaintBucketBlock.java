@@ -6,10 +6,10 @@ import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.block.state.StateDefinition;
 import net.minecraft.world.level.block.state.properties.IntegerProperty;
 
-public class FulledPaintBucketBlock extends PaintBucketBlock {
+public class FilledPaintBucketBlock extends PaintBucketBlock {
     public static final IntegerProperty LEVEL_PAINT = ModBlockStateProperties.LEVEL_PAINT;
 
-    public FulledPaintBucketBlock(Properties properties) {
+    public FilledPaintBucketBlock(Properties properties) {
         super(properties);
         this.registerDefaultState(this.stateDefinition.any().setValue(LEVEL_PAINT, 4));
     }

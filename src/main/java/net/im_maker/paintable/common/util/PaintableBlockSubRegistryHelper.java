@@ -1,4 +1,4 @@
-package net.im_maker.paintable;
+package net.im_maker.paintable.common.util;
 
 
 import com.teamabnormals.blueprint.core.util.registry.BlockSubRegistryHelper;

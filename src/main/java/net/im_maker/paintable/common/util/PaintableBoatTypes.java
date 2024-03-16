@@ -1,4 +1,4 @@
-package net.im_maker.paintable.common;
+package net.im_maker.paintable.common.util;
 
 import com.teamabnormals.boatload.common.item.FurnaceBoatItem;
 import com.teamabnormals.boatload.common.item.LargeBoatItem;

@@ -1,6 +1,5 @@
 package net.im_maker.paintable.common.util;
 
-import net.im_maker.paintable.Paintable;
 import net.minecraft.world.level.block.state.properties.WoodType;
 
 public class ModWoodTypes {
