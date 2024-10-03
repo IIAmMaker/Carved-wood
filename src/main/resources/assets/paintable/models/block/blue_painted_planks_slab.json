@@ -1,8 +1,0 @@
-{
-  "parent": "minecraft:block/slab",
-  "textures": {
-    "bottom": "paintable:block/blue_painted_planks",
-    "side": "paintable:block/blue_painted_planks",
-    "top": "paintable:block/blue_painted_planks"
-  }
-}

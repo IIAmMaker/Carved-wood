@@ -1,0 +1,11 @@
+{
+    "required": true,
+    "package": "net.im_maker.carved_wood.mixin",
+    "refmap": "carved_wood.refmap.json",
+    "mixins": [
+        "ChiseledBookShelfBlockMixin",
+        "WrittenBookItemMixin"
+    ],
+    "client": [],
+    "server": []
+}

@@ -1,8 +1,0 @@
-{
-  "type": "minecraft:stonecutting",
-  "count": 1,
-  "inglimeient": {
-    "item": "paintable:lime_painted_bricks"
-  },
-  "result": "paintable:lime_painted_brick_wall"
-}

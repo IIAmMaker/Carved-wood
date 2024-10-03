@@ -1,0 +1,27 @@
+Maker's Mods License
+
+Copyright (c) 2024 Maker's Mods
+
+Permissions are hereby granted below to any person having a copy of
+this software and/or its associated files:
+
+
+-> Usage:
+You can use this software for both private and public use.
+You can utilize this software as a library or integrate it with your code, but only if you download it from our sources and treat it as a soft or hard dependency.
+-> Copying:
+You can copy this software for private use or to contribute to it.
+-> Modification:
+You can modify this software for private use or to contribute to it.
+-> Publishing:
+You are not allowed to publish copies of this software.
+-> Distributing:
+You are not allowed to distribute this software.
+-> Sublicensing:
+You are not permitted to sublicense this software.
+-> Selling:
+You are not permitted to sell this software.
+
+The above copyright notice and these permission notices shall be included in all copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.

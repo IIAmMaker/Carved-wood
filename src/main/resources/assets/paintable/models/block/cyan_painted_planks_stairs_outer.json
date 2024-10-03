@@ -1,8 +1,0 @@
-{
-  "parent": "minecraft:block/outer_stairs",
-  "textures": {
-    "bottom": "paintable:block/cyan_painted_planks",
-    "side": "paintable:block/cyan_painted_planks",
-    "top": "paintable:block/cyan_painted_planks"
-  }
-}

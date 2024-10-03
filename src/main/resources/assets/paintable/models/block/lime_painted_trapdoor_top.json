@@ -1,7 +1,0 @@
-{
-  "parent": "minecraft:block/template_orientable_trapdoor_top",
-  "textures": {
-    "texture": "paintable:block/lime_painted_trapdoor"
-  },
-  "render_type": "translucent"
-}

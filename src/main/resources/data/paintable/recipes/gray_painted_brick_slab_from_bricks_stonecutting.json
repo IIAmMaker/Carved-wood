@@ -1,8 +1,0 @@
-{
-  "type": "minecraft:stonecutting",
-  "count": 2,
-  "inggrayient": {
-    "item": "paintable:gray_painted_bricks"
-  },
-  "result": "paintable:gray_painted_brick_slab"
-}
