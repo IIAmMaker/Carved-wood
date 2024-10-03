@@ -1,0 +1,7 @@
+{
+  "parent": "carved_wood:block/template_ladder",
+  "textures": {
+    "particle": "carved_wood:block/jungle_ladder",
+    "texture": "carved_wood:block/jungle_ladder"
+  }
+}

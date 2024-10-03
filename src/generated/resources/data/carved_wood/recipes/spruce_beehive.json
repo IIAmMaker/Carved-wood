@@ -1,0 +1,22 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "group": "beehive",
+  "key": {
+    "#": {
+      "item": "minecraft:honeycomb"
+    },
+    "P": {
+      "item": "minecraft:spruce_planks"
+    }
+  },
+  "pattern": [
+    "PPP",
+    "###",
+    "PPP"
+  ],
+  "result": {
+    "item": "carved_wood:spruce_beehive"
+  },
+  "show_notification": true
+}

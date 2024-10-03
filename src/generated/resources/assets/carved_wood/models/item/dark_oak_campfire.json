@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:item/generated",
+  "textures": {
+    "layer0": "carved_wood:item/dark_oak_campfire"
+  }
+}

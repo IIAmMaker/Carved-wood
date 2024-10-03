@@ -1,0 +1,20 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "building",
+  "group": "wooden_mosaic_stairs",
+  "key": {
+    "#": {
+      "item": "carved_wood:crimson_mosaic"
+    }
+  },
+  "pattern": [
+    "#  ",
+    "## ",
+    "###"
+  ],
+  "result": {
+    "count": 4,
+    "item": "carved_wood:crimson_mosaic_stairs"
+  },
+  "show_notification": true
+}

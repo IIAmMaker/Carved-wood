@@ -1,0 +1,13 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "building",
+  "group": "log",
+  "ingredients": [
+    {
+      "item": "carved_wood:stripped_warped_stem_bundle"
+    }
+  ],
+  "result": {
+    "item": "minecraft:stripped_warped_stem"
+  }
+}

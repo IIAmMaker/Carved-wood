@@ -1,0 +1,22 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "redstone",
+  "group": "lectern",
+  "key": {
+    "B": {
+      "item": "carved_wood:jungle_bookshelf"
+    },
+    "S": {
+      "item": "minecraft:jungle_slab"
+    }
+  },
+  "pattern": [
+    "SSS",
+    " B ",
+    " S "
+  ],
+  "result": {
+    "item": "carved_wood:jungle_lectern"
+  },
+  "show_notification": true
+}

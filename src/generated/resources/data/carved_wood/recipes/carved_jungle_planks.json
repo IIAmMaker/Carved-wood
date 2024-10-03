@@ -1,0 +1,18 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "building",
+  "group": "carved_planks",
+  "key": {
+    "#": {
+      "item": "carved_wood:jungle_tile_slab"
+    }
+  },
+  "pattern": [
+    "#",
+    "#"
+  ],
+  "result": {
+    "item": "carved_wood:carved_jungle_planks"
+  },
+  "show_notification": true
+}

@@ -1,0 +1,13 @@
+{
+  "variants": {
+    "type=bottom": {
+      "model": "carved_wood:block/jungle_mosaic_slab"
+    },
+    "type=double": {
+      "model": "carved_wood:block/jungle_mosaic"
+    },
+    "type=top": {
+      "model": "carved_wood:block/jungle_mosaic_slab_top"
+    }
+  }
+}

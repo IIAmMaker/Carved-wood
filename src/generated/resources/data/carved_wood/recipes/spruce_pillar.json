@@ -1,0 +1,19 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "building",
+  "group": "wooden_pillar",
+  "key": {
+    "#": {
+      "item": "carved_wood:spruce_boards"
+    }
+  },
+  "pattern": [
+    "#",
+    "#"
+  ],
+  "result": {
+    "count": 2,
+    "item": "carved_wood:spruce_pillar"
+  },
+  "show_notification": true
+}

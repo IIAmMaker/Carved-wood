@@ -1,0 +1,12 @@
+// 1.20.1	2024-10-02T17:14:56.5725709	Tags for minecraft:item mod id carved_wood
+7684b23e597d19c284c4c2a81a128f09b61f2dc9 data/forge/tags/items/barrels/wooden.json
+2c4d462b49e0844a29afc6512dd10788d203f790 data/forge/tags/items/beehives.json
+dae0f6d4a859963a75ace219426b28278886fa15 data/forge/tags/items/bookshelves.json
+73f8dde8c5a885a47177cdb5a75a8c92385690a1 data/forge/tags/items/chests/trapped.json
+1b48527945bb441300e6e10a4a71c4215874b6a6 data/forge/tags/items/chests/wooden.json
+28f4182e6b723252ca2fc71f45dcffe6d12a07c1 data/forge/tags/items/chiseled_bookshelves.json
+b73d3b7a83b9f93ca8ef0cfc1e3504a0581de4ca data/forge/tags/items/crafting_tables.json
+60d957b916db30ef0bdef2fd8a502613b3c3f352 data/forge/tags/items/ladders.json
+24de1e1ef3687a2a4a80d6b21b5908dcee7847c0 data/forge/tags/items/lecterns.json
+3f0b6ed707e788958a471e68cbb33b5d8d5028a5 data/minecraft/tags/items/slabs.json
+5e5f9f067cc585ff085521a45a5f4278c36db437 data/minecraft/tags/items/stairs.json

@@ -1,0 +1,8 @@
+{
+  "parent": "carved_wood:block/template_bookshelf",
+  "textures": {
+    "bottom": "minecraft:block/jungle_planks",
+    "side": "carved_wood:block/jungle_bookshelf",
+    "top": "minecraft:block/jungle_planks"
+  }
+}

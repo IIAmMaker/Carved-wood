@@ -1,0 +1,17 @@
+{
+  "variants": {
+    "axis=x": {
+      "model": "carved_wood:block/spruce_pillar_horizontal",
+      "x": 90,
+      "y": 270
+    },
+    "axis=y": {
+      "model": "carved_wood:block/spruce_pillar"
+    },
+    "axis=z": {
+      "model": "carved_wood:block/spruce_pillar_horizontal",
+      "x": 90,
+      "y": 180
+    }
+  }
+}

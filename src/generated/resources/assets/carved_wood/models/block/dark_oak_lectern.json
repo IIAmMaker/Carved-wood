@@ -1,0 +1,10 @@
+{
+  "parent": "carved_wood:block/template_lectern",
+  "textures": {
+    "base": "carved_wood:block/dark_oak_lectern_base",
+    "bottom": "minecraft:block/dark_oak_planks",
+    "front": "carved_wood:block/dark_oak_lectern_front",
+    "sides": "carved_wood:block/dark_oak_lectern_sides",
+    "top": "carved_wood:block/dark_oak_lectern_top"
+  }
+}

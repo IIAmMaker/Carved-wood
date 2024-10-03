@@ -1,0 +1,19 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "building",
+  "group": "wooden_tiles",
+  "key": {
+    "#": {
+      "item": "carved_wood:bamboo_boards"
+    }
+  },
+  "pattern": [
+    "##",
+    "##"
+  ],
+  "result": {
+    "count": 4,
+    "item": "carved_wood:bamboo_tiles"
+  },
+  "show_notification": true
+}

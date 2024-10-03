@@ -1,0 +1,19 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "building",
+  "group": "log_bundle",
+  "key": {
+    "#": {
+      "item": "minecraft:jungle_log"
+    }
+  },
+  "pattern": [
+    "##",
+    "##"
+  ],
+  "result": {
+    "count": 4,
+    "item": "carved_wood:jungle_log_bundle"
+  },
+  "show_notification": true
+}

@@ -1,0 +1,8 @@
+{
+  "parent": "minecraft:block/stairs",
+  "textures": {
+    "bottom": "carved_wood:block/acacia_tiles",
+    "side": "carved_wood:block/acacia_tiles",
+    "top": "carved_wood:block/acacia_tiles"
+  }
+}

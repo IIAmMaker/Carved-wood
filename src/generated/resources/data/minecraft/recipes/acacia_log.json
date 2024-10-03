@@ -1,0 +1,13 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "building",
+  "group": "log",
+  "ingredients": [
+    {
+      "item": "carved_wood:acacia_log_bundle"
+    }
+  ],
+  "result": {
+    "item": "minecraft:acacia_log"
+  }
+}

@@ -1,0 +1,26 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "building",
+  "group": "wooden_lantern",
+  "key": {
+    "#": {
+      "item": "minecraft:spruce_planks"
+    },
+    "G": {
+      "item": "minecraft:glowstone"
+    },
+    "P": {
+      "item": "minecraft:paper"
+    }
+  },
+  "pattern": [
+    "#P#",
+    "PGP",
+    "#P#"
+  ],
+  "result": {
+    "count": 2,
+    "item": "carved_wood:spruce_lantern"
+  },
+  "show_notification": true
+}

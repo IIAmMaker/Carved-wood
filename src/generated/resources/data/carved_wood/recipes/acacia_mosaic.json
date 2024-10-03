@@ -1,0 +1,16 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "building",
+  "group": "wooden_mosaic",
+  "key": {
+    "#": []
+  },
+  "pattern": [
+    "#",
+    "#"
+  ],
+  "result": {
+    "item": "carved_wood:acacia_mosaic"
+  },
+  "show_notification": true
+}

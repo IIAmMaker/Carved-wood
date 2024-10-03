@@ -1,0 +1,20 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "building",
+  "group": "wooden_tile_stairs",
+  "key": {
+    "#": {
+      "item": "carved_wood:spruce_tiles"
+    }
+  },
+  "pattern": [
+    "#  ",
+    "## ",
+    "###"
+  ],
+  "result": {
+    "count": 4,
+    "item": "carved_wood:spruce_tile_stairs"
+  },
+  "show_notification": true
+}

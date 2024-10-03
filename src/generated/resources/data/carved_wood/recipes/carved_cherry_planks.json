@@ -1,0 +1,18 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "building",
+  "group": "carved_planks",
+  "key": {
+    "#": {
+      "item": "carved_wood:cherry_tile_slab"
+    }
+  },
+  "pattern": [
+    "#",
+    "#"
+  ],
+  "result": {
+    "item": "carved_wood:carved_cherry_planks"
+  },
+  "show_notification": true
+}

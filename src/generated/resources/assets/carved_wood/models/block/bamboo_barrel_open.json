@@ -1,0 +1,8 @@
+{
+  "parent": "carved_wood:block/template_barrel",
+  "textures": {
+    "bottom": "carved_wood:block/bamboo_barrel_bottom",
+    "side": "carved_wood:block/bamboo_barrel_side",
+    "top": "carved_wood:block/bamboo_barrel_top_open"
+  }
+}

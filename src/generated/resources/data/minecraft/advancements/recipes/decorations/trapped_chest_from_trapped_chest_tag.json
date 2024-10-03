@@ -1,0 +1,33 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "minecraft:trapped_chest_from_trapped_chest_tag"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    },
+    "has_trapped_chest": {
+      "conditions": {
+        "items": [
+          {
+            "tag": "forge:chests/trapped"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "requirements": [
+    [
+      "has_trapped_chest",
+      "has_the_recipe"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "minecraft:trapped_chest_from_trapped_chest_tag"
+    ]
+  },
+  "sends_telemetry_event": false
+}
