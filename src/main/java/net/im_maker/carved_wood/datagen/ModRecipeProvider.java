@@ -383,7 +383,7 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
 
     private void woodenTrappedChests (Consumer<FinishedRecipe> pWriter, String woodType) {
         Item ingredient = item(woodType + "_chest");
-        Item result = item(woodType + "_trapped_chest");
+        Item result = item("trapped_" + woodType + "_chest");
         ShapelessRecipeBuilder.shapeless(RecipeCategory.DECORATIONS, result, 1)
                 .requires(ingredient)
                 .requires(Items.TRIPWIRE_HOOK)
