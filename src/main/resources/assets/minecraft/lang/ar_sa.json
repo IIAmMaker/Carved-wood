@@ -1,11 +1,12 @@
 {
-  "block.minecraft.crafting_table": "Oak Crafting Table",
-  "block.minecraft.crafter": "Oak Crafter",
-  "block.minecraft.ladder": "Oak Ladder",
-  "block.minecraft.barrel": "Spruce Barrel",
-  "block.minecraft.campfire": "Oak Campfire",
-  "block.minecraft.soul_campfire": "Oak Soul Campfire",
-  "block.minecraft.beehive": "Oak Beehive",
-  "block.minecraft.bookshelf": "Oak Bookshelf",
-  "block.minecraft.chiseled_bookshelf": "Oak Chiseled Chiseled"
+  "block.minecraft.crafting_table": "طاولة النجارة من البلوط",
+  "block.minecraft.crafter": "صانع من البلوط",
+  "block.minecraft.ladder": "سلم البلوط",
+  "block.minecraft.barrel": "برميل التنوب",
+  "block.minecraft.campfire": "موقد نار البلوط",
+  "block.minecraft.soul_campfire": "موقد نار الروح البلوط",
+  "block.minecraft.beehive": "خلية نحل البلوط",
+  "block.minecraft.bookshelf": "رف كتب البلوط",
+  "block.minecraft.chiseled_bookshelf": "رف كتب بلوط محفور",
+  "block.minecraft.lectern": "منصة القراءة من البلوط"
 }
