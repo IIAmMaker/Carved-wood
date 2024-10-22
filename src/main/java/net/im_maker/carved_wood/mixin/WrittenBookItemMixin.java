@@ -1,6 +1,6 @@
 package net.im_maker.carved_wood.mixin;
 
-import net.im_maker.carved_wood.common.tags.CWTags;
+import net.im_maker.carved_wood.common.util.CWTags;
 import net.minecraft.core.BlockPos;
 import net.minecraft.world.InteractionResult;
 import net.minecraft.world.item.WrittenBookItem;
@@ -32,22 +32,4 @@ public abstract class WrittenBookItemMixin {
             cir.setReturnValue(InteractionResult.PASS);
         }
     }
-
-
-    ///**
-    // * Inject code after the original useOn method.
-    // * This can be used to perform actions after the original method executes.
-    // */
-    //@Inject(method = "useOn", at = @At("RETURN"))
-    //public void afterUseOn(UseOnContext context, CallbackInfoReturnable<InteractionResult> cir) {
-    //    Level level = context.getLevel();
-    //    BlockPos blockPos = context.getClickedPos();
-    //    Player player = context.getPlayer();
-    //    ItemStack itemStack = context.getItemInHand();
-    //    InteractionResult result = cir.getReturnValue();
-//
-    //    // Example: Log the result of the useOn method
-    //    // For simplicity, using System.out. For real mods, consider using a logger.
-    //    System.out.println("useOn method executed with result: " + result);
-    //}
 }
