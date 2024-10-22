@@ -18,6 +18,10 @@ public class CWCampfireBlock extends CampfireBlock {
         super(pSpawnParticles, pFireDamage, pProperties);
     }
 
+    public CWCampfireBlock(boolean isSoul, Properties pProperties) {
+        super(!isSoul, isSoul ? 2 : 1, pProperties);
+    }
+
     @Nullable
     public <T extends BlockEntity> BlockEntityTicker<T> getTicker(Level pLevel, BlockState pState, BlockEntityType<T> pBlockEntityType) {
         if (pLevel.isClientSide) {
