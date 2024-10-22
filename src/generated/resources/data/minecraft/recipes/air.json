@@ -1,22 +1,16 @@
 {
-  "type": "minecraft:crafting_shaped",
+  "type": "minecraft:crafting_shapeless",
   "category": "misc",
-  "group": "chiseled_bookshelf",
-  "key": {
-    "P": {
-      "item": "minecraft:spruce_planks"
+  "group": "trapped_chest",
+  "ingredients": [
+    {
+      "item": "carved_wood:oak_chest"
     },
-    "S": {
-      "item": "minecraft:spruce_slab"
+    {
+      "item": "minecraft:tripwire_hook"
     }
-  },
-  "pattern": [
-    "PPP",
-    "SSS",
-    "PPP"
   ],
   "result": {
     "item": "minecraft:air"
-  },
-  "show_notification": true
+  }
 }
