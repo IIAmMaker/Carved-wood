@@ -56,10 +56,10 @@ public class CarvedWood {
         CWBlocks.register(modEventBus);
         CWItems.register(modEventBus);
         CWBlockEntities.register(modEventBus);
-        CWPoiType.register(modEventBus);
         modEventBus.addListener(this::setup);
         modEventBus.addListener(this::clientSetup);
         modEventBus.addListener(this::addCreative);
+        CWPoiType.register(modEventBus);
     }
 
 
