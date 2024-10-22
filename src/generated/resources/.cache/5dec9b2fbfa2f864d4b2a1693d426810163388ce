@@ -1,8 +1,8 @@
-// 1.20.1	2024-10-02T17:14:56.5725709	Tags for minecraft:item mod id carved_wood
+// 1.20.1	2024-10-22T17:33:21.0452243	Tags for minecraft:item mod id carved_wood
 7684b23e597d19c284c4c2a81a128f09b61f2dc9 data/forge/tags/items/barrels/wooden.json
-2c4d462b49e0844a29afc6512dd10788d203f790 data/forge/tags/items/beehives.json
+9972651fc11c10a1900e17efcaec2db9b38efa6f data/forge/tags/items/beehives.json
 dae0f6d4a859963a75ace219426b28278886fa15 data/forge/tags/items/bookshelves.json
-73f8dde8c5a885a47177cdb5a75a8c92385690a1 data/forge/tags/items/chests/trapped.json
+19b93b01803407cc447063baaa9425c9951a8dfc data/forge/tags/items/chests/trapped.json
 1b48527945bb441300e6e10a4a71c4215874b6a6 data/forge/tags/items/chests/wooden.json
 28f4182e6b723252ca2fc71f45dcffe6d12a07c1 data/forge/tags/items/chiseled_bookshelves.json
 b73d3b7a83b9f93ca8ef0cfc1e3504a0581de4ca data/forge/tags/items/crafting_tables.json

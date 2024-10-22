@@ -1,19 +1,20 @@
-// 1.20.1	2024-09-27T13:42:50.0715967	Tags for minecraft:block mod id carved_wood
+// 1.20.1	2024-10-22T17:33:21.0482556	Tags for minecraft:block mod id carved_wood
 7684b23e597d19c284c4c2a81a128f09b61f2dc9 data/forge/tags/blocks/barrels/wooden.json
-2c4d462b49e0844a29afc6512dd10788d203f790 data/forge/tags/blocks/beehives.json
+9972651fc11c10a1900e17efcaec2db9b38efa6f data/forge/tags/blocks/beehives.json
 dae0f6d4a859963a75ace219426b28278886fa15 data/forge/tags/blocks/bookshelves.json
-73f8dde8c5a885a47177cdb5a75a8c92385690a1 data/forge/tags/blocks/chests/trapped.json
+19b93b01803407cc447063baaa9425c9951a8dfc data/forge/tags/blocks/chests/trapped.json
 1b48527945bb441300e6e10a4a71c4215874b6a6 data/forge/tags/blocks/chests/wooden.json
 28f4182e6b723252ca2fc71f45dcffe6d12a07c1 data/forge/tags/blocks/chiseled_bookshelves.json
 10f28d948402599c53c931daba83741da0c4f78a data/forge/tags/blocks/crafting_tables.json
+60d957b916db30ef0bdef2fd8a502613b3c3f352 data/forge/tags/blocks/ladders.json
 24de1e1ef3687a2a4a80d6b21b5908dcee7847c0 data/forge/tags/blocks/lecterns.json
-4bedd5192eaf572df80d82bac0ffd9d4130e0b27 data/minecraft/tags/blocks/campfires.json
+6e3176be2c3659edc69989c999b9d36b5c4909e9 data/minecraft/tags/blocks/campfires.json
 3702d572950b619bc26b8d0bbdb7e5e978f8bf67 data/minecraft/tags/blocks/climbable.json
 dae0f6d4a859963a75ace219426b28278886fa15 data/minecraft/tags/blocks/enchantment_power_provider.json
-122741b892e2862418cda40fb6f959bd0b178b66 data/minecraft/tags/blocks/features_cannot_replace.json
-e12fdb4ce4f74160f489df58077738710281d36f data/minecraft/tags/blocks/guarded_by_piglins.json
+2181ee7f3a4a5c0f92eec5c4e0eab66701efb251 data/minecraft/tags/blocks/features_cannot_replace.json
+48b8bf9fff3fae68f93dcecb439d81efa549e2a3 data/minecraft/tags/blocks/guarded_by_piglins.json
 1b48527945bb441300e6e10a4a71c4215874b6a6 data/minecraft/tags/blocks/lava_pool_stone_cannot_replace.json
-fb353832f2beed6d5700ef5364681fe0bbd0939e data/minecraft/tags/blocks/mineable/axe.json
-c1641e0c3e7ac95e0b4e1e2b6808518b2ccbb6b9 data/minecraft/tags/blocks/piglin_repellents.json
+ac9899424d013d1fca5c63cacf849d1b90ab99d6 data/minecraft/tags/blocks/mineable/axe.json
+cc6c5ec9729d8a4408715e8eb0f2839f6958e02e data/minecraft/tags/blocks/piglin_repellents.json
 3f0b6ed707e788958a471e68cbb33b5d8d5028a5 data/minecraft/tags/blocks/slabs.json
 5e5f9f067cc585ff085521a45a5f4278c36db437 data/minecraft/tags/blocks/stairs.json
