@@ -7,12 +7,12 @@ import net.minecraft.tags.ItemTags;
 import net.minecraft.tags.TagKey;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.Items;
+import net.minecraft.world.item.crafting.Ingredient;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.Blocks;
 import net.minecraftforge.common.Tags;
 import net.minecraftforge.common.crafting.conditions.IConditionBuilder;
 
-import java.util.List;
 import java.util.function.Consumer;
 
 public class ModRecipeProvider extends RecipeProvider implements IConditionBuilder {
@@ -41,6 +41,18 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
                 .pattern("###")
                 .define('#', ingredient)
                 .group("wooden_boards")
+                .unlockedBy(getHasName(ingredient), has(ingredient))
+                .save(pWriter);
+    }
+
+    private void woodenSmoothBoardsRecipe (Consumer<FinishedRecipe> pWriter, String woodType) {
+        Item ingredient = item(woodType + "_boards");
+        ShapedRecipeBuilder.shaped(RecipeCategory.BUILDING_BLOCKS, item("smooth_" + woodType + "_boards"), 9)
+                .pattern("###")
+                .pattern("###")
+                .pattern("###")
+                .define('#', ingredient)
+                .group("wooden_smooth_boards")
                 .unlockedBy(getHasName(ingredient), has(ingredient))
                 .save(pWriter);
     }
@@ -147,6 +159,66 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
                 .define('#', ingredient)
                 .group("wooden_pillar")
                 .unlockedBy(getHasName(ingredient), has(ingredient))
+                .save(pWriter);
+    }
+
+    private void woodenCampfiresRecipe (Consumer<FinishedRecipe> pWriter, String woodType) {
+        String trunkType;
+        switch (woodType) {
+            case "crimson", "warped" -> trunkType = "_stem";
+            case "bamboo" -> trunkType = "_block";
+            default -> trunkType = "_log";
+        }
+        String trunkWoodType;
+        switch (woodType) {
+            case "crimson", "warped" -> trunkWoodType = "_hyphae";
+            case "bamboo" -> trunkWoodType = "_block";
+            default -> trunkWoodType = "_wood";
+        }
+        Item ingredient0 = item("minecraft", woodType + trunkType);
+        Item ingredient1 = item("minecraft", woodType + trunkWoodType);
+        Item result = item(woodType + "_campfire");
+        result = woodType == "oak" ? Blocks.CAMPFIRE.asItem() : result;
+        ShapedRecipeBuilder.shaped(RecipeCategory.DECORATIONS, result, 1)
+                .pattern(" S ")
+                .pattern("SCS")
+                .pattern("###")
+                .define('S', Tags.Items.RODS_WOODEN)
+                .define('C', ItemTags.COALS)
+                .define('#', Ingredient.of(ingredient0,ingredient1))
+                .group("campfires")
+                .unlockedBy(getHasName(Items.STICK), has(Tags.Items.RODS))
+                .unlockedBy(getHasName(Items.COAL), has(ItemTags.COALS))
+                .save(pWriter);
+    }
+
+    private void woodenSoulCampfiresRecipe (Consumer<FinishedRecipe> pWriter, String woodType) {
+        String trunkType;
+        switch (woodType) {
+            case "crimson", "warped" -> trunkType = "_stem";
+            case "bamboo" -> trunkType = "_block";
+            default -> trunkType = "_log";
+        }
+        String trunkWoodType;
+        switch (woodType) {
+            case "crimson", "warped" -> trunkWoodType = "_hyphae";
+            case "bamboo" -> trunkWoodType = "_block";
+            default -> trunkWoodType = "_wood";
+        }
+        Item ingredient0 = item("minecraft", woodType + trunkType);
+        Item ingredient1 = item("minecraft", woodType + trunkWoodType);
+        Item result = item("soul_" + woodType + "_campfire");
+        result = woodType == "oak" ? Blocks.SOUL_CAMPFIRE.asItem() : result;
+        ShapedRecipeBuilder.shaped(RecipeCategory.DECORATIONS, result, 1)
+                .pattern(" S ")
+                .pattern("SCS")
+                .pattern("###")
+                .define('S', Tags.Items.RODS_WOODEN)
+                .define('C', ItemTags.SOUL_FIRE_BASE_BLOCKS)
+                .define('#', Ingredient.of(ingredient0,ingredient1))
+                .group("campfires")
+                .unlockedBy(getHasName(Items.STICK), has(Tags.Items.RODS))
+                .unlockedBy(getHasName(Items.COAL), has(ItemTags.COALS))
                 .save(pWriter);
     }
 
@@ -400,26 +472,6 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
                 .save(pWriter);
     }
 
-    private void woodenBarrelsA (Consumer<FinishedRecipe> pWriter, List<String> woodList, int woodTypeNumber) {
-        String woodType = woodList.get(woodTypeNumber);
-        String nameSpace = woodList.get(0);
-
-
-        Item planks = item(nameSpace, woodType + "_planks");
-        Item slab = item(nameSpace, woodType + "_slab");
-        Item result = item(woodType + "_barrel");
-        result = woodType == "spruce" ? item("minecraft", "barrel"): result;
-        ShapedRecipeBuilder.shaped(RecipeCategory.DECORATIONS, result, 1)
-                .pattern("PSP")
-                .pattern("P P")
-                .pattern("PSP")
-                .define('P', planks)
-                .define('S', slab)
-                .group("barrel")
-                .unlockedBy(getHasName(planks), has(planks))
-                .save(pWriter);
-    }
-
     private void vanillaTrappedChest (Consumer<FinishedRecipe> pWriter) {
         Item ingredient = Items.CHEST;
         Item result = Items.TRAPPED_CHEST;
@@ -461,6 +513,7 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
     protected void buildRecipes(Consumer<FinishedRecipe> pWriter) {
         for (String type : CarvedWood.WOOD_TYPES) {
             woodenBoardsRecipe(pWriter, type);
+            woodenSmoothBoardsRecipe(pWriter, type);
             woodenTilesRecipe(pWriter, type);
             woodenTileStairsRecipe(pWriter, type);
             woodenTileSlabsRecipe(pWriter, type);
@@ -470,6 +523,8 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
             carvedPlanksRecipe(pWriter, type);
             woodenPillarsRecipe(pWriter, type);
             woodenLanternRecipe(pWriter, type);
+            woodenCampfiresRecipe(pWriter, type);
+            woodenSoulCampfiresRecipe(pWriter, type);
             logBundlesRecipe(pWriter, type);
             strippedLogBundlesRecipe(pWriter, type);
             logsFromLogsBundlesRecipes(pWriter, type);
