@@ -1,4 +1,4 @@
-package net.im_maker.carved_wood.common.tags;
+package net.im_maker.carved_wood.common.util;
 
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.tags.BlockTags;
@@ -14,8 +14,8 @@ public class CWTags {
         public static final TagKey<Block> CHISELED_BOOKSHELVES = tag("chiseled_bookshelves");
         public static final TagKey<Block> LECTERNS = tag("lecterns");
         public static final TagKey<Block> BEEHIVES = tag("beehives");
+        public static final TagKey<Block> LADDERS = tag("ladders");
         public static final TagKey<Block> COMPOSTER = tag("composter");
-
 
         private static TagKey<Block> tag(String name) {
             return BlockTags.create(new ResourceLocation("forge", name));

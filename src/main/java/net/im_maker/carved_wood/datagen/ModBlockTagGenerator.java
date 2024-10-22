@@ -540,5 +540,19 @@ public class ModBlockTagGenerator extends BlockTagsProvider {
                 CWBlocks.WARPED_BARREL.get(),
                 CWBlocks.BAMBOO_BARREL.get()
         );
+
+        this.tag(CWTags.Blocks.LADDERS).add(
+                CWBlocks.SPRUCE_LADDER.get(),
+                CWBlocks.BIRCH_LADDER.get(),
+                CWBlocks.JUNGLE_LADDER.get(),
+                CWBlocks.ACACIA_LADDER.get(),
+                CWBlocks.DARK_OAK_LADDER.get(),
+                CWBlocks.MANGROVE_LADDER.get(),
+                CWBlocks.CHERRY_LADDER.get(),
+                CWBlocks.CRIMSON_LADDER.get(),
+                CWBlocks.WARPED_LADDER.get(),
+                CWBlocks.BAMBOO_LADDER.get(),
+                Blocks.LADDER
+        );
     }
 }
