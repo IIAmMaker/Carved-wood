@@ -376,29 +376,29 @@ public class ModBlockStateProvider<T> extends BlockStateProvider {
                         .texture("top", "block/" + name(block) + "_top")
                         .texture("side", "block/" + name(block) + "_side")
                         .texture("particle", "block/" + name(block) + "_top"),
-                models().withExistingParent("chiseled_bookshelf/" + name(block) + "_occupied_top_left", "carved_wood:block/chiseled_bookshelf/type" + type + "/template_chiseled_bookshelf_slot_top_left_type" + type)
+                models().withExistingParent("block/" + name(block) + "_occupied_top_left", "carved_wood:block/chiseled_bookshelf/type" + type + "/template_chiseled_bookshelf_slot_top_left_type" + type)
                         .texture("texture", "block/" + name(block) + "_occupied"),
-                models().withExistingParent("chiseled_bookshelf/" + name(block) + "_empty_top_left", "carved_wood:block/chiseled_bookshelf/type" + type + "/template_chiseled_bookshelf_slot_top_left_type" + type)
+                models().withExistingParent("block/" + name(block) + "_empty_top_left", "carved_wood:block/chiseled_bookshelf/type" + type + "/template_chiseled_bookshelf_slot_top_left_type" + type)
                         .texture("texture", "block/" + name(block) + "_empty"),
-                models().withExistingParent("chiseled_bookshelf/" + name(block) + "_occupied_top_mid", "carved_wood:block/chiseled_bookshelf/type" + type + "/template_chiseled_bookshelf_slot_top_mid_type" + type)
+                models().withExistingParent("block/" + name(block) + "_occupied_top_mid", "carved_wood:block/chiseled_bookshelf/type" + type + "/template_chiseled_bookshelf_slot_top_mid_type" + type)
                         .texture("texture", "block/" + name(block) + "_occupied"),
-                models().withExistingParent("chiseled_bookshelf/" + name(block) + "_empty_top_mid", "carved_wood:block/chiseled_bookshelf/type" + type + "/template_chiseled_bookshelf_slot_top_mid_type" + type)
+                models().withExistingParent("block/" + name(block) + "_empty_top_mid", "carved_wood:block/chiseled_bookshelf/type" + type + "/template_chiseled_bookshelf_slot_top_mid_type" + type)
                         .texture("texture", "block/" + name(block) + "_empty"),
-                models().withExistingParent("chiseled_bookshelf/" + name(block) + "_occupied_top_right", "carved_wood:block/chiseled_bookshelf/type" + type + "/template_chiseled_bookshelf_slot_top_right_type" + type)
+                models().withExistingParent("block/" + name(block) + "_occupied_top_right", "carved_wood:block/chiseled_bookshelf/type" + type + "/template_chiseled_bookshelf_slot_top_right_type" + type)
                         .texture("texture", "block/" + name(block) + "_occupied"),
-                models().withExistingParent("chiseled_bookshelf/" + name(block) + "_empty_top_right", "carved_wood:block/chiseled_bookshelf/type" + type + "/template_chiseled_bookshelf_slot_top_right_type" + type)
+                models().withExistingParent("block/" + name(block) + "_empty_top_right", "carved_wood:block/chiseled_bookshelf/type" + type + "/template_chiseled_bookshelf_slot_top_right_type" + type)
                         .texture("texture", "block/" + name(block) + "_empty"),
-                models().withExistingParent("chiseled_bookshelf/" + name(block) + "_occupied_bottom_left", "carved_wood:block/chiseled_bookshelf/type" + type + "/template_chiseled_bookshelf_slot_bottom_left_type" + type)
+                models().withExistingParent("block/" + name(block) + "_occupied_bottom_left", "carved_wood:block/chiseled_bookshelf/type" + type + "/template_chiseled_bookshelf_slot_bottom_left_type" + type)
                         .texture("texture", "block/" + name(block) + "_occupied"),
-                models().withExistingParent("chiseled_bookshelf/" + name(block) + "_empty_bottom_left", "carved_wood:block/chiseled_bookshelf/type" + type + "/template_chiseled_bookshelf_slot_bottom_left_type" + type)
+                models().withExistingParent("block/" + name(block) + "_empty_bottom_left", "carved_wood:block/chiseled_bookshelf/type" + type + "/template_chiseled_bookshelf_slot_bottom_left_type" + type)
                         .texture("texture", "block/" + name(block) + "_empty"),
-                models().withExistingParent("chiseled_bookshelf/" + name(block) + "_occupied_bottom_mid", "carved_wood:block/chiseled_bookshelf/type" + type + "/template_chiseled_bookshelf_slot_bottom_mid_type" + type)
+                models().withExistingParent("block/" + name(block) + "_occupied_bottom_mid", "carved_wood:block/chiseled_bookshelf/type" + type + "/template_chiseled_bookshelf_slot_bottom_mid_type" + type)
                         .texture("texture", "block/" + name(block) + "_occupied"),
-                models().withExistingParent("chiseled_bookshelf/" + name(block) + "_empty_bottom_mid", "carved_wood:block/chiseled_bookshelf/type" + type + "/template_chiseled_bookshelf_slot_bottom_mid_type" + type)
+                models().withExistingParent("block/" + name(block) + "_empty_bottom_mid", "carved_wood:block/chiseled_bookshelf/type" + type + "/template_chiseled_bookshelf_slot_bottom_mid_type" + type)
                         .texture("texture", "block/" + name(block) + "_empty"),
-                models().withExistingParent("chiseled_bookshelf/" + name(block) + "_occupied_bottom_right", "carved_wood:block/chiseled_bookshelf/type" + type + "/template_chiseled_bookshelf_slot_bottom_right_type" + type)
+                models().withExistingParent("block/" + name(block) + "_occupied_bottom_right", "carved_wood:block/chiseled_bookshelf/type" + type + "/template_chiseled_bookshelf_slot_bottom_right_type" + type)
                         .texture("texture", "block/" + name(block) + "_occupied"),
-                models().withExistingParent("chiseled_bookshelf/" + name(block) + "_empty_bottom_right", "carved_wood:block/chiseled_bookshelf/type" + type + "/template_chiseled_bookshelf_slot_bottom_right_type" + type)
+                models().withExistingParent("block/" + name(block) + "_empty_bottom_right", "carved_wood:block/chiseled_bookshelf/type" + type + "/template_chiseled_bookshelf_slot_bottom_right_type" + type)
                         .texture("texture", "block/" + name(block) + "_empty"),
                 models().withExistingParent(name(block) + "_inventory", "carved_wood:block/template_chiseled_bookshelf_inventory")
                         .texture("top", "block/" + name(block) + "_top")

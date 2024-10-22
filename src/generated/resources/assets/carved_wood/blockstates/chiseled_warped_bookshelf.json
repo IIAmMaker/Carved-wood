@@ -12,7 +12,7 @@
     },
     {
       "apply": {
-        "model": "carved_wood:chiseled_bookshelf/chiseled_warped_bookshelf_occupied_top_left",
+        "model": "carved_wood:block/chiseled_warped_bookshelf_occupied_top_left",
         "uvlock": true,
         "y": 180
       },
@@ -23,7 +23,7 @@
     },
     {
       "apply": {
-        "model": "carved_wood:chiseled_bookshelf/chiseled_warped_bookshelf_empty_top_left",
+        "model": "carved_wood:block/chiseled_warped_bookshelf_empty_top_left",
         "uvlock": true,
         "y": 180
       },
@@ -34,7 +34,7 @@
     },
     {
       "apply": {
-        "model": "carved_wood:chiseled_bookshelf/chiseled_warped_bookshelf_occupied_top_mid",
+        "model": "carved_wood:block/chiseled_warped_bookshelf_occupied_top_mid",
         "uvlock": true,
         "y": 180
       },
@@ -45,7 +45,7 @@
     },
     {
       "apply": {
-        "model": "carved_wood:chiseled_bookshelf/chiseled_warped_bookshelf_empty_top_mid",
+        "model": "carved_wood:block/chiseled_warped_bookshelf_empty_top_mid",
         "uvlock": true,
         "y": 180
       },
@@ -56,7 +56,7 @@
     },
     {
       "apply": {
-        "model": "carved_wood:chiseled_bookshelf/chiseled_warped_bookshelf_occupied_top_right",
+        "model": "carved_wood:block/chiseled_warped_bookshelf_occupied_top_right",
         "uvlock": true,
         "y": 180
       },
@@ -67,7 +67,7 @@
     },
     {
       "apply": {
-        "model": "carved_wood:chiseled_bookshelf/chiseled_warped_bookshelf_empty_top_right",
+        "model": "carved_wood:block/chiseled_warped_bookshelf_empty_top_right",
         "uvlock": true,
         "y": 180
       },
@@ -78,7 +78,7 @@
     },
     {
       "apply": {
-        "model": "carved_wood:chiseled_bookshelf/chiseled_warped_bookshelf_occupied_bottom_left",
+        "model": "carved_wood:block/chiseled_warped_bookshelf_occupied_bottom_left",
         "uvlock": true,
         "y": 180
       },
@@ -89,7 +89,7 @@
     },
     {
       "apply": {
-        "model": "carved_wood:chiseled_bookshelf/chiseled_warped_bookshelf_empty_bottom_left",
+        "model": "carved_wood:block/chiseled_warped_bookshelf_empty_bottom_left",
         "uvlock": true,
         "y": 180
       },
@@ -100,7 +100,7 @@
     },
     {
       "apply": {
-        "model": "carved_wood:chiseled_bookshelf/chiseled_warped_bookshelf_occupied_bottom_mid",
+        "model": "carved_wood:block/chiseled_warped_bookshelf_occupied_bottom_mid",
         "uvlock": true,
         "y": 180
       },
@@ -111,7 +111,7 @@
     },
     {
       "apply": {
-        "model": "carved_wood:chiseled_bookshelf/chiseled_warped_bookshelf_empty_bottom_mid",
+        "model": "carved_wood:block/chiseled_warped_bookshelf_empty_bottom_mid",
         "uvlock": true,
         "y": 180
       },
@@ -122,7 +122,7 @@
     },
     {
       "apply": {
-        "model": "carved_wood:chiseled_bookshelf/chiseled_warped_bookshelf_occupied_bottom_right",
+        "model": "carved_wood:block/chiseled_warped_bookshelf_occupied_bottom_right",
         "uvlock": true,
         "y": 180
       },
@@ -133,7 +133,7 @@
     },
     {
       "apply": {
-        "model": "carved_wood:chiseled_bookshelf/chiseled_warped_bookshelf_empty_bottom_right",
+        "model": "carved_wood:block/chiseled_warped_bookshelf_empty_bottom_right",
         "uvlock": true,
         "y": 180
       },
@@ -153,7 +153,7 @@
     },
     {
       "apply": {
-        "model": "carved_wood:chiseled_bookshelf/chiseled_warped_bookshelf_occupied_top_left",
+        "model": "carved_wood:block/chiseled_warped_bookshelf_occupied_top_left",
         "uvlock": true
       },
       "when": {
@@ -163,7 +163,7 @@
     },
     {
       "apply": {
-        "model": "carved_wood:chiseled_bookshelf/chiseled_warped_bookshelf_empty_top_left",
+        "model": "carved_wood:block/chiseled_warped_bookshelf_empty_top_left",
         "uvlock": true
       },
       "when": {
@@ -173,7 +173,7 @@
     },
     {
       "apply": {
-        "model": "carved_wood:chiseled_bookshelf/chiseled_warped_bookshelf_occupied_top_mid",
+        "model": "carved_wood:block/chiseled_warped_bookshelf_occupied_top_mid",
         "uvlock": true
       },
       "when": {
@@ -183,7 +183,7 @@
     },
     {
       "apply": {
-        "model": "carved_wood:chiseled_bookshelf/chiseled_warped_bookshelf_empty_top_mid",
+        "model": "carved_wood:block/chiseled_warped_bookshelf_empty_top_mid",
         "uvlock": true
       },
       "when": {
@@ -193,7 +193,7 @@
     },
     {
       "apply": {
-        "model": "carved_wood:chiseled_bookshelf/chiseled_warped_bookshelf_occupied_top_right",
+        "model": "carved_wood:block/chiseled_warped_bookshelf_occupied_top_right",
         "uvlock": true
       },
       "when": {
@@ -203,7 +203,7 @@
     },
     {
       "apply": {
-        "model": "carved_wood:chiseled_bookshelf/chiseled_warped_bookshelf_empty_top_right",
+        "model": "carved_wood:block/chiseled_warped_bookshelf_empty_top_right",
         "uvlock": true
       },
       "when": {
@@ -213,7 +213,7 @@
     },
     {
       "apply": {
-        "model": "carved_wood:chiseled_bookshelf/chiseled_warped_bookshelf_occupied_bottom_left",
+        "model": "carved_wood:block/chiseled_warped_bookshelf_occupied_bottom_left",
         "uvlock": true
       },
       "when": {
@@ -223,7 +223,7 @@
     },
     {
       "apply": {
-        "model": "carved_wood:chiseled_bookshelf/chiseled_warped_bookshelf_empty_bottom_left",
+        "model": "carved_wood:block/chiseled_warped_bookshelf_empty_bottom_left",
         "uvlock": true
       },
       "when": {
@@ -233,7 +233,7 @@
     },
     {
       "apply": {
-        "model": "carved_wood:chiseled_bookshelf/chiseled_warped_bookshelf_occupied_bottom_mid",
+        "model": "carved_wood:block/chiseled_warped_bookshelf_occupied_bottom_mid",
         "uvlock": true
       },
       "when": {
@@ -243,7 +243,7 @@
     },
     {
       "apply": {
-        "model": "carved_wood:chiseled_bookshelf/chiseled_warped_bookshelf_empty_bottom_mid",
+        "model": "carved_wood:block/chiseled_warped_bookshelf_empty_bottom_mid",
         "uvlock": true
       },
       "when": {
@@ -253,7 +253,7 @@
     },
     {
       "apply": {
-        "model": "carved_wood:chiseled_bookshelf/chiseled_warped_bookshelf_occupied_bottom_right",
+        "model": "carved_wood:block/chiseled_warped_bookshelf_occupied_bottom_right",
         "uvlock": true
       },
       "when": {
@@ -263,7 +263,7 @@
     },
     {
       "apply": {
-        "model": "carved_wood:chiseled_bookshelf/chiseled_warped_bookshelf_empty_bottom_right",
+        "model": "carved_wood:block/chiseled_warped_bookshelf_empty_bottom_right",
         "uvlock": true
       },
       "when": {
@@ -283,7 +283,7 @@
     },
     {
       "apply": {
-        "model": "carved_wood:chiseled_bookshelf/chiseled_warped_bookshelf_occupied_top_left",
+        "model": "carved_wood:block/chiseled_warped_bookshelf_occupied_top_left",
         "uvlock": true,
         "y": 90
       },
@@ -294,7 +294,7 @@
     },
     {
       "apply": {
-        "model": "carved_wood:chiseled_bookshelf/chiseled_warped_bookshelf_empty_top_left",
+        "model": "carved_wood:block/chiseled_warped_bookshelf_empty_top_left",
         "uvlock": true,
         "y": 90
       },
@@ -305,7 +305,7 @@
     },
     {
       "apply": {
-        "model": "carved_wood:chiseled_bookshelf/chiseled_warped_bookshelf_occupied_top_mid",
+        "model": "carved_wood:block/chiseled_warped_bookshelf_occupied_top_mid",
         "uvlock": true,
         "y": 90
       },
@@ -316,7 +316,7 @@
     },
     {
       "apply": {
-        "model": "carved_wood:chiseled_bookshelf/chiseled_warped_bookshelf_empty_top_mid",
+        "model": "carved_wood:block/chiseled_warped_bookshelf_empty_top_mid",
         "uvlock": true,
         "y": 90
       },
@@ -327,7 +327,7 @@
     },
     {
       "apply": {
-        "model": "carved_wood:chiseled_bookshelf/chiseled_warped_bookshelf_occupied_top_right",
+        "model": "carved_wood:block/chiseled_warped_bookshelf_occupied_top_right",
         "uvlock": true,
         "y": 90
       },
@@ -338,7 +338,7 @@
     },
     {
       "apply": {
-        "model": "carved_wood:chiseled_bookshelf/chiseled_warped_bookshelf_empty_top_right",
+        "model": "carved_wood:block/chiseled_warped_bookshelf_empty_top_right",
         "uvlock": true,
         "y": 90
       },
@@ -349,7 +349,7 @@
     },
     {
       "apply": {
-        "model": "carved_wood:chiseled_bookshelf/chiseled_warped_bookshelf_occupied_bottom_left",
+        "model": "carved_wood:block/chiseled_warped_bookshelf_occupied_bottom_left",
         "uvlock": true,
         "y": 90
       },
@@ -360,7 +360,7 @@
     },
     {
       "apply": {
-        "model": "carved_wood:chiseled_bookshelf/chiseled_warped_bookshelf_empty_bottom_left",
+        "model": "carved_wood:block/chiseled_warped_bookshelf_empty_bottom_left",
         "uvlock": true,
         "y": 90
       },
@@ -371,7 +371,7 @@
     },
     {
       "apply": {
-        "model": "carved_wood:chiseled_bookshelf/chiseled_warped_bookshelf_occupied_bottom_mid",
+        "model": "carved_wood:block/chiseled_warped_bookshelf_occupied_bottom_mid",
         "uvlock": true,
         "y": 90
       },
@@ -382,7 +382,7 @@
     },
     {
       "apply": {
-        "model": "carved_wood:chiseled_bookshelf/chiseled_warped_bookshelf_empty_bottom_mid",
+        "model": "carved_wood:block/chiseled_warped_bookshelf_empty_bottom_mid",
         "uvlock": true,
         "y": 90
       },
@@ -393,7 +393,7 @@
     },
     {
       "apply": {
-        "model": "carved_wood:chiseled_bookshelf/chiseled_warped_bookshelf_occupied_bottom_right",
+        "model": "carved_wood:block/chiseled_warped_bookshelf_occupied_bottom_right",
         "uvlock": true,
         "y": 90
       },
@@ -404,7 +404,7 @@
     },
     {
       "apply": {
-        "model": "carved_wood:chiseled_bookshelf/chiseled_warped_bookshelf_empty_bottom_right",
+        "model": "carved_wood:block/chiseled_warped_bookshelf_empty_bottom_right",
         "uvlock": true,
         "y": 90
       },
@@ -425,7 +425,7 @@
     },
     {
       "apply": {
-        "model": "carved_wood:chiseled_bookshelf/chiseled_warped_bookshelf_occupied_top_left",
+        "model": "carved_wood:block/chiseled_warped_bookshelf_occupied_top_left",
         "uvlock": true,
         "y": 270
       },
@@ -436,7 +436,7 @@
     },
     {
       "apply": {
-        "model": "carved_wood:chiseled_bookshelf/chiseled_warped_bookshelf_empty_top_left",
+        "model": "carved_wood:block/chiseled_warped_bookshelf_empty_top_left",
         "uvlock": true,
         "y": 270
       },
@@ -447,7 +447,7 @@
     },
     {
       "apply": {
-        "model": "carved_wood:chiseled_bookshelf/chiseled_warped_bookshelf_occupied_top_mid",
+        "model": "carved_wood:block/chiseled_warped_bookshelf_occupied_top_mid",
         "uvlock": true,
         "y": 270
       },
@@ -458,7 +458,7 @@
     },
     {
       "apply": {
-        "model": "carved_wood:chiseled_bookshelf/chiseled_warped_bookshelf_empty_top_mid",
+        "model": "carved_wood:block/chiseled_warped_bookshelf_empty_top_mid",
         "uvlock": true,
         "y": 270
       },
@@ -469,7 +469,7 @@
     },
     {
       "apply": {
-        "model": "carved_wood:chiseled_bookshelf/chiseled_warped_bookshelf_occupied_top_right",
+        "model": "carved_wood:block/chiseled_warped_bookshelf_occupied_top_right",
         "uvlock": true,
         "y": 270
       },
@@ -480,7 +480,7 @@
     },
     {
       "apply": {
-        "model": "carved_wood:chiseled_bookshelf/chiseled_warped_bookshelf_empty_top_right",
+        "model": "carved_wood:block/chiseled_warped_bookshelf_empty_top_right",
         "uvlock": true,
         "y": 270
       },
@@ -491,7 +491,7 @@
     },
     {
       "apply": {
-        "model": "carved_wood:chiseled_bookshelf/chiseled_warped_bookshelf_occupied_bottom_left",
+        "model": "carved_wood:block/chiseled_warped_bookshelf_occupied_bottom_left",
         "uvlock": true,
         "y": 270
       },
@@ -502,7 +502,7 @@
     },
     {
       "apply": {
-        "model": "carved_wood:chiseled_bookshelf/chiseled_warped_bookshelf_empty_bottom_left",
+        "model": "carved_wood:block/chiseled_warped_bookshelf_empty_bottom_left",
         "uvlock": true,
         "y": 270
       },
@@ -513,7 +513,7 @@
     },
     {
       "apply": {
-        "model": "carved_wood:chiseled_bookshelf/chiseled_warped_bookshelf_occupied_bottom_mid",
+        "model": "carved_wood:block/chiseled_warped_bookshelf_occupied_bottom_mid",
         "uvlock": true,
         "y": 270
       },
@@ -524,7 +524,7 @@
     },
     {
       "apply": {
-        "model": "carved_wood:chiseled_bookshelf/chiseled_warped_bookshelf_empty_bottom_mid",
+        "model": "carved_wood:block/chiseled_warped_bookshelf_empty_bottom_mid",
         "uvlock": true,
         "y": 270
       },
@@ -535,7 +535,7 @@
     },
     {
       "apply": {
-        "model": "carved_wood:chiseled_bookshelf/chiseled_warped_bookshelf_occupied_bottom_right",
+        "model": "carved_wood:block/chiseled_warped_bookshelf_occupied_bottom_right",
         "uvlock": true,
         "y": 270
       },
@@ -546,7 +546,7 @@
     },
     {
       "apply": {
-        "model": "carved_wood:chiseled_bookshelf/chiseled_warped_bookshelf_empty_bottom_right",
+        "model": "carved_wood:block/chiseled_warped_bookshelf_empty_bottom_right",
         "uvlock": true,
         "y": 270
       },
