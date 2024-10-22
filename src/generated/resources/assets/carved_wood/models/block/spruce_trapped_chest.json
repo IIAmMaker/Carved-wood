@@ -1,6 +1,0 @@
-{
-  "parent": "carved_wood:block/template_chest",
-  "textures": {
-    "particle": "minecraft:block/spruce_planks"
-  }
-}
