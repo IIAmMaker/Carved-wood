@@ -192,27 +192,27 @@ public class ModItemModelProvider extends ItemModelProvider {
         simplerBlockItem(CWBlocks.BAMBOO_LADDER);
 
         chestBlockItem(CWBlocks.OAK_CHEST);
-        chestBlockItem(CWBlocks.OAK_TRAPPED_CHEST);
+        chestBlockItem(CWBlocks.TRAPPED_OAK_CHEST);
         chestBlockItem(CWBlocks.SPRUCE_CHEST);
-        chestBlockItem(CWBlocks.SPRUCE_TRAPPED_CHEST);
+        chestBlockItem(CWBlocks.TRAPPED_SPRUCE_CHEST);
         chestBlockItem(CWBlocks.BIRCH_CHEST);
-        chestBlockItem(CWBlocks.BIRCH_TRAPPED_CHEST);
+        chestBlockItem(CWBlocks.TRAPPED_BIRCH_CHEST);
         chestBlockItem(CWBlocks.JUNGLE_CHEST);
-        chestBlockItem(CWBlocks.JUNGLE_TRAPPED_CHEST);
+        chestBlockItem(CWBlocks.TRAPPED_JUNGLE_CHEST);
         chestBlockItem(CWBlocks.ACACIA_CHEST);
-        chestBlockItem(CWBlocks.ACACIA_TRAPPED_CHEST);
+        chestBlockItem(CWBlocks.TRAPPED_ACACIA_CHEST);
         chestBlockItem(CWBlocks.DARK_OAK_CHEST);
-        chestBlockItem(CWBlocks.DARK_OAK_TRAPPED_CHEST);
+        chestBlockItem(CWBlocks.TRAPPED_DARK_OAK_CHEST);
         chestBlockItem(CWBlocks.MANGROVE_CHEST);
-        chestBlockItem(CWBlocks.MANGROVE_TRAPPED_CHEST);
+        chestBlockItem(CWBlocks.TRAPPED_MANGROVE_CHEST);
         chestBlockItem(CWBlocks.CHERRY_CHEST);
-        chestBlockItem(CWBlocks.CHERRY_TRAPPED_CHEST);
+        chestBlockItem(CWBlocks.TRAPPED_CHERRY_CHEST);
         chestBlockItem(CWBlocks.CRIMSON_CHEST);
-        chestBlockItem(CWBlocks.CRIMSON_TRAPPED_CHEST);
+        chestBlockItem(CWBlocks.TRAPPED_CRIMSON_CHEST);
         chestBlockItem(CWBlocks.WARPED_CHEST);
-        chestBlockItem(CWBlocks.WARPED_TRAPPED_CHEST);
+        chestBlockItem(CWBlocks.TRAPPED_WARPED_CHEST);
         chestBlockItem(CWBlocks.BAMBOO_CHEST);
-        chestBlockItem(CWBlocks.BAMBOO_TRAPPED_CHEST);
+        chestBlockItem(CWBlocks.TRAPPED_BAMBOO_CHEST);
 
         BlockItem(CWBlocks.SPRUCE_CAMPFIRE);
         BlockItem(CWBlocks.BIRCH_CAMPFIRE);
@@ -225,16 +225,16 @@ public class ModItemModelProvider extends ItemModelProvider {
         BlockItem(CWBlocks.WARPED_CAMPFIRE);
         BlockItem(CWBlocks.BAMBOO_CAMPFIRE);
 
-        BlockItem(CWBlocks.SPRUCE_SOUL_CAMPFIRE);
-        BlockItem(CWBlocks.BIRCH_SOUL_CAMPFIRE);
-        BlockItem(CWBlocks.JUNGLE_SOUL_CAMPFIRE);
-        BlockItem(CWBlocks.ACACIA_SOUL_CAMPFIRE);
-        BlockItem(CWBlocks.DARK_OAK_SOUL_CAMPFIRE);
-        BlockItem(CWBlocks.MANGROVE_SOUL_CAMPFIRE);
-        BlockItem(CWBlocks.CHERRY_SOUL_CAMPFIRE);
-        BlockItem(CWBlocks.CRIMSON_SOUL_CAMPFIRE);
-        BlockItem(CWBlocks.WARPED_SOUL_CAMPFIRE);
-        BlockItem(CWBlocks.BAMBOO_SOUL_CAMPFIRE);
+        BlockItem(CWBlocks.SOUL_SPRUCE_CAMPFIRE);
+        BlockItem(CWBlocks.SOUL_BIRCH_CAMPFIRE);
+        BlockItem(CWBlocks.SOUL_JUNGLE_CAMPFIRE);
+        BlockItem(CWBlocks.SOUL_ACACIA_CAMPFIRE);
+        BlockItem(CWBlocks.SOUL_DARK_OAK_CAMPFIRE);
+        BlockItem(CWBlocks.SOUL_MANGROVE_CAMPFIRE);
+        BlockItem(CWBlocks.SOUL_CHERRY_CAMPFIRE);
+        BlockItem(CWBlocks.SOUL_CRIMSON_CAMPFIRE);
+        BlockItem(CWBlocks.SOUL_WARPED_CAMPFIRE);
+        BlockItem(CWBlocks.SOUL_BAMBOO_CAMPFIRE);
 
         evenSimplerBlockItem(CWBlocks.OAK_BARREL);
         evenSimplerBlockItem(CWBlocks.BIRCH_BARREL);

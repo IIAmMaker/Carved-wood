@@ -2,7 +2,7 @@ package net.im_maker.carved_wood.datagen;
 
 import net.im_maker.carved_wood.CarvedWood;
 import net.im_maker.carved_wood.common.block.CWBlocks;
-import net.im_maker.carved_wood.common.tags.CWTags;
+import net.im_maker.carved_wood.common.util.CWTags;
 import net.minecraft.core.HolderLookup;
 import net.minecraft.data.PackOutput;
 import net.minecraft.data.tags.ItemTagsProvider;
@@ -85,20 +85,6 @@ public class ModItemTagGenerator extends ItemTagsProvider {
                 Blocks.CRAFTING_TABLE.asItem()
         );
 
-        this.tag(CWTags.Items.LADDERS).add(
-                CWBlocks.SPRUCE_LADDER.get().asItem(),
-                CWBlocks.BIRCH_LADDER.get().asItem(),
-                CWBlocks.JUNGLE_LADDER.get().asItem(),
-                CWBlocks.ACACIA_LADDER.get().asItem(),
-                CWBlocks.DARK_OAK_LADDER.get().asItem(),
-                CWBlocks.MANGROVE_LADDER.get().asItem(),
-                CWBlocks.CHERRY_LADDER.get().asItem(),
-                CWBlocks.CRIMSON_LADDER.get().asItem(),
-                CWBlocks.WARPED_LADDER.get().asItem(),
-                CWBlocks.BAMBOO_LADDER.get().asItem(),
-                Blocks.LADDER.asItem()
-        );
-
         this.tag(Tags.Items.CHESTS_WOODEN).add(
                 CWBlocks.OAK_CHEST.get().asItem(),
                 CWBlocks.SPRUCE_CHEST.get().asItem(),
@@ -114,17 +100,17 @@ public class ModItemTagGenerator extends ItemTagsProvider {
         );
 
         this.tag(Tags.Items.CHESTS_TRAPPED).add(
-                CWBlocks.OAK_TRAPPED_CHEST.get().asItem(),
-                CWBlocks.SPRUCE_TRAPPED_CHEST.get().asItem(),
-                CWBlocks.BIRCH_TRAPPED_CHEST.get().asItem(),
-                CWBlocks.JUNGLE_TRAPPED_CHEST.get().asItem(),
-                CWBlocks.ACACIA_TRAPPED_CHEST.get().asItem(),
-                CWBlocks.DARK_OAK_TRAPPED_CHEST.get().asItem(),
-                CWBlocks.MANGROVE_TRAPPED_CHEST.get().asItem(),
-                CWBlocks.CHERRY_TRAPPED_CHEST.get().asItem(),
-                CWBlocks.CRIMSON_TRAPPED_CHEST.get().asItem(),
-                CWBlocks.WARPED_TRAPPED_CHEST.get().asItem(),
-                CWBlocks.BAMBOO_TRAPPED_CHEST.get().asItem()
+                CWBlocks.TRAPPED_OAK_CHEST.get().asItem(),
+                CWBlocks.TRAPPED_SPRUCE_CHEST.get().asItem(),
+                CWBlocks.TRAPPED_BIRCH_CHEST.get().asItem(),
+                CWBlocks.TRAPPED_JUNGLE_CHEST.get().asItem(),
+                CWBlocks.TRAPPED_ACACIA_CHEST.get().asItem(),
+                CWBlocks.TRAPPED_DARK_OAK_CHEST.get().asItem(),
+                CWBlocks.TRAPPED_MANGROVE_CHEST.get().asItem(),
+                CWBlocks.TRAPPED_CHERRY_CHEST.get().asItem(),
+                CWBlocks.TRAPPED_CRIMSON_CHEST.get().asItem(),
+                CWBlocks.TRAPPED_WARPED_CHEST.get().asItem(),
+                CWBlocks.TRAPPED_BAMBOO_CHEST.get().asItem()
         );
 
         this.tag(Tags.Items.BARRELS_WOODEN).add(
@@ -158,5 +144,6 @@ public class ModItemTagGenerator extends ItemTagsProvider {
         //this.copy(CWTags.Blocks.COMPOSTER, CWTags.Items.COMPOSTER);
         this.copy(CWTags.Blocks.BEEHIVES, CWTags.Items.BEEHIVES);
         this.copy(CWTags.Blocks.LECTERNS, CWTags.Items.LECTERNS);
+        this.copy(CWTags.Blocks.LADDERS, CWTags.Items.LADDERS);
     }
 }

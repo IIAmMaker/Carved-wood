@@ -2,7 +2,7 @@ package net.im_maker.carved_wood.datagen;
 
 import net.im_maker.carved_wood.CarvedWood;
 import net.im_maker.carved_wood.common.block.CWBlocks;
-import net.im_maker.carved_wood.common.tags.CWTags;
+import net.im_maker.carved_wood.common.util.CWTags;
 import net.minecraft.core.HolderLookup;
 import net.minecraft.data.PackOutput;
 import net.minecraft.tags.BlockTags;
@@ -182,28 +182,28 @@ public class ModBlockTagGenerator extends BlockTagsProvider {
                 CWBlocks.WARPED_LADDER.get(),
                 CWBlocks.BAMBOO_LADDER.get(),
                 CWBlocks.OAK_CHEST.get(),
-                CWBlocks.OAK_TRAPPED_CHEST.get(),
+                CWBlocks.TRAPPED_OAK_CHEST.get(),
                 CWBlocks.SPRUCE_CHEST.get(),
-                CWBlocks.SPRUCE_TRAPPED_CHEST.get(),
+                CWBlocks.TRAPPED_SPRUCE_CHEST.get(),
                 CWBlocks.BIRCH_CHEST.get(),
-                CWBlocks.BIRCH_TRAPPED_CHEST.get(),
+                CWBlocks.TRAPPED_BIRCH_CHEST.get(),
                 CWBlocks.JUNGLE_CHEST.get(),
-                CWBlocks.JUNGLE_TRAPPED_CHEST.get(),
+                CWBlocks.TRAPPED_JUNGLE_CHEST.get(),
                 CWBlocks.ACACIA_CHEST.get(),
-                CWBlocks.ACACIA_TRAPPED_CHEST.get(),
+                CWBlocks.TRAPPED_ACACIA_CHEST.get(),
                 CWBlocks.DARK_OAK_CHEST.get(),
-                CWBlocks.DARK_OAK_TRAPPED_CHEST.get(),
+                CWBlocks.TRAPPED_DARK_OAK_CHEST.get(),
                 CWBlocks.MANGROVE_CHEST.get(),
-                CWBlocks.MANGROVE_TRAPPED_CHEST.get(),
+                CWBlocks.TRAPPED_MANGROVE_CHEST.get(),
                 CWBlocks.CHERRY_CHEST.get(),
-                CWBlocks.CHERRY_TRAPPED_CHEST.get(),
+                CWBlocks.TRAPPED_CHERRY_CHEST.get(),
                 CWBlocks.CRIMSON_CHEST.get(),
-                CWBlocks.CRIMSON_TRAPPED_CHEST.get(),
+                CWBlocks.TRAPPED_CRIMSON_CHEST.get(),
                 CWBlocks.WARPED_CHEST.get(),
-                CWBlocks.WARPED_TRAPPED_CHEST.get(),
+                CWBlocks.TRAPPED_WARPED_CHEST.get(),
                 CWBlocks.BAMBOO_CHEST.get(),
-                CWBlocks.BAMBOO_TRAPPED_CHEST.get(),
-                //Blocks.CAMPFIRE,
+                CWBlocks.TRAPPED_BAMBOO_CHEST.get(),
+                Blocks.CAMPFIRE,
                 CWBlocks.SPRUCE_CAMPFIRE.get(),
                 CWBlocks.BIRCH_CAMPFIRE.get(),
                 CWBlocks.JUNGLE_CAMPFIRE.get(),
@@ -214,17 +214,17 @@ public class ModBlockTagGenerator extends BlockTagsProvider {
                 CWBlocks.CRIMSON_CAMPFIRE.get(),
                 CWBlocks.WARPED_CAMPFIRE.get(),
                 CWBlocks.BAMBOO_CAMPFIRE.get(),
-                //Blocks.SOUL_CAMPFIRE,
-                CWBlocks.SPRUCE_SOUL_CAMPFIRE.get(),
-                CWBlocks.BIRCH_SOUL_CAMPFIRE.get(),
-                CWBlocks.JUNGLE_SOUL_CAMPFIRE.get(),
-                CWBlocks.ACACIA_SOUL_CAMPFIRE.get(),
-                CWBlocks.DARK_OAK_SOUL_CAMPFIRE.get(),
-                CWBlocks.MANGROVE_SOUL_CAMPFIRE.get(),
-                CWBlocks.CHERRY_SOUL_CAMPFIRE.get(),
-                CWBlocks.CRIMSON_SOUL_CAMPFIRE.get(),
-                CWBlocks.WARPED_SOUL_CAMPFIRE.get(),
-                CWBlocks.BAMBOO_SOUL_CAMPFIRE.get(),
+                Blocks.SOUL_CAMPFIRE,
+                CWBlocks.SOUL_SPRUCE_CAMPFIRE.get(),
+                CWBlocks.SOUL_BIRCH_CAMPFIRE.get(),
+                CWBlocks.SOUL_JUNGLE_CAMPFIRE.get(),
+                CWBlocks.SOUL_ACACIA_CAMPFIRE.get(),
+                CWBlocks.SOUL_DARK_OAK_CAMPFIRE.get(),
+                CWBlocks.SOUL_MANGROVE_CAMPFIRE.get(),
+                CWBlocks.SOUL_CHERRY_CAMPFIRE.get(),
+                CWBlocks.SOUL_CRIMSON_CAMPFIRE.get(),
+                CWBlocks.SOUL_WARPED_CAMPFIRE.get(),
+                CWBlocks.SOUL_BAMBOO_CAMPFIRE.get(),
                 CWBlocks.OAK_BARREL.get(),
                 CWBlocks.BIRCH_BARREL.get(),
                 CWBlocks.JUNGLE_BARREL.get(),
@@ -390,20 +390,6 @@ public class ModBlockTagGenerator extends BlockTagsProvider {
                 Blocks.BEEHIVE
         );
 
-        this.tag(CWTags.Blocks.BEEHIVES).add(
-                CWBlocks.SPRUCE_BEEHIVE.get(),
-                CWBlocks.BIRCH_BEEHIVE.get(),
-                CWBlocks.JUNGLE_BEEHIVE.get(),
-                CWBlocks.ACACIA_BEEHIVE.get(),
-                CWBlocks.DARK_OAK_BEEHIVE.get(),
-                CWBlocks.MANGROVE_BEEHIVE.get(),
-                CWBlocks.CHERRY_BEEHIVE.get(),
-                CWBlocks.CRIMSON_BEEHIVE.get(),
-                CWBlocks.WARPED_BEEHIVE.get(),
-                CWBlocks.BAMBOO_BEEHIVE.get(),
-                Blocks.BEEHIVE
-        );
-
         this.tag(BlockTags.CAMPFIRES).add(
                 CWBlocks.SPRUCE_CAMPFIRE.get(),
                 CWBlocks.BIRCH_CAMPFIRE.get(),
@@ -415,29 +401,29 @@ public class ModBlockTagGenerator extends BlockTagsProvider {
                 CWBlocks.CRIMSON_CAMPFIRE.get(),
                 CWBlocks.WARPED_CAMPFIRE.get(),
                 CWBlocks.BAMBOO_CAMPFIRE.get(),
-                CWBlocks.SPRUCE_SOUL_CAMPFIRE.get(),
-                CWBlocks.BIRCH_SOUL_CAMPFIRE.get(),
-                CWBlocks.JUNGLE_SOUL_CAMPFIRE.get(),
-                CWBlocks.ACACIA_SOUL_CAMPFIRE.get(),
-                CWBlocks.DARK_OAK_SOUL_CAMPFIRE.get(),
-                CWBlocks.MANGROVE_SOUL_CAMPFIRE.get(),
-                CWBlocks.CHERRY_SOUL_CAMPFIRE.get(),
-                CWBlocks.CRIMSON_SOUL_CAMPFIRE.get(),
-                CWBlocks.WARPED_SOUL_CAMPFIRE.get(),
-                CWBlocks.BAMBOO_SOUL_CAMPFIRE.get()
+                CWBlocks.SOUL_SPRUCE_CAMPFIRE.get(),
+                CWBlocks.SOUL_BIRCH_CAMPFIRE.get(),
+                CWBlocks.SOUL_JUNGLE_CAMPFIRE.get(),
+                CWBlocks.SOUL_ACACIA_CAMPFIRE.get(),
+                CWBlocks.SOUL_DARK_OAK_CAMPFIRE.get(),
+                CWBlocks.SOUL_MANGROVE_CAMPFIRE.get(),
+                CWBlocks.SOUL_CHERRY_CAMPFIRE.get(),
+                CWBlocks.SOUL_CRIMSON_CAMPFIRE.get(),
+                CWBlocks.SOUL_WARPED_CAMPFIRE.get(),
+                CWBlocks.SOUL_BAMBOO_CAMPFIRE.get()
         );
 
         this.tag(BlockTags.PIGLIN_REPELLENTS).add(
-                CWBlocks.SPRUCE_SOUL_CAMPFIRE.get(),
-                CWBlocks.BIRCH_SOUL_CAMPFIRE.get(),
-                CWBlocks.JUNGLE_SOUL_CAMPFIRE.get(),
-                CWBlocks.ACACIA_SOUL_CAMPFIRE.get(),
-                CWBlocks.DARK_OAK_SOUL_CAMPFIRE.get(),
-                CWBlocks.MANGROVE_SOUL_CAMPFIRE.get(),
-                CWBlocks.CHERRY_SOUL_CAMPFIRE.get(),
-                CWBlocks.CRIMSON_SOUL_CAMPFIRE.get(),
-                CWBlocks.WARPED_SOUL_CAMPFIRE.get(),
-                CWBlocks.BAMBOO_SOUL_CAMPFIRE.get()
+                CWBlocks.SOUL_SPRUCE_CAMPFIRE.get(),
+                CWBlocks.SOUL_BIRCH_CAMPFIRE.get(),
+                CWBlocks.SOUL_JUNGLE_CAMPFIRE.get(),
+                CWBlocks.SOUL_ACACIA_CAMPFIRE.get(),
+                CWBlocks.SOUL_DARK_OAK_CAMPFIRE.get(),
+                CWBlocks.SOUL_MANGROVE_CAMPFIRE.get(),
+                CWBlocks.SOUL_CHERRY_CAMPFIRE.get(),
+                CWBlocks.SOUL_CRIMSON_CAMPFIRE.get(),
+                CWBlocks.SOUL_WARPED_CAMPFIRE.get(),
+                CWBlocks.SOUL_BAMBOO_CAMPFIRE.get()
         );
 
         this.tag(BlockTags.GUARDED_BY_PIGLINS).add(
@@ -452,17 +438,17 @@ public class ModBlockTagGenerator extends BlockTagsProvider {
                 CWBlocks.CRIMSON_CHEST.get(),
                 CWBlocks.WARPED_CHEST.get(),
                 CWBlocks.BAMBOO_CHEST.get(),
-                CWBlocks.OAK_TRAPPED_CHEST.get(),
-                CWBlocks.SPRUCE_TRAPPED_CHEST.get(),
-                CWBlocks.BIRCH_TRAPPED_CHEST.get(),
-                CWBlocks.JUNGLE_TRAPPED_CHEST.get(),
-                CWBlocks.ACACIA_TRAPPED_CHEST.get(),
-                CWBlocks.DARK_OAK_TRAPPED_CHEST.get(),
-                CWBlocks.MANGROVE_TRAPPED_CHEST.get(),
-                CWBlocks.CHERRY_TRAPPED_CHEST.get(),
-                CWBlocks.CRIMSON_TRAPPED_CHEST.get(),
-                CWBlocks.WARPED_TRAPPED_CHEST.get(),
-                CWBlocks.BAMBOO_TRAPPED_CHEST.get(),
+                CWBlocks.TRAPPED_OAK_CHEST.get(),
+                CWBlocks.TRAPPED_SPRUCE_CHEST.get(),
+                CWBlocks.TRAPPED_BIRCH_CHEST.get(),
+                CWBlocks.TRAPPED_JUNGLE_CHEST.get(),
+                CWBlocks.TRAPPED_ACACIA_CHEST.get(),
+                CWBlocks.TRAPPED_DARK_OAK_CHEST.get(),
+                CWBlocks.TRAPPED_MANGROVE_CHEST.get(),
+                CWBlocks.TRAPPED_CHERRY_CHEST.get(),
+                CWBlocks.TRAPPED_CRIMSON_CHEST.get(),
+                CWBlocks.TRAPPED_WARPED_CHEST.get(),
+                CWBlocks.TRAPPED_BAMBOO_CHEST.get(),
                 CWBlocks.OAK_BARREL.get(),
                 CWBlocks.BIRCH_BARREL.get(),
                 CWBlocks.JUNGLE_BARREL.get(),
@@ -487,17 +473,17 @@ public class ModBlockTagGenerator extends BlockTagsProvider {
                 CWBlocks.CRIMSON_CHEST.get(),
                 CWBlocks.WARPED_CHEST.get(),
                 CWBlocks.BAMBOO_CHEST.get(),
-                CWBlocks.OAK_TRAPPED_CHEST.get(),
-                CWBlocks.SPRUCE_TRAPPED_CHEST.get(),
-                CWBlocks.BIRCH_TRAPPED_CHEST.get(),
-                CWBlocks.JUNGLE_TRAPPED_CHEST.get(),
-                CWBlocks.ACACIA_TRAPPED_CHEST.get(),
-                CWBlocks.DARK_OAK_TRAPPED_CHEST.get(),
-                CWBlocks.MANGROVE_TRAPPED_CHEST.get(),
-                CWBlocks.CHERRY_TRAPPED_CHEST.get(),
-                CWBlocks.CRIMSON_TRAPPED_CHEST.get(),
-                CWBlocks.WARPED_TRAPPED_CHEST.get(),
-                CWBlocks.BAMBOO_TRAPPED_CHEST.get()
+                CWBlocks.TRAPPED_OAK_CHEST.get(),
+                CWBlocks.TRAPPED_SPRUCE_CHEST.get(),
+                CWBlocks.TRAPPED_BIRCH_CHEST.get(),
+                CWBlocks.TRAPPED_JUNGLE_CHEST.get(),
+                CWBlocks.TRAPPED_ACACIA_CHEST.get(),
+                CWBlocks.TRAPPED_DARK_OAK_CHEST.get(),
+                CWBlocks.TRAPPED_MANGROVE_CHEST.get(),
+                CWBlocks.TRAPPED_CHERRY_CHEST.get(),
+                CWBlocks.TRAPPED_CRIMSON_CHEST.get(),
+                CWBlocks.TRAPPED_WARPED_CHEST.get(),
+                CWBlocks.TRAPPED_BAMBOO_CHEST.get()
         );
 
         this.tag(Tags.Blocks.CHESTS_WOODEN).add(
@@ -529,17 +515,17 @@ public class ModBlockTagGenerator extends BlockTagsProvider {
         );
 
         this.tag(Tags.Blocks.CHESTS_TRAPPED).add(
-                CWBlocks.OAK_TRAPPED_CHEST.get(),
-                CWBlocks.SPRUCE_TRAPPED_CHEST.get(),
-                CWBlocks.BIRCH_TRAPPED_CHEST.get(),
-                CWBlocks.JUNGLE_TRAPPED_CHEST.get(),
-                CWBlocks.ACACIA_TRAPPED_CHEST.get(),
-                CWBlocks.DARK_OAK_TRAPPED_CHEST.get(),
-                CWBlocks.MANGROVE_TRAPPED_CHEST.get(),
-                CWBlocks.CHERRY_TRAPPED_CHEST.get(),
-                CWBlocks.CRIMSON_TRAPPED_CHEST.get(),
-                CWBlocks.WARPED_TRAPPED_CHEST.get(),
-                CWBlocks.BAMBOO_TRAPPED_CHEST.get()
+                CWBlocks.TRAPPED_OAK_CHEST.get(),
+                CWBlocks.TRAPPED_SPRUCE_CHEST.get(),
+                CWBlocks.TRAPPED_BIRCH_CHEST.get(),
+                CWBlocks.TRAPPED_JUNGLE_CHEST.get(),
+                CWBlocks.TRAPPED_ACACIA_CHEST.get(),
+                CWBlocks.TRAPPED_DARK_OAK_CHEST.get(),
+                CWBlocks.TRAPPED_MANGROVE_CHEST.get(),
+                CWBlocks.TRAPPED_CHERRY_CHEST.get(),
+                CWBlocks.TRAPPED_CRIMSON_CHEST.get(),
+                CWBlocks.TRAPPED_WARPED_CHEST.get(),
+                CWBlocks.TRAPPED_BAMBOO_CHEST.get()
         );
 
         this.tag(Tags.Blocks.BARRELS_WOODEN).add(

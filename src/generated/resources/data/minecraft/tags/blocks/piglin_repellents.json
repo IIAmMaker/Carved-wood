@@ -1,14 +1,14 @@
 {
   "values": [
-    "carved_wood:spruce_soul_campfire",
-    "carved_wood:birch_soul_campfire",
-    "carved_wood:jungle_soul_campfire",
-    "carved_wood:acacia_soul_campfire",
-    "carved_wood:dark_oak_soul_campfire",
-    "carved_wood:mangrove_soul_campfire",
-    "carved_wood:cherry_soul_campfire",
-    "carved_wood:crimson_soul_campfire",
-    "carved_wood:warped_soul_campfire",
-    "carved_wood:bamboo_soul_campfire"
+    "carved_wood:soul_spruce_campfire",
+    "carved_wood:soul_birch_campfire",
+    "carved_wood:soul_jungle_campfire",
+    "carved_wood:soul_acacia_campfire",
+    "carved_wood:soul_dark_oak_campfire",
+    "carved_wood:soul_mangrove_campfire",
+    "carved_wood:soul_cherry_campfire",
+    "carved_wood:soul_crimson_campfire",
+    "carved_wood:soul_warped_campfire",
+    "carved_wood:soul_bamboo_campfire"
   ]
 }

@@ -38,27 +38,27 @@ public class ModBlockLootTables extends BlockLootSubProvider {
         this.dropSelf(CWBlocks.BAMBOO_LADDER.get());
 
         this.dropSelf(CWBlocks.OAK_CHEST.get());
-        this.dropSelf(CWBlocks.OAK_TRAPPED_CHEST.get());
+        this.dropSelf(CWBlocks.TRAPPED_OAK_CHEST.get());
         this.dropSelf(CWBlocks.SPRUCE_CHEST.get());
-        this.dropSelf(CWBlocks.SPRUCE_TRAPPED_CHEST.get());
+        this.dropSelf(CWBlocks.TRAPPED_SPRUCE_CHEST.get());
         this.dropSelf(CWBlocks.BIRCH_CHEST.get());
-        this.dropSelf(CWBlocks.BIRCH_TRAPPED_CHEST.get());
+        this.dropSelf(CWBlocks.TRAPPED_BIRCH_CHEST.get());
         this.dropSelf(CWBlocks.JUNGLE_CHEST.get());
-        this.dropSelf(CWBlocks.JUNGLE_TRAPPED_CHEST.get());
+        this.dropSelf(CWBlocks.TRAPPED_JUNGLE_CHEST.get());
         this.dropSelf(CWBlocks.ACACIA_CHEST.get());
-        this.dropSelf(CWBlocks.ACACIA_TRAPPED_CHEST.get());
+        this.dropSelf(CWBlocks.TRAPPED_ACACIA_CHEST.get());
         this.dropSelf(CWBlocks.DARK_OAK_CHEST.get());
-        this.dropSelf(CWBlocks.DARK_OAK_TRAPPED_CHEST.get());
+        this.dropSelf(CWBlocks.TRAPPED_DARK_OAK_CHEST.get());
         this.dropSelf(CWBlocks.MANGROVE_CHEST.get());
-        this.dropSelf(CWBlocks.MANGROVE_TRAPPED_CHEST.get());
+        this.dropSelf(CWBlocks.TRAPPED_MANGROVE_CHEST.get());
         this.dropSelf(CWBlocks.CHERRY_CHEST.get());
-        this.dropSelf(CWBlocks.CHERRY_TRAPPED_CHEST.get());
+        this.dropSelf(CWBlocks.TRAPPED_CHERRY_CHEST.get());
         this.dropSelf(CWBlocks.CRIMSON_CHEST.get());
-        this.dropSelf(CWBlocks.CRIMSON_TRAPPED_CHEST.get());
+        this.dropSelf(CWBlocks.TRAPPED_CRIMSON_CHEST.get());
         this.dropSelf(CWBlocks.WARPED_CHEST.get());
-        this.dropSelf(CWBlocks.WARPED_TRAPPED_CHEST.get());
+        this.dropSelf(CWBlocks.TRAPPED_WARPED_CHEST.get());
         this.dropSelf(CWBlocks.BAMBOO_CHEST.get());
-        this.dropSelf(CWBlocks.BAMBOO_TRAPPED_CHEST.get());
+        this.dropSelf(CWBlocks.TRAPPED_BAMBOO_CHEST.get());
 
         this.dropSelf(CWBlocks.OAK_BARREL.get());
         this.dropSelf(CWBlocks.BIRCH_BARREL.get());
@@ -126,16 +126,16 @@ public class ModBlockLootTables extends BlockLootSubProvider {
         this.dropSelf(CWBlocks.WARPED_CAMPFIRE.get());
         this.dropSelf(CWBlocks.BAMBOO_CAMPFIRE.get());
 
-        this.dropSelf(CWBlocks.SPRUCE_SOUL_CAMPFIRE.get());
-        this.dropSelf(CWBlocks.BIRCH_SOUL_CAMPFIRE.get());
-        this.dropSelf(CWBlocks.JUNGLE_SOUL_CAMPFIRE.get());
-        this.dropSelf(CWBlocks.ACACIA_SOUL_CAMPFIRE.get());
-        this.dropSelf(CWBlocks.DARK_OAK_SOUL_CAMPFIRE.get());
-        this.dropSelf(CWBlocks.MANGROVE_SOUL_CAMPFIRE.get());
-        this.dropSelf(CWBlocks.CHERRY_SOUL_CAMPFIRE.get());
-        this.dropSelf(CWBlocks.CRIMSON_SOUL_CAMPFIRE.get());
-        this.dropSelf(CWBlocks.WARPED_SOUL_CAMPFIRE.get());
-        this.dropSelf(CWBlocks.BAMBOO_SOUL_CAMPFIRE.get());
+        this.dropSelf(CWBlocks.SOUL_SPRUCE_CAMPFIRE.get());
+        this.dropSelf(CWBlocks.SOUL_BIRCH_CAMPFIRE.get());
+        this.dropSelf(CWBlocks.SOUL_JUNGLE_CAMPFIRE.get());
+        this.dropSelf(CWBlocks.SOUL_ACACIA_CAMPFIRE.get());
+        this.dropSelf(CWBlocks.SOUL_DARK_OAK_CAMPFIRE.get());
+        this.dropSelf(CWBlocks.SOUL_MANGROVE_CAMPFIRE.get());
+        this.dropSelf(CWBlocks.SOUL_CHERRY_CAMPFIRE.get());
+        this.dropSelf(CWBlocks.SOUL_CRIMSON_CAMPFIRE.get());
+        this.dropSelf(CWBlocks.SOUL_WARPED_CAMPFIRE.get());
+        this.dropSelf(CWBlocks.SOUL_BAMBOO_CAMPFIRE.get());
 
         this.dropSelf(CWBlocks.CARVED_OAK_PLANKS.get());
         this.dropSelf(CWBlocks.CARVED_SPRUCE_PLANKS.get());

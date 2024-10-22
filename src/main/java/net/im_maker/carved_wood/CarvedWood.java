@@ -29,6 +29,7 @@ import net.minecraftforge.fml.event.lifecycle.FMLClientSetupEvent;
 import net.minecraftforge.fml.event.lifecycle.FMLCommonSetupEvent;
 import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
 import net.minecraftforge.registries.ForgeRegistries;
+import net.minecraftforge.registries.MissingMappingsEvent;
 import org.spongepowered.asm.mixin.MixinEnvironment;
 
 import java.util.ArrayList;
@@ -62,16 +63,22 @@ public class CarvedWood {
     }
 
 
-    //@SubscribeEvent
-    //public void onMissing(MissingMappingsEvent event) {
-    //    for (MissingMappingsEvent.Mapping mapping : event.getMappings(ForgeRegistries.Keys.BLOCKS, "carved_wood")) {
-    //        ResourceLocation oldId = mapping.getKey();
-    //        if (oldId.toString().equals("")) {
-    //            ResourceLocation newId = new ResourceLocation("");
-    //            mapping.remap(ForgeRegistries.BLOCKS.getValue(newId));
-    //        }
-    //    }
-    //}
+    @SubscribeEvent
+    public void onMissing(MissingMappingsEvent event) {
+        for (String woodType : WOOD_TYPES) {
+            for (MissingMappingsEvent.Mapping mapping : event.getMappings(ForgeRegistries.Keys.BLOCKS, "carved_wood")) {
+                ResourceLocation oldId = mapping.getKey();
+                if (oldId.toString().equals(woodType + "_trapped_chest")) {
+                    ResourceLocation newId = new ResourceLocation("trapped_" + woodType + "_chest");
+                    mapping.remap(ForgeRegistries.BLOCKS.getValue(newId));
+                }
+                if (oldId.toString().equals(woodType + "_soul_campfire")) {
+                    ResourceLocation newId = new ResourceLocation("soul_" + woodType + "_chest");
+                    mapping.remap(ForgeRegistries.BLOCKS.getValue(newId));
+                }
+            }
+        }
+    }
 
     private static void addAfter(MutableHashedLinkedMap<ItemStack, CreativeModeTab.TabVisibility> map, ItemLike after, ItemLike... blocks) {
         for (int i = blocks.length - 1; i >= 0; i--) {
@@ -141,7 +148,7 @@ public class CarvedWood {
                         Block craftingTable = getBlockFromString(woodType + "_crafting_table");
                         Block ladder = getBlockFromString(woodType + "_ladder");
                         Block campfire = getBlockFromString(woodType + "_campfire");
-                        Block soulCampfire = getBlockFromString(woodType + "_soul_campfire");
+                        Block soulCampfire = getBlockFromString("soul_" + woodType + "_campfire");
                         Block bookshelf = getBlockFromString(woodType + "_bookshelf");
                         Block chiseled_bookshelf = getBlockFromString("chiseled_" + woodType + "_bookshelf");
                         Block lectern = getBlockFromString(woodType + "_lectern");
@@ -168,7 +175,7 @@ public class CarvedWood {
                 for (String woodType : WOOD_TYPES) {
                     Block chest = getBlockFromString(woodType + "_chest");
                     addAfter(entries, Blocks.CHEST, chest);
-                    Block trappedChest = getBlockFromString(woodType + "_trapped_chest");
+                    Block trappedChest = getBlockFromString("trapped_" + woodType + "_chest");
                     addAfter(entries, Blocks.TRAPPED_CHEST, trappedChest);
                 }
             }
