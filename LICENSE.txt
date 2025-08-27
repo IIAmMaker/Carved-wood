@@ -5,6 +5,7 @@ Copyright (c) 2024 Maker's Mods
 Permissions are hereby granted below to any person having a copy of
 this software and/or its associated files:
 
+ 
 
 -> Usage:
 You can use this software for both private and public use.
@@ -21,6 +22,12 @@ You are not allowed to distribute this software.
 You are not permitted to sublicense this software.
 -> Selling:
 You are not permitted to sell this software.
+
+
+Modpack Clarification:
+Permission is granted to include this mod in modpacks, provided it is an unmodified public copy obtained from our official sources. Redistribution of modified versions is not allowed. Credits are appreciated but not required.
+
+
 
 The above copyright notice and these permission notices shall be included in all copies or substantial portions of the Software.
 
