@@ -1,0 +1,7 @@
+{
+  "parent": "minecraft:block/cube_column_horizontal",
+  "textures": {
+    "end": "carved_wood:block/pale_oak_log",
+    "side": "carved_wood:block/pale_oak_log"
+  }
+}

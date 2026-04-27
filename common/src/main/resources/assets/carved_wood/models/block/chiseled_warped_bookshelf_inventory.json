@@ -1,0 +1,9 @@
+{
+  "parent": "carved_wood:block/template_chiseled_bookshelf_inventory",
+  "textures": {
+    "front": "carved_wood:block/chiseled_warped_bookshelf_empty",
+    "particle": "carved_wood:block/chiseled_warped_bookshelf_top",
+    "side": "carved_wood:block/chiseled_warped_bookshelf_side",
+    "top": "carved_wood:block/chiseled_warped_bookshelf_top"
+  }
+}

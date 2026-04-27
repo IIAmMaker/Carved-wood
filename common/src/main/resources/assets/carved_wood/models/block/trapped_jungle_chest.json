@@ -1,0 +1,6 @@
+{
+  "parent": "carved_wood:block/template_chest",
+  "textures": {
+    "particle": "minecraft:block/jungle_planks"
+  }
+}

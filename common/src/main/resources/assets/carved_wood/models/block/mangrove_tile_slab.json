@@ -1,0 +1,8 @@
+{
+  "parent": "minecraft:block/slab",
+  "textures": {
+    "bottom": "carved_wood:block/mangrove_tiles",
+    "side": "carved_wood:block/mangrove_tiles",
+    "top": "carved_wood:block/mangrove_tiles"
+  }
+}

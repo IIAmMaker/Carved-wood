@@ -1,0 +1,83 @@
+{
+  "parent": "block/block",
+  "textures": {
+    "#wooden_lantern": "#wooden_lantern",
+    "particle": "#particle"
+  },
+  "elements": [
+    {
+      "from": [3, 0, 3],
+      "to": [13, 2, 13],
+      "faces": {
+        "north": {"uv": [0, 10, 5, 12], "texture": "#wooden_lantern"},
+        "east": {"uv": [0, 10, 5, 12], "texture": "#wooden_lantern"},
+        "south": {"uv": [0, 10, 5, 12], "texture": "#wooden_lantern"},
+        "west": {"uv": [0, 10, 5, 12], "texture": "#wooden_lantern"},
+        "up": {"uv": [0, 0, 5, 10], "texture": "#wooden_lantern"},
+        "down": {"uv": [0, 0, 5, 10], "texture": "#wooden_lantern", "cullface": "down"}
+      }
+    },
+    {
+      "from": [4, 2, 4],
+      "to": [12, 12, 12],
+      "rotation": {"angle": 0, "axis": "y", "origin": [0, 2, 0]},
+      "faces": {
+        "north": {"uv": [5, 0, 9, 10], "texture": "#wooden_lantern"},
+        "east": {"uv": [5, 0, 9, 10], "texture": "#wooden_lantern"},
+        "south": {"uv": [5, 0, 9, 10], "texture": "#wooden_lantern"},
+        "west": {"uv": [5, 0, 9, 10], "texture": "#wooden_lantern"}
+      }
+    },
+    {
+      "from": [3, 12, 3],
+      "to": [13, 14, 13],
+      "rotation": {"angle": 0, "axis": "y", "origin": [0, 12, 0]},
+      "faces": {
+        "north": {"uv": [0, 10, 5, 12], "texture": "#wooden_lantern"},
+        "east": {"uv": [0, 10, 5, 12], "texture": "#wooden_lantern"},
+        "south": {"uv": [0, 10, 5, 12], "texture": "#wooden_lantern"},
+        "west": {"uv": [0, 10, 5, 12], "texture": "#wooden_lantern"},
+        "up": {"uv": [0, 0, 5, 10], "texture": "#wooden_lantern"},
+        "down": {"uv": [0, 0, 5, 10], "texture": "#wooden_lantern"}
+      }
+    },
+    {
+      "from": [6, 14, 6],
+      "to": [10, 16, 16],
+      "rotation": {"angle": 0, "axis": "y", "origin": [0, 14, 0]},
+      "faces": {
+        "north": {"uv": [9, 4, 11, 6], "texture": "#wooden_lantern"},
+        "east": {"uv": [8, 14, 13, 16], "texture": "#wooden_lantern"},
+        "south": {"uv": [9, 4, 11, 6], "texture": "#wooden_lantern"},
+        "west": {"uv": [13, 14, 8, 16], "texture": "#wooden_lantern"},
+        "up": {"uv": [13, 10, 8, 14], "rotation": 90, "texture": "#wooden_lantern", "cullface": "up"},
+        "down": {"uv": [5.5, 10, 10.5, 14], "rotation": 90, "texture": "#wooden_lantern"}
+      }
+    }
+  ],
+  "display": {
+    "thirdperson_righthand": {
+      "rotation": [75, 45, 0],
+      "translation": [0, 1.5, 0],
+      "scale": [0.375, 0.375, 0.375]
+    },
+    "thirdperson_lefthand": {
+      "rotation": [75, 45, 0],
+      "translation": [0, 1.5, 0],
+      "scale": [0.375, 0.375, 0.375]
+    },
+    "firstperson_righthand": {
+      "rotation": [0, 100, 0],
+      "translation": [0, 1.25, 0],
+      "scale": [0.4, 0.4, 0.4]
+    },
+    "firstperson_lefthand": {
+      "rotation": [0, -80, 0],
+      "translation": [0, 1.25, 0],
+      "scale": [0.4, 0.4, 0.4]
+    },
+    "head": {
+      "translation": [0, 14.5, 0]
+    }
+  }
+}

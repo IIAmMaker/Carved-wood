@@ -1,0 +1,7 @@
+{
+  "parent": "carved_wood:block/template_big_planks",
+  "textures": {
+    "end": "carved_wood:block/dark_oak_panels",
+    "side": "carved_wood:block/dark_oak_panels"
+  }
+}

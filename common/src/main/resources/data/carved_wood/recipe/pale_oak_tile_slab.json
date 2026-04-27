@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "building",
+  "group": "wooden_tile_slab",
+  "key": {
+    "#": {
+      "item": "carved_wood:pale_oak_tiles"
+    }
+  },
+  "pattern": [
+    "###"
+  ],
+  "result": {
+    "count": 6,
+    "id": "carved_wood:pale_oak_tile_slab"
+  }
+}

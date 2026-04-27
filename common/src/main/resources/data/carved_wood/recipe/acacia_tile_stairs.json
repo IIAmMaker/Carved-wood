@@ -1,0 +1,19 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "building",
+  "group": "wooden_tile_stairs",
+  "key": {
+    "#": {
+      "item": "carved_wood:acacia_tiles"
+    }
+  },
+  "pattern": [
+    "#  ",
+    "## ",
+    "###"
+  ],
+  "result": {
+    "count": 4,
+    "id": "carved_wood:acacia_tile_stairs"
+  }
+}

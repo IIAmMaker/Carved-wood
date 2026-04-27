@@ -1,0 +1,17 @@
+{
+  "values": [
+    "minecraft:crafter",
+    "carved_wood:spruce_crafter",
+    "carved_wood:birch_crafter",
+    "carved_wood:jungle_crafter",
+    "carved_wood:acacia_crafter",
+    "carved_wood:dark_oak_crafter",
+    "carved_wood:mangrove_crafter",
+    "carved_wood:cherry_crafter",
+    "carved_wood:pale_oak_crafter",
+    "carved_wood:crimson_crafter",
+    "carved_wood:warped_crafter",
+    "carved_wood:bamboo_crafter",
+    "carved_wood:pale_oak_crafter"
+  ]
+}

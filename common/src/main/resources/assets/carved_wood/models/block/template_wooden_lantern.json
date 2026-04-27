@@ -1,0 +1,45 @@
+{
+  "parent": "block/block",
+  "textures": {
+    "#wooden_lantern": "#wooden_lantern",
+    "particle": "#particle"
+  },
+  "elements": [
+    {
+      "from": [3, 0, 3],
+      "to": [13, 2, 13],
+      "faces": {
+        "north": {"uv": [0, 10, 5, 12], "texture": "#wooden_lantern"},
+        "east": {"uv": [0, 10, 5, 12], "texture": "#wooden_lantern"},
+        "south": {"uv": [0, 10, 5, 12], "texture": "#wooden_lantern"},
+        "west": {"uv": [0, 10, 5, 12], "texture": "#wooden_lantern"},
+        "up": {"uv": [0, 0, 5, 10], "texture": "#wooden_lantern"},
+        "down": {"uv": [0, 0, 5, 10], "texture": "#wooden_lantern", "cullface": "down"}
+      }
+    },
+    {
+      "from": [4, 2, 4],
+      "to": [12, 12, 12],
+      "rotation": {"angle": 0, "axis": "y", "origin": [0, 2, 0]},
+      "faces": {
+        "north": {"uv": [5, 0, 9, 10], "texture": "#wooden_lantern"},
+        "east": {"uv": [5, 0, 9, 10], "texture": "#wooden_lantern"},
+        "south": {"uv": [5, 0, 9, 10], "texture": "#wooden_lantern"},
+        "west": {"uv": [5, 0, 9, 10], "texture": "#wooden_lantern"}
+      }
+    },
+    {
+      "from": [3, 12, 3],
+      "to": [13, 14, 13],
+      "rotation": {"angle": 0, "axis": "y", "origin": [0, 12, 0]},
+      "faces": {
+        "north": {"uv": [0, 10, 5, 12], "texture": "#wooden_lantern"},
+        "east": {"uv": [0, 10, 5, 12], "texture": "#wooden_lantern"},
+        "south": {"uv": [0, 10, 5, 12], "texture": "#wooden_lantern"},
+        "west": {"uv": [0, 10, 5, 12], "texture": "#wooden_lantern"},
+        "up": {"uv": [0, 0, 5, 10], "texture": "#wooden_lantern"},
+        "down": {"uv": [0, 0, 5, 10], "texture": "#wooden_lantern"}
+      }
+    }
+  ]
+}

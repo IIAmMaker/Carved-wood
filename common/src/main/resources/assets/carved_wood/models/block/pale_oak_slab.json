@@ -1,0 +1,8 @@
+{
+  "parent": "minecraft:block/slab",
+  "textures": {
+    "bottom": "carved_wood:block/pale_oak_planks",
+    "side": "carved_wood:block/pale_oak_planks",
+    "top": "carved_wood:block/pale_oak_planks"
+  }
+}

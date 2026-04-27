@@ -1,0 +1,7 @@
+{
+  "parent": "minecraft:block/cube_column_horizontal",
+  "textures": {
+    "end": "carved_wood:block/jungle_lantern_top",
+    "side": "carved_wood:block/jungle_lantern"
+  }
+}

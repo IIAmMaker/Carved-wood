@@ -1,0 +1,13 @@
+{
+  "variants": {
+    "type=bottom": {
+      "model": "carved_wood:block/dark_oak_tile_slab"
+    },
+    "type=double": {
+      "model": "carved_wood:block/dark_oak_tiles"
+    },
+    "type=top": {
+      "model": "carved_wood:block/dark_oak_tile_slab_top"
+    }
+  }
+}

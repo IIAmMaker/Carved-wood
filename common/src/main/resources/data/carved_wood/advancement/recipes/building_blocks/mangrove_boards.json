@@ -1,0 +1,32 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_mangrove_panels": {
+      "conditions": {
+        "items": [
+          {
+            "items": "carved_wood:mangrove_panels"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "carved_wood:mangrove_boards"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    }
+  },
+  "requirements": [
+    [
+      "has_the_recipe",
+      "has_mangrove_panels"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "carved_wood:mangrove_boards"
+    ]
+  }
+}

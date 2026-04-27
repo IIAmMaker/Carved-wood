@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:item/generated",
+  "textures": {
+    "layer0": "carved_wood:item/soul_pale_oak_campfire"
+  }
+}

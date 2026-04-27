@@ -1,0 +1,6 @@
+{
+  "parent": "carved_wood:block/template_chest",
+  "textures": {
+    "particle": "vanillabackport:block/pale_oak_planks"
+  }
+}
