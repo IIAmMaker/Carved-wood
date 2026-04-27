@@ -1,0 +1,101 @@
+plugins {
+    id 'net.neoforged.moddev'
+}
+
+
+base {
+    archivesName = "${mod_name}-neoforge-${minecraft_version}"
+}
+
+neoForge {
+    version = neoforge_version
+    // Automatically enable neoforge AccessTransformers if the file exists
+    def at = project(':common').file('src/main/resources/META-INF/accesstransformer.cfg')
+    if (at.exists()) {
+        accessTransformers.from(at.absolutePath)
+    }
+    parchment {
+        minecraftVersion = parchment_minecraft
+        mappingsVersion = parchment_version
+    }
+    runs {
+        configureEach {
+            systemProperty('neoforge.enabledGameTestNamespaces', mod_id)
+            ideName = "NeoForge ${it.name.capitalize()} (${project.path})" // Unify the run config names with fabric
+        }
+        client {
+            client()
+        }
+        data {
+            data()
+            programArguments.addAll '--mod', project.mod_id, '--all', '--output', file('src/generated/resources/').getAbsolutePath(), '--existing', file('src/main/resources/').getAbsolutePath()
+
+        }
+        server {
+            server()
+        }
+    }
+    mods {
+        "${mod_id}" {
+            sourceSet sourceSets.main
+        }
+    }
+}
+
+repositories {
+    maven {
+        url = "https://api.modrinth.com/maven"
+    }
+    maven {
+        // location of the maven that hosts JEI files since January 2023
+        name = "Jared's maven"
+        url = "https://maven.blamejared.com/"
+    }
+    maven {
+        // location of a maven mirror for JEI files, as a fallback
+        name = "ModMaven"
+        url = "https://modmaven.dev"
+    }
+}
+
+dependencies {
+    annotationProcessor "net.neoforged:neoforge:${neoforge_version}" // Needed for Mixin processing
+
+    //annotationProcessor("org.spongepowered:mixin:0.8.5") // or latest
+
+    //implementation "net.neoforged:neoforge:${neoforge_version}"
+    //compileOnly("mezz.jei:jei-${minecraft_version}-neoforge-api:${jei_version}")
+    // at runtime, use the full JEI jar for NeoForge
+    //runtimeOnly("mezz.jei:jei-${minecraft_version}-neoforge:${jei_version}")
+    implementation "maven.modrinth:cloth-config:izKINKFg"
+    implementation "maven.modrinth:kubejs:3w2ufpfQ"
+    implementation "maven.modrinth:rhino:KobrWfUm"
+
+    implementation "maven.modrinth:Would:tCzVXIHV"
+    implementation "maven.modrinth:moonlight:X7j32itX"
+    implementation "maven.modrinth:supplementaries:B4k8qIJB"
+    implementation "maven.modrinth:amendments:8xf6Wpxs"
+    implementation "maven.modrinth:every-compat:tTI0Msfm"
+
+    implementation "maven.modrinth:visual-workbench:Jy5V5FNj"
+    implementation "maven.modrinth:puzzles-lib:EgWWSAhJ"
+
+    implementation "maven.modrinth:platform:Idu0kQLR"
+    implementation "maven.modrinth:vanillabackport:FziQWhG6"
+    implementation "maven.modrinth:polymorph:VEburL70"
+
+
+    implementation "maven.modrinth:my-nethers-delight:n2vJCdff"
+    implementation "maven.modrinth:farmers-delight:cYqC3svy"
+}
+
+sourceSets {
+    main {
+        resources {
+            srcDirs += project(':common').file('src/main/resources')
+        }
+    }
+}
+
+
+sourceSets.main.resources { srcDir 'src/generated/resources' }

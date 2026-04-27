@@ -1,0 +1,45 @@
+modLoader = "javafml"
+loaderVersion = "21.0.118-beta"
+license = "Maker's Mods License"
+
+[[mods]]
+modId = "carved_wood"
+version = "1.9.3"
+displayName = "Carved Wood"
+logoFile = "carved_wood_logo.png"
+authors = "Im_Maker"
+description = '''
+Adds new wooden blocks and new variants of existing wooden blocks!
+Twitter/X: I_AmMaker
+'''
+
+[[mixins]]
+config = "carved_wood.neoforge.mixins.json"
+
+[[dependencies.carved_wood]]
+modId = "neoforge"
+type="required"
+versionRange = "[4,)"
+ordering = "NONE"
+side = "BOTH"
+
+[[dependencies.carved_wood]]
+modId = "minecraft"
+type="required"
+versionRange = "[1.21, 1.22)"
+ordering = "NONE"
+side = "BOTH"
+
+[[dependencies.carved_wood]]
+modId = "polymorph"
+type="optional"
+versionRange = "*"
+ordering = "AFTER"
+side = "BOTH"
+
+[[dependencies.carved_wood]]
+modId = "vanillabackport"
+type="optional"
+versionRange = "*"
+ordering = "AFTER"
+side = "BOTH"

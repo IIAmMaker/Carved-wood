@@ -1,6 +1,0 @@
-{
-  "parent": "minecraft:block/cube_all",
-  "textures": {
-    "all": "carved_wood:block/dark_oak_boards"
-  }
-}

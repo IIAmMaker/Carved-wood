@@ -1,0 +1,366 @@
+package net.im_maker.carved_wood.datagen;
+
+import net.im_maker.carved_wood.common.block.CWBlocks;
+import net.minecraft.core.Holder;
+import net.minecraft.core.HolderLookup;
+import net.minecraft.data.loot.BlockLootSubProvider;
+import net.minecraft.world.flag.FeatureFlags;
+import net.minecraft.world.level.block.Block;
+
+import java.util.Set;
+import java.util.function.Supplier;
+
+public class ModBlockLootTables extends BlockLootSubProvider {
+    public ModBlockLootTables(HolderLookup.Provider registries) {
+        super(Set.of(), FeatureFlags.REGISTRY.allFlags(), registries);
+    }
+
+    @Override
+    protected void generate() {
+        dropSelf(CWBlocks.SPRUCE_CRAFTING_TABLE.get());
+        dropSelf(CWBlocks.BIRCH_CRAFTING_TABLE.get());
+        dropSelf(CWBlocks.JUNGLE_CRAFTING_TABLE.get());
+        dropSelf(CWBlocks.ACACIA_CRAFTING_TABLE.get());
+        dropSelf(CWBlocks.DARK_OAK_CRAFTING_TABLE.get());
+        dropSelf(CWBlocks.MANGROVE_CRAFTING_TABLE.get());
+        dropSelf(CWBlocks.CHERRY_CRAFTING_TABLE.get());
+        dropSelf(CWBlocks.PALE_OAK_CRAFTING_TABLE.get());
+        dropSelf(CWBlocks.CRIMSON_CRAFTING_TABLE.get());
+        dropSelf(CWBlocks.WARPED_CRAFTING_TABLE.get());
+        dropSelf(CWBlocks.BAMBOO_CRAFTING_TABLE.get());
+
+        dropSelf(CWBlocks.SPRUCE_CRAFTER.get());
+        dropSelf(CWBlocks.BIRCH_CRAFTER.get());
+        dropSelf(CWBlocks.JUNGLE_CRAFTER.get());
+        dropSelf(CWBlocks.ACACIA_CRAFTER.get());
+        dropSelf(CWBlocks.DARK_OAK_CRAFTER.get());
+        dropSelf(CWBlocks.MANGROVE_CRAFTER.get());
+        dropSelf(CWBlocks.CHERRY_CRAFTER.get());
+        dropSelf(CWBlocks.PALE_OAK_CRAFTER.get());
+        dropSelf(CWBlocks.CRIMSON_CRAFTER.get());
+        dropSelf(CWBlocks.WARPED_CRAFTER.get());
+        dropSelf(CWBlocks.BAMBOO_CRAFTER.get());
+
+        dropSelf(CWBlocks.SPRUCE_LADDER.get());
+        dropSelf(CWBlocks.BIRCH_LADDER.get());
+        dropSelf(CWBlocks.JUNGLE_LADDER.get());
+        dropSelf(CWBlocks.ACACIA_LADDER.get());
+        dropSelf(CWBlocks.DARK_OAK_LADDER.get());
+        dropSelf(CWBlocks.MANGROVE_LADDER.get());
+        dropSelf(CWBlocks.CHERRY_LADDER.get());
+        dropSelf(CWBlocks.PALE_OAK_LADDER.get());
+        dropSelf(CWBlocks.CRIMSON_LADDER.get());
+        dropSelf(CWBlocks.WARPED_LADDER.get());
+        dropSelf(CWBlocks.BAMBOO_LADDER.get());
+
+        dropSelf(CWBlocks.OAK_CHEST.get());
+        dropSelf(CWBlocks.TRAPPED_OAK_CHEST.get());
+        dropSelf(CWBlocks.SPRUCE_CHEST.get());
+        dropSelf(CWBlocks.TRAPPED_SPRUCE_CHEST.get());
+        dropSelf(CWBlocks.BIRCH_CHEST.get());
+        dropSelf(CWBlocks.TRAPPED_BIRCH_CHEST.get());
+        dropSelf(CWBlocks.JUNGLE_CHEST.get());
+        dropSelf(CWBlocks.TRAPPED_JUNGLE_CHEST.get());
+        dropSelf(CWBlocks.ACACIA_CHEST.get());
+        dropSelf(CWBlocks.TRAPPED_ACACIA_CHEST.get());
+        dropSelf(CWBlocks.DARK_OAK_CHEST.get());
+        dropSelf(CWBlocks.TRAPPED_DARK_OAK_CHEST.get());
+        dropSelf(CWBlocks.MANGROVE_CHEST.get());
+        dropSelf(CWBlocks.TRAPPED_MANGROVE_CHEST.get());
+        dropSelf(CWBlocks.CHERRY_CHEST.get());
+        dropSelf(CWBlocks.PALE_OAK_CHEST.get());
+        dropSelf(CWBlocks.TRAPPED_CHERRY_CHEST.get());
+        dropSelf(CWBlocks.TRAPPED_PALE_OAK_CHEST.get());
+        dropSelf(CWBlocks.CRIMSON_CHEST.get());
+        dropSelf(CWBlocks.TRAPPED_CRIMSON_CHEST.get());
+        dropSelf(CWBlocks.WARPED_CHEST.get());
+        dropSelf(CWBlocks.TRAPPED_WARPED_CHEST.get());
+        dropSelf(CWBlocks.BAMBOO_CHEST.get());
+        dropSelf(CWBlocks.TRAPPED_BAMBOO_CHEST.get());
+
+        dropSelf(CWBlocks.OAK_BARREL.get());
+        dropSelf(CWBlocks.BIRCH_BARREL.get());
+        dropSelf(CWBlocks.JUNGLE_BARREL.get());
+        dropSelf(CWBlocks.ACACIA_BARREL.get());
+        dropSelf(CWBlocks.DARK_OAK_BARREL.get());
+        dropSelf(CWBlocks.MANGROVE_BARREL.get());
+        dropSelf(CWBlocks.CHERRY_BARREL.get());
+        dropSelf(CWBlocks.PALE_OAK_BARREL.get());
+        dropSelf(CWBlocks.CRIMSON_BARREL.get());
+        dropSelf(CWBlocks.WARPED_BARREL.get());
+        dropSelf(CWBlocks.BAMBOO_BARREL.get());
+
+        dropSelf(CWBlocks.SPRUCE_BOOKSHELF.get());
+        dropSelf(CWBlocks.BIRCH_BOOKSHELF.get());
+        dropSelf(CWBlocks.JUNGLE_BOOKSHELF.get());
+        dropSelf(CWBlocks.ACACIA_BOOKSHELF.get());
+        dropSelf(CWBlocks.DARK_OAK_BOOKSHELF.get());
+        dropSelf(CWBlocks.MANGROVE_BOOKSHELF.get());
+        dropSelf(CWBlocks.CHERRY_BOOKSHELF.get());
+        dropSelf(CWBlocks.PALE_OAK_BOOKSHELF.get());
+        dropSelf(CWBlocks.CRIMSON_BOOKSHELF.get());
+        dropSelf(CWBlocks.WARPED_BOOKSHELF.get());
+        dropSelf(CWBlocks.BAMBOO_BOOKSHELF.get());
+
+        dropSelf(CWBlocks.CHISELED_SPRUCE_BOOKSHELF.get());
+        dropSelf(CWBlocks.CHISELED_BIRCH_BOOKSHELF.get());
+        dropSelf(CWBlocks.CHISELED_JUNGLE_BOOKSHELF.get());
+        dropSelf(CWBlocks.CHISELED_ACACIA_BOOKSHELF.get());
+        dropSelf(CWBlocks.CHISELED_DARK_OAK_BOOKSHELF.get());
+        dropSelf(CWBlocks.CHISELED_MANGROVE_BOOKSHELF.get());
+        dropSelf(CWBlocks.CHISELED_CHERRY_BOOKSHELF.get());
+        dropSelf(CWBlocks.CHISELED_PALE_OAK_BOOKSHELF.get());
+        dropSelf(CWBlocks.CHISELED_CRIMSON_BOOKSHELF.get());
+        dropSelf(CWBlocks.CHISELED_WARPED_BOOKSHELF.get());
+        dropSelf(CWBlocks.CHISELED_BAMBOO_BOOKSHELF.get());
+
+        dropSelf(CWBlocks.SPRUCE_LECTERN.get());
+        dropSelf(CWBlocks.BIRCH_LECTERN.get());
+        dropSelf(CWBlocks.JUNGLE_LECTERN.get());
+        dropSelf(CWBlocks.ACACIA_LECTERN.get());
+        dropSelf(CWBlocks.DARK_OAK_LECTERN.get());
+        dropSelf(CWBlocks.MANGROVE_LECTERN.get());
+        dropSelf(CWBlocks.CHERRY_LECTERN.get());
+        dropSelf(CWBlocks.PALE_OAK_LECTERN.get());
+        dropSelf(CWBlocks.CRIMSON_LECTERN.get());
+        dropSelf(CWBlocks.WARPED_LECTERN.get());
+        dropSelf(CWBlocks.BAMBOO_LECTERN.get());
+
+        dropSelf(CWBlocks.SPRUCE_BEEHIVE.get());
+        dropSelf(CWBlocks.BIRCH_BEEHIVE.get());
+        dropSelf(CWBlocks.JUNGLE_BEEHIVE.get());
+        dropSelf(CWBlocks.ACACIA_BEEHIVE.get());
+        dropSelf(CWBlocks.DARK_OAK_BEEHIVE.get());
+        dropSelf(CWBlocks.MANGROVE_BEEHIVE.get());
+        dropSelf(CWBlocks.CHERRY_BEEHIVE.get());
+        dropSelf(CWBlocks.PALE_OAK_BEEHIVE.get());
+        dropSelf(CWBlocks.CRIMSON_BEEHIVE.get());
+        dropSelf(CWBlocks.WARPED_BEEHIVE.get());
+        dropSelf(CWBlocks.BAMBOO_BEEHIVE.get());
+
+        dropSelf(CWBlocks.SPRUCE_CAMPFIRE.get());
+        dropSelf(CWBlocks.BIRCH_CAMPFIRE.get());
+        dropSelf(CWBlocks.JUNGLE_CAMPFIRE.get());
+        dropSelf(CWBlocks.ACACIA_CAMPFIRE.get());
+        dropSelf(CWBlocks.DARK_OAK_CAMPFIRE.get());
+        dropSelf(CWBlocks.MANGROVE_CAMPFIRE.get());
+        dropSelf(CWBlocks.CHERRY_CAMPFIRE.get());
+        dropSelf(CWBlocks.PALE_OAK_CAMPFIRE.get());
+        dropSelf(CWBlocks.CRIMSON_CAMPFIRE.get());
+        dropSelf(CWBlocks.WARPED_CAMPFIRE.get());
+        dropSelf(CWBlocks.BAMBOO_CAMPFIRE.get());
+
+        dropSelf(CWBlocks.SOUL_SPRUCE_CAMPFIRE.get());
+        dropSelf(CWBlocks.SOUL_BIRCH_CAMPFIRE.get());
+        dropSelf(CWBlocks.SOUL_JUNGLE_CAMPFIRE.get());
+        dropSelf(CWBlocks.SOUL_ACACIA_CAMPFIRE.get());
+        dropSelf(CWBlocks.SOUL_DARK_OAK_CAMPFIRE.get());
+        dropSelf(CWBlocks.SOUL_MANGROVE_CAMPFIRE.get());
+        dropSelf(CWBlocks.SOUL_CHERRY_CAMPFIRE.get());
+        dropSelf(CWBlocks.SOUL_PALE_OAK_CAMPFIRE.get());
+        dropSelf(CWBlocks.SOUL_CRIMSON_CAMPFIRE.get());
+        dropSelf(CWBlocks.SOUL_WARPED_CAMPFIRE.get());
+        dropSelf(CWBlocks.SOUL_BAMBOO_CAMPFIRE.get());
+
+        dropSelf(CWBlocks.CARVED_OAK_PLANKS.get());
+        dropSelf(CWBlocks.CARVED_SPRUCE_PLANKS.get());
+        dropSelf(CWBlocks.CARVED_BIRCH_PLANKS.get());
+        dropSelf(CWBlocks.CARVED_JUNGLE_PLANKS.get());
+        dropSelf(CWBlocks.CARVED_ACACIA_PLANKS.get());
+        dropSelf(CWBlocks.CARVED_DARK_OAK_PLANKS.get());
+        dropSelf(CWBlocks.CARVED_MANGROVE_PLANKS.get());
+        dropSelf(CWBlocks.CARVED_CHERRY_PLANKS.get());
+        dropSelf(CWBlocks.CARVED_PALE_OAK_PLANKS.get());
+        dropSelf(CWBlocks.CARVED_CRIMSON_PLANKS.get());
+        dropSelf(CWBlocks.CARVED_WARPED_PLANKS.get());
+        dropSelf(CWBlocks.CARVED_BAMBOO_PLANKS.get());
+
+        dropSelf(CWBlocks.OAK_LANTERN.get());
+        dropSelf(CWBlocks.SPRUCE_LANTERN.get());
+        dropSelf(CWBlocks.BIRCH_LANTERN.get());
+        dropSelf(CWBlocks.JUNGLE_LANTERN.get());
+        dropSelf(CWBlocks.ACACIA_LANTERN.get());
+        dropSelf(CWBlocks.DARK_OAK_LANTERN.get());
+        dropSelf(CWBlocks.MANGROVE_LANTERN.get());
+        dropSelf(CWBlocks.CHERRY_LANTERN.get());
+        dropSelf(CWBlocks.PALE_OAK_LANTERN.get());
+        dropSelf(CWBlocks.CRIMSON_LANTERN.get());
+        dropSelf(CWBlocks.WARPED_LANTERN.get());
+        dropSelf(CWBlocks.BAMBOO_LANTERN.get());
+
+        dropSelf(CWBlocks.OAK_LANTERN_BLOCK.get());
+        dropSelf(CWBlocks.SPRUCE_LANTERN_BLOCK.get());
+        dropSelf(CWBlocks.BIRCH_LANTERN_BLOCK.get());
+        dropSelf(CWBlocks.JUNGLE_LANTERN_BLOCK.get());
+        dropSelf(CWBlocks.ACACIA_LANTERN_BLOCK.get());
+        dropSelf(CWBlocks.DARK_OAK_LANTERN_BLOCK.get());
+        dropSelf(CWBlocks.MANGROVE_LANTERN_BLOCK.get());
+        dropSelf(CWBlocks.CHERRY_LANTERN_BLOCK.get());
+        dropSelf(CWBlocks.PALE_OAK_LANTERN_BLOCK.get());
+        dropSelf(CWBlocks.CRIMSON_LANTERN_BLOCK.get());
+        dropSelf(CWBlocks.WARPED_LANTERN_BLOCK.get());
+        dropSelf(CWBlocks.BAMBOO_LANTERN_BLOCK.get());
+
+        dropSelf(CWBlocks.OAK_BOARDS.get());
+        dropSelf(CWBlocks.SPRUCE_BOARDS.get());
+        dropSelf(CWBlocks.BIRCH_BOARDS.get());
+        dropSelf(CWBlocks.JUNGLE_BOARDS.get());
+        dropSelf(CWBlocks.ACACIA_BOARDS.get());
+        dropSelf(CWBlocks.DARK_OAK_BOARDS.get());
+        dropSelf(CWBlocks.MANGROVE_BOARDS.get());
+        dropSelf(CWBlocks.CHERRY_BOARDS.get());
+        dropSelf(CWBlocks.PALE_OAK_BOARDS.get());
+        dropSelf(CWBlocks.CRIMSON_BOARDS.get());
+        dropSelf(CWBlocks.WARPED_BOARDS.get());
+        dropSelf(CWBlocks.BAMBOO_BOARDS.get());
+
+        dropSelf(CWBlocks.OAK_PANELS.get());
+        dropSelf(CWBlocks.SPRUCE_PANELS.get());
+        dropSelf(CWBlocks.BIRCH_PANELS.get());
+        dropSelf(CWBlocks.JUNGLE_PANELS.get());
+        dropSelf(CWBlocks.ACACIA_PANELS.get());
+        dropSelf(CWBlocks.DARK_OAK_PANELS.get());
+        dropSelf(CWBlocks.MANGROVE_PANELS.get());
+        dropSelf(CWBlocks.CHERRY_PANELS.get());
+        dropSelf(CWBlocks.PALE_OAK_PANELS.get());
+        dropSelf(CWBlocks.CRIMSON_PANELS.get());
+        dropSelf(CWBlocks.WARPED_PANELS.get());
+        dropSelf(CWBlocks.BAMBOO_PANELS.get());
+
+        dropSelf(CWBlocks.SMOOTH_OAK_BOARDS.get());
+        dropSelf(CWBlocks.SMOOTH_SPRUCE_BOARDS.get());
+        dropSelf(CWBlocks.SMOOTH_BIRCH_BOARDS.get());
+        dropSelf(CWBlocks.SMOOTH_JUNGLE_BOARDS.get());
+        dropSelf(CWBlocks.SMOOTH_ACACIA_BOARDS.get());
+        dropSelf(CWBlocks.SMOOTH_DARK_OAK_BOARDS.get());
+        dropSelf(CWBlocks.SMOOTH_MANGROVE_BOARDS.get());
+        dropSelf(CWBlocks.SMOOTH_CHERRY_BOARDS.get());
+        dropSelf(CWBlocks.SMOOTH_PALE_OAK_BOARDS.get());
+        dropSelf(CWBlocks.SMOOTH_CRIMSON_BOARDS.get());
+        dropSelf(CWBlocks.SMOOTH_WARPED_BOARDS.get());
+        dropSelf(CWBlocks.SMOOTH_BAMBOO_BOARDS.get());
+
+        dropSelf(CWBlocks.OAK_TILES.get());
+        dropSelf(CWBlocks.SPRUCE_TILES.get());
+        dropSelf(CWBlocks.BIRCH_TILES.get());
+        dropSelf(CWBlocks.JUNGLE_TILES.get());
+        dropSelf(CWBlocks.ACACIA_TILES.get());
+        dropSelf(CWBlocks.DARK_OAK_TILES.get());
+        dropSelf(CWBlocks.MANGROVE_TILES.get());
+        dropSelf(CWBlocks.CHERRY_TILES.get());
+        dropSelf(CWBlocks.PALE_OAK_TILES.get());
+        dropSelf(CWBlocks.CRIMSON_TILES.get());
+        dropSelf(CWBlocks.WARPED_TILES.get());
+        dropSelf(CWBlocks.BAMBOO_TILES.get());
+
+        dropSelf(CWBlocks.OAK_TILE_STAIRS.get());
+        dropSelf(CWBlocks.SPRUCE_TILE_STAIRS.get());
+        dropSelf(CWBlocks.BIRCH_TILE_STAIRS.get());
+        dropSelf(CWBlocks.JUNGLE_TILE_STAIRS.get());
+        dropSelf(CWBlocks.ACACIA_TILE_STAIRS.get());
+        dropSelf(CWBlocks.DARK_OAK_TILE_STAIRS.get());
+        dropSelf(CWBlocks.MANGROVE_TILE_STAIRS.get());
+        dropSelf(CWBlocks.CHERRY_TILE_STAIRS.get());
+        dropSelf(CWBlocks.PALE_OAK_TILE_STAIRS.get());
+        dropSelf(CWBlocks.CRIMSON_TILE_STAIRS.get());
+        dropSelf(CWBlocks.WARPED_TILE_STAIRS.get());
+        dropSelf(CWBlocks.BAMBOO_TILE_STAIRS.get());
+
+        add(CWBlocks.OAK_TILE_SLAB.get(), block -> createSlabItemTable(CWBlocks.OAK_TILE_SLAB.get()));
+        add(CWBlocks.SPRUCE_TILE_SLAB.get(), block -> createSlabItemTable(CWBlocks.SPRUCE_TILE_SLAB.get()));
+        add(CWBlocks.BIRCH_TILE_SLAB.get(), block -> createSlabItemTable(CWBlocks.BIRCH_TILE_SLAB.get()));
+        add(CWBlocks.JUNGLE_TILE_SLAB.get(), block -> createSlabItemTable(CWBlocks.JUNGLE_TILE_SLAB.get()));
+        add(CWBlocks.ACACIA_TILE_SLAB.get(), block -> createSlabItemTable(CWBlocks.ACACIA_TILE_SLAB.get()));
+        add(CWBlocks.DARK_OAK_TILE_SLAB.get(), block -> createSlabItemTable(CWBlocks.DARK_OAK_TILE_SLAB.get()));
+        add(CWBlocks.MANGROVE_TILE_SLAB.get(), block -> createSlabItemTable(CWBlocks.MANGROVE_TILE_SLAB.get()));
+        add(CWBlocks.CHERRY_TILE_SLAB.get(), block -> createSlabItemTable(CWBlocks.CHERRY_TILE_SLAB.get()));
+        add(CWBlocks.PALE_OAK_TILE_SLAB.get(), block -> createSlabItemTable(CWBlocks.PALE_OAK_TILE_SLAB.get()));
+        add(CWBlocks.CRIMSON_TILE_SLAB.get(), block -> createSlabItemTable(CWBlocks.CRIMSON_TILE_SLAB.get()));
+        add(CWBlocks.WARPED_TILE_SLAB.get(), block -> createSlabItemTable(CWBlocks.WARPED_TILE_SLAB.get()));
+        add(CWBlocks.BAMBOO_TILE_SLAB.get(), block -> createSlabItemTable(CWBlocks.BAMBOO_TILE_SLAB.get()));
+
+        dropSelf(CWBlocks.OAK_MOSAIC.get());
+        dropSelf(CWBlocks.SPRUCE_MOSAIC.get());
+        dropSelf(CWBlocks.BIRCH_MOSAIC.get());
+        dropSelf(CWBlocks.JUNGLE_MOSAIC.get());
+        dropSelf(CWBlocks.ACACIA_MOSAIC.get());
+        dropSelf(CWBlocks.DARK_OAK_MOSAIC.get());
+        dropSelf(CWBlocks.MANGROVE_MOSAIC.get());
+        dropSelf(CWBlocks.CHERRY_MOSAIC.get());
+        dropSelf(CWBlocks.PALE_OAK_MOSAIC.get());
+        dropSelf(CWBlocks.CRIMSON_MOSAIC.get());
+        dropSelf(CWBlocks.WARPED_MOSAIC.get());
+
+        dropSelf(CWBlocks.OAK_MOSAIC_STAIRS.get());
+        dropSelf(CWBlocks.SPRUCE_MOSAIC_STAIRS.get());
+        dropSelf(CWBlocks.BIRCH_MOSAIC_STAIRS.get());
+        dropSelf(CWBlocks.JUNGLE_MOSAIC_STAIRS.get());
+        dropSelf(CWBlocks.ACACIA_MOSAIC_STAIRS.get());
+        dropSelf(CWBlocks.DARK_OAK_MOSAIC_STAIRS.get());
+        dropSelf(CWBlocks.MANGROVE_MOSAIC_STAIRS.get());
+        dropSelf(CWBlocks.CHERRY_MOSAIC_STAIRS.get());
+        dropSelf(CWBlocks.PALE_OAK_MOSAIC_STAIRS.get());
+        dropSelf(CWBlocks.CRIMSON_MOSAIC_STAIRS.get());
+        dropSelf(CWBlocks.WARPED_MOSAIC_STAIRS.get());
+
+        add(CWBlocks.OAK_MOSAIC_SLAB.get(), block -> createSlabItemTable(CWBlocks.OAK_MOSAIC_SLAB.get()));
+        add(CWBlocks.SPRUCE_MOSAIC_SLAB.get(), block -> createSlabItemTable(CWBlocks.SPRUCE_MOSAIC_SLAB.get()));
+        add(CWBlocks.BIRCH_MOSAIC_SLAB.get(), block -> createSlabItemTable(CWBlocks.BIRCH_MOSAIC_SLAB.get()));
+        add(CWBlocks.JUNGLE_MOSAIC_SLAB.get(), block -> createSlabItemTable(CWBlocks.JUNGLE_MOSAIC_SLAB.get()));
+        add(CWBlocks.ACACIA_MOSAIC_SLAB.get(), block -> createSlabItemTable(CWBlocks.ACACIA_MOSAIC_SLAB.get()));
+        add(CWBlocks.DARK_OAK_MOSAIC_SLAB.get(), block -> createSlabItemTable(CWBlocks.DARK_OAK_MOSAIC_SLAB.get()));
+        add(CWBlocks.MANGROVE_MOSAIC_SLAB.get(), block -> createSlabItemTable(CWBlocks.MANGROVE_MOSAIC_SLAB.get()));
+        add(CWBlocks.CHERRY_MOSAIC_SLAB.get(), block -> createSlabItemTable(CWBlocks.CHERRY_MOSAIC_SLAB.get()));
+        add(CWBlocks.PALE_OAK_MOSAIC_SLAB.get(), block -> createSlabItemTable(CWBlocks.PALE_OAK_MOSAIC_SLAB.get()));
+        add(CWBlocks.CRIMSON_MOSAIC_SLAB.get(), block -> createSlabItemTable(CWBlocks.CRIMSON_MOSAIC_SLAB.get()));
+        add(CWBlocks.WARPED_MOSAIC_SLAB.get(), block -> createSlabItemTable(CWBlocks.WARPED_MOSAIC_SLAB.get()));
+
+        dropSelf(CWBlocks.OAK_PILLAR.get());
+        dropSelf(CWBlocks.SPRUCE_PILLAR.get());
+        dropSelf(CWBlocks.BIRCH_PILLAR.get());
+        dropSelf(CWBlocks.JUNGLE_PILLAR.get());
+        dropSelf(CWBlocks.ACACIA_PILLAR.get());
+        dropSelf(CWBlocks.DARK_OAK_PILLAR.get());
+        dropSelf(CWBlocks.MANGROVE_PILLAR.get());
+        dropSelf(CWBlocks.CHERRY_PILLAR.get());
+        dropSelf(CWBlocks.PALE_OAK_PILLAR.get());
+        dropSelf(CWBlocks.CRIMSON_PILLAR.get());
+        dropSelf(CWBlocks.WARPED_PILLAR.get());
+        dropSelf(CWBlocks.BAMBOO_PILLAR.get());
+
+        dropSelf(CWBlocks.OAK_LOG_BUNDLE.get());
+        dropSelf(CWBlocks.SPRUCE_LOG_BUNDLE.get());
+        dropSelf(CWBlocks.BIRCH_LOG_BUNDLE.get());
+        dropSelf(CWBlocks.JUNGLE_LOG_BUNDLE.get());
+        dropSelf(CWBlocks.ACACIA_LOG_BUNDLE.get());
+        dropSelf(CWBlocks.DARK_OAK_LOG_BUNDLE.get());
+        dropSelf(CWBlocks.MANGROVE_LOG_BUNDLE.get());
+        dropSelf(CWBlocks.CHERRY_LOG_BUNDLE.get());
+        dropSelf(CWBlocks.PALE_OAK_LOG_BUNDLE.get());
+        dropSelf(CWBlocks.CRIMSON_STEM_BUNDLE.get());
+        dropSelf(CWBlocks.WARPED_STEM_BUNDLE.get());
+        dropSelf(CWBlocks.BAMBOO_BUNDLE.get());
+
+        dropSelf(CWBlocks.STRIPPED_OAK_LOG_BUNDLE.get());
+        dropSelf(CWBlocks.STRIPPED_SPRUCE_LOG_BUNDLE.get());
+        dropSelf(CWBlocks.STRIPPED_BIRCH_LOG_BUNDLE.get());
+        dropSelf(CWBlocks.STRIPPED_JUNGLE_LOG_BUNDLE.get());
+        dropSelf(CWBlocks.STRIPPED_ACACIA_LOG_BUNDLE.get());
+        dropSelf(CWBlocks.STRIPPED_DARK_OAK_LOG_BUNDLE.get());
+        dropSelf(CWBlocks.STRIPPED_MANGROVE_LOG_BUNDLE.get());
+        dropSelf(CWBlocks.STRIPPED_CHERRY_LOG_BUNDLE.get());
+        dropSelf(CWBlocks.STRIPPED_PALE_OAK_LOG_BUNDLE.get());
+        dropSelf(CWBlocks.STRIPPED_CRIMSON_STEM_BUNDLE.get());
+        dropSelf(CWBlocks.STRIPPED_WARPED_STEM_BUNDLE.get());
+        dropSelf(CWBlocks.STRIPPED_BAMBOO_BUNDLE.get());
+    }
+
+    @Override
+    protected Iterable<Block> getKnownBlocks() {
+        return CWBlocks.BLOCKS.getEntries()
+                .stream()
+                .map(Holder::value)
+                .collect(java.util.stream.Collectors.toList());
+    }
+
+}

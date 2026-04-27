@@ -1,8 +1,0 @@
-{
-  "parent": "minecraft:block/inner_stairs",
-  "textures": {
-    "bottom": "carved_wood:block/jungle_tiles",
-    "side": "carved_wood:block/jungle_tiles",
-    "top": "carved_wood:block/jungle_tiles"
-  }
-}
