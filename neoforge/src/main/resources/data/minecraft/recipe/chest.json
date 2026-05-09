@@ -10,7 +10,8 @@
       },
       "subtracted": {
         "tag": "c:chests/trapped"
-      }    }
+      }
+    }
   ],
   "result": {
     "count": 1,

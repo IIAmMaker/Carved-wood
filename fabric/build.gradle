@@ -1,0 +1,139 @@
+plugins {
+    id 'fabric-loom'
+}
+
+base {
+    archivesName = "${mod_name}-fabric-${minecraft_version}"
+}
+
+repositories {
+    mavenCentral()
+    mavenLocal()
+    maven {
+        name = 'Sponge / Mixin'
+        url = 'https://repo.spongepowered.org/repository/maven-public/'
+    }
+    maven {
+        name = 'BlameJared Maven (JEI / CraftTweaker / Bookshelf)'
+        url = 'https://maven.blamejared.com'
+    }
+    maven {
+        name = 'Curse Maven'
+        url = "https://cursemaven.com"
+    }
+    maven {
+        name = "Modrinth"
+        url = "https://api.modrinth.com/maven"
+    }
+    maven {
+        name = 'Ladysnake Mods'
+        url = 'https://maven.ladysnake.org/releases'
+    }
+    maven {
+        name = "Jared's maven"
+        url = "https://maven.blamejared.com/"
+    }
+    maven {
+        name = "ModMaven"
+        url = "https://modmaven.dev"
+    }
+}
+
+dependencies {
+    minecraft "com.mojang:minecraft:${minecraft_version}"
+    mappings loom.officialMojangMappings()
+    //mappings loom.layered {
+    //    officialMojangMappings()
+    //    parchment("org.parchmentmc.data:parchment-${parchment_minecraft}:${parchment_version}@zip")
+    //}
+
+    modImplementation "net.fabricmc:fabric-loader:${fabric_loader_version}"
+    modImplementation "net.fabricmc.fabric-api:fabric-api:${fabric_version}"
+
+    modCompileOnlyApi("mezz.jei:jei-1.21.1-fabric-api:${jei_version}")
+    modRuntimeOnly("mezz.jei:jei-1.21.1-fabric:${jei_version}")
+
+    modImplementation "maven.modrinth:vanillabackport:NsLfcMnu"
+    modImplementation "maven.modrinth:platform:7na86AyJ"
+    modImplementation "maven.modrinth:polymorph:YuL8WZQ9"
+    modImplementation "maven.modrinth:would:2sKDLT7r"
+    modImplementation "maven.modrinth:moonlight:Ltny842h"
+    //modRuntimeOnly "maven.modrinth:supplementaries:W65LrELj"
+    modImplementation "maven.modrinth:amendments:4XziKHCP"
+    modImplementation "maven.modrinth:every-compat:kmmvtMsL"
+
+    modApi "org.ladysnake.cardinal-components-api:cardinal-components-base:${project.cca_version}"
+    modApi "org.ladysnake.cardinal-components-api:cardinal-components-entity:${project.cca_version}"
+    modApi "org.ladysnake.cardinal-components-api:cardinal-components-block:${project.cca_version}"
+
+    include "org.ladysnake.cardinal-components-api:cardinal-components-base:${project.cca_version}"
+    include "org.ladysnake.cardinal-components-api:cardinal-components-entity:${project.cca_version}"
+    include "org.ladysnake.cardinal-components-api:cardinal-components-block:${project.cca_version}"
+
+
+    //modImplementation "maven.modrinth:fabric-api:0.92.3+1.20.1"
+
+    //implementation group: 'com.google.code.findbugs', name: 'jsr305', version: '3.0.1'
+    implementation project(":common")
+//
+    //modImplementation "mezz.jei:jei-1.20.1-fabric:15.2.0.27"
+    //modImplementation "maven.modrinth:jei:AFNTMB1o"
+//
+    //modImplementation "maven.modrinth:would:FQzRahD5"
+//
+    //modImplementation "maven.modrinth:universal-sawmill:1.20-1.4.6"
+    //modImplementation "maven.modrinth:moonlight:Wjdv40t5"
+//
+    //modImplementation "maven.modrinth:polymorph:UlRasi89"
+    ////polymorph's dependencies:
+    //modImplementation "maven.modrinth:cardinal-components-api:qW85eawp"
+    //implementation group: 'com.electronwill.night-config', name: 'core', version: '3.6.5'
+    ////modCompileOnly "curse.maven:quickbench-914551:4767801"
+    ////modLocalRuntime "curse.maven:quickbench-914551:4767801"
+    //modApi "dev.onyxstudios.cardinal-components-api:cardinal-components-base:5.2.0"
+    //modApi "dev.onyxstudios.cardinal-components-api:cardinal-components-entity:5.2.0"
+    //modApi "dev.onyxstudios.cardinal-components-api:cardinal-components-block:5.2.0"
+    //modApi "dev.onyxstudios.cardinal-components-api:cardinal-components-item:5.2.0"
+    //include "dev.onyxstudios.cardinal-components-api:cardinal-components-base:5.2.0"
+    //include "dev.onyxstudios.cardinal-components-api:cardinal-components-entity:5.2.0"
+    //include "dev.onyxstudios.cardinal-components-api:cardinal-components-block:5.2.0"
+    //include "dev.onyxstudios.cardinal-components-api:cardinal-components-item:5.2.0"
+}
+
+loom {
+    def aw = project(':common').file("src/main/resources/${mod_id}.accesswidener")
+    if (aw.exists()) {
+        accessWidenerPath.set(aw)
+    }
+    mixin {
+        defaultRefmapName.set("${mod_id}.refmap.json")
+    }
+    runs {
+        client {
+            client()
+            setConfigName('Fabric Client')
+            ideConfigGenerated(true)
+            runDir('runs/client')
+        }
+        server {
+            server()
+            setConfigName('Fabric Server')
+            ideConfigGenerated(true)
+            runDir('run')
+
+            // EULA enforcement
+            property 'eula', 'true'
+            programArgs '--nogui'  // Optional: Run without GUI
+
+        }
+    }
+}
+
+sourceSets {
+    main {
+        resources {
+            srcDirs += project(':common').file('src/main/resources')
+            //srcDirs += project(':common').file('src/generated/resources')
+        }
+    }
+}
