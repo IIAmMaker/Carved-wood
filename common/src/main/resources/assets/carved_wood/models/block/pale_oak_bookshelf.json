@@ -1,8 +1,0 @@
-{
-  "parent": "carved_wood:block/template_bookshelf",
-  "textures": {
-    "bottom": "minecraft:block/pale_oak_planks",
-    "side": "carved_wood:block/pale_oak_bookshelf",
-    "top": "minecraft:block/pale_oak_planks"
-  }
-}

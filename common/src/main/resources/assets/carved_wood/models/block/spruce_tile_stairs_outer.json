@@ -1,8 +1,0 @@
-{
-  "parent": "minecraft:block/outer_stairs",
-  "textures": {
-    "bottom": "carved_wood:block/spruce_tiles",
-    "side": "carved_wood:block/spruce_tiles",
-    "top": "carved_wood:block/spruce_tiles"
-  }
-}

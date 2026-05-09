@@ -1,7 +1,0 @@
-{
-  "parent": "minecraft:block/cube_column",
-  "textures": {
-    "end": "carved_wood:block/pale_oak_log",
-    "side": "carved_wood:block/pale_oak_log"
-  }
-}

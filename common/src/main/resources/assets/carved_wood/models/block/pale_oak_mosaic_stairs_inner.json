@@ -1,8 +1,0 @@
-{
-  "parent": "minecraft:block/inner_stairs",
-  "textures": {
-    "bottom": "carved_wood:block/pale_oak_mosaic",
-    "side": "carved_wood:block/pale_oak_mosaic",
-    "top": "carved_wood:block/pale_oak_mosaic"
-  }
-}

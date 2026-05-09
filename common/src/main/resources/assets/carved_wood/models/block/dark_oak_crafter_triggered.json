@@ -1,9 +1,0 @@
-{
-  "parent": "carved_wood:block/dark_oak_crafter",
-  "textures": {
-    "east": "carved_wood:block/dark_oak_crafter_east_triggered",
-    "south": "carved_wood:block/dark_oak_crafter_south_triggered",
-    "top": "carved_wood:block/crafter_top_triggered",
-    "west": "carved_wood:block/dark_oak_crafter_west_triggered"
-  }
-}

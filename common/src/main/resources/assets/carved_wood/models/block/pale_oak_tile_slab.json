@@ -1,8 +1,0 @@
-{
-  "parent": "minecraft:block/slab",
-  "textures": {
-    "bottom": "carved_wood:block/pale_oak_tiles",
-    "side": "carved_wood:block/pale_oak_tiles",
-    "top": "carved_wood:block/pale_oak_tiles"
-  }
-}

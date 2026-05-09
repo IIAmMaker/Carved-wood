@@ -1,7 +1,0 @@
-{
-  "parent": "minecraft:block/cube_column",
-  "textures": {
-    "end": "carved_wood:block/spruce_panels",
-    "side": "carved_wood:block/spruce_panels"
-  }
-}

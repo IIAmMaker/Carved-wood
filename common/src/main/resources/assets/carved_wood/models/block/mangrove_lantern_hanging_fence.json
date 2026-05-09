@@ -1,7 +1,0 @@
-{
-  "parent": "carved_wood:block/template_hanging_wooden_lantern_fence",
-  "textures": {
-    "particle": "carved_wood:block/mangrove_lantern_block",
-    "wooden_lantern": "carved_wood:block/mangrove_lantern"
-  }
-}
