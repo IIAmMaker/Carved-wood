@@ -101,8 +101,6 @@ public class CarvedWoodModule extends SimpleModule {
         super(modId, "crwo", EveryCompat.MOD_ID);
         ResourceKey<CreativeModeTab> tab = CreativeModeTabs.BUILDING_BLOCKS;
 
-
-
         //REASON: take a look at their textures, you'll see why.
         //.excludeBlockTypes("natures_spirit", "joshua")
         //.excludeBlockTypes("natures_spirit", "coconut")
