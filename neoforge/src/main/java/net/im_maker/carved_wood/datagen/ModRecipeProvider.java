@@ -612,8 +612,8 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
             woodenCrafters(output, type);
         }
         vanillaTrappedChest(output);
-        removingTheChestRecipe(output);
-        chestFromTag(output);
+        //removingTheChestRecipe(output);
+        //chestFromTag(output);
         trappedChestFromTag(output);
     }
 }
