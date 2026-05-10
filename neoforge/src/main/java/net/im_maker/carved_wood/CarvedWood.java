@@ -4,6 +4,8 @@ import com.mojang.logging.LogUtils;
 import net.im_maker.carved_wood.client.renderer.CWModelLayers;
 import net.im_maker.carved_wood.client.renderer.block.CWCampfireRenderer;
 import net.im_maker.carved_wood.client.renderer.block.CWChestRenderer;
+import net.im_maker.carved_wood.common.FlammableBlockRegistryCommon;
+import net.im_maker.carved_wood.common.util.FlammableBlockRegistryForge;
 import net.im_maker.carved_wood.common.block.CWBlocks;
 import net.im_maker.carved_wood.common.block.entity.CWBlockEntities;
 import net.im_maker.carved_wood.common.item.CWItems;
@@ -52,6 +54,7 @@ public class CarvedWood {
     public static final Logger LOGGER = LogUtils.getLogger();
 
     public CarvedWood(IEventBus modEventBus, ModContainer modContainer) {
+        FlammableBlockRegistryCommon.setInstance(new FlammableBlockRegistryForge());
         CWBlocks.register(modEventBus);
         CWItems.register(modEventBus);
         CWRecipes.register(modEventBus);

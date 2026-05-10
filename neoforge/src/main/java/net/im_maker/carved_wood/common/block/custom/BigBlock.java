@@ -35,7 +35,7 @@ public class BigBlock extends RotatedPillarBlock {
 
     @Override
     public int getFireSpreadSpeed(BlockState state, BlockGetter level, BlockPos pos, Direction direction) {
-        return isFlammable ? 5 : super.getFlammability(state, level, pos, direction);
+        return isFlammable ? 5 : super.getFireSpreadSpeed(state, level, pos, direction);
     }
 
     @Override

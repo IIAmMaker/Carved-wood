@@ -1,7 +1,5 @@
 package net.im_maker.carved_wood;
 
-import com.blackgear.vanillabackport.common.registries.ModBlocks;
-import com.blackgear.vanillabackport.core.VanillaBackport;
 import net.fabricmc.api.ModInitializer;
 import net.fabricmc.fabric.api.itemgroup.v1.FabricItemGroupEntries;
 import net.fabricmc.fabric.api.itemgroup.v1.ItemGroupEvents;
@@ -9,6 +7,8 @@ import net.fabricmc.fabric.api.resource.ResourceManagerHelper;
 import net.fabricmc.fabric.api.resource.ResourcePackActivationType;
 import net.fabricmc.loader.api.FabricLoader;
 import net.fabricmc.loader.api.ModContainer;
+import net.im_maker.carved_wood.common.FlammableBlockRegistryCommon;
+import net.im_maker.carved_wood.common.util.FlammableBlockRegistryFabric;
 import net.im_maker.carved_wood.common.block.CWBlocks;
 import net.im_maker.carved_wood.common.block.custom.chiseled_bookshelf.CWMenus;
 import net.im_maker.carved_wood.common.block.entity.CWBlockEntities;
@@ -18,7 +18,6 @@ import net.im_maker.carved_wood.common.util.CWFuelRegistry;
 import net.im_maker.carved_wood.common.util.CWPoiType;
 import net.im_maker.carved_wood.common.util.DataPackRegistrar;
 import net.im_maker.carved_wood.compatibility.WoodGood.ModCompat;
-import net.minecraft.client.gui.screens.MenuScreens;
 import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.item.CreativeModeTabs;
@@ -42,6 +41,7 @@ public class CarvedWood implements ModInitializer {
 
     @Override
     public void onInitialize() {
+        FlammableBlockRegistryCommon.setInstance(new FlammableBlockRegistryFabric());
         DataPackRegistrar.loadBuiltinResourcePacks();
         CWItems.registerItems();
         CWMenus.register();
