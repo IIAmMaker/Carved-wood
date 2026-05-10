@@ -4,10 +4,7 @@ import com.blackgear.vanillabackport.common.registries.ModBlocks;
 import net.im_maker.carved_wood.CarvedWood;
 import net.im_maker.carved_wood.common.block.CWBlocks;
 import net.im_maker.carved_wood.common.block.block_values.WoodenLanternShape;
-import net.im_maker.carved_wood.common.block.custom.CWBarrelBlock;
-import net.im_maker.carved_wood.common.block.custom.CWCampfireBlock;
-import net.im_maker.carved_wood.common.block.custom.BigBlock;
-import net.im_maker.carved_wood.common.block.custom.WoodenLantern;
+import net.im_maker.carved_wood.common.block.custom.*;
 import net.minecraft.client.gui.layouts.EqualSpacingLayout;
 import net.minecraft.core.Direction;
 import net.minecraft.core.FrontAndTop;
@@ -56,18 +53,18 @@ public class ModBlockStateProvider<T> extends BlockStateProvider {
         crafterBlock(CWBlocks.WARPED_CRAFTER.get());
         crafterBlock(CWBlocks.BAMBOO_CRAFTER.get());
 
-        columnBlock(CWBlocks.CARVED_OAK_PLANKS.get());
-        columnBlock(CWBlocks.CARVED_SPRUCE_PLANKS.get());
-        columnBlock(CWBlocks.CARVED_BIRCH_PLANKS.get());
-        columnBlock(CWBlocks.CARVED_JUNGLE_PLANKS.get());
-        columnBlock(CWBlocks.CARVED_ACACIA_PLANKS.get());
-        columnBlock(CWBlocks.CARVED_DARK_OAK_PLANKS.get());
-        columnBlock(CWBlocks.CARVED_MANGROVE_PLANKS.get());
-        columnBlock(CWBlocks.CARVED_CHERRY_PLANKS.get());
-        columnBlock(CWBlocks.CARVED_PALE_OAK_PLANKS.get());
-        columnBlock(CWBlocks.CARVED_CRIMSON_PLANKS.get());
-        columnBlock(CWBlocks.CARVED_WARPED_PLANKS.get());
-        columnBlock(CWBlocks.CARVED_BAMBOO_PLANKS.get());
+        carvedPlankBlock(CWBlocks.CARVED_OAK_PLANKS.get());
+        carvedPlankBlock(CWBlocks.CARVED_SPRUCE_PLANKS.get());
+        carvedPlankBlock(CWBlocks.CARVED_BIRCH_PLANKS.get());
+        carvedPlankBlock(CWBlocks.CARVED_JUNGLE_PLANKS.get());
+        carvedPlankBlock(CWBlocks.CARVED_ACACIA_PLANKS.get());
+        carvedPlankBlock(CWBlocks.CARVED_DARK_OAK_PLANKS.get());
+        carvedPlankBlock(CWBlocks.CARVED_MANGROVE_PLANKS.get());
+        carvedPlankBlock(CWBlocks.CARVED_CHERRY_PLANKS.get());
+        carvedPlankBlock(CWBlocks.CARVED_PALE_OAK_PLANKS.get());
+        carvedPlankBlock(CWBlocks.CARVED_CRIMSON_PLANKS.get());
+        carvedPlankBlock(CWBlocks.CARVED_WARPED_PLANKS.get());
+        carvedPlankBlock(CWBlocks.CARVED_BAMBOO_PLANKS.get());
 
         columnBlock(CWBlocks.OAK_LANTERN_BLOCK.get());
         columnBlock(CWBlocks.SPRUCE_LANTERN_BLOCK.get());
@@ -1152,6 +1149,30 @@ public class ModBlockStateProvider<T> extends BlockStateProvider {
                 .modelForState().modelFile(horizontal_z).rotationX(90).rotationY(180).addModel()
                 .partialState().with(RotatedPillarBlock.AXIS, Direction.Axis.X)
                 .modelForState().modelFile(horizontal_x).rotationX(90).rotationY(270).addModel();
+    }
+
+    public void carvedPlankBlock(Block block) {
+        carvedPlankBlock(block, blockTexture(block), extend(blockTexture(block), "_top"));
+    }
+
+    public void carvedPlankBlock(Block block, ResourceLocation side, ResourceLocation end) {
+        carvedPlankBlock((CarvedPlanksBlock)block, models().cubeColumn(name(block), side, end));
+    }
+
+    public void carvedPlankBlock(CarvedPlanksBlock block, ModelFile model) {
+        getVariantBuilder(block)
+                .partialState().with(CarvedPlanksBlock.FACING, Direction.DOWN)
+                .modelForState().modelFile(model).rotationX(180).addModel()
+                .partialState().with(CarvedPlanksBlock.FACING, Direction.UP)
+                .modelForState().modelFile(model).addModel()
+                .partialState().with(CarvedPlanksBlock.FACING, Direction.NORTH)
+                .modelForState().modelFile(model).rotationX(90).addModel()
+                .partialState().with(CarvedPlanksBlock.FACING, Direction.SOUTH)
+                .modelForState().modelFile(model).rotationX(90).rotationY(180).addModel()
+                .partialState().with(CarvedPlanksBlock.FACING, Direction.EAST)
+                .modelForState().modelFile(model).rotationX(90).rotationY(90).addModel()
+                .partialState().with(CarvedPlanksBlock.FACING, Direction.WEST)
+                .modelForState().modelFile(model).rotationX(90).rotationY(270).addModel();
     }
 
     public void craftingTableBlock(Block block, String woodType) {

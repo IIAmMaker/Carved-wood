@@ -165,18 +165,18 @@ public class CWBlocks {
     public static final Block WARPED_BEEHIVE = registryBlock("warped_beehive", new CWBeehiveBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.WARPED_PLANKS).strength(0.6F), false));
     public static final Block BAMBOO_BEEHIVE = registryBlock("bamboo_beehive", new CWBeehiveBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.BAMBOO_PLANKS).strength(0.6F)));
     //Carved Planks
-    public static final Block CARVED_OAK_PLANKS = registryWoodenFuelBlock("carved_oak_planks", new PlanksBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.OAK_PLANKS)));
-    public static final Block CARVED_SPRUCE_PLANKS = registryWoodenFuelBlock("carved_spruce_planks", new PlanksBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.SPRUCE_PLANKS)));
-    public static final Block CARVED_BIRCH_PLANKS = registryWoodenFuelBlock("carved_birch_planks", new PlanksBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.BIRCH_PLANKS)));
-    public static final Block CARVED_JUNGLE_PLANKS = registryWoodenFuelBlock("carved_jungle_planks", new PlanksBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.JUNGLE_PLANKS)));
-    public static final Block CARVED_ACACIA_PLANKS = registryWoodenFuelBlock("carved_acacia_planks", new PlanksBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.ACACIA_PLANKS)));
-    public static final Block CARVED_DARK_OAK_PLANKS = registryWoodenFuelBlock("carved_dark_oak_planks", new PlanksBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.DARK_OAK_PLANKS)));
-    public static final Block CARVED_MANGROVE_PLANKS = registryWoodenFuelBlock("carved_mangrove_planks", new PlanksBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.MANGROVE_PLANKS)));
-    public static final Block CARVED_CHERRY_PLANKS = registryWoodenFuelBlock("carved_cherry_planks", new PlanksBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.CHERRY_PLANKS)));
-    public static final Block CARVED_PALE_OAK_PLANKS = registryWoodenFuelBlock("carved_pale_oak_planks", new PlanksBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.OAK_PLANKS).mapColor(MapColor.QUARTZ)));
-    public static final Block CARVED_CRIMSON_PLANKS = registryBlock("carved_crimson_planks", new Block(BlockBehaviour.Properties.ofFullCopy(Blocks.CRIMSON_PLANKS)));
-    public static final Block CARVED_WARPED_PLANKS = registryBlock("carved_warped_planks", new Block(BlockBehaviour.Properties.ofFullCopy(Blocks.WARPED_PLANKS)));
-    public static final Block CARVED_BAMBOO_PLANKS = registryWoodenFuelBlock("carved_bamboo_planks", new PlanksBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.BAMBOO_PLANKS)));
+    public static final Block CARVED_OAK_PLANKS = registryWoodenFuelBlock("carved_oak_planks", new CarvedPlanksBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.OAK_PLANKS)));
+    public static final Block CARVED_SPRUCE_PLANKS = registryWoodenFuelBlock("carved_spruce_planks", new CarvedPlanksBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.SPRUCE_PLANKS)));
+    public static final Block CARVED_BIRCH_PLANKS = registryWoodenFuelBlock("carved_birch_planks", new CarvedPlanksBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.BIRCH_PLANKS)));
+    public static final Block CARVED_JUNGLE_PLANKS = registryWoodenFuelBlock("carved_jungle_planks", new CarvedPlanksBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.JUNGLE_PLANKS)));
+    public static final Block CARVED_ACACIA_PLANKS = registryWoodenFuelBlock("carved_acacia_planks", new CarvedPlanksBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.ACACIA_PLANKS)));
+    public static final Block CARVED_DARK_OAK_PLANKS = registryWoodenFuelBlock("carved_dark_oak_planks", new CarvedPlanksBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.DARK_OAK_PLANKS)));
+    public static final Block CARVED_MANGROVE_PLANKS = registryWoodenFuelBlock("carved_mangrove_planks", new CarvedPlanksBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.MANGROVE_PLANKS)));
+    public static final Block CARVED_CHERRY_PLANKS = registryWoodenFuelBlock("carved_cherry_planks", new CarvedPlanksBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.CHERRY_PLANKS)));
+    public static final Block CARVED_PALE_OAK_PLANKS = registryWoodenFuelBlock("carved_pale_oak_planks", new CarvedPlanksBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.OAK_PLANKS).mapColor(MapColor.QUARTZ)));
+    public static final Block CARVED_CRIMSON_PLANKS = registryBlock("carved_crimson_planks", new CarvedPlanksBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.CRIMSON_PLANKS), false));
+    public static final Block CARVED_WARPED_PLANKS = registryBlock("carved_warped_planks", new CarvedPlanksBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.WARPED_PLANKS), false));
+    public static final Block CARVED_BAMBOO_PLANKS = registryWoodenFuelBlock("carved_bamboo_planks", new CarvedPlanksBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.BAMBOO_PLANKS)));
     //Wooden Panels
     public static final Block OAK_PANELS = registryWoodenFuelBlock("oak_panels", new BigBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.OAK_PLANKS)));
     public static final Block SPRUCE_PANELS = registryWoodenFuelBlock("spruce_panels", new BigBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.SPRUCE_PLANKS)));
