@@ -16,7 +16,6 @@ out
 # gradle
 build
 .gradle
-.gitignore
 
 # other
 eclipse
@@ -4658,3 +4657,26 @@ forge*changelog.txt
 /fabric/runs/server/logs/latest.log
 /fabric/runs/server/eula.txt
 /fabric/runs/server/server.properties
+/fabric/runs/client/crash-reports/crash-2026-05-10_01.32.00-client.txt
+/fabric/runs/client/crash-reports/crash-2026-05-10_01.36.23-client.txt
+/fabric/runs/client/debug/chunk-New World (2)-2026-05-09_14.32.07-server.txt
+/fabric/runs/client/debug/chunk-New World (2)-2026-05-09_14.32.15-server.txt
+/fabric/runs/client/debug/chunk-New World (2)-2026-05-10_01.42.32-server.txt
+/fabric/runs/client/logs/2026-04-27-1.log.gz
+/fabric/runs/client/logs/2026-05-09-1.log.gz
+/fabric/runs/client/logs/2026-05-09-2.log.gz
+/fabric/runs/client/logs/2026-05-10-1.log.gz
+/fabric/runs/client/logs/2026-05-10-2.log.gz
+/fabric/runs/client/saves/New World (2)/advancements/00b30fb1-4b45-3336-98e4-8adf600e5f5e.json
+/fabric/runs/client/saves/New World (2)/advancements/05a2b883-672c-35b9-82ec-eccc4e0cabc2.json
+/fabric/runs/client/saves/New World (2)/playerdata/00b30fb1-4b45-3336-98e4-8adf600e5f5e.dat
+/fabric/runs/client/saves/New World (2)/playerdata/05a2b883-672c-35b9-82ec-eccc4e0cabc2.dat
+/fabric/runs/client/saves/New World (2)/playerdata/05a2b883-672c-35b9-82ec-eccc4e0cabc2.dat_old
+/fabric/runs/client/saves/New World (2)/stats/00b30fb1-4b45-3336-98e4-8adf600e5f5e.json
+/fabric/runs/client/saves/New World (2)/stats/05a2b883-672c-35b9-82ec-eccc4e0cabc2.json
+/common/src/generated/resources/.cache/2f1fca84d3f5306fe28bc3f8b5219e80a9327062
+/common/src/generated/resources/.cache/3af7b68ec7bcab962504e47c9added9afcf2c441
+/common/src/generated/resources/.cache/5dec9b2fbfa2f864d4b2a1693d426810163388ce
+/common/src/generated/resources/.cache/9fb1092f32d4fcbf9e061ffd718d4ec689c6c95e
+/common/src/generated/resources/.cache/59eb3dbb5f86130e09b3c62d89b9525ee01cf52d
+/common/src/generated/resources/.cache/660f855b349489f8fa782ee0d0e36333355491f1

@@ -28,7 +28,7 @@ neoForge {
         }
         data {
             data()
-            programArguments.addAll '--mod', project.mod_id, '--all', '--output', file('src/generated/resources/').getAbsolutePath(), '--existing', file('src/main/resources/').getAbsolutePath()
+            programArguments.addAll '--mod', project.mod_id, '--all', '--output', file('../common/src/generated/resources/').getAbsolutePath(), '--existing', file('../common/src/main/resources/').getAbsolutePath()
 
         }
         server {
@@ -38,6 +38,7 @@ neoForge {
     mods {
         "${mod_id}" {
             sourceSet sourceSets.main
+            sourceSet project(":common").sourceSets.main
         }
     }
 }
@@ -59,14 +60,18 @@ repositories {
 }
 
 dependencies {
-    annotationProcessor "net.neoforged:neoforge:${neoforge_version}" // Needed for Mixin processing
+    implementation "net.neoforged:neoforge:${neoforge_version}:sources"
+    implementation "net.neoforged:neoforge:${neoforge_version}"
+
+    implementation project(":common")
+
+    //annotationProcessor "net.neoforged:neoforge:${neoforge_version}" // Needed for Mixin processing
 
     //annotationProcessor("org.spongepowered:mixin:0.8.5") // or latest
 
-    //implementation "net.neoforged:neoforge:${neoforge_version}"
-    //compileOnly("mezz.jei:jei-${minecraft_version}-neoforge-api:${jei_version}")
-    // at runtime, use the full JEI jar for NeoForge
-    //runtimeOnly("mezz.jei:jei-${minecraft_version}-neoforge:${jei_version}")
+    compileOnly("mezz.jei:jei-${minecraft_version}-neoforge-api:${jei_version}")
+
+    runtimeOnly("mezz.jei:jei-${minecraft_version}-neoforge:${jei_version}")
     implementation "maven.modrinth:cloth-config:izKINKFg"
     implementation "maven.modrinth:kubejs:3w2ufpfQ"
     implementation "maven.modrinth:rhino:KobrWfUm"
@@ -84,15 +89,18 @@ dependencies {
     implementation "maven.modrinth:vanillabackport:FziQWhG6"
     implementation "maven.modrinth:polymorph:VEburL70"
 
-
     implementation "maven.modrinth:my-nethers-delight:n2vJCdff"
     implementation "maven.modrinth:farmers-delight:cYqC3svy"
+
+    implementation "maven.modrinth:create:UjX6dr61"
+
 }
 
 sourceSets {
     main {
         resources {
             srcDirs += project(':common').file('src/main/resources')
+            srcDirs += project(':common').file('src/generated/resources')
         }
     }
 }
