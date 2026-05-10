@@ -1,0 +1,30 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "group": "campfires",
+  "key": {
+    "#": [
+      {
+        "item": "minecraft:mangrove_log"
+      },
+      {
+        "item": "minecraft:mangrove_wood"
+      }
+    ],
+    "C": {
+      "tag": "minecraft:soul_fire_base_blocks"
+    },
+    "S": {
+      "tag": "c:rods/wooden"
+    }
+  },
+  "pattern": [
+    " S ",
+    "SCS",
+    "###"
+  ],
+  "result": {
+    "count": 1,
+    "id": "carved_wood:soul_mangrove_campfire"
+  }
+}

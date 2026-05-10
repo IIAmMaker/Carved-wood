@@ -1,0 +1,8 @@
+{
+  "parent": "carved_wood:block/template_chiseled_bookshelf",
+  "textures": {
+    "particle": "carved_wood:block/chiseled_spruce_bookshelf_top",
+    "side": "carved_wood:block/chiseled_spruce_bookshelf_side",
+    "top": "carved_wood:block/chiseled_spruce_bookshelf_top"
+  }
+}

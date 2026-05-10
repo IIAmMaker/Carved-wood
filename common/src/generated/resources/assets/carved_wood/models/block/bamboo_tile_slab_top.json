@@ -1,0 +1,8 @@
+{
+  "parent": "minecraft:block/slab_top",
+  "textures": {
+    "bottom": "carved_wood:block/bamboo_tiles",
+    "side": "carved_wood:block/bamboo_tiles",
+    "top": "carved_wood:block/bamboo_tiles"
+  }
+}

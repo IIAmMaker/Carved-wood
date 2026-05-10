@@ -1,0 +1,7 @@
+{
+  "parent": "minecraft:block/cube_column",
+  "textures": {
+    "end": "carved_wood:block/carved_spruce_planks_top",
+    "side": "carved_wood:block/carved_spruce_planks"
+  }
+}

@@ -1,0 +1,13 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    {
+      "tag": "c:chests/trapped"
+    }
+  ],
+  "result": {
+    "count": 1,
+    "id": "minecraft:trapped_chest"
+  }
+}

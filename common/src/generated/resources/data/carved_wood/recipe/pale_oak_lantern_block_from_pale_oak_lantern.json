@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "building",
+  "group": "wooden_lantern_block_from_wooden_lantern",
+  "ingredients": [
+    {
+      "item": "carved_wood:pale_oak_lantern"
+    },
+    {
+      "item": "carved_wood:pale_oak_lantern"
+    }
+  ],
+  "result": {
+    "count": 1,
+    "id": "carved_wood:pale_oak_lantern_block"
+  }
+}

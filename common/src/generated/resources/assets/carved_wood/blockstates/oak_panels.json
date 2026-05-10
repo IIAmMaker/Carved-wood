@@ -1,0 +1,44 @@
+{
+  "variants": {
+    "axis=x,end_odd=false,odd=false": {
+      "model": "carved_wood:block/oak_panels_even"
+    },
+    "axis=x,end_odd=false,odd=true": {
+      "model": "carved_wood:block/oak_panels_odd"
+    },
+    "axis=x,end_odd=true,odd=false": {
+      "model": "carved_wood:block/oak_panels_even_e"
+    },
+    "axis=x,end_odd=true,odd=true": {
+      "model": "carved_wood:block/oak_panels_odd_e"
+    },
+    "axis=y,end_odd=false,odd=false": {
+      "model": "carved_wood:block/oak_panels_even_v"
+    },
+    "axis=y,end_odd=false,odd=true": {
+      "model": "carved_wood:block/oak_panels_odd_v"
+    },
+    "axis=y,end_odd=true,odd=false": {
+      "model": "carved_wood:block/oak_panels_even_e_v"
+    },
+    "axis=y,end_odd=true,odd=true": {
+      "model": "carved_wood:block/oak_panels_odd_e_v"
+    },
+    "axis=z,end_odd=false,odd=false": {
+      "model": "carved_wood:block/oak_panels_even",
+      "y": 90
+    },
+    "axis=z,end_odd=false,odd=true": {
+      "model": "carved_wood:block/oak_panels_odd",
+      "y": 90
+    },
+    "axis=z,end_odd=true,odd=false": {
+      "model": "carved_wood:block/oak_panels_even_e",
+      "y": 90
+    },
+    "axis=z,end_odd=true,odd=true": {
+      "model": "carved_wood:block/oak_panels_odd_e",
+      "y": 90
+    }
+  }
+}

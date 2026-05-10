@@ -1,0 +1,30 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "group": "campfires",
+  "key": {
+    "#": [
+      {
+        "item": "minecraft:cherry_log"
+      },
+      {
+        "item": "minecraft:cherry_wood"
+      }
+    ],
+    "C": {
+      "tag": "minecraft:coals"
+    },
+    "S": {
+      "tag": "c:rods/wooden"
+    }
+  },
+  "pattern": [
+    " S ",
+    "SCS",
+    "###"
+  ],
+  "result": {
+    "count": 1,
+    "id": "carved_wood:cherry_campfire"
+  }
+}

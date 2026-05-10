@@ -1,0 +1,30 @@
+{
+  "variants": {
+    "facing=down": {
+      "model": "carved_wood:block/carved_dark_oak_planks",
+      "x": 180
+    },
+    "facing=east": {
+      "model": "carved_wood:block/carved_dark_oak_planks",
+      "x": 90,
+      "y": 90
+    },
+    "facing=north": {
+      "model": "carved_wood:block/carved_dark_oak_planks",
+      "x": 90
+    },
+    "facing=south": {
+      "model": "carved_wood:block/carved_dark_oak_planks",
+      "x": 90,
+      "y": 180
+    },
+    "facing=up": {
+      "model": "carved_wood:block/carved_dark_oak_planks"
+    },
+    "facing=west": {
+      "model": "carved_wood:block/carved_dark_oak_planks",
+      "x": 90,
+      "y": 270
+    }
+  }
+}

@@ -1,0 +1,9 @@
+{
+  "parent": "carved_wood:block/warped_crafter_triggered",
+  "textures": {
+    "east": "carved_wood:block/warped_crafter_east_crafting",
+    "north": "carved_wood:block/warped_crafter_north_crafting",
+    "top": "carved_wood:block/crafter_top_crafting",
+    "west": "carved_wood:block/warped_crafter_west_crafting"
+  }
+}

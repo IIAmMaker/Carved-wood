@@ -1,0 +1,18 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "building",
+  "group": "wooden_tiles",
+  "key": {
+    "#": {
+      "item": "carved_wood:birch_boards"
+    }
+  },
+  "pattern": [
+    "##",
+    "##"
+  ],
+  "result": {
+    "count": 4,
+    "id": "carved_wood:birch_tiles"
+  }
+}

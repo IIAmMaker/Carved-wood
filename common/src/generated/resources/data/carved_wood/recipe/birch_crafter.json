@@ -1,0 +1,28 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "redstone",
+  "group": "beehive",
+  "key": {
+    "C": {
+      "item": "carved_wood:birch_crafting_table"
+    },
+    "D": {
+      "item": "minecraft:dropper"
+    },
+    "I": {
+      "item": "minecraft:iron_ingot"
+    },
+    "R": {
+      "item": "minecraft:redstone"
+    }
+  },
+  "pattern": [
+    "III",
+    "ICI",
+    "RDR"
+  ],
+  "result": {
+    "count": 1,
+    "id": "carved_wood:birch_crafter"
+  }
+}

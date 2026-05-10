@@ -1,0 +1,32 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "carved_wood:warped_boards"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    },
+    "has_warped_panels": {
+      "conditions": {
+        "items": [
+          {
+            "items": "carved_wood:warped_panels"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "requirements": [
+    [
+      "has_the_recipe",
+      "has_warped_panels"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "carved_wood:warped_boards"
+    ]
+  }
+}

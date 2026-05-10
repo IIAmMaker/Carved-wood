@@ -1,0 +1,32 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_jungle_panels": {
+      "conditions": {
+        "items": [
+          {
+            "items": "carved_wood:jungle_panels"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "carved_wood:jungle_boards"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    }
+  },
+  "requirements": [
+    [
+      "has_the_recipe",
+      "has_jungle_panels"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "carved_wood:jungle_boards"
+    ]
+  }
+}

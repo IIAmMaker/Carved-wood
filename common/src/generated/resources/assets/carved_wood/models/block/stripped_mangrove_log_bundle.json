@@ -1,0 +1,7 @@
+{
+  "parent": "carved_wood:block/template_wooden_pillar",
+  "textures": {
+    "end": "carved_wood:block/stripped_mangrove_log_bundle_top",
+    "side": "carved_wood:block/stripped_mangrove_log_bundle"
+  }
+}

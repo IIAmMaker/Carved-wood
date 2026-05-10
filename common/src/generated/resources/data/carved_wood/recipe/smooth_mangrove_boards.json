@@ -1,0 +1,19 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "building",
+  "group": "wooden_smooth_boards",
+  "key": {
+    "#": {
+      "item": "carved_wood:mangrove_boards"
+    }
+  },
+  "pattern": [
+    "###",
+    "###",
+    "###"
+  ],
+  "result": {
+    "count": 9,
+    "id": "carved_wood:smooth_mangrove_boards"
+  }
+}

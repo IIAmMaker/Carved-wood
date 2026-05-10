@@ -1,0 +1,11 @@
+{
+  "parent": "minecraft:block/crafter",
+  "textures": {
+    "bottom": "carved_wood:block/crafter_bottom",
+    "east": "carved_wood:block/crimson_crafter_east",
+    "north": "carved_wood:block/crimson_crafter_north",
+    "south": "carved_wood:block/crimson_crafter_south",
+    "top": "carved_wood:block/crafter_top",
+    "west": "carved_wood:block/crimson_crafter_west"
+  }
+}

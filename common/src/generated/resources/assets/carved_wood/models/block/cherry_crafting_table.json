@@ -1,0 +1,12 @@
+{
+  "parent": "minecraft:block/cube",
+  "textures": {
+    "down": "minecraft:block/cherry_planks",
+    "east": "carved_wood:block/cherry_crafting_table_side",
+    "north": "carved_wood:block/cherry_crafting_table_front",
+    "particle": "carved_wood:block/cherry_crafting_table_front",
+    "south": "carved_wood:block/cherry_crafting_table_front",
+    "up": "carved_wood:block/cherry_crafting_table_top",
+    "west": "carved_wood:block/cherry_crafting_table_side"
+  }
+}

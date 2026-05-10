@@ -1,0 +1,30 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "group": "campfires",
+  "key": {
+    "#": [
+      {
+        "item": "minecraft:dark_oak_log"
+      },
+      {
+        "item": "minecraft:dark_oak_wood"
+      }
+    ],
+    "C": {
+      "tag": "minecraft:coals"
+    },
+    "S": {
+      "tag": "c:rods/wooden"
+    }
+  },
+  "pattern": [
+    " S ",
+    "SCS",
+    "###"
+  ],
+  "result": {
+    "count": 1,
+    "id": "carved_wood:dark_oak_campfire"
+  }
+}

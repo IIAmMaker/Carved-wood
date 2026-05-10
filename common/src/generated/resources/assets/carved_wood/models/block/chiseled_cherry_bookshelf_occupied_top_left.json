@@ -1,0 +1,6 @@
+{
+  "parent": "carved_wood:block/chiseled_bookshelf/type7/template_chiseled_bookshelf_slot_top_left_type7",
+  "textures": {
+    "texture": "carved_wood:block/chiseled_cherry_bookshelf_occupied"
+  }
+}
