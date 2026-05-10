@@ -1,6 +1,5 @@
 package net.im_maker.carved_wood.common.block.entity.custom;
 
-import net.im_maker.carved_wood.common.block.custom.CWChestBlock;
 import net.im_maker.carved_wood.common.block.entity.CWBlockEntities;
 import net.minecraft.core.BlockPos;
 import net.minecraft.world.level.block.entity.BlockEntityType;
