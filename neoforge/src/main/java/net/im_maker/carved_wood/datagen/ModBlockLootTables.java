@@ -5,7 +5,13 @@ import net.minecraft.core.Holder;
 import net.minecraft.core.HolderLookup;
 import net.minecraft.data.loot.BlockLootSubProvider;
 import net.minecraft.world.flag.FeatureFlags;
+import net.minecraft.world.item.Items;
 import net.minecraft.world.level.block.Block;
+import net.minecraft.world.level.storage.loot.LootTable;
+import net.minecraft.world.level.storage.loot.entries.LootItem;
+import net.minecraft.world.level.storage.loot.entries.LootPoolEntryContainer;
+import net.minecraft.world.level.storage.loot.functions.SetItemCountFunction;
+import net.minecraft.world.level.storage.loot.providers.number.ConstantValue;
 
 import java.util.Set;
 import java.util.function.Supplier;
@@ -90,17 +96,17 @@ public class ModBlockLootTables extends BlockLootSubProvider {
         dropSelf(CWBlocks.WARPED_BARREL.get());
         dropSelf(CWBlocks.BAMBOO_BARREL.get());
 
-        dropSelf(CWBlocks.SPRUCE_BOOKSHELF.get());
-        dropSelf(CWBlocks.BIRCH_BOOKSHELF.get());
-        dropSelf(CWBlocks.JUNGLE_BOOKSHELF.get());
-        dropSelf(CWBlocks.ACACIA_BOOKSHELF.get());
-        dropSelf(CWBlocks.DARK_OAK_BOOKSHELF.get());
-        dropSelf(CWBlocks.MANGROVE_BOOKSHELF.get());
-        dropSelf(CWBlocks.CHERRY_BOOKSHELF.get());
-        dropSelf(CWBlocks.PALE_OAK_BOOKSHELF.get());
-        dropSelf(CWBlocks.CRIMSON_BOOKSHELF.get());
-        dropSelf(CWBlocks.WARPED_BOOKSHELF.get());
-        dropSelf(CWBlocks.BAMBOO_BOOKSHELF.get());
+        add(CWBlocks.SPRUCE_BOOKSHELF.get(), this::bookshelfDrop);
+        add(CWBlocks.BIRCH_BOOKSHELF.get(), this::bookshelfDrop);
+        add(CWBlocks.JUNGLE_BOOKSHELF.get(), this::bookshelfDrop);
+        add(CWBlocks.ACACIA_BOOKSHELF.get(), this::bookshelfDrop);
+        add(CWBlocks.DARK_OAK_BOOKSHELF.get(), this::bookshelfDrop);
+        add(CWBlocks.MANGROVE_BOOKSHELF.get(), this::bookshelfDrop);
+        add(CWBlocks.CHERRY_BOOKSHELF.get(), this::bookshelfDrop);
+        add(CWBlocks.PALE_OAK_BOOKSHELF.get(), this::bookshelfDrop);
+        add(CWBlocks.CRIMSON_BOOKSHELF.get(), this::bookshelfDrop);
+        add(CWBlocks.WARPED_BOOKSHELF.get(), this::bookshelfDrop);
+        add(CWBlocks.BAMBOO_BOOKSHELF.get(), this::bookshelfDrop);
 
         dropSelf(CWBlocks.CHISELED_SPRUCE_BOOKSHELF.get());
         dropSelf(CWBlocks.CHISELED_BIRCH_BOOKSHELF.get());
@@ -138,29 +144,30 @@ public class ModBlockLootTables extends BlockLootSubProvider {
         dropSelf(CWBlocks.WARPED_BEEHIVE.get());
         dropSelf(CWBlocks.BAMBOO_BEEHIVE.get());
 
-        dropSelf(CWBlocks.SPRUCE_CAMPFIRE.get());
-        dropSelf(CWBlocks.BIRCH_CAMPFIRE.get());
-        dropSelf(CWBlocks.JUNGLE_CAMPFIRE.get());
-        dropSelf(CWBlocks.ACACIA_CAMPFIRE.get());
-        dropSelf(CWBlocks.DARK_OAK_CAMPFIRE.get());
-        dropSelf(CWBlocks.MANGROVE_CAMPFIRE.get());
-        dropSelf(CWBlocks.CHERRY_CAMPFIRE.get());
-        dropSelf(CWBlocks.PALE_OAK_CAMPFIRE.get());
-        dropSelf(CWBlocks.CRIMSON_CAMPFIRE.get());
-        dropSelf(CWBlocks.WARPED_CAMPFIRE.get());
-        dropSelf(CWBlocks.BAMBOO_CAMPFIRE.get());
+        add(CWBlocks.SPRUCE_CAMPFIRE.get(), this::campfireDrop);
+        add(CWBlocks.BIRCH_CAMPFIRE.get(), this::campfireDrop);
+        add(CWBlocks.JUNGLE_CAMPFIRE.get(), this::campfireDrop);
+        add(CWBlocks.ACACIA_CAMPFIRE.get(), this::campfireDrop);
+        add(CWBlocks.DARK_OAK_CAMPFIRE.get(), this::campfireDrop);
+        add(CWBlocks.MANGROVE_CAMPFIRE.get(), this::campfireDrop);
+        add(CWBlocks.CHERRY_CAMPFIRE.get(), this::campfireDrop);
+        add(CWBlocks.PALE_OAK_CAMPFIRE.get(), this::campfireDrop);
+        add(CWBlocks.CRIMSON_CAMPFIRE.get(), this::campfireDrop);
+        add(CWBlocks.WARPED_CAMPFIRE.get(), this::campfireDrop);
+        add(CWBlocks.BAMBOO_CAMPFIRE.get(), this::campfireDrop);
+        add(CWBlocks.SPRUCE_CAMPFIRE.get(), this::campfireDrop);
 
-        dropSelf(CWBlocks.SOUL_SPRUCE_CAMPFIRE.get());
-        dropSelf(CWBlocks.SOUL_BIRCH_CAMPFIRE.get());
-        dropSelf(CWBlocks.SOUL_JUNGLE_CAMPFIRE.get());
-        dropSelf(CWBlocks.SOUL_ACACIA_CAMPFIRE.get());
-        dropSelf(CWBlocks.SOUL_DARK_OAK_CAMPFIRE.get());
-        dropSelf(CWBlocks.SOUL_MANGROVE_CAMPFIRE.get());
-        dropSelf(CWBlocks.SOUL_CHERRY_CAMPFIRE.get());
-        dropSelf(CWBlocks.SOUL_PALE_OAK_CAMPFIRE.get());
-        dropSelf(CWBlocks.SOUL_CRIMSON_CAMPFIRE.get());
-        dropSelf(CWBlocks.SOUL_WARPED_CAMPFIRE.get());
-        dropSelf(CWBlocks.SOUL_BAMBOO_CAMPFIRE.get());
+        add(CWBlocks.SOUL_SPRUCE_CAMPFIRE.get(), this::soulCampfireDrop);
+        add(CWBlocks.SOUL_BIRCH_CAMPFIRE.get(), this::soulCampfireDrop);
+        add(CWBlocks.SOUL_JUNGLE_CAMPFIRE.get(), this::soulCampfireDrop);
+        add(CWBlocks.SOUL_ACACIA_CAMPFIRE.get(), this::soulCampfireDrop);
+        add(CWBlocks.SOUL_DARK_OAK_CAMPFIRE.get(), this::soulCampfireDrop);
+        add(CWBlocks.SOUL_MANGROVE_CAMPFIRE.get(), this::soulCampfireDrop);
+        add(CWBlocks.SOUL_CHERRY_CAMPFIRE.get(), this::soulCampfireDrop);
+        add(CWBlocks.SOUL_PALE_OAK_CAMPFIRE.get(), this::soulCampfireDrop);
+        add(CWBlocks.SOUL_CRIMSON_CAMPFIRE.get(), this::soulCampfireDrop);
+        add(CWBlocks.SOUL_WARPED_CAMPFIRE.get(), this::soulCampfireDrop);
+        add(CWBlocks.SOUL_BAMBOO_CAMPFIRE.get(), this::soulCampfireDrop);
 
         dropSelf(CWBlocks.CARVED_OAK_PLANKS.get());
         dropSelf(CWBlocks.CARVED_SPRUCE_PLANKS.get());
@@ -355,6 +362,33 @@ public class ModBlockLootTables extends BlockLootSubProvider {
         dropSelf(CWBlocks.STRIPPED_BAMBOO_BUNDLE.get());
     }
 
+    protected LootTable.Builder campfireDrop(Block pBlock) {
+        return createSilkTouchDispatchTable(pBlock,
+                this.applyExplosionCondition(pBlock,
+                        LootItem.lootTableItem(Items.CHARCOAL)
+                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(2.0F)))
+                )
+        );
+    }
+
+    protected LootTable.Builder soulCampfireDrop(Block pBlock) {
+        return createSilkTouchDispatchTable(pBlock,
+                this.applyExplosionCondition(pBlock,
+                        LootItem.lootTableItem(Items.SOUL_SOIL)
+                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(1.0F)))
+                )
+        );
+    }
+
+    protected LootTable.Builder bookshelfDrop(Block pBlock) {
+        return createSilkTouchDispatchTable(pBlock,
+                this.applyExplosionDecay(pBlock,
+                        LootItem.lootTableItem(Items.BOOK)
+                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(3.0F)))
+                )
+        );
+    }
+
     @Override
     protected Iterable<Block> getKnownBlocks() {
         return CWBlocks.BLOCKS.getEntries()
@@ -362,5 +396,4 @@ public class ModBlockLootTables extends BlockLootSubProvider {
                 .map(Holder::value)
                 .collect(java.util.stream.Collectors.toList());
     }
-
 }
