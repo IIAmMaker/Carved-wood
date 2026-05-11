@@ -230,18 +230,18 @@ public class CWBlocks {
     public static final Block WARPED_LANTERN = registryBlock("warped_lantern", new WoodenLantern(BlockBehaviour.Properties.ofFullCopy(Blocks.WARPED_PLANKS).forceSolidOn().noOcclusion().pushReaction(PushReaction.DESTROY).lightLevel(lightValue(15))));
     public static final Block BAMBOO_LANTERN = registryWoodenFuelBlock("bamboo_lantern", new WoodenLantern(BlockBehaviour.Properties.ofFullCopy(Blocks.BAMBOO_PLANKS).forceSolidOn().noOcclusion().pushReaction(PushReaction.DESTROY).lightLevel(lightValue(15))));
     //Wooden Lantern
-    public static final Block OAK_LANTERN_BLOCK  = registryWoodenFuelBlock("oak_lantern_block", new PlanksBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.OAK_PLANKS).lightLevel(lightValue(15))));
-    public static final Block SPRUCE_LANTERN_BLOCK  = registryWoodenFuelBlock("spruce_lantern_block", new PlanksBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.SPRUCE_PLANKS).lightLevel(lightValue(15))));
-    public static final Block BIRCH_LANTERN_BLOCK  = registryWoodenFuelBlock("birch_lantern_block", new PlanksBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.BIRCH_PLANKS).lightLevel(lightValue(15))));
-    public static final Block JUNGLE_LANTERN_BLOCK  = registryWoodenFuelBlock("jungle_lantern_block", new PlanksBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.JUNGLE_PLANKS).lightLevel(lightValue(15))));
-    public static final Block ACACIA_LANTERN_BLOCK  = registryWoodenFuelBlock("acacia_lantern_block", new PlanksBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.ACACIA_PLANKS).lightLevel(lightValue(15))));
-    public static final Block DARK_OAK_LANTERN_BLOCK  = registryWoodenFuelBlock("dark_oak_lantern_block", new PlanksBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.DARK_OAK_PLANKS).lightLevel(lightValue(15))));
-    public static final Block MANGROVE_LANTERN_BLOCK  = registryWoodenFuelBlock("mangrove_lantern_block", new PlanksBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.MANGROVE_PLANKS).lightLevel(lightValue(15))));
-    public static final Block CHERRY_LANTERN_BLOCK  = registryWoodenFuelBlock("cherry_lantern_block", new PlanksBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.CHERRY_PLANKS).lightLevel(lightValue(15))));
-    public static final Block PALE_OAK_LANTERN_BLOCK  = registryWoodenFuelBlock("pale_oak_lantern_block", new PlanksBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.OAK_PLANKS).mapColor(MapColor.QUARTZ).lightLevel(lightValue(15))));
-    public static final Block CRIMSON_LANTERN_BLOCK  = registryBlock("crimson_lantern_block", new Block(BlockBehaviour.Properties.ofFullCopy(Blocks.CRIMSON_PLANKS).lightLevel(lightValue(15))));
-    public static final Block WARPED_LANTERN_BLOCK  = registryBlock("warped_lantern_block", new Block(BlockBehaviour.Properties.ofFullCopy(Blocks.WARPED_PLANKS).lightLevel(lightValue(15))));
-    public static final Block BAMBOO_LANTERN_BLOCK  = registryWoodenFuelBlock("bamboo_lantern_block", new PlanksBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.BAMBOO_PLANKS).lightLevel(lightValue(15))));
+    public static final Block OAK_LANTERN_BLOCK  = registryWoodenFuelBlock("oak_lantern_block", new CarvedPlanksBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.OAK_PLANKS).lightLevel(lightValue(15))));
+    public static final Block SPRUCE_LANTERN_BLOCK  = registryWoodenFuelBlock("spruce_lantern_block", new CarvedPlanksBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.SPRUCE_PLANKS).lightLevel(lightValue(15))));
+    public static final Block BIRCH_LANTERN_BLOCK  = registryWoodenFuelBlock("birch_lantern_block", new CarvedPlanksBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.BIRCH_PLANKS).lightLevel(lightValue(15))));
+    public static final Block JUNGLE_LANTERN_BLOCK  = registryWoodenFuelBlock("jungle_lantern_block", new CarvedPlanksBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.JUNGLE_PLANKS).lightLevel(lightValue(15))));
+    public static final Block ACACIA_LANTERN_BLOCK  = registryWoodenFuelBlock("acacia_lantern_block", new CarvedPlanksBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.ACACIA_PLANKS).lightLevel(lightValue(15))));
+    public static final Block DARK_OAK_LANTERN_BLOCK  = registryWoodenFuelBlock("dark_oak_lantern_block", new CarvedPlanksBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.DARK_OAK_PLANKS).lightLevel(lightValue(15))));
+    public static final Block MANGROVE_LANTERN_BLOCK  = registryWoodenFuelBlock("mangrove_lantern_block", new CarvedPlanksBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.MANGROVE_PLANKS).lightLevel(lightValue(15))));
+    public static final Block CHERRY_LANTERN_BLOCK  = registryWoodenFuelBlock("cherry_lantern_block", new CarvedPlanksBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.CHERRY_PLANKS).lightLevel(lightValue(15))));
+    public static final Block PALE_OAK_LANTERN_BLOCK  = registryWoodenFuelBlock("pale_oak_lantern_block", new CarvedPlanksBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.OAK_PLANKS).mapColor(MapColor.QUARTZ).lightLevel(lightValue(15))));
+    public static final Block CRIMSON_LANTERN_BLOCK  = registryBlock("crimson_lantern_block", new CarvedPlanksBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.CRIMSON_PLANKS).lightLevel(lightValue(15)), false));
+    public static final Block WARPED_LANTERN_BLOCK  = registryBlock("warped_lantern_block", new CarvedPlanksBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.WARPED_PLANKS).lightLevel(lightValue(15)), false));
+    public static final Block BAMBOO_LANTERN_BLOCK  = registryWoodenFuelBlock("bamboo_lantern_block", new CarvedPlanksBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.BAMBOO_PLANKS).lightLevel(lightValue(15))));
     //Wooden Tiles
     public static final Block OAK_TILES = registryWoodenFuelBlock("oak_tiles", new PlanksBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.OAK_PLANKS)));
     public static final Block SPRUCE_TILES = registryWoodenFuelBlock("spruce_tiles", new PlanksBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.SPRUCE_PLANKS)));

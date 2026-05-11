@@ -439,7 +439,7 @@ public class CarvedWoodModule extends SimpleModule {
 
         carvedPlanks = SimpleEntrySet.builder(WoodType.class, "planks", "carved",
                         CWBlocks.CARVED_OAK_PLANKS, () -> VanillaWoodTypes.OAK,
-                        w -> new PlanksBlock(Utils.copyPropertySafe(w.log)))
+                        w -> new CarvedPlanksBlock(Utils.copyPropertySafe(w.log)))
                 .addTexture(modRes("block/carved_oak_planks"))
                 .addTexture(modRes("block/carved_oak_planks_top"))
                 .addTag(BlockTags.MINEABLE_WITH_AXE, Registries.BLOCK)
@@ -451,7 +451,7 @@ public class CarvedWoodModule extends SimpleModule {
 
         largeWoodenLanterns = SimpleEntrySet.builder(WoodType.class, "lantern_block",
                         CWBlocks.OAK_LANTERN_BLOCK, () -> VanillaWoodTypes.OAK,
-                        w -> new PlanksBlock(Utils.copyPropertySafe(w.log).lightLevel(lightValue(15))))
+                        w -> new CarvedPlanksBlock(Utils.copyPropertySafe(w.log).lightLevel(lightValue(15))))
                 .addTextureM(modRes("block/oak_lantern_block"), EveryCompat.res("block/crwo/oak_lantern_block_m"))
                 .addTextureM(modRes("block/oak_lantern_block_top"), EveryCompat.res("block/crwo/oak_lantern_block_top_m"))
                 .addTag(BlockTags.MINEABLE_WITH_AXE, Registries.BLOCK)

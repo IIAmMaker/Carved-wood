@@ -66,18 +66,18 @@ public class ModBlockStateProvider<T> extends BlockStateProvider {
         carvedPlankBlock(CWBlocks.CARVED_WARPED_PLANKS.get());
         carvedPlankBlock(CWBlocks.CARVED_BAMBOO_PLANKS.get());
 
-        columnBlock(CWBlocks.OAK_LANTERN_BLOCK.get());
-        columnBlock(CWBlocks.SPRUCE_LANTERN_BLOCK.get());
-        columnBlock(CWBlocks.BIRCH_LANTERN_BLOCK.get());
-        columnBlock(CWBlocks.JUNGLE_LANTERN_BLOCK.get());
-        columnBlock(CWBlocks.ACACIA_LANTERN_BLOCK.get());
-        columnBlock(CWBlocks.DARK_OAK_LANTERN_BLOCK.get());
-        columnBlock(CWBlocks.MANGROVE_LANTERN_BLOCK.get());
-        columnBlock(CWBlocks.CHERRY_LANTERN_BLOCK.get());
-        columnBlock(CWBlocks.PALE_OAK_LANTERN_BLOCK.get());
-        columnBlock(CWBlocks.CRIMSON_LANTERN_BLOCK.get());
-        columnBlock(CWBlocks.WARPED_LANTERN_BLOCK.get());
-        columnBlock(CWBlocks.BAMBOO_LANTERN_BLOCK.get());
+        carvedPlankBlock(CWBlocks.OAK_LANTERN_BLOCK.get());
+        carvedPlankBlock(CWBlocks.SPRUCE_LANTERN_BLOCK.get());
+        carvedPlankBlock(CWBlocks.BIRCH_LANTERN_BLOCK.get());
+        carvedPlankBlock(CWBlocks.JUNGLE_LANTERN_BLOCK.get());
+        carvedPlankBlock(CWBlocks.ACACIA_LANTERN_BLOCK.get());
+        carvedPlankBlock(CWBlocks.DARK_OAK_LANTERN_BLOCK.get());
+        carvedPlankBlock(CWBlocks.MANGROVE_LANTERN_BLOCK.get());
+        carvedPlankBlock(CWBlocks.CHERRY_LANTERN_BLOCK.get());
+        carvedPlankBlock(CWBlocks.PALE_OAK_LANTERN_BLOCK.get());
+        carvedPlankBlock(CWBlocks.CRIMSON_LANTERN_BLOCK.get());
+        carvedPlankBlock(CWBlocks.WARPED_LANTERN_BLOCK.get());
+        carvedPlankBlock(CWBlocks.BAMBOO_LANTERN_BLOCK.get());
 
         blockWithItem(CWBlocks.OAK_BOARDS.get());
         blockWithItem(CWBlocks.SPRUCE_BOARDS.get());
