@@ -128,8 +128,12 @@ loom {
 sourceSets {
     main {
         resources {
-            srcDirs += project(':common').file('src/main/resources')
+            //srcDirs += project(':common').file('src/main/resources')
             srcDirs += project(':common').file('src/generated/resources')
         }
     }
+}
+
+tasks.named('jar', Jar) {
+    from project(':common').sourceSets.main.output
 }

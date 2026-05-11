@@ -99,11 +99,16 @@ dependencies {
 sourceSets {
     main {
         resources {
-            srcDirs += project(':common').file('src/main/resources')
-            srcDirs += project(':common').file('src/generated/resources')
+            srcDirs += [
+                    //project(':common').file('src/main/resources').absolutePath,
+                    project(':common').file('src/generated/resources').absolutePath
+            ]
         }
     }
 }
 
+tasks.named('jar', Jar) {
+    from project(':common').sourceSets.main.output
+}
 
 sourceSets.main.resources { srcDir 'src/generated/resources' }
