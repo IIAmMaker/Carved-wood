@@ -4,7 +4,7 @@ license = "Maker's Mods License"
 
 [[mods]]
 modId = "carved_wood"
-version = "1.9.5"
+version = "1.9.7"
 displayName = "Carved Wood"
 logoFile = "carved_wood_logo.png"
 authors = "Im_Maker"

@@ -1,6 +1,5 @@
 package net.im_maker.carved_wood.common.block.block_values;
 
-import net.minecraft.core.Direction;
 import net.minecraft.util.StringRepresentable;
 
 public enum WoodenLanternShape implements StringRepresentable {
@@ -24,11 +23,11 @@ public enum WoodenLanternShape implements StringRepresentable {
         return this != SETTING && this != HANGING;
     }
 
-    public boolean isWall() {
+    public boolean isHangingOnWall() {
         return this == HANGING_WALL;
     }
 
-    public boolean isFence() {
+    public boolean isHangingOnFence() {
         return this == HANGING_FENCE;
     }
 
