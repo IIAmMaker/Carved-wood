@@ -1,0 +1,19 @@
+{
+  "variants": {
+    "facing=east": {
+      "model": "carved_wood:block/warped_lectern",
+      "y": 90
+    },
+    "facing=north": {
+      "model": "carved_wood:block/warped_lectern"
+    },
+    "facing=south": {
+      "model": "carved_wood:block/warped_lectern",
+      "y": 180
+    },
+    "facing=west": {
+      "model": "carved_wood:block/warped_lectern",
+      "y": 270
+    }
+  }
+}

@@ -1,0 +1,19 @@
+{
+  "variants": {
+    "facing=east": {
+      "model": "carved_wood:block/dark_oak_lectern",
+      "y": 90
+    },
+    "facing=north": {
+      "model": "carved_wood:block/dark_oak_lectern"
+    },
+    "facing=south": {
+      "model": "carved_wood:block/dark_oak_lectern",
+      "y": 180
+    },
+    "facing=west": {
+      "model": "carved_wood:block/dark_oak_lectern",
+      "y": 270
+    }
+  }
+}
