@@ -1,7 +1,7 @@
-package net.im_maker.carved_wood.common.block.entity.custom;
+package net.im_maker.carved_wood.common.block.entity;
 
-import net.im_maker.carved_wood.common.block.custom.chiseled_bookshelf.CWChiseledBookShelfBlockType1;
-import net.im_maker.carved_wood.common.block.entity.CWBlockEntities;
+import net.im_maker.carved_wood.common.block.chiseled_bookshelf.CWChiseledBookShelfBlockType1;
+import net.im_maker.carved_wood.common.registers.CWBlockEntityTypes;
 import net.minecraft.core.BlockPos;
 import net.minecraft.world.level.block.entity.BlockEntityType;
 import net.minecraft.world.level.block.entity.ChiseledBookShelfBlockEntity;
@@ -14,7 +14,7 @@ public class CWChiseledBookShelfBlockEntity extends ChiseledBookShelfBlockEntity
 
     @Override
     public BlockEntityType<?> getType() {
-        return CWBlockEntities.CHISELED_BOOKSHELF.get();
+        return CWBlockEntityTypes.CHISELED_BOOKSHELF.get();
     }
 
     public boolean isValidBlockState(BlockState state) {

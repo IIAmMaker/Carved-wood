@@ -3,7 +3,7 @@ package net.im_maker.carved_wood.client.renderer.block;
 import com.mojang.blaze3d.vertex.PoseStack;
 import com.mojang.blaze3d.vertex.VertexConsumer;
 import com.mojang.math.Axis;
-import net.im_maker.carved_wood.common.block.custom.CWLecternBlock;
+import net.im_maker.carved_wood.common.block.CWLecternBlock;
 import net.minecraft.client.model.BookModel;
 import net.minecraft.client.model.geom.ModelLayers;
 import net.minecraft.client.renderer.MultiBufferSource;

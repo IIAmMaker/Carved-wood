@@ -1,6 +1,6 @@
-package net.im_maker.carved_wood.common.block.entity.custom;
+package net.im_maker.carved_wood.common.block.entity;
 
-import net.im_maker.carved_wood.common.block.entity.CWBlockEntities;
+import net.im_maker.carved_wood.common.registers.CWBlockEntityTypes;
 import net.minecraft.core.BlockPos;
 import net.minecraft.world.level.block.entity.BarrelBlockEntity;
 import net.minecraft.world.level.block.entity.BlockEntityType;
@@ -13,7 +13,7 @@ public class CWBarrelBlockEntity extends BarrelBlockEntity {
 
     @Override
     public BlockEntityType<?> getType() {
-        return CWBlockEntities.BARREL;
+        return CWBlockEntityTypes.BARREL.get();
     }
 
     public boolean isValidBlockState(BlockState blockState) {

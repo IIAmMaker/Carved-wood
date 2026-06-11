@@ -1,22 +1,21 @@
-package net.im_maker.carved_wood.common.block.entity.custom;
+package net.im_maker.carved_wood.common.block.entity;
 
-import net.im_maker.carved_wood.common.block.entity.CWBlockEntities;
+import net.im_maker.carved_wood.common.registers.CWBlockEntityTypes;
 import net.minecraft.core.BlockPos;
 import net.minecraft.world.Container;
-import net.minecraft.world.inventory.CraftingContainer;
 import net.minecraft.world.level.block.ChestBlock;
 import net.minecraft.world.level.block.entity.BlockEntityType;
-import net.minecraft.world.level.block.entity.CrafterBlockEntity;
+import net.minecraft.world.level.block.entity.TrappedChestBlockEntity;
 import net.minecraft.world.level.block.state.BlockState;
 
-public class CWCrafterBlockEntity extends CrafterBlockEntity implements CraftingContainer {
-    public CWCrafterBlockEntity(BlockPos pPos, BlockState pBlockState) {
+public class CWTrappedChestBlockEntity extends TrappedChestBlockEntity {
+    public CWTrappedChestBlockEntity(BlockPos pPos, BlockState pBlockState) {
         super(pPos, pBlockState);
     }
 
     @Override
     public BlockEntityType<?> getType() {
-        return CWBlockEntities.CRAFTER.get();
+        return CWBlockEntityTypes.TRAPPED_CHEST.get();
     }
 
     public boolean isValidBlockState(BlockState blockState) {

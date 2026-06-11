@@ -5,9 +5,9 @@ import com.mojang.blaze3d.vertex.VertexConsumer;
 import com.mojang.math.Axis;
 import java.util.Calendar;
 
-import net.im_maker.carved_wood.common.block.custom.CWChestBlock;
-import net.im_maker.carved_wood.common.block.custom.CWTrappedChestBlock;
-import net.im_maker.carved_wood.common.item.custom.ChestBlockItem;
+import net.im_maker.carved_wood.common.block.CWChestBlock;
+import net.im_maker.carved_wood.common.block.CWTrappedChestBlock;
+import net.im_maker.carved_wood.common.item.ChestBlockItem;
 import net.im_maker.carved_wood.client.renderer.ChestSheets;
 import net.im_maker.carved_wood.client.renderer.CWModelLayers;
 import net.minecraft.client.model.geom.ModelPart;

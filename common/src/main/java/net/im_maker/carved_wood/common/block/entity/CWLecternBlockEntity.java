@@ -1,19 +1,19 @@
-package net.im_maker.carved_wood.common.block.entity.custom;
+package net.im_maker.carved_wood.common.block.entity;
 
-import net.im_maker.carved_wood.common.block.entity.CWBlockEntities;
+import net.im_maker.carved_wood.common.registers.CWBlockEntityTypes;
 import net.minecraft.core.BlockPos;
-import net.minecraft.world.level.block.entity.BeehiveBlockEntity;
 import net.minecraft.world.level.block.entity.BlockEntityType;
+import net.minecraft.world.level.block.entity.LecternBlockEntity;
 import net.minecraft.world.level.block.state.BlockState;
 
-public class CWBeehiveBlockEntity extends BeehiveBlockEntity {
-    public CWBeehiveBlockEntity(BlockPos pPos, BlockState pBlockState) {
+public class CWLecternBlockEntity extends LecternBlockEntity {
+    public CWLecternBlockEntity(BlockPos pPos, BlockState pBlockState) {
         super(pPos, pBlockState);
     }
 
     @Override
     public BlockEntityType<?> getType() {
-        return CWBlockEntities.BEEHIVE.get();
+        return CWBlockEntityTypes.LECTERN.get();
     }
 
     public boolean isValidBlockState(BlockState blockState) {
