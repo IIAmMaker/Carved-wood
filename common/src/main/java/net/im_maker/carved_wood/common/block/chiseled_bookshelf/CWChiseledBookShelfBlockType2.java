@@ -1,6 +1,6 @@
-package net.im_maker.carved_wood.common.block.custom.chiseled_bookshelf;
+package net.im_maker.carved_wood.common.block.chiseled_bookshelf;
 
-import net.im_maker.carved_wood.common.block.entity.custom.CWChiseledBookShelfBlockEntity;
+import net.im_maker.carved_wood.common.block.entity.CWChiseledBookShelfBlockEntity;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
 import net.minecraft.sounds.SoundEvent;
@@ -15,9 +15,7 @@ import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.Items;
 import net.minecraft.world.level.Level;
-import net.minecraft.world.level.block.ChiseledBookShelfBlock;
 import net.minecraft.world.level.block.HorizontalDirectionalBlock;
-import net.minecraft.world.level.block.RenderShape;
 import net.minecraft.world.level.block.entity.BlockEntity;
 import net.minecraft.world.level.block.entity.ChiseledBookShelfBlockEntity;
 import net.minecraft.world.level.block.state.BlockState;
@@ -29,8 +27,8 @@ import net.minecraft.world.phys.Vec3;
 import java.util.Optional;
 import java.util.OptionalInt;
 
-public class CWChiseledBookShelfBlockType3 extends CWChiseledBookShelfBlockType1 {
-    public CWChiseledBookShelfBlockType3(Properties pProperties) {
+public class CWChiseledBookShelfBlockType2 extends CWChiseledBookShelfBlockType1 {
+    public CWChiseledBookShelfBlockType2(Properties pProperties) {
         super(pProperties);
     }
 
@@ -137,17 +135,25 @@ public class CWChiseledBookShelfBlockType3 extends CWChiseledBookShelfBlockType1
 
     private OptionalInt getHitSlot(BlockHitResult hitResult, BlockState blockState) {
         return getRelativeHitCoordinatesForBlockFace(hitResult, blockState.getValue(HorizontalDirectionalBlock.FACING)).map(vec2 -> {
-            int i = vec2.y >= getBlockPixel( 5f) ? vec2.y >= getBlockPixel(11f) ? 0 : 2 : 4;
+            int i = vec2.y >= getBlockPixel(8f) ? 0 : 1;
             int j = getSection(vec2.x, i);
-            return OptionalInt.of(i + j);
+            return OptionalInt.of(j + i * 3);
         }).orElseGet(OptionalInt::empty);
     }
 
     private static int getSection(float pX, float pY) {
-        if (pX < getBlockPixel(9f)) {
+        if (pY == 1 && pX < getBlockPixel(5f)) {
             return 0;
-        } else {
+        } else if (pY == 0 && pX < getBlockPixel(9f)) {
+            return 0;
+        } else if (pY == 1 && pX < getBlockPixel(8f)) {
             return 1;
+        } else if (pY == 0 && pX < getBlockPixel(13f)) {
+            return 1;
+        } else if (pY == 1 && pX < getBlockPixel(13f)) {
+            return 2;
+        } else {
+            return 2;
         }
 
     }

@@ -1,6 +1,6 @@
-package net.im_maker.carved_wood.common.block.custom.chiseled_bookshelf;
+package net.im_maker.carved_wood.common.block.chiseled_bookshelf;
 
-import net.im_maker.carved_wood.common.block.entity.custom.CWChiseledBookShelfBlockEntity;
+import net.im_maker.carved_wood.common.block.entity.CWChiseledBookShelfBlockEntity;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
 import net.minecraft.sounds.SoundEvent;
@@ -15,7 +15,6 @@ import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.Items;
 import net.minecraft.world.level.Level;
-import net.minecraft.world.level.block.ChiseledBookShelfBlock;
 import net.minecraft.world.level.block.HorizontalDirectionalBlock;
 import net.minecraft.world.level.block.entity.BlockEntity;
 import net.minecraft.world.level.block.entity.ChiseledBookShelfBlockEntity;
@@ -28,8 +27,8 @@ import net.minecraft.world.phys.Vec3;
 import java.util.Optional;
 import java.util.OptionalInt;
 
-public class CWChiseledBookShelfBlockType7 extends CWChiseledBookShelfBlockType1 {
-    public CWChiseledBookShelfBlockType7(Properties pProperties) {
+public class CWChiseledBookShelfBlockType8 extends CWChiseledBookShelfBlockType1 {
+    public CWChiseledBookShelfBlockType8(Properties pProperties) {
         super(pProperties);
     }
 
@@ -136,17 +135,19 @@ public class CWChiseledBookShelfBlockType7 extends CWChiseledBookShelfBlockType1
 
     private OptionalInt getHitSlot(BlockHitResult hitResult, BlockState blockState) {
         return getRelativeHitCoordinatesForBlockFace(hitResult, blockState.getValue(HorizontalDirectionalBlock.FACING)).map(vec2 -> {
-            int i = (vec2.y >= getBlockPixel(5f) && vec2.x > getBlockPixel(5f) && vec2.x < getBlockPixel(12f)) || vec2.y >= getBlockPixel(11f) ? 0 : 1;
-            int j = getSection(vec2.x);
-            return OptionalInt.of(j + i * 3);
+            int i = vec2.x <= getBlockPixel(11f) ? vec2.x <= getBlockPixel(6f) ? 0 : 1 : 2;
+            int j = getSection(vec2.y, i);
+            return OptionalInt.of(i + j * 3);
         }).orElseGet(OptionalInt::empty);
     }
 
-    private static int getSection(float pX) {
-        if (pX < getBlockPixel(6f)) {
-            return 0;
+    private static int getSection(float pY, float pX) {
+        if (pY < getBlockPixel(7f)) {
+            return 1;
+        } else if (pY < getBlockPixel(8f) && pX == 1) {
+            return 1;
         } else {
-            return pX < getBlockPixel(12f) ? 1 : 2;
+            return pY < getBlockPixel(10f) && pX == 2 ? 1 : 0;
         }
     }
 

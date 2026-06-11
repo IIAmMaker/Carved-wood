@@ -1,6 +1,6 @@
-package net.im_maker.carved_wood.common.block.custom.chiseled_bookshelf;
+package net.im_maker.carved_wood.common.block.chiseled_bookshelf;
 
-import net.im_maker.carved_wood.common.block.entity.custom.CWChiseledBookShelfBlockEntity;
+import net.im_maker.carved_wood.common.block.entity.CWChiseledBookShelfBlockEntity;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
 import net.minecraft.sounds.SoundEvent;
@@ -15,7 +15,6 @@ import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.Items;
 import net.minecraft.world.level.Level;
-import net.minecraft.world.level.block.ChiseledBookShelfBlock;
 import net.minecraft.world.level.block.HorizontalDirectionalBlock;
 import net.minecraft.world.level.block.entity.BlockEntity;
 import net.minecraft.world.level.block.entity.ChiseledBookShelfBlockEntity;

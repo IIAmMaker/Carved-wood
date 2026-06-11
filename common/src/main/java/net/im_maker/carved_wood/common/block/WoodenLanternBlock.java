@@ -1,4 +1,4 @@
-package net.im_maker.carved_wood.common.block.custom;
+package net.im_maker.carved_wood.common.block;
 
 import com.mojang.serialization.MapCodec;
 import javax.annotation.Nullable;
@@ -26,8 +26,8 @@ import net.minecraft.world.phys.shapes.CollisionContext;
 import net.minecraft.world.phys.shapes.Shapes;
 import net.minecraft.world.phys.shapes.VoxelShape;
 
-public class WoodenLantern extends Block implements SimpleWaterloggedBlock {
-    public static final MapCodec<WoodenLantern> CODEC = simpleCodec(WoodenLantern::new);
+public class WoodenLanternBlock extends Block implements SimpleWaterloggedBlock {
+    public static final MapCodec<WoodenLanternBlock> CODEC = simpleCodec(WoodenLanternBlock::new);
     public static final BooleanProperty HANGING = BlockStateProperties.HANGING;
     public static final EnumProperty<WoodenLanternShape> SHAPE = CWBlockStateProperties.WOODEN_LANTERN_SHAPE;
     public static final DirectionProperty FACING = HorizontalDirectionalBlock.FACING;
@@ -52,11 +52,11 @@ public class WoodenLantern extends Block implements SimpleWaterloggedBlock {
     protected static final VoxelShape HANGING_SHAPE = Shapes.or(AABB, AA, BB, AB);
 
     @Override
-    public MapCodec<WoodenLantern> codec() {
+    public MapCodec<WoodenLanternBlock> codec() {
         return CODEC;
     }
 
-    public WoodenLantern(BlockBehaviour.Properties properties) {
+    public WoodenLanternBlock(BlockBehaviour.Properties properties) {
         super(properties);
         this.registerDefaultState(this.stateDefinition.any().setValue(HANGING, Boolean.valueOf(false)).setValue(SHAPE, WoodenLanternShape.SETTING).setValue(FACING, Direction.NORTH).setValue(WATERLOGGED, Boolean.valueOf(false)));
     }
@@ -72,12 +72,12 @@ public class WoodenLantern extends Block implements SimpleWaterloggedBlock {
         Direction horizontalFacing = ctx.getHorizontalDirection().getOpposite();
 
         boolean supportAbove = Block.canSupportCenter(level, pos.above(), Direction.DOWN);
-        boolean supportBelow = Block.canSupportCenter(level, pos.below(), Direction.UP) || (level.getBlockState(pos.below()).getBlock() instanceof WoodenLantern);
+        boolean supportBelow = Block.canSupportCenter(level, pos.below(), Direction.UP) || (level.getBlockState(pos.below()).getBlock() instanceof WoodenLanternBlock);
 
         BlockState state = defaultBlockState()
                 .setValue(FACING, horizontalFacing)
                 .setValue(WATERLOGGED, fluid.getType() == Fluids.WATER);
-        if (level.getBlockState(pos.above()).getBlock() instanceof WoodenLantern && state.getValue(SHAPE) == WoodenLanternShape.SETTING) {
+        if (level.getBlockState(pos.above()).getBlock() instanceof WoodenLanternBlock && state.getValue(SHAPE) == WoodenLanternShape.SETTING) {
             return state.setValue(SHAPE, WoodenLanternShape.HANGING);
         }
 
@@ -169,7 +169,7 @@ public class WoodenLantern extends Block implements SimpleWaterloggedBlock {
         switch (shape) {
             case WoodenLanternShape.SETTING: return
                     Block.canSupportCenter(level, pos.below(), Direction.UP)
-                    || (level.getBlockState(pos.below()).getBlock() instanceof WoodenLantern);
+                    || (level.getBlockState(pos.below()).getBlock() instanceof WoodenLanternBlock);
             case WoodenLanternShape.HANGING: return
                     Block.canSupportCenter(level, pos.above(), Direction.DOWN)
                     || Block.canSupportCenter(level, pos.below(), Direction.UP);
@@ -207,7 +207,7 @@ public class WoodenLantern extends Block implements SimpleWaterloggedBlock {
         if (state.getValue(WATERLOGGED)) {
             level.scheduleTick(pos, Fluids.WATER, Fluids.WATER.getTickDelay(level));
         }
-        if (level.getBlockState(pos.above()).getBlock() instanceof WoodenLantern && state.getValue(SHAPE) == WoodenLanternShape.SETTING) {
+        if (level.getBlockState(pos.above()).getBlock() instanceof WoodenLanternBlock && state.getValue(SHAPE) == WoodenLanternShape.SETTING) {
             return state.setValue(SHAPE, WoodenLanternShape.HANGING);
         }
 

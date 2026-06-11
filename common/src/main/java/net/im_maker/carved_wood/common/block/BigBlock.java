@@ -1,11 +1,10 @@
-package net.im_maker.carved_wood.common.block.custom;
+package net.im_maker.carved_wood.common.block;
 
-import net.fabricmc.fabric.api.registry.FlammableBlockRegistry;
 import net.im_maker.carved_wood.common.block.block_values.CWBlockStateProperties;
+import net.im_maker.carved_wood.platform.PlatHelper;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
 import net.minecraft.world.item.context.BlockPlaceContext;
-import net.minecraft.world.level.BlockGetter;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.RotatedPillarBlock;
 import net.minecraft.world.level.block.state.BlockState;
@@ -15,15 +14,14 @@ import net.minecraft.world.level.block.state.properties.BooleanProperty;
 import net.minecraft.world.level.block.state.properties.EnumProperty;
 
 public class BigBlock extends RotatedPillarBlock {
-    private final Boolean isFlammable;
     public static final EnumProperty<Direction.Axis> AXIS = BlockStateProperties.AXIS;
     public static final BooleanProperty ODD = CWBlockStateProperties.ODD;
     public static final BooleanProperty END_ODD = CWBlockStateProperties.END_ODD;
+
     public BigBlock(Properties pProperties, Boolean isFlammable) {
         super(pProperties);
-        this.isFlammable = isFlammable;
+        if (isFlammable) PlatHelper.addFlammableBlock(this, 20, 5);
         this.registerDefaultState(this.stateDefinition.any().setValue(ODD, false).setValue(END_ODD, false).setValue(AXIS, Direction.Axis.Y));
-        if (isFlammable) FlammableBlockRegistry.getDefaultInstance().add(this, 20, 5);
     }
 
     public BigBlock(Properties pProperties) {

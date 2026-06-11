@@ -1,4 +1,4 @@
-package net.im_maker.carved_wood.common.block.custom;
+package net.im_maker.carved_wood.common.block;
 
 import net.im_maker.carved_wood.common.util.CWCraftingMenu;
 import net.minecraft.core.BlockPos;
@@ -19,8 +19,9 @@ public class CWCraftingTableBlock extends CraftingTableBlock {
 
     @Override
     public MenuProvider getMenuProvider(BlockState pState, Level pLevel, BlockPos pPos) {
-        return new SimpleMenuProvider((i, inventory, player) -> {
-            return new CWCraftingMenu(this, i, inventory, ContainerLevelAccess.create(pLevel, pPos));
-        }, CONTAINER_TITLE);
+        return new SimpleMenuProvider(
+                (i, inventory, player) ->
+                        new CWCraftingMenu(i, inventory, ContainerLevelAccess.create(pLevel, pPos), this),
+                CONTAINER_TITLE);
     }
 }

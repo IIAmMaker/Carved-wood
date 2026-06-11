@@ -1,7 +1,7 @@
-package net.im_maker.carved_wood.common.block.custom;
+package net.im_maker.carved_wood.common.block;
 
-import net.im_maker.carved_wood.common.block.entity.CWBlockEntities;
-import net.im_maker.carved_wood.common.block.entity.custom.CWCampfireBlockEntity;
+import net.im_maker.carved_wood.common.block.entity.CWCampfireBlockEntity;
+import net.im_maker.carved_wood.common.registers.CWBlockEntityTypes;
 import net.minecraft.core.BlockPos;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.CampfireBlock;
@@ -25,9 +25,10 @@ public class CWCampfireBlock extends CampfireBlock {
     @Nullable
     public <T extends BlockEntity> BlockEntityTicker<T> getTicker(Level pLevel, BlockState pState, BlockEntityType<T> pBlockEntityType) {
         if (pLevel.isClientSide) {
-            return pState.getValue(LIT) ? createTickerHelper(pBlockEntityType, CWBlockEntities.CAMPFIRE.get(), CWCampfireBlockEntity::particleTick) : null;
+            return pState.getValue(LIT) ? createTickerHelper(pBlockEntityType, CWBlockEntityTypes.CAMPFIRE.get(), CWCampfireBlockEntity::particleTick) : null;
         } else {
-            return pState.getValue(LIT) ? createTickerHelper(pBlockEntityType, CWBlockEntities.CAMPFIRE.get(), CWCampfireBlockEntity::cookTick) : createTickerHelper(pBlockEntityType, CWBlockEntities.CAMPFIRE.get(), CWCampfireBlockEntity::cooldownTick);
+            return pState.getValue(LIT) ? createTickerHelper(pBlockEntityType, CWBlockEntityTypes.CAMPFIRE.get(), CWCampfireBlockEntity::cookTick)
+                    : createTickerHelper(pBlockEntityType, CWBlockEntityTypes.CAMPFIRE.get(), CWCampfireBlockEntity::cooldownTick);
         }
     }
 

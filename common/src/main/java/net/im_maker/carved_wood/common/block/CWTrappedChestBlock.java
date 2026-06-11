@@ -1,8 +1,8 @@
-package net.im_maker.carved_wood.common.block.custom;
+package net.im_maker.carved_wood.common.block;
 
-import net.im_maker.carved_wood.common.block.entity.CWBlockEntities;
-import net.im_maker.carved_wood.common.block.entity.custom.CWChestBlockEntity;
-import net.im_maker.carved_wood.common.block.entity.custom.CWTrappedChestBlockEntity;
+import net.im_maker.carved_wood.common.block.entity.CWChestBlockEntity;
+import net.im_maker.carved_wood.common.block.entity.CWTrappedChestBlockEntity;
+import net.im_maker.carved_wood.common.registers.CWBlockEntityTypes;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
 import net.minecraft.resources.ResourceLocation;
@@ -17,7 +17,7 @@ import net.minecraft.world.level.block.state.BlockState;
 public class CWTrappedChestBlock extends ChestBlock {
     private final String chestName;
     public CWTrappedChestBlock(String name, Properties properties) {
-        super(properties, CWBlockEntities.TRAPPED_CHEST::get);
+        super(properties, () -> CWBlockEntityTypes.TRAPPED_CHEST.get());
         this.chestName = name;
     }
 
