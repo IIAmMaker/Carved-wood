@@ -10,7 +10,7 @@ import org.spongepowered.asm.mixin.gen.Accessor;
 import java.util.Map;
 
 @Mixin(PoiTypes.class)
-public interface MixinPoiTypesAccessor {
+public interface PoiTypesAccessor {
     @Accessor("TYPE_BY_STATE")
     static Map<BlockState, Holder<PoiType>> getPoiStatesToType() {
         throw new UnsupportedOperationException();

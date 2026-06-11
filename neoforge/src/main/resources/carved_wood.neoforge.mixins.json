@@ -4,8 +4,10 @@
     "package": "${group}.mixin",
     "refmap": "${mod_id}.refmap.json",
     "compatibilityLevel": "JAVA_18",
+    "plugin": "net.im_maker.carved_wood.mixin.CarvedWoodMixinPlugin",
     "mixins": [
-        "MixinPoiTypesAccessor"
+        "BlockEntityTypeAccessor",
+        "create.LinkedControllerItemMixin"
     ],
     "client": [
     ],
