@@ -128,7 +128,7 @@ loom {
 sourceSets {
     main {
         resources {
-            //srcDirs += project(':common').file('src/main/resources')
+            srcDirs += project(':common').file('src/main/resources')
             srcDirs += project(':common').file('src/generated/resources')
         }
     }

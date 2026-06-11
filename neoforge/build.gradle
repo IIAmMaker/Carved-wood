@@ -48,7 +48,7 @@ repositories {
         url = "https://api.modrinth.com/maven"
     }
     maven {
-        // location of the maven that hosts JEI files since January 2023
+        // JEI
         name = "Jared's maven"
         url = "https://maven.blamejared.com/"
     }
@@ -57,6 +57,10 @@ repositories {
         name = "ModMaven"
         url = "https://modmaven.dev"
     }
+    maven { url = "https://maven.tterrag.com/" }
+    maven { url = "https://maven.createmod.net" }
+    maven { url = "https://maven.ithundxr.dev/snapshots" }
+    maven { url = "https://maven.createmod.net" } // Ponder, Flywheel
 }
 
 dependencies {
@@ -72,28 +76,42 @@ dependencies {
     compileOnly("mezz.jei:jei-${minecraft_version}-neoforge-api:${jei_version}")
 
     runtimeOnly("mezz.jei:jei-${minecraft_version}-neoforge:${jei_version}")
-    implementation "maven.modrinth:cloth-config:izKINKFg"
-    implementation "maven.modrinth:kubejs:3w2ufpfQ"
-    implementation "maven.modrinth:rhino:KobrWfUm"
+    //implementation "maven.modrinth:cloth-config:izKINKFg"
+    //implementation "maven.modrinth:kubejs:3w2ufpfQ"
+    //implementation "maven.modrinth:rhino:KobrWfUm"
 
     implementation "maven.modrinth:Would:tCzVXIHV"
     implementation "maven.modrinth:moonlight:X7j32itX"
-    implementation "maven.modrinth:supplementaries:B4k8qIJB"
-    implementation "maven.modrinth:amendments:8xf6Wpxs"
+    //implementation "maven.modrinth:supplementaries:B4k8qIJB"
+    //implementation "maven.modrinth:amendments:8xf6Wpxs"
     implementation "maven.modrinth:every-compat:tTI0Msfm"
 
-    implementation "maven.modrinth:visual-workbench:Jy5V5FNj"
-    implementation "maven.modrinth:puzzles-lib:EgWWSAhJ"
+    //implementation "maven.modrinth:visual-workbench:Jy5V5FNj"
+    //implementation "maven.modrinth:puzzles-lib:EgWWSAhJ"
 
     implementation "maven.modrinth:platform:Idu0kQLR"
     implementation "maven.modrinth:vanillabackport:FziQWhG6"
     implementation "maven.modrinth:polymorph:VEburL70"
+    implementation "maven.modrinth:crafting-tweaks:9CqWhYyd"
+    implementation "maven.modrinth:balm:3XiinKbh"
 
     implementation "maven.modrinth:my-nethers-delight:n2vJCdff"
     implementation "maven.modrinth:farmers-delight:cYqC3svy"
 
-    implementation "maven.modrinth:create:UjX6dr61"
 
+    implementation("com.simibubi.create:create-${minecraft_version}:${create_version}") { transitive = false }
+    implementation("dev.engine-room.flywheel:flywheel-neoforge-${minecraft_version}:${flywheel_version}")
+    implementation("dev.engine-room.flywheel:flywheel-neoforge-api-${minecraft_version}:${flywheel_version}")
+    implementation("net.createmod.ponder:ponder-neoforge:${ponder_version}+mc${minecraft_version}")
+    implementation("com.tterrag.registrate:Registrate:${registrate_version}")
+
+    //compileOnly("dev.engine-room.flywheel:flywheel-neoforge-api-$minecraft_version:$flywheel_version")
+    //runtimeOnly(jarJar("dev.engine-room.flywheel:flywheel-neoforge-$minecraft_version:$flywheel_version") {
+    //    version {
+    //        strictly "[1.0,2.0)"
+    //        prefer flywheel_version
+    //    }
+    //})
 }
 
 sourceSets {
@@ -112,3 +130,7 @@ tasks.named('jar', Jar) {
 }
 
 sourceSets.main.resources { srcDir 'src/generated/resources' }
+
+tasks.withType(Javadoc).configureEach {
+    enabled = false
+}

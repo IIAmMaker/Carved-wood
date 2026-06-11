@@ -16,7 +16,7 @@
     "environment": "*",
     "entrypoints": {
         "main": [
-            "${group}.${modname}"
+            "${group}.${modname}Fabric"
         ],
         "client": [
             "${group}.${modname}Client"
