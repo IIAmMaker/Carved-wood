@@ -1,9 +1,8 @@
-package net.im_maker.carved_wood.common.recipe.custom;
+package net.im_maker.carved_wood.common.recipe;
 
-import net.im_maker.carved_wood.common.recipe.CWRecipes;
+import net.im_maker.carved_wood.common.registers.CWRecipes;
 import net.im_maker.carved_wood.common.util.CWTags;
 import net.minecraft.core.HolderLookup;
-import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.tags.ItemTags;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.Items;
@@ -13,8 +12,8 @@ import net.minecraft.world.item.crafting.CustomRecipe;
 import net.minecraft.world.item.crafting.RecipeSerializer;
 import net.minecraft.world.level.Level;
 
-public class BeehiveRecipe extends CustomRecipe {
-    public BeehiveRecipe(CraftingBookCategory category) {
+public class ChiseledBookshelfRecipe extends CustomRecipe {
+    public ChiseledBookshelfRecipe(CraftingBookCategory category) {
         super(category);
     }
 
@@ -33,9 +32,9 @@ public class BeehiveRecipe extends CustomRecipe {
         return isPlanks(pattern[0][0])
                 && isPlanks(pattern[0][1])
                 && isPlanks(pattern[0][2])
-                && isHoneycomb(pattern[1][0])
-                && isHoneycomb(pattern[1][1])
-                && isHoneycomb(pattern[1][2])
+                && isWoodenSlab(pattern[1][0])
+                && isWoodenSlab(pattern[1][1])
+                && isWoodenSlab(pattern[1][2])
                 && isPlanks(pattern[2][0])
                 && isPlanks(pattern[2][1])
                 && isPlanks(pattern[2][2]);
@@ -43,7 +42,7 @@ public class BeehiveRecipe extends CustomRecipe {
 
     @Override
     public ItemStack assemble(CraftingInput craftingInput, HolderLookup.Provider provider) {
-        return new ItemStack(Items.BEEHIVE);
+        return new ItemStack(Items.CHISELED_BOOKSHELF);
     }
 
     @Override
@@ -53,11 +52,11 @@ public class BeehiveRecipe extends CustomRecipe {
 
     @Override
     public RecipeSerializer<?> getSerializer() {
-        return CWRecipes.BEEHIVE;
+        return CWRecipes.CHISELED_BOOKSHELF.get();
     }
 
-    private boolean isHoneycomb(ItemStack stack) {
-        return stack.is(Items.HONEYCOMB);
+    private boolean isWoodenSlab(ItemStack stack) {
+        return stack.is(ItemTags.WOODEN_SLABS) && ! stack.is(CWTags.Items.FLAG);
     }
 
     private boolean isPlanks(ItemStack stack) {

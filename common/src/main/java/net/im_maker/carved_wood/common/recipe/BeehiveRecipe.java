@@ -1,9 +1,8 @@
-package net.im_maker.carved_wood.common.recipe.custom;
+package net.im_maker.carved_wood.common.recipe;
 
-import net.im_maker.carved_wood.common.recipe.CWRecipes;
+import net.im_maker.carved_wood.common.registers.CWRecipes;
 import net.im_maker.carved_wood.common.util.CWTags;
 import net.minecraft.core.HolderLookup;
-import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.tags.ItemTags;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.Items;
@@ -13,8 +12,8 @@ import net.minecraft.world.item.crafting.CustomRecipe;
 import net.minecraft.world.item.crafting.RecipeSerializer;
 import net.minecraft.world.level.Level;
 
-public class ChestRecipe extends CustomRecipe {
-    public ChestRecipe(CraftingBookCategory category) {
+public class BeehiveRecipe extends CustomRecipe {
+    public BeehiveRecipe(CraftingBookCategory category) {
         super(category);
     }
 
@@ -33,17 +32,17 @@ public class ChestRecipe extends CustomRecipe {
         return isPlanks(pattern[0][0])
                 && isPlanks(pattern[0][1])
                 && isPlanks(pattern[0][2])
-                && isPlanks(pattern[1][0])
-                && isPlanks(pattern[1][2])
+                && isHoneycomb(pattern[1][0])
+                && isHoneycomb(pattern[1][1])
+                && isHoneycomb(pattern[1][2])
                 && isPlanks(pattern[2][0])
                 && isPlanks(pattern[2][1])
-                && isPlanks(pattern[2][2])
-                && pattern[1][1].isEmpty();
+                && isPlanks(pattern[2][2]);
     }
 
     @Override
     public ItemStack assemble(CraftingInput craftingInput, HolderLookup.Provider provider) {
-        return new ItemStack(Items.CHEST);
+        return new ItemStack(Items.BEEHIVE);
     }
 
     @Override
@@ -53,7 +52,11 @@ public class ChestRecipe extends CustomRecipe {
 
     @Override
     public RecipeSerializer<?> getSerializer() {
-        return CWRecipes.CHEST;
+        return CWRecipes.BEEHIVE.get();
+    }
+
+    private boolean isHoneycomb(ItemStack stack) {
+        return stack.is(Items.HONEYCOMB);
     }
 
     private boolean isPlanks(ItemStack stack) {

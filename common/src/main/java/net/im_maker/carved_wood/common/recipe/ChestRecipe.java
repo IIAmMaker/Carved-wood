@@ -1,9 +1,8 @@
-package net.im_maker.carved_wood.common.recipe.custom;
+package net.im_maker.carved_wood.common.recipe;
 
-import net.im_maker.carved_wood.common.recipe.CWRecipes;
+import net.im_maker.carved_wood.common.registers.CWRecipes;
 import net.im_maker.carved_wood.common.util.CWTags;
 import net.minecraft.core.HolderLookup;
-import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.tags.ItemTags;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.Items;
@@ -13,8 +12,8 @@ import net.minecraft.world.item.crafting.CustomRecipe;
 import net.minecraft.world.item.crafting.RecipeSerializer;
 import net.minecraft.world.level.Level;
 
-public class LadderRecipe extends CustomRecipe {
-    public LadderRecipe(CraftingBookCategory category) {
+public class ChestRecipe extends CustomRecipe {
+    public ChestRecipe(CraftingBookCategory category) {
         super(category);
     }
 
@@ -30,20 +29,20 @@ public class LadderRecipe extends CustomRecipe {
             }
         }
 
-        return isStick(pattern[0][0])
-                && isStick(pattern[0][2])
-                && isStick(pattern[1][0])
-                && isPlanks(pattern[1][1])
-                && isStick(pattern[1][2])
-                && isStick(pattern[2][0])
-                && isStick(pattern[2][2])
-                && pattern[0][1].isEmpty()
-                && pattern[2][1].isEmpty();
+        return isPlanks(pattern[0][0])
+                && isPlanks(pattern[0][1])
+                && isPlanks(pattern[0][2])
+                && isPlanks(pattern[1][0])
+                && isPlanks(pattern[1][2])
+                && isPlanks(pattern[2][0])
+                && isPlanks(pattern[2][1])
+                && isPlanks(pattern[2][2])
+                && pattern[1][1].isEmpty();
     }
 
     @Override
     public ItemStack assemble(CraftingInput craftingInput, HolderLookup.Provider provider) {
-        return new ItemStack(Items.LADDER);
+        return new ItemStack(Items.CHEST);
     }
 
     @Override
@@ -53,11 +52,7 @@ public class LadderRecipe extends CustomRecipe {
 
     @Override
     public RecipeSerializer<?> getSerializer() {
-        return CWRecipes.LADDER;
-    }
-
-    private boolean isStick(ItemStack stack) {
-        return stack.is(Items.STICK);
+        return CWRecipes.CHEST.get();
     }
 
     private boolean isPlanks(ItemStack stack) {

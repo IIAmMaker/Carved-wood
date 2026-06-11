@@ -1,9 +1,8 @@
-package net.im_maker.carved_wood.common.recipe.custom;
+package net.im_maker.carved_wood.common.recipe;
 
-import net.im_maker.carved_wood.common.recipe.CWRecipes;
+import net.im_maker.carved_wood.common.registers.CWRecipes;
 import net.im_maker.carved_wood.common.util.CWTags;
 import net.minecraft.core.HolderLookup;
-import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.tags.ItemTags;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.Items;
@@ -13,8 +12,8 @@ import net.minecraft.world.item.crafting.CustomRecipe;
 import net.minecraft.world.item.crafting.RecipeSerializer;
 import net.minecraft.world.level.Level;
 
-public class ChiseledBookshelfRecipe extends CustomRecipe {
-    public ChiseledBookshelfRecipe(CraftingBookCategory category) {
+public class LadderRecipe extends CustomRecipe {
+    public LadderRecipe(CraftingBookCategory category) {
         super(category);
     }
 
@@ -30,20 +29,20 @@ public class ChiseledBookshelfRecipe extends CustomRecipe {
             }
         }
 
-        return isPlanks(pattern[0][0])
-                && isPlanks(pattern[0][1])
-                && isPlanks(pattern[0][2])
-                && isWoodenSlab(pattern[1][0])
-                && isWoodenSlab(pattern[1][1])
-                && isWoodenSlab(pattern[1][2])
-                && isPlanks(pattern[2][0])
-                && isPlanks(pattern[2][1])
-                && isPlanks(pattern[2][2]);
+        return isStick(pattern[0][0])
+                && isStick(pattern[0][2])
+                && isStick(pattern[1][0])
+                && isPlanks(pattern[1][1])
+                && isStick(pattern[1][2])
+                && isStick(pattern[2][0])
+                && isStick(pattern[2][2])
+                && pattern[0][1].isEmpty()
+                && pattern[2][1].isEmpty();
     }
 
     @Override
     public ItemStack assemble(CraftingInput craftingInput, HolderLookup.Provider provider) {
-        return new ItemStack(Items.CHISELED_BOOKSHELF);
+        return new ItemStack(Items.LADDER);
     }
 
     @Override
@@ -53,11 +52,11 @@ public class ChiseledBookshelfRecipe extends CustomRecipe {
 
     @Override
     public RecipeSerializer<?> getSerializer() {
-        return CWRecipes.CHISELED_BOOKSHELF;
+        return CWRecipes.LADDER.get();
     }
 
-    private boolean isWoodenSlab(ItemStack stack) {
-        return stack.is(ItemTags.WOODEN_SLABS) && ! stack.is(CWTags.Items.FLAG);
+    private boolean isStick(ItemStack stack) {
+        return stack.is(Items.STICK);
     }
 
     private boolean isPlanks(ItemStack stack) {

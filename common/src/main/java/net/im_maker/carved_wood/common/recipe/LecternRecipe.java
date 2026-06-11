@@ -1,10 +1,9 @@
-package net.im_maker.carved_wood.common.recipe.custom;
+package net.im_maker.carved_wood.common.recipe;
 
-import net.fabricmc.fabric.api.tag.convention.v2.ConventionalItemTags;
-import net.im_maker.carved_wood.common.recipe.CWRecipes;
+import net.im_maker.carved_wood.common.registers.CWRecipes;
 import net.im_maker.carved_wood.common.util.CWTags;
+import net.im_maker.carved_wood.common.util.ConventionalTags;
 import net.minecraft.core.HolderLookup;
-import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.tags.ItemTags;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.Items;
@@ -54,11 +53,11 @@ public class LecternRecipe extends CustomRecipe {
 
     @Override
     public RecipeSerializer<?> getSerializer() {
-        return CWRecipes.LECTERN;
+        return CWRecipes.LECTERN.get();
     }
 
     private boolean isBookshelf(ItemStack stack) {
-        return stack.is(ConventionalItemTags.BOOKSHELVES);
+        return stack.is(ConventionalTags.Items.BOOKSHELVES);
     }
 
     private boolean isWoodenSlab(ItemStack stack) {

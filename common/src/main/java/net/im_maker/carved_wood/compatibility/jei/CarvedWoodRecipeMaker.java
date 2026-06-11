@@ -1,7 +1,8 @@
 package net.im_maker.carved_wood.compatibility.jei;
 
-import net.fabricmc.fabric.api.tag.convention.v2.ConventionalItemTags;
+import net.im_maker.carved_wood.CarvedWood;
 import net.im_maker.carved_wood.common.util.CWTags;
+import net.im_maker.carved_wood.common.util.ConventionalTags;
 import net.minecraft.core.Holder;
 import net.minecraft.core.NonNullList;
 import net.minecraft.core.registries.BuiltInRegistries;
@@ -53,7 +54,7 @@ public final class CarvedWoodRecipeMaker {
                 filteredPlanks, Ingredient.EMPTY, filteredPlanks,
                 filteredPlanks, filteredSlabs, filteredPlanks
         );
-        ResourceLocation id = ResourceLocation.fromNamespaceAndPath("carved_wood", BARREL_GROUP + ".barrel");
+        ResourceLocation id = CarvedWood.newRL("carved_wood", BARREL_GROUP + ".barrel");
         ShapelessRecipe recipe = new ShapelessRecipe(BARREL_GROUP + ".barrel", CraftingBookCategory.MISC, new ItemStack(Items.BARREL), inputs);
         return new RecipeHolder<>(id, recipe);
     }
@@ -66,7 +67,7 @@ public final class CarvedWoodRecipeMaker {
                 Ingredient.of(Items.HONEYCOMB), Ingredient.of(Items.HONEYCOMB), Ingredient.of(Items.HONEYCOMB),
                 filteredPlanks, filteredPlanks, filteredPlanks
         );
-        ResourceLocation id = ResourceLocation.fromNamespaceAndPath("carved_wood", BEEHIVE_GROUP + ".beehive");
+        ResourceLocation id = CarvedWood.newRL("carved_wood", BEEHIVE_GROUP + ".beehive");
         ShapelessRecipe recipe = new ShapelessRecipe(BEEHIVE_GROUP + ".beehive", CraftingBookCategory.MISC, new ItemStack(Items.BEEHIVE), inputs);
         return new RecipeHolder<>(id, recipe);
     }
@@ -79,7 +80,7 @@ public final class CarvedWoodRecipeMaker {
                 Ingredient.of(Items.BOOK), Ingredient.of(Items.BOOK), Ingredient.of(Items.BOOK),
                 filteredPlanks, filteredPlanks, filteredPlanks
         );
-        ResourceLocation id = ResourceLocation.fromNamespaceAndPath("carved_wood", BOOKSHELF_GROUP + ".bookshelf");
+        ResourceLocation id = CarvedWood.newRL("carved_wood", BOOKSHELF_GROUP + ".bookshelf");
         ShapelessRecipe recipe = new ShapelessRecipe(BOOKSHELF_GROUP + ".bookshelf", CraftingBookCategory.MISC, new ItemStack(Items.BOOKSHELF), inputs);
         return new RecipeHolder<>(id, recipe);
     }
@@ -92,7 +93,7 @@ public final class CarvedWoodRecipeMaker {
                 Ingredient.of(Items.STICK), Ingredient.of(ItemTags.COALS), Ingredient.of(Items.STICK),
                 filteredLogs, filteredLogs, filteredLogs
         );
-        ResourceLocation id = ResourceLocation.fromNamespaceAndPath("carved_wood", CAMPFIRE_GROUP + ".campfire");
+        ResourceLocation id = CarvedWood.newRL("carved_wood", CAMPFIRE_GROUP + ".campfire");
         ShapelessRecipe recipe = new ShapelessRecipe(CAMPFIRE_GROUP + ".campfire", CraftingBookCategory.MISC, new ItemStack(Items.CAMPFIRE), inputs);
         return new RecipeHolder<>(id, recipe);
     }
@@ -105,7 +106,7 @@ public final class CarvedWoodRecipeMaker {
                 filteredPlanks, Ingredient.EMPTY, filteredPlanks,
                 filteredPlanks, filteredPlanks, filteredPlanks
         );
-        ResourceLocation id = ResourceLocation.fromNamespaceAndPath("carved_wood", CHEST_GROUP + ".chest");
+        ResourceLocation id = CarvedWood.newRL("carved_wood", CHEST_GROUP + ".chest");
         ShapelessRecipe recipe = new ShapelessRecipe(CHEST_GROUP + ".chest", CraftingBookCategory.MISC, new ItemStack(Items.CHEST), inputs);
         return new RecipeHolder<>(id, recipe);
     }
@@ -119,7 +120,7 @@ public final class CarvedWoodRecipeMaker {
                 filteredSlabs, filteredSlabs, filteredSlabs,
                 filteredPlanks, filteredPlanks, filteredPlanks
         );
-        ResourceLocation id = ResourceLocation.fromNamespaceAndPath("carved_wood", CHISELED_BOOKSHELF_GROUP + ".chiseled_bookshelf");
+        ResourceLocation id = CarvedWood.newRL("carved_wood", CHISELED_BOOKSHELF_GROUP + ".chiseled_bookshelf");
         ShapelessRecipe recipe = new ShapelessRecipe(CHISELED_BOOKSHELF_GROUP + ".chiseled_bookshelf", CraftingBookCategory.MISC, new ItemStack(Items.CHISELED_BOOKSHELF), inputs);
         return new RecipeHolder<>(id, recipe);
     }
@@ -132,7 +133,7 @@ public final class CarvedWoodRecipeMaker {
                 filteredPlanks, filteredPlanks, Ingredient.EMPTY,
                 Ingredient.EMPTY, Ingredient.EMPTY, Ingredient.EMPTY
         );
-        ResourceLocation id = ResourceLocation.fromNamespaceAndPath("carved_wood", CRAFTING_TABLE_GROUP + ".crafting_table");
+        ResourceLocation id = CarvedWood.newRL("carved_wood", CRAFTING_TABLE_GROUP + ".crafting_table");
         ShapelessRecipe recipe = new ShapelessRecipe(CRAFTING_TABLE_GROUP + ".crafting_table", CraftingBookCategory.MISC, new ItemStack(Items.CRAFTING_TABLE), inputs);
         return new RecipeHolder<>(id, recipe);
     }
@@ -145,7 +146,7 @@ public final class CarvedWoodRecipeMaker {
                 Ingredient.of(Items.STICK), filteredPlanks, Ingredient.of(Items.STICK),
                 Ingredient.of(Items.STICK), Ingredient.EMPTY, Ingredient.of(Items.STICK)
         );
-        ResourceLocation id = ResourceLocation.fromNamespaceAndPath("carved_wood", LADDER_GROUP + ".ladder");
+        ResourceLocation id = CarvedWood.newRL("carved_wood", LADDER_GROUP + ".ladder");
         ShapelessRecipe recipe = new ShapelessRecipe(LADDER_GROUP + ".ladder", CraftingBookCategory.MISC, new ItemStack(Items.LADDER), inputs);
         return new RecipeHolder<>(id, recipe);
     }
@@ -155,10 +156,10 @@ public final class CarvedWoodRecipeMaker {
 
         NonNullList<Ingredient> inputs = NonNullList.of(Ingredient.EMPTY,
                 filteredSlabs, filteredSlabs, filteredSlabs,
-                Ingredient.EMPTY, Ingredient.of(ConventionalItemTags.BOOKSHELVES), Ingredient.EMPTY,
+                Ingredient.EMPTY, Ingredient.of(ConventionalTags.Items.BOOKSHELVES), Ingredient.EMPTY,
                 Ingredient.EMPTY, filteredSlabs, Ingredient.EMPTY
         );
-        ResourceLocation id = ResourceLocation.fromNamespaceAndPath("carved_wood", LECTERN_GROUP + ".lectern");
+        ResourceLocation id = CarvedWood.newRL("carved_wood", LECTERN_GROUP + ".lectern");
         ShapelessRecipe recipe = new ShapelessRecipe(LECTERN_GROUP + ".lectern", CraftingBookCategory.MISC, new ItemStack(Items.LECTERN), inputs);
         return new RecipeHolder<>(id, recipe);
     }
@@ -171,7 +172,7 @@ public final class CarvedWoodRecipeMaker {
                 Ingredient.of(Items.STICK), Ingredient.of(ItemTags.SOUL_FIRE_BASE_BLOCKS), Ingredient.of(Items.STICK),
                 filteredLogs, filteredLogs, filteredLogs
         );
-        ResourceLocation id = ResourceLocation.fromNamespaceAndPath("carved_wood", SOUL_CAMPFIRE_GROUP + ".soul_campfire");
+        ResourceLocation id = CarvedWood.newRL("carved_wood", SOUL_CAMPFIRE_GROUP + ".soul_campfire");
         ShapelessRecipe recipe = new ShapelessRecipe(SOUL_CAMPFIRE_GROUP + ".soul_campfire", CraftingBookCategory.MISC, new ItemStack(Items.SOUL_CAMPFIRE), inputs);
         return new RecipeHolder<>(id, recipe);
     }

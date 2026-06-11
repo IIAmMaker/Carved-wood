@@ -1,14 +1,9 @@
-package net.im_maker.carved_wood.common.recipe.custom;
+package net.im_maker.carved_wood.common.recipe;
 
-import com.blackgear.vanillabackport.core.data.tags.ModItemTags;
-import net.fabricmc.loader.api.FabricLoader;
-import net.im_maker.carved_wood.common.recipe.CWRecipes;
-import net.im_maker.carved_wood.common.util.CWTags;
+import net.im_maker.carved_wood.CarvedWood;
+import net.im_maker.carved_wood.common.registers.CWRecipes;
 import net.minecraft.core.HolderLookup;
-import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.core.registries.Registries;
-import net.minecraft.resources.ResourceLocation;
-import net.minecraft.tags.BlockTags;
 import net.minecraft.tags.ItemTags;
 import net.minecraft.tags.TagKey;
 import net.minecraft.world.item.ItemStack;
@@ -59,7 +54,7 @@ public class CampfireRecipe extends CustomRecipe {
 
     @Override
     public RecipeSerializer<?> getSerializer() {
-        return CWRecipes.CAMPFIRE;
+        return CWRecipes.CAMPFIRE.get();
     }
 
     private boolean isStick(ItemStack stack) {
@@ -80,7 +75,7 @@ public class CampfireRecipe extends CustomRecipe {
                 && !stack.is(ItemTags.DARK_OAK_LOGS)
                 && !stack.is(ItemTags.MANGROVE_LOGS)
                 && !stack.is(ItemTags.CHERRY_LOGS)
-                && !stack.is(TagKey.create(Registries.ITEM, ResourceLocation.fromNamespaceAndPath("vanillabackport", "pale_oak_logs")))
+                && !stack.is(TagKey.create(Registries.ITEM, CarvedWood.newRL("vanillabackport", "pale_oak_logs")))
                 && !stack.is(ItemTags.CRIMSON_STEMS)
                 && !stack.is(ItemTags.WARPED_STEMS);
     }
