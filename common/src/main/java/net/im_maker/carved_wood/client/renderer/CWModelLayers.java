@@ -3,7 +3,6 @@ package net.im_maker.carved_wood.client.renderer;
 import com.google.common.collect.Sets;
 import net.im_maker.carved_wood.CarvedWood;
 import net.minecraft.client.model.geom.ModelLayerLocation;
-import net.minecraft.resources.ResourceLocation;
 import net.neoforged.api.distmarker.Dist;
 import net.neoforged.api.distmarker.OnlyIn;
 
@@ -31,7 +30,6 @@ public class CWModelLayers {
    }
 
    private static ModelLayerLocation createLocation(String pPath, String pModel) {
-      return new ModelLayerLocation(ResourceLocation.fromNamespaceAndPath(CarvedWood.MOD_ID, pPath), pModel);
+      return new ModelLayerLocation(CarvedWood.newRL(CarvedWood.MOD_ID, pPath), pModel);
    }
-
 }

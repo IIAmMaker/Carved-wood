@@ -3,7 +3,6 @@ package net.im_maker.carved_wood.client.renderer;
 import net.im_maker.carved_wood.CarvedWood;
 import net.minecraft.client.renderer.Sheets;
 import net.minecraft.client.resources.model.Material;
-import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.level.block.entity.BlockEntity;
 import net.minecraft.world.level.block.entity.TrappedChestBlockEntity;
 import net.minecraft.world.level.block.state.properties.ChestType;
@@ -25,7 +24,7 @@ public class ChestSheets {
     }
 
     private static Material chestMaterial(String pChestName) {
-        return new Material(Sheets.CHEST_SHEET, ResourceLocation.fromNamespaceAndPath(CarvedWood.MOD_ID, "entity/chest/" + pChestName));
+        return new Material(Sheets.CHEST_SHEET, CarvedWood.newRL(CarvedWood.MOD_ID, "entity/chest/" + pChestName));
     }
 
 
