@@ -1,6 +1,7 @@
 package net.im_maker.carved_wood.datagen;
 
-import net.im_maker.carved_wood.common.block.CWBlocks;
+import net.im_maker.carved_wood.common.registers.CWBlocksNeoForge;
+import net.im_maker.carved_wood.common.registers.CWBlocks;
 import net.minecraft.core.Holder;
 import net.minecraft.core.HolderLookup;
 import net.minecraft.data.loot.BlockLootSubProvider;
@@ -9,12 +10,10 @@ import net.minecraft.world.item.Items;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.storage.loot.LootTable;
 import net.minecraft.world.level.storage.loot.entries.LootItem;
-import net.minecraft.world.level.storage.loot.entries.LootPoolEntryContainer;
 import net.minecraft.world.level.storage.loot.functions.SetItemCountFunction;
 import net.minecraft.world.level.storage.loot.providers.number.ConstantValue;
 
 import java.util.Set;
-import java.util.function.Supplier;
 
 public class ModBlockLootTables extends BlockLootSubProvider {
     public ModBlockLootTables(HolderLookup.Provider registries) {
@@ -360,6 +359,7 @@ public class ModBlockLootTables extends BlockLootSubProvider {
         dropSelf(CWBlocks.STRIPPED_CRIMSON_STEM_BUNDLE.get());
         dropSelf(CWBlocks.STRIPPED_WARPED_STEM_BUNDLE.get());
         dropSelf(CWBlocks.STRIPPED_BAMBOO_BUNDLE.get());
+
     }
 
     protected LootTable.Builder campfireDrop(Block pBlock) {
@@ -391,7 +391,7 @@ public class ModBlockLootTables extends BlockLootSubProvider {
 
     @Override
     protected Iterable<Block> getKnownBlocks() {
-        return CWBlocks.BLOCKS.getEntries()
+        return CWBlocksNeoForge.BLOCKS.getEntries()
                 .stream()
                 .map(Holder::value)
                 .collect(java.util.stream.Collectors.toList());

@@ -2,10 +2,10 @@ package net.im_maker.carved_wood.datagen;
 
 import com.blackgear.vanillabackport.common.registries.ModBlocks;
 import net.im_maker.carved_wood.CarvedWood;
-import net.im_maker.carved_wood.common.block.CWBlocks;
+import net.im_maker.carved_wood.common.block.*;
+import net.im_maker.carved_wood.common.registers.CWBlocksNeoForge;
+import net.im_maker.carved_wood.common.registers.CWBlocks;
 import net.im_maker.carved_wood.common.block.block_values.WoodenLanternShape;
-import net.im_maker.carved_wood.common.block.custom.*;
-import net.minecraft.client.gui.layouts.EqualSpacingLayout;
 import net.minecraft.core.Direction;
 import net.minecraft.core.FrontAndTop;
 import net.minecraft.core.registries.BuiltInRegistries;
@@ -19,7 +19,8 @@ import net.neoforged.neoforge.client.model.generators.ConfiguredModel;
 import net.neoforged.neoforge.client.model.generators.ModelFile;
 import net.neoforged.neoforge.client.model.generators.MultiPartBlockStateBuilder;
 import net.neoforged.neoforge.common.data.ExistingFileHelper;
-import net.neoforged.neoforge.registries.DeferredBlock;
+
+import java.util.function.Supplier;
 
 public class ModBlockStateProvider<T> extends BlockStateProvider {
     public ModBlockStateProvider(PackOutput output, ExistingFileHelper exFileHelper) {
@@ -330,6 +331,18 @@ public class ModBlockStateProvider<T> extends BlockStateProvider {
         lecternBlock(CWBlocks.WARPED_LECTERN, blockTexture(Blocks.WARPED_PLANKS));
         lecternBlock(CWBlocks.BAMBOO_LECTERN, blockTexture(Blocks.BAMBOO_PLANKS));
 
+        lecternBlockC(CWBlocksNeoForge.SPRUCE_LECTERN_CONTROLLER, blockTexture(Blocks.SPRUCE_PLANKS));
+        lecternBlockC(CWBlocksNeoForge.BIRCH_LECTERN_CONTROLLER, blockTexture(Blocks.BIRCH_PLANKS));
+        lecternBlockC(CWBlocksNeoForge.JUNGLE_LECTERN_CONTROLLER, blockTexture(Blocks.JUNGLE_PLANKS));
+        lecternBlockC(CWBlocksNeoForge.ACACIA_LECTERN_CONTROLLER, blockTexture(Blocks.ACACIA_PLANKS));
+        lecternBlockC(CWBlocksNeoForge.DARK_OAK_LECTERN_CONTROLLER, blockTexture(Blocks.DARK_OAK_PLANKS));
+        lecternBlockC(CWBlocksNeoForge.MANGROVE_LECTERN_CONTROLLER, blockTexture(Blocks.MANGROVE_PLANKS));
+        lecternBlockC(CWBlocksNeoForge.CHERRY_LECTERN_CONTROLLER, blockTexture(Blocks.CHERRY_PLANKS));
+        lecternBlockC(CWBlocksNeoForge.PALE_OAK_LECTERN_CONTROLLER, blockTexture(ModBlocks.PALE_OAK_PLANKS.get()));
+        lecternBlockC(CWBlocksNeoForge.CRIMSON_LECTERN_CONTROLLER, blockTexture(Blocks.CRIMSON_PLANKS));
+        lecternBlockC(CWBlocksNeoForge.WARPED_LECTERN_CONTROLLER, blockTexture(Blocks.WARPED_PLANKS));
+        lecternBlockC(CWBlocksNeoForge.BAMBOO_LECTERN_CONTROLLER, blockTexture(Blocks.BAMBOO_PLANKS));
+
         beehiveBlock(CWBlocks.SPRUCE_BEEHIVE);
         beehiveBlock(CWBlocks.BIRCH_BEEHIVE, true);
         beehiveBlock(CWBlocks.JUNGLE_BEEHIVE);
@@ -356,11 +369,11 @@ public class ModBlockStateProvider<T> extends BlockStateProvider {
         woodenLanternBlock(CWBlocks.BAMBOO_LANTERN.get());
     }
 
-    public void beehiveBlock(DeferredBlock<Block> block) {
+    public void beehiveBlock(Supplier<Block> block) {
         beehiveBlock(block.get(), false);
     }
 
-    public void beehiveBlock(DeferredBlock<Block> block, Boolean honeyed) {
+    public void beehiveBlock(Supplier<Block> block, Boolean honeyed) {
         beehiveBlock(block.get(), honeyed);
     }
 
@@ -434,7 +447,7 @@ public class ModBlockStateProvider<T> extends BlockStateProvider {
                 .modelForState().modelFile(honey).rotationY(270).addModel();
     }
 
-    public void chiseledBookshelfBlock(DeferredBlock<Block> block, int type) {
+    public void chiseledBookshelfBlock(Supplier<Block> block, int type) {
         chiseledBookshelfBlock(block.get(), type);
     }
 
@@ -523,7 +536,7 @@ public class ModBlockStateProvider<T> extends BlockStateProvider {
         partBuilder.end();
     }
 
-    public void lecternBlock(DeferredBlock<Block> block, ResourceLocation planks) {
+    public void lecternBlock(Supplier<Block> block, ResourceLocation planks) {
         lecternBlock(block.get(), planks);
     }
 
@@ -535,6 +548,21 @@ public class ModBlockStateProvider<T> extends BlockStateProvider {
                         .texture("front", "block/" + name(block) + "_front")
                         .texture("sides", "block/" + name(block) + "_sides")
                         .texture("top", "block/" + name(block) + "_top"));
+    }
+
+    public void lecternBlockC(Supplier<Block> block, ResourceLocation planks) {
+        lecternBlockC(block.get(), planks);
+    }
+
+    public void lecternBlockC(Block block, ResourceLocation planks) {
+        String name = name(block).replace("_controller","");
+        lecternBlock(block,
+                models().withExistingParent(name, "carved_wood:block/template_lectern")
+                        .texture("bottom", planks)
+                        .texture("base", "block/" + name + "_base")
+                        .texture("front", "block/" + name + "_front")
+                        .texture("sides", "block/" + name + "_sides")
+                        .texture("top", "block/" + name + "_top"));
     }
 
     public void lecternBlock(Block block, ModelFile model) {
@@ -549,7 +577,7 @@ public class ModBlockStateProvider<T> extends BlockStateProvider {
                 .modelForState().modelFile(model).rotationY(270).addModel();
     }
 
-    public void bookshelfBlock(DeferredBlock<Block> block, String woodType) {
+    public void bookshelfBlock(Supplier<Block> block, String woodType) {
         bookshelfBlock(block.get(), woodType);
     }
 
@@ -565,7 +593,7 @@ public class ModBlockStateProvider<T> extends BlockStateProvider {
         getVariantBuilder(block).partialState().modelForState().modelFile(bookshelf).addModel();
     }
 
-    public void crafterBlock(DeferredBlock<Block> block) {
+    public void crafterBlock(Supplier<Block> block) {
         crafterBlock(block.get());
     }
 
@@ -861,7 +889,7 @@ public class ModBlockStateProvider<T> extends BlockStateProvider {
             .modelForState().modelFile(crafterCraftingTriggered).rotationY(270).addModel();
     }
 
-    public void barrelBlock(DeferredBlock<Block> block) {
+    public void barrelBlock(Supplier<Block> block) {
         barrelBlock(block.get());
     }
 
@@ -905,7 +933,7 @@ public class ModBlockStateProvider<T> extends BlockStateProvider {
                 .with(CWBarrelBlock.OPEN, true).modelForState().modelFile(barrelOpen).rotationX(90).rotationY(270).addModel();
     }
 
-    public void woodenPanelsBlock(DeferredBlock<Block> block) {
+    public void woodenPanelsBlock(Supplier<Block> block) {
         woodenPanelsBlock(block.get());
     }
 
@@ -953,7 +981,7 @@ public class ModBlockStateProvider<T> extends BlockStateProvider {
                 .partialState().with(BigBlock.AXIS, Direction.Axis.Z).with(BigBlock.ODD, true).with(BigBlock.END_ODD, true).modelForState().rotationY(90).modelFile(oddEndV).addModel();
     }
 
-    public void campfireBlock(DeferredBlock<Block> normal, DeferredBlock<Block> soul) {
+    public void campfireBlock(Supplier<Block> normal, Supplier<Block> soul) {
         campfireBlock(normal.get(), soul.get());
     }
 
@@ -1019,65 +1047,65 @@ public class ModBlockStateProvider<T> extends BlockStateProvider {
 
     private void woodenLanternBlock(Block block, ModelFile woodenLantern, ModelFile hangingWoodenLantern, ModelFile hangingSideWoodenLantern, ModelFile hangingWallWoodenLantern, ModelFile hangingFenceWoodenLantern) {
         getVariantBuilder(block).partialState()
-                .with(WoodenLantern.SHAPE, WoodenLanternShape.SETTING)
-                .with(WoodenLantern.FACING, Direction.NORTH)
+                .with(WoodenLanternBlock.SHAPE, WoodenLanternShape.SETTING)
+                .with(WoodenLanternBlock.FACING, Direction.NORTH)
                 .modelForState().modelFile(woodenLantern).addModel().partialState()
-                .with(WoodenLantern.SHAPE, WoodenLanternShape.HANGING)
-                .with(WoodenLantern.FACING, Direction.NORTH)
+                .with(WoodenLanternBlock.SHAPE, WoodenLanternShape.HANGING)
+                .with(WoodenLanternBlock.FACING, Direction.NORTH)
                 .modelForState().modelFile(hangingWoodenLantern).addModel().partialState()
-                .with(WoodenLantern.SHAPE, WoodenLanternShape.HANGING_SIDE)
-                .with(WoodenLantern.FACING, Direction.NORTH)
+                .with(WoodenLanternBlock.SHAPE, WoodenLanternShape.HANGING_SIDE)
+                .with(WoodenLanternBlock.FACING, Direction.NORTH)
                 .modelForState().modelFile(hangingSideWoodenLantern).addModel().partialState()
-                .with(WoodenLantern.SHAPE, WoodenLanternShape.HANGING_WALL)
-                .with(WoodenLantern.FACING, Direction.NORTH)
+                .with(WoodenLanternBlock.SHAPE, WoodenLanternShape.HANGING_WALL)
+                .with(WoodenLanternBlock.FACING, Direction.NORTH)
                 .modelForState().modelFile(hangingWallWoodenLantern).addModel().partialState()
-                .with(WoodenLantern.SHAPE, WoodenLanternShape.HANGING_FENCE)
-                .with(WoodenLantern.FACING, Direction.NORTH)
+                .with(WoodenLanternBlock.SHAPE, WoodenLanternShape.HANGING_FENCE)
+                .with(WoodenLanternBlock.FACING, Direction.NORTH)
                 .modelForState().modelFile(hangingFenceWoodenLantern).addModel().partialState()
-                .with(WoodenLantern.SHAPE, WoodenLanternShape.SETTING)
-                .with(WoodenLantern.FACING, Direction.EAST)
+                .with(WoodenLanternBlock.SHAPE, WoodenLanternShape.SETTING)
+                .with(WoodenLanternBlock.FACING, Direction.EAST)
                 .modelForState().modelFile(woodenLantern).rotationY(90).addModel().partialState()
-                .with(WoodenLantern.SHAPE, WoodenLanternShape.HANGING)
-                .with(WoodenLantern.FACING, Direction.EAST)
+                .with(WoodenLanternBlock.SHAPE, WoodenLanternShape.HANGING)
+                .with(WoodenLanternBlock.FACING, Direction.EAST)
                 .modelForState().modelFile(hangingWoodenLantern).rotationY(90).addModel().partialState()
-                .with(WoodenLantern.SHAPE, WoodenLanternShape.HANGING_SIDE)
-                .with(WoodenLantern.FACING, Direction.EAST)
+                .with(WoodenLanternBlock.SHAPE, WoodenLanternShape.HANGING_SIDE)
+                .with(WoodenLanternBlock.FACING, Direction.EAST)
                 .modelForState().modelFile(hangingSideWoodenLantern).rotationY(90).addModel().partialState()
-                .with(WoodenLantern.SHAPE, WoodenLanternShape.HANGING_WALL)
-                .with(WoodenLantern.FACING, Direction.EAST)
+                .with(WoodenLanternBlock.SHAPE, WoodenLanternShape.HANGING_WALL)
+                .with(WoodenLanternBlock.FACING, Direction.EAST)
                 .modelForState().modelFile(hangingWallWoodenLantern).rotationY(90).addModel().partialState()
-                .with(WoodenLantern.SHAPE, WoodenLanternShape.HANGING_FENCE)
-                .with(WoodenLantern.FACING, Direction.EAST)
+                .with(WoodenLanternBlock.SHAPE, WoodenLanternShape.HANGING_FENCE)
+                .with(WoodenLanternBlock.FACING, Direction.EAST)
                 .modelForState().modelFile(hangingFenceWoodenLantern).rotationY(90).addModel().partialState()
-                .with(WoodenLantern.SHAPE, WoodenLanternShape.SETTING)
-                .with(WoodenLantern.FACING, Direction.SOUTH)
+                .with(WoodenLanternBlock.SHAPE, WoodenLanternShape.SETTING)
+                .with(WoodenLanternBlock.FACING, Direction.SOUTH)
                 .modelForState().modelFile(woodenLantern).rotationY(180).addModel().partialState()
-                .with(WoodenLantern.SHAPE, WoodenLanternShape.HANGING)
-                .with(WoodenLantern.FACING, Direction.SOUTH)
+                .with(WoodenLanternBlock.SHAPE, WoodenLanternShape.HANGING)
+                .with(WoodenLanternBlock.FACING, Direction.SOUTH)
                 .modelForState().modelFile(hangingWoodenLantern).rotationY(180).addModel().partialState()
-                .with(WoodenLantern.SHAPE, WoodenLanternShape.HANGING_SIDE)
-                .with(WoodenLantern.FACING, Direction.SOUTH)
+                .with(WoodenLanternBlock.SHAPE, WoodenLanternShape.HANGING_SIDE)
+                .with(WoodenLanternBlock.FACING, Direction.SOUTH)
                 .modelForState().modelFile(hangingSideWoodenLantern).rotationY(180).addModel().partialState()
-                .with(WoodenLantern.SHAPE, WoodenLanternShape.HANGING_WALL)
-                .with(WoodenLantern.FACING, Direction.SOUTH)
+                .with(WoodenLanternBlock.SHAPE, WoodenLanternShape.HANGING_WALL)
+                .with(WoodenLanternBlock.FACING, Direction.SOUTH)
                 .modelForState().modelFile(hangingWallWoodenLantern).rotationY(180).addModel().partialState()
-                .with(WoodenLantern.SHAPE, WoodenLanternShape.HANGING_FENCE)
-                .with(WoodenLantern.FACING, Direction.SOUTH)
+                .with(WoodenLanternBlock.SHAPE, WoodenLanternShape.HANGING_FENCE)
+                .with(WoodenLanternBlock.FACING, Direction.SOUTH)
                 .modelForState().modelFile(hangingFenceWoodenLantern).rotationY(180).addModel().partialState()
-                .with(WoodenLantern.SHAPE, WoodenLanternShape.SETTING)
-                .with(WoodenLantern.FACING, Direction.WEST)
+                .with(WoodenLanternBlock.SHAPE, WoodenLanternShape.SETTING)
+                .with(WoodenLanternBlock.FACING, Direction.WEST)
                 .modelForState().modelFile(woodenLantern).rotationY(270).addModel().partialState()
-                .with(WoodenLantern.SHAPE, WoodenLanternShape.HANGING)
-                .with(WoodenLantern.FACING, Direction.WEST)
+                .with(WoodenLanternBlock.SHAPE, WoodenLanternShape.HANGING)
+                .with(WoodenLanternBlock.FACING, Direction.WEST)
                 .modelForState().modelFile(hangingWoodenLantern).rotationY(270).addModel().partialState()
-                .with(WoodenLantern.SHAPE, WoodenLanternShape.HANGING_SIDE)
-                .with(WoodenLantern.FACING, Direction.WEST)
+                .with(WoodenLanternBlock.SHAPE, WoodenLanternShape.HANGING_SIDE)
+                .with(WoodenLanternBlock.FACING, Direction.WEST)
                 .modelForState().modelFile(hangingSideWoodenLantern).rotationY(270).addModel().partialState()
-                .with(WoodenLantern.SHAPE, WoodenLanternShape.HANGING_WALL)
-                .with(WoodenLantern.FACING, Direction.WEST)
+                .with(WoodenLanternBlock.SHAPE, WoodenLanternShape.HANGING_WALL)
+                .with(WoodenLanternBlock.FACING, Direction.WEST)
                 .modelForState().modelFile(hangingWallWoodenLantern).rotationY(270).addModel().partialState()
-                .with(WoodenLantern.SHAPE, WoodenLanternShape.HANGING_FENCE)
-                .with(WoodenLantern.FACING, Direction.WEST)
+                .with(WoodenLanternBlock.SHAPE, WoodenLanternShape.HANGING_FENCE)
+                .with(WoodenLanternBlock.FACING, Direction.WEST)
                 .modelForState().modelFile(hangingFenceWoodenLantern).rotationY(270).addModel();
     }
 
@@ -1204,7 +1232,7 @@ public class ModBlockStateProvider<T> extends BlockStateProvider {
     }
 
     private ResourceLocation extend(ResourceLocation rl, String suffix) {
-        return ResourceLocation.fromNamespaceAndPath(rl.getNamespace(), rl.getPath() + suffix);
+        return CarvedWood.newRL(rl.getNamespace(), rl.getPath() + suffix);
     }
 
     public void columnBlock(Block block) {

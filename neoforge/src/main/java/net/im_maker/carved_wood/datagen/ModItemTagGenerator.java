@@ -1,9 +1,9 @@
 package net.im_maker.carved_wood.datagen;
 
 import com.blackgear.vanillabackport.common.registries.ModBlocks;
-import com.blackgear.vanillabackport.common.registries.ModItems;
+import com.simibubi.create.AllTags;
 import net.im_maker.carved_wood.CarvedWood;
-import net.im_maker.carved_wood.common.block.CWBlocks;
+import net.im_maker.carved_wood.common.registers.CWBlocks;
 import net.im_maker.carved_wood.common.util.CWTags;
 import net.minecraft.core.HolderLookup;
 import net.minecraft.data.PackOutput;
@@ -110,6 +110,7 @@ public class ModItemTagGenerator extends ItemTagsProvider {
         );
 
         this.tag(CWTags.Items.CRAFTING_TABLES).add(
+                Blocks.CRAFTING_TABLE.asItem(),
                 CWBlocks.SPRUCE_CRAFTING_TABLE.get().asItem(),
                 CWBlocks.BIRCH_CRAFTING_TABLE.get().asItem(),
                 CWBlocks.JUNGLE_CRAFTING_TABLE.get().asItem(),
@@ -120,8 +121,7 @@ public class ModItemTagGenerator extends ItemTagsProvider {
                 CWBlocks.PALE_OAK_CRAFTING_TABLE.get().asItem(),
                 CWBlocks.CRIMSON_CRAFTING_TABLE.get().asItem(),
                 CWBlocks.WARPED_CRAFTING_TABLE.get().asItem(),
-                CWBlocks.BAMBOO_CRAFTING_TABLE.get().asItem(),
-                Blocks.CRAFTING_TABLE.asItem()
+                CWBlocks.BAMBOO_CRAFTING_TABLE.get().asItem()
         );
 
         this.tag(Tags.Items.CHESTS_WOODEN).add(
@@ -206,5 +206,30 @@ public class ModItemTagGenerator extends ItemTagsProvider {
         this.copy(BlockTags.BEEHIVES, CWTags.Items.BEEHIVES);
         this.copy(CWTags.Blocks.LECTERNS, CWTags.Items.LECTERNS);
         this.copy(CWTags.Blocks.LADDERS, CWTags.Items.LADDERS);
+
+        this.tag(AllTags.AllItemTags.CONTRAPTION_CONTROLLED.tag).add(
+                CWBlocks.SPRUCE_CAMPFIRE.get().asItem(),
+                CWBlocks.BIRCH_CAMPFIRE.get().asItem(),
+                CWBlocks.JUNGLE_CAMPFIRE.get().asItem(),
+                CWBlocks.ACACIA_CAMPFIRE.get().asItem(),
+                CWBlocks.DARK_OAK_CAMPFIRE.get().asItem(),
+                CWBlocks.MANGROVE_CAMPFIRE.get().asItem(),
+                CWBlocks.CHERRY_CAMPFIRE.get().asItem(),
+                CWBlocks.PALE_OAK_CAMPFIRE.get().asItem(),
+                CWBlocks.CRIMSON_CAMPFIRE.get().asItem(),
+                CWBlocks.WARPED_CAMPFIRE.get().asItem(),
+                CWBlocks.BAMBOO_CAMPFIRE.get().asItem(),
+                CWBlocks.SOUL_SPRUCE_CAMPFIRE.get().asItem(),
+                CWBlocks.SOUL_BIRCH_CAMPFIRE.get().asItem(),
+                CWBlocks.SOUL_JUNGLE_CAMPFIRE.get().asItem(),
+                CWBlocks.SOUL_ACACIA_CAMPFIRE.get().asItem(),
+                CWBlocks.SOUL_DARK_OAK_CAMPFIRE.get().asItem(),
+                CWBlocks.SOUL_MANGROVE_CAMPFIRE.get().asItem(),
+                CWBlocks.SOUL_CHERRY_CAMPFIRE.get().asItem(),
+                CWBlocks.SOUL_PALE_OAK_CAMPFIRE.get().asItem(),
+                CWBlocks.SOUL_CRIMSON_CAMPFIRE.get().asItem(),
+                CWBlocks.SOUL_WARPED_CAMPFIRE.get().asItem(),
+                CWBlocks.SOUL_BAMBOO_CAMPFIRE.get().asItem()
+        );
     }
 }

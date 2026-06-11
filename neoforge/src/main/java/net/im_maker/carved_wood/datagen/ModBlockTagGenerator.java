@@ -1,7 +1,8 @@
 package net.im_maker.carved_wood.datagen;
 
+import com.simibubi.create.AllTags;
 import net.im_maker.carved_wood.CarvedWood;
-import net.im_maker.carved_wood.common.block.CWBlocks;
+import net.im_maker.carved_wood.common.registers.CWBlocks;
 import net.im_maker.carved_wood.common.util.CWTags;
 import net.minecraft.core.HolderLookup;
 import net.minecraft.data.PackOutput;
@@ -464,6 +465,7 @@ public class ModBlockTagGenerator extends BlockTagsProvider {
         );
 
         this.tag(CWTags.Blocks.CRAFTING_TABLES).add(
+                Blocks.CRAFTING_TABLE,
                 CWBlocks.SPRUCE_CRAFTING_TABLE.get(),
                 CWBlocks.BIRCH_CRAFTING_TABLE.get(),
                 CWBlocks.JUNGLE_CRAFTING_TABLE.get(),
@@ -474,8 +476,7 @@ public class ModBlockTagGenerator extends BlockTagsProvider {
                 CWBlocks.PALE_OAK_CRAFTING_TABLE.get(),
                 CWBlocks.CRIMSON_CRAFTING_TABLE.get(),
                 CWBlocks.WARPED_CRAFTING_TABLE.get(),
-                CWBlocks.BAMBOO_CRAFTING_TABLE.get(),
-                Blocks.CRAFTING_TABLE
+                CWBlocks.BAMBOO_CRAFTING_TABLE.get()
         );
 
         this.tag(BlockTags.CLIMBABLE).add(
@@ -655,6 +656,33 @@ public class ModBlockTagGenerator extends BlockTagsProvider {
                 CWBlocks.TRAPPED_BAMBOO_CHEST.get()
         );
 
+        this.tag(Tags.Blocks.CHESTS).add(
+                CWBlocks.OAK_CHEST.get(),
+                CWBlocks.SPRUCE_CHEST.get(),
+                CWBlocks.BIRCH_CHEST.get(),
+                CWBlocks.JUNGLE_CHEST.get(),
+                CWBlocks.ACACIA_CHEST.get(),
+                CWBlocks.DARK_OAK_CHEST.get(),
+                CWBlocks.MANGROVE_CHEST.get(),
+                CWBlocks.CHERRY_CHEST.get(),
+                CWBlocks.PALE_OAK_CHEST.get(),
+                CWBlocks.CRIMSON_CHEST.get(),
+                CWBlocks.WARPED_CHEST.get(),
+                CWBlocks.BAMBOO_CHEST.get(),
+                CWBlocks.TRAPPED_OAK_CHEST.get(),
+                CWBlocks.TRAPPED_SPRUCE_CHEST.get(),
+                CWBlocks.TRAPPED_BIRCH_CHEST.get(),
+                CWBlocks.TRAPPED_JUNGLE_CHEST.get(),
+                CWBlocks.TRAPPED_ACACIA_CHEST.get(),
+                CWBlocks.TRAPPED_DARK_OAK_CHEST.get(),
+                CWBlocks.TRAPPED_MANGROVE_CHEST.get(),
+                CWBlocks.TRAPPED_CHERRY_CHEST.get(),
+                CWBlocks.TRAPPED_PALE_OAK_CHEST.get(),
+                CWBlocks.TRAPPED_CRIMSON_CHEST.get(),
+                CWBlocks.TRAPPED_WARPED_CHEST.get(),
+                CWBlocks.TRAPPED_BAMBOO_CHEST.get()
+        );
+
         this.tag(BlockTags.LAVA_POOL_STONE_CANNOT_REPLACE).add(
                 CWBlocks.OAK_CHEST.get(),
                 CWBlocks.SPRUCE_CHEST.get(),
@@ -699,6 +727,20 @@ public class ModBlockTagGenerator extends BlockTagsProvider {
                 CWBlocks.BAMBOO_BARREL.get()
         );
 
+        this.tag(Tags.Blocks.BARRELS).add(
+                CWBlocks.OAK_BARREL.get(),
+                CWBlocks.BIRCH_BARREL.get(),
+                CWBlocks.JUNGLE_BARREL.get(),
+                CWBlocks.ACACIA_BARREL.get(),
+                CWBlocks.DARK_OAK_BARREL.get(),
+                CWBlocks.MANGROVE_BARREL.get(),
+                CWBlocks.CHERRY_BARREL.get(),
+                CWBlocks.PALE_OAK_BARREL.get(),
+                CWBlocks.CRIMSON_BARREL.get(),
+                CWBlocks.WARPED_BARREL.get(),
+                CWBlocks.BAMBOO_BARREL.get()
+        );
+
         this.tag(CWTags.Blocks.LADDERS).add(
                 CWBlocks.SPRUCE_LADDER.get(),
                 CWBlocks.BIRCH_LADDER.get(),
@@ -712,6 +754,90 @@ public class ModBlockTagGenerator extends BlockTagsProvider {
                 CWBlocks.WARPED_LADDER.get(),
                 CWBlocks.BAMBOO_LADDER.get(),
                 Blocks.LADDER
+        );
+
+        this.tag(AllTags.AllBlockTags.SIMPLE_MOUNTED_STORAGE.tag).add(
+                CWBlocks.OAK_BARREL.get(),
+                CWBlocks.BIRCH_BARREL.get(),
+                CWBlocks.JUNGLE_BARREL.get(),
+                CWBlocks.ACACIA_BARREL.get(),
+                CWBlocks.DARK_OAK_BARREL.get(),
+                CWBlocks.MANGROVE_BARREL.get(),
+                CWBlocks.CHERRY_BARREL.get(),
+                CWBlocks.PALE_OAK_BARREL.get(),
+                CWBlocks.CRIMSON_BARREL.get(),
+                CWBlocks.WARPED_BARREL.get(),
+                CWBlocks.BAMBOO_BARREL.get()
+        );
+
+        this.tag(AllTags.AllBlockTags.CHEST_MOUNTED_STORAGE.tag).add(
+                CWBlocks.OAK_CHEST.get(),
+                CWBlocks.SPRUCE_CHEST.get(),
+                CWBlocks.BIRCH_CHEST.get(),
+                CWBlocks.JUNGLE_CHEST.get(),
+                CWBlocks.ACACIA_CHEST.get(),
+                CWBlocks.DARK_OAK_CHEST.get(),
+                CWBlocks.MANGROVE_CHEST.get(),
+                CWBlocks.CHERRY_CHEST.get(),
+                CWBlocks.PALE_OAK_CHEST.get(),
+                CWBlocks.CRIMSON_CHEST.get(),
+                CWBlocks.WARPED_CHEST.get(),
+                CWBlocks.BAMBOO_CHEST.get(),
+                CWBlocks.TRAPPED_OAK_CHEST.get(),
+                CWBlocks.TRAPPED_SPRUCE_CHEST.get(),
+                CWBlocks.TRAPPED_BIRCH_CHEST.get(),
+                CWBlocks.TRAPPED_JUNGLE_CHEST.get(),
+                CWBlocks.TRAPPED_ACACIA_CHEST.get(),
+                CWBlocks.TRAPPED_DARK_OAK_CHEST.get(),
+                CWBlocks.TRAPPED_MANGROVE_CHEST.get(),
+                CWBlocks.TRAPPED_CHERRY_CHEST.get(),
+                CWBlocks.TRAPPED_PALE_OAK_CHEST.get(),
+                CWBlocks.TRAPPED_CRIMSON_CHEST.get(),
+                CWBlocks.TRAPPED_WARPED_CHEST.get(),
+                CWBlocks.TRAPPED_BAMBOO_CHEST.get()
+        );
+
+        this.tag(AllTags.AllBlockTags.SINGLE_BLOCK_INVENTORIES.tag).add(
+                CWBlocks.CHISELED_SPRUCE_BOOKSHELF.get(),
+                CWBlocks.CHISELED_BIRCH_BOOKSHELF.get(),
+                CWBlocks.CHISELED_JUNGLE_BOOKSHELF.get(),
+                CWBlocks.CHISELED_ACACIA_BOOKSHELF.get(),
+                CWBlocks.CHISELED_DARK_OAK_BOOKSHELF.get(),
+                CWBlocks.CHISELED_MANGROVE_BOOKSHELF.get(),
+                CWBlocks.CHISELED_CHERRY_BOOKSHELF.get(),
+                CWBlocks.CHISELED_PALE_OAK_BOOKSHELF.get(),
+                CWBlocks.CHISELED_CRIMSON_BOOKSHELF.get(),
+                CWBlocks.CHISELED_WARPED_BOOKSHELF.get(),
+                CWBlocks.CHISELED_BAMBOO_BOOKSHELF.get(),
+                Blocks.CHISELED_BOOKSHELF
+        );
+
+        this.tag(AllTags.AllBlockTags.FAN_PROCESSING_CATALYSTS_HAUNTING.tag).add(
+                CWBlocks.SOUL_SPRUCE_CAMPFIRE.get(),
+                CWBlocks.SOUL_BIRCH_CAMPFIRE.get(),
+                CWBlocks.SOUL_JUNGLE_CAMPFIRE.get(),
+                CWBlocks.SOUL_ACACIA_CAMPFIRE.get(),
+                CWBlocks.SOUL_DARK_OAK_CAMPFIRE.get(),
+                CWBlocks.SOUL_MANGROVE_CAMPFIRE.get(),
+                CWBlocks.SOUL_CHERRY_CAMPFIRE.get(),
+                CWBlocks.SOUL_PALE_OAK_CAMPFIRE.get(),
+                CWBlocks.SOUL_CRIMSON_CAMPFIRE.get(),
+                CWBlocks.SOUL_WARPED_CAMPFIRE.get(),
+                CWBlocks.SOUL_BAMBOO_CAMPFIRE.get()
+        );
+
+        this.tag(AllTags.AllBlockTags.FAN_PROCESSING_CATALYSTS_SMOKING.tag).add(
+                CWBlocks.SPRUCE_CAMPFIRE.get(),
+                CWBlocks.BIRCH_CAMPFIRE.get(),
+                CWBlocks.JUNGLE_CAMPFIRE.get(),
+                CWBlocks.ACACIA_CAMPFIRE.get(),
+                CWBlocks.DARK_OAK_CAMPFIRE.get(),
+                CWBlocks.MANGROVE_CAMPFIRE.get(),
+                CWBlocks.CHERRY_CAMPFIRE.get(),
+                CWBlocks.PALE_OAK_CAMPFIRE.get(),
+                CWBlocks.CRIMSON_CAMPFIRE.get(),
+                CWBlocks.WARPED_CAMPFIRE.get(),
+                CWBlocks.BAMBOO_CAMPFIRE.get()
         );
     }
 }

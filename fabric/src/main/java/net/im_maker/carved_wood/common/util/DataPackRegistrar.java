@@ -5,7 +5,6 @@ import net.fabricmc.fabric.api.resource.ResourcePackActivationType;
 import net.fabricmc.loader.api.FabricLoader;
 import net.fabricmc.loader.api.ModContainer;
 import net.im_maker.carved_wood.CarvedWood;
-import net.minecraft.resources.ResourceLocation;
 
 import java.util.Optional;
 
@@ -13,7 +12,7 @@ public class DataPackRegistrar {
 
     private static void registerBuiltinVanillaBackportDataPack(ModContainer modContainer, String packId) {
         ResourceManagerHelper.registerBuiltinResourcePack(
-                ResourceLocation.fromNamespaceAndPath(CarvedWood.MOD_ID, packId),
+                CarvedWood.newRL(CarvedWood.MOD_ID, packId),
                 modContainer,
                 "CarvedWood VanillaBackport Compat",
                 ResourcePackActivationType.ALWAYS_ENABLED

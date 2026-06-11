@@ -1,13 +1,15 @@
 package net.im_maker.carved_wood.datagen;
 
 import net.im_maker.carved_wood.CarvedWood;
-import net.im_maker.carved_wood.common.block.CWBlocks;
+import net.im_maker.carved_wood.common.registers.CWBlocksNeoForge;
+import net.im_maker.carved_wood.common.registers.CWBlocks;
 import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.data.PackOutput;
 import net.minecraft.world.level.block.Block;
 import net.neoforged.neoforge.client.model.generators.ItemModelProvider;
 import net.neoforged.neoforge.common.data.ExistingFileHelper;
-import net.neoforged.neoforge.registries.DeferredBlock;
+
+import java.util.function.Supplier;
 
 public class ModItemModelProvider extends ItemModelProvider {
 
@@ -355,6 +357,18 @@ public class ModItemModelProvider extends ItemModelProvider {
         evenSimplerBlockItem(CWBlocks.WARPED_LECTERN);
         evenSimplerBlockItem(CWBlocks.BAMBOO_LECTERN);
 
+        evenSimplerBlockItem(CWBlocksNeoForge.SPRUCE_LECTERN_CONTROLLER);
+        evenSimplerBlockItem(CWBlocksNeoForge.BIRCH_LECTERN_CONTROLLER);
+        evenSimplerBlockItem(CWBlocksNeoForge.JUNGLE_LECTERN_CONTROLLER);
+        evenSimplerBlockItem(CWBlocksNeoForge.ACACIA_LECTERN_CONTROLLER);
+        evenSimplerBlockItem(CWBlocksNeoForge.DARK_OAK_LECTERN_CONTROLLER);
+        evenSimplerBlockItem(CWBlocksNeoForge.MANGROVE_LECTERN_CONTROLLER);
+        evenSimplerBlockItem(CWBlocksNeoForge.CHERRY_LECTERN_CONTROLLER);
+        evenSimplerBlockItem(CWBlocksNeoForge.PALE_OAK_LECTERN_CONTROLLER);
+        evenSimplerBlockItem(CWBlocksNeoForge.CRIMSON_LECTERN_CONTROLLER);
+        evenSimplerBlockItem(CWBlocksNeoForge.WARPED_LECTERN_CONTROLLER);
+        evenSimplerBlockItem(CWBlocksNeoForge.BAMBOO_LECTERN_CONTROLLER);
+
         evenSimplerBlockItem(CWBlocks.SPRUCE_BEEHIVE);
         evenSimplerBlockItem(CWBlocks.BIRCH_BEEHIVE);
         evenSimplerBlockItem(CWBlocks.JUNGLE_BEEHIVE);
@@ -368,30 +382,30 @@ public class ModItemModelProvider extends ItemModelProvider {
         evenSimplerBlockItem(CWBlocks.BAMBOO_BEEHIVE);
     }
 
-    public void chestBlockItem(DeferredBlock<Block> block) {
-        this.withExistingParent(block.getId().getPath(), "carved_wood:item/template_chest");
+    public void chestBlockItem(Supplier<Block> block) {
+        this.withExistingParent(BuiltInRegistries.BLOCK.getKey(block.get()).getPath(), "carved_wood:item/template_chest");
     }
 
-    public void simplerBlockItem(DeferredBlock<Block> block) {
-        this.withExistingParent(block.getId().getPath(), "minecraft:item/generated")
+    public void simplerBlockItem(Supplier<Block> block) {
+        this.withExistingParent(BuiltInRegistries.BLOCK.getKey(block.get()).getPath(), "minecraft:item/generated")
                 .texture("layer0", "block/" + BuiltInRegistries.BLOCK.getKey(block.get()).getPath());
     }
 
-    public void chiseledBookshelfBlockItem(DeferredBlock<Block> block) {
-        this.withExistingParent(block.getId().getPath(), "carved_wood:block/" + BuiltInRegistries.BLOCK.getKey(block.get()).getPath() + "_inventory");
+    public void chiseledBookshelfBlockItem(Supplier<Block> block) {
+        this.withExistingParent(BuiltInRegistries.BLOCK.getKey(block.get()).getPath(), "carved_wood:block/" + BuiltInRegistries.BLOCK.getKey(block.get()).getPath() + "_inventory");
     }
 
-    public void BlockItem(DeferredBlock<Block> block) {
-        this.withExistingParent(block.getId().getPath(), "minecraft:item/generated")
+    public void BlockItem(Supplier<Block> block) {
+        this.withExistingParent(BuiltInRegistries.BLOCK.getKey(block.get()).getPath(), "minecraft:item/generated")
                 .texture("layer0", "item/" + BuiltInRegistries.BLOCK.getKey(block.get()).getPath());
     }
 
-    public void evenSimplerBlockItem(DeferredBlock<Block> block) {
+    public void evenSimplerBlockItem(Supplier<Block> block) {
         this.withExistingParent(CarvedWood.MOD_ID + ":" + BuiltInRegistries.BLOCK.getKey(block.get()).getPath(),
                 modLoc("block/" + BuiltInRegistries.BLOCK.getKey(block.get()).getPath()));
     }
 
-    public void LargePlanksBlockItem(DeferredBlock<Block> block) {
+    public void LargePlanksBlockItem(Supplier<Block> block) {
         this.withExistingParent(CarvedWood.MOD_ID + ":" + BuiltInRegistries.BLOCK.getKey(block.get()).getPath(),
                 modLoc("block/" + BuiltInRegistries.BLOCK.getKey(block.get()).getPath() + "_even"));
     }
