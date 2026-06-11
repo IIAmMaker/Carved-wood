@@ -25,7 +25,7 @@ public class CWTags {
             return TagKey.create(Registries.BLOCK, name);
         }
         private static TagKey<Block> tag(String name) {
-            return create(ResourceLocation.fromNamespaceAndPath("c", name));
+            return create(CarvedWood.newRL("c", name));
         }
     }
 
@@ -46,10 +46,10 @@ public class CWTags {
             return TagKey.create(Registries.ITEM, name);
         }
         private static TagKey<Item> tag(String name) {
-            return create(ResourceLocation.fromNamespaceAndPath("c", name));
+            return create(CarvedWood.newRL("c", name));
         }
         private static TagKey<Item> tagCW(String name) {
-            return create(ResourceLocation.fromNamespaceAndPath(CarvedWood.MOD_ID, name));
+            return create(CarvedWood.newRL(CarvedWood.MOD_ID, name));
         }
     }
 }
