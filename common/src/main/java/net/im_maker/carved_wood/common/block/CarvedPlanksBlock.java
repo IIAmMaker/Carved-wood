@@ -1,7 +1,7 @@
-package net.im_maker.carved_wood.common.block.custom;
+package net.im_maker.carved_wood.common.block;
 
 import com.mojang.serialization.MapCodec;
-import net.im_maker.carved_wood.common.FlammableBlockRegistryCommon;
+import net.im_maker.carved_wood.platform.PlatHelper;
 import net.minecraft.world.item.context.BlockPlaceContext;
 import net.minecraft.world.level.block.*;
 import net.minecraft.world.level.block.state.BlockState;
@@ -10,13 +10,13 @@ import net.minecraft.world.level.block.state.StateDefinition;
 public class CarvedPlanksBlock extends DirectionalBlock {
     public static final MapCodec<CarvedPlanksBlock> CODEC = simpleCodec(CarvedPlanksBlock::new);
 
-    public CarvedPlanksBlock(Properties pProperties, Boolean isFlammable) {
-        super(pProperties);
-        if (isFlammable) FlammableBlockRegistryCommon.getDefaultInstance().add(this, 20, 5);
-    }
-
     public CarvedPlanksBlock(Properties pProperties) {
         this(pProperties, true);
+    }
+
+    public CarvedPlanksBlock(Properties pProperties, Boolean isFlammable) {
+        super(pProperties);
+        if (isFlammable) PlatHelper.addFlammableBlock(this, 20, 5);
     }
 
     @Override
