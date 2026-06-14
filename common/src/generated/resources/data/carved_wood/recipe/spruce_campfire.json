@@ -3,6 +3,12 @@
   "category": "misc",
   "group": "campfires",
   "key": {
+    "S": {
+      "tag": "c:rods/wooden"
+    },
+    "C": {
+      "tag": "minecraft:coals"
+    },
     "#": [
       {
         "item": "minecraft:spruce_log"
@@ -10,13 +16,7 @@
       {
         "item": "minecraft:spruce_wood"
       }
-    ],
-    "C": {
-      "tag": "minecraft:coals"
-    },
-    "S": {
-      "tag": "c:rods/wooden"
-    }
+    ]
   },
   "pattern": [
     " S ",
@@ -24,7 +24,19 @@
     "###"
   ],
   "result": {
-    "count": 1,
-    "id": "carved_wood:spruce_campfire"
-  }
+    "id": "carved_wood:spruce_campfire",
+    "count": 1
+  },
+  "neoforge:conditions": [
+    {
+      "type": "carved_wood:config",
+      "value": "wooden_campfires"
+    }
+  ],
+  "fabric:load_conditions": [
+    {
+      "condition": "carved_wood:config",
+      "value": "wooden_campfires"
+    }
+  ]
 }

@@ -13,7 +13,19 @@
     " # "
   ],
   "result": {
-    "count": 5,
-    "id": "minecraft:stripped_acacia_wood"
-  }
+    "id": "minecraft:stripped_acacia_wood",
+    "count": 5
+  },
+  "neoforge:conditions": [
+    {
+      "type": "carved_wood:config",
+      "value": "log_bundles"
+    }
+  ],
+  "fabric:load_conditions": [
+    {
+      "condition": "carved_wood:config",
+      "value": "log_bundles"
+    }
+  ]
 }

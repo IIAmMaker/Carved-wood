@@ -1,7 +1,7 @@
 {
   "type": "minecraft:crafting_shaped",
   "category": "misc",
-  "group": "chest",
+  "group": "wooden_chests",
   "key": {
     "#": {
       "item": "minecraft:jungle_planks"
@@ -13,7 +13,19 @@
     "###"
   ],
   "result": {
-    "count": 1,
-    "id": "carved_wood:jungle_chest"
-  }
+    "id": "carved_wood:jungle_chest",
+    "count": 1
+  },
+  "neoforge:conditions": [
+    {
+      "type": "carved_wood:config",
+      "value": "wooden_chests"
+    }
+  ],
+  "fabric:load_conditions": [
+    {
+      "condition": "carved_wood:config",
+      "value": "wooden_chests"
+    }
+  ]
 }

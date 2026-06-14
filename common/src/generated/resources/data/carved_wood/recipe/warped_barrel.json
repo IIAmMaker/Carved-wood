@@ -1,7 +1,7 @@
 {
   "type": "minecraft:crafting_shaped",
   "category": "misc",
-  "group": "barrel",
+  "group": "wooden_barrels",
   "key": {
     "P": {
       "item": "minecraft:warped_planks"
@@ -16,7 +16,19 @@
     "PSP"
   ],
   "result": {
-    "count": 1,
-    "id": "carved_wood:warped_barrel"
-  }
+    "id": "carved_wood:warped_barrel",
+    "count": 1
+  },
+  "neoforge:conditions": [
+    {
+      "type": "carved_wood:config",
+      "value": "wooden_barrels"
+    }
+  ],
+  "fabric:load_conditions": [
+    {
+      "condition": "carved_wood:config",
+      "value": "wooden_barrels"
+    }
+  ]
 }

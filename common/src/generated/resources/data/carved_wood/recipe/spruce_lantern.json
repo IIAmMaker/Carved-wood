@@ -19,7 +19,19 @@
     " # "
   ],
   "result": {
-    "count": 2,
-    "id": "carved_wood:spruce_lantern"
-  }
+    "id": "carved_wood:spruce_lantern",
+    "count": 2
+  },
+  "neoforge:conditions": [
+    {
+      "type": "carved_wood:config",
+      "value": "planks_sets"
+    }
+  ],
+  "fabric:load_conditions": [
+    {
+      "condition": "carved_wood:config",
+      "value": "planks_sets"
+    }
+  ]
 }

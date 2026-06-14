@@ -1,13 +1,13 @@
 {
   "type": "minecraft:crafting_shaped",
-  "category": "redstone",
-  "group": "lectern",
+  "category": "misc",
+  "group": "wooden_lecterns",
   "key": {
+    "S": {
+      "tag": "minecraft:wooden_slabs"
+    },
     "B": {
       "item": "minecraft:bookshelf"
-    },
-    "S": {
-      "item": "minecraft:oak_slab"
     }
   },
   "pattern": [
@@ -16,7 +16,21 @@
     " S "
   ],
   "result": {
-    "count": 1,
-    "id": "minecraft:lectern"
-  }
+    "id": "minecraft:lectern",
+    "count": 1
+  },
+  "neoforge:conditions": [
+    {
+      "type": "carved_wood:config",
+      "value": "wooden_lecterns",
+      "inverted": true
+    }
+  ],
+  "fabric:load_conditions": [
+    {
+      "condition": "carved_wood:config",
+      "value": "wooden_lecterns",
+      "inverted": true
+    }
+  ]
 }

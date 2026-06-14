@@ -1,0 +1,21 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "group": "wooden_lantern_from_wooden_lantern_block",
+  "result": {
+    "id": "carved_wood:pale_oak_lantern",
+    "count": 2
+  },
+  "neoforge:conditions": [
+    {
+      "type": "carved_wood:config",
+      "value": "planks_sets"
+    }
+  ],
+  "fabric:load_conditions": [
+    {
+      "condition": "carved_wood:config",
+      "value": "planks_sets"
+    }
+  ]
+}

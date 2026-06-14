@@ -1,0 +1,16 @@
+{
+  "type": "carved_wood:crafting_special_chest",
+  "category": "misc",
+  "neoforge:conditions": [
+    {
+      "type": "carved_wood:config",
+      "value": "mixed_chest_crafting"
+    }
+  ],
+  "fabric:load_conditions": [
+    {
+      "condition": "carved_wood:config",
+      "value": "mixed_chest_crafting"
+    }
+  ]
+}

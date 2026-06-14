@@ -12,7 +12,19 @@
     "##"
   ],
   "result": {
-    "count": 4,
-    "id": "carved_wood:crimson_tiles"
-  }
+    "id": "carved_wood:crimson_tiles",
+    "count": 4
+  },
+  "neoforge:conditions": [
+    {
+      "type": "carved_wood:config",
+      "value": "planks_sets"
+    }
+  ],
+  "fabric:load_conditions": [
+    {
+      "condition": "carved_wood:config",
+      "value": "planks_sets"
+    }
+  ]
 }

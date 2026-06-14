@@ -1,0 +1,31 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "building",
+  "group": "wooden_tile_stairs",
+  "key": {
+    "#": {
+      "item": "carved_wood:pale_oak_tiles"
+    }
+  },
+  "pattern": [
+    "#  ",
+    "## ",
+    "###"
+  ],
+  "result": {
+    "id": "carved_wood:pale_oak_tile_stairs",
+    "count": 4
+  },
+  "neoforge:conditions": [
+    {
+      "type": "carved_wood:config",
+      "value": "planks_sets"
+    }
+  ],
+  "fabric:load_conditions": [
+    {
+      "condition": "carved_wood:config",
+      "value": "planks_sets"
+    }
+  ]
+}

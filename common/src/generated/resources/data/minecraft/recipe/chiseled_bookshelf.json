@@ -1,13 +1,13 @@
 {
   "type": "minecraft:crafting_shaped",
-  "category": "building",
-  "group": "chiseled_bookshelf",
+  "category": "misc",
+  "group": "wooden_chiseled_bookshelves",
   "key": {
     "P": {
-      "item": "minecraft:oak_planks"
+      "tag": "minecraft:planks"
     },
     "S": {
-      "item": "minecraft:oak_slab"
+      "tag": "minecraft:wooden_slabs"
     }
   },
   "pattern": [
@@ -16,7 +16,21 @@
     "PPP"
   ],
   "result": {
-    "count": 1,
-    "id": "minecraft:chiseled_bookshelf"
-  }
+    "id": "minecraft:chiseled_bookshelf",
+    "count": 1
+  },
+  "neoforge:conditions": [
+    {
+      "type": "carved_wood:config",
+      "value": "wooden_chiseled_bookshelves",
+      "inverted": true
+    }
+  ],
+  "fabric:load_conditions": [
+    {
+      "condition": "carved_wood:config",
+      "value": "wooden_chiseled_bookshelves",
+      "inverted": true
+    }
+  ]
 }

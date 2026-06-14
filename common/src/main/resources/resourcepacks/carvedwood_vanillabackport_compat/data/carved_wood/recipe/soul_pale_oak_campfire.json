@@ -3,15 +3,20 @@
   "category": "misc",
   "group": "campfires",
   "key": {
-    "#": {
-      "tag": "minecraft:pale_oak_logs"
+    "S": {
+      "tag": "c:rods/wooden"
     },
     "C": {
       "tag": "minecraft:soul_fire_base_blocks"
     },
-    "S": {
-      "tag": "c:rods/wooden"
-    }
+    "#": [
+      {
+        "item": "minecraft:pale_oak_log"
+      },
+      {
+        "item": "minecraft:pale_oak_wood"
+      }
+    ]
   },
   "pattern": [
     " S ",
@@ -19,7 +24,19 @@
     "###"
   ],
   "result": {
-    "count": 1,
-    "id": "carved_wood:soul_pale_oak_campfire"
-  }
+    "id": "carved_wood:soul_pale_oak_campfire",
+    "count": 1
+  },
+  "neoforge:conditions": [
+    {
+      "type": "carved_wood:config",
+      "value": "wooden_campfires"
+    }
+  ],
+  "fabric:load_conditions": [
+    {
+      "condition": "carved_wood:config",
+      "value": "wooden_campfires"
+    }
+  ]
 }

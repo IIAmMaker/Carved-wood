@@ -12,7 +12,19 @@
     "#"
   ],
   "result": {
-    "count": 1,
-    "id": "carved_wood:cherry_mosaic"
-  }
+    "id": "carved_wood:cherry_mosaic",
+    "count": 1
+  },
+  "neoforge:conditions": [
+    {
+      "type": "carved_wood:config",
+      "value": "planks_sets"
+    }
+  ],
+  "fabric:load_conditions": [
+    {
+      "condition": "carved_wood:config",
+      "value": "planks_sets"
+    }
+  ]
 }

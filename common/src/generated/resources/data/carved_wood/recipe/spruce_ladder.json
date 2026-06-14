@@ -1,7 +1,7 @@
 {
   "type": "minecraft:crafting_shaped",
   "category": "misc",
-  "group": "ladder",
+  "group": "wooden_ladders",
   "key": {
     "#": {
       "item": "minecraft:spruce_planks"
@@ -16,7 +16,19 @@
     "S S"
   ],
   "result": {
-    "count": 3,
-    "id": "carved_wood:spruce_ladder"
-  }
+    "id": "carved_wood:spruce_ladder",
+    "count": 3
+  },
+  "neoforge:conditions": [
+    {
+      "type": "carved_wood:config",
+      "value": "wooden_ladders"
+    }
+  ],
+  "fabric:load_conditions": [
+    {
+      "condition": "carved_wood:config",
+      "value": "wooden_ladders"
+    }
+  ]
 }

@@ -1,13 +1,13 @@
 {
   "type": "minecraft:crafting_shaped",
   "category": "redstone",
-  "group": "lectern",
+  "group": "wooden_lecterns",
   "key": {
-    "B": {
-      "item": "carved_wood:birch_bookshelf"
-    },
     "S": {
       "item": "minecraft:birch_slab"
+    },
+    "B": {
+      "item": "carved_wood:birch_bookshelf"
     }
   },
   "pattern": [
@@ -16,7 +16,19 @@
     " S "
   ],
   "result": {
-    "count": 1,
-    "id": "carved_wood:birch_lectern"
-  }
+    "id": "carved_wood:birch_lectern",
+    "count": 1
+  },
+  "neoforge:conditions": [
+    {
+      "type": "carved_wood:config",
+      "value": "wooden_bookshelves"
+    }
+  ],
+  "fabric:load_conditions": [
+    {
+      "condition": "carved_wood:config",
+      "value": "wooden_bookshelves"
+    }
+  ]
 }

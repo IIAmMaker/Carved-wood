@@ -1,5 +1,6 @@
 {
   "values": [
+    "minecraft:crafting_table",
     "carved_wood:spruce_crafting_table",
     "carved_wood:birch_crafting_table",
     "carved_wood:jungle_crafting_table",
@@ -22,7 +23,6 @@
     "carved_wood:pale_oak_crafting_table",
     "carved_wood:crimson_crafting_table",
     "carved_wood:warped_crafting_table",
-    "carved_wood:bamboo_crafting_table",
-    "minecraft:crafting_table"
+    "carved_wood:bamboo_crafting_table"
   ]
 }

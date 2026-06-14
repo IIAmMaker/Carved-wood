@@ -1,14 +1,21 @@
 {
   "type": "minecraft:crafting_shapeless",
   "category": "building",
-  "group": "logs",
-  "ingredients": [
+  "group": "log",
+  "result": {
+    "id": "minecraft:pale_oak_log",
+    "count": 1
+  },
+  "neoforge:conditions": [
     {
-      "item": "carved_wood:pale_oak_log_bundle"
+      "type": "carved_wood:config",
+      "value": "log_bundles"
     }
   ],
-  "result": {
-    "count": 1,
-    "id": "minecraft:pale_oak_log"
-  }
+  "fabric:load_conditions": [
+    {
+      "condition": "carved_wood:config",
+      "value": "log_bundles"
+    }
+  ]
 }

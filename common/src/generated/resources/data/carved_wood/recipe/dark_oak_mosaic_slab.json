@@ -11,7 +11,19 @@
     "###"
   ],
   "result": {
-    "count": 6,
-    "id": "carved_wood:dark_oak_mosaic_slab"
-  }
+    "id": "carved_wood:dark_oak_mosaic_slab",
+    "count": 6
+  },
+  "neoforge:conditions": [
+    {
+      "type": "carved_wood:config",
+      "value": "planks_sets"
+    }
+  ],
+  "fabric:load_conditions": [
+    {
+      "condition": "carved_wood:config",
+      "value": "planks_sets"
+    }
+  ]
 }

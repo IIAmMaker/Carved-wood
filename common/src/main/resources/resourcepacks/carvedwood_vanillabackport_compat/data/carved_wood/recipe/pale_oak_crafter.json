@@ -1,0 +1,40 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "redstone",
+  "group": "wooden_crafters",
+  "key": {
+    "I": {
+      "item": "minecraft:iron_ingot"
+    },
+    "R": {
+      "item": "minecraft:redstone"
+    },
+    "C": {
+      "item": "carved_wood:pale_oak_crafting_table"
+    },
+    "D": {
+      "item": "minecraft:dropper"
+    }
+  },
+  "pattern": [
+    "III",
+    "ICI",
+    "RDR"
+  ],
+  "result": {
+    "id": "carved_wood:pale_oak_crafter",
+    "count": 1
+  },
+  "neoforge:conditions": [
+    {
+      "type": "carved_wood:config",
+      "value": "wooden_crafting_tables"
+    }
+  ],
+  "fabric:load_conditions": [
+    {
+      "condition": "carved_wood:config",
+      "value": "wooden_crafting_tables"
+    }
+  ]
+}

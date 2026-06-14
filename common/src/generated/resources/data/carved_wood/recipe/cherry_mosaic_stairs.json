@@ -13,7 +13,19 @@
     "###"
   ],
   "result": {
-    "count": 4,
-    "id": "carved_wood:cherry_mosaic_stairs"
-  }
+    "id": "carved_wood:cherry_mosaic_stairs",
+    "count": 4
+  },
+  "neoforge:conditions": [
+    {
+      "type": "carved_wood:config",
+      "value": "planks_sets"
+    }
+  ],
+  "fabric:load_conditions": [
+    {
+      "condition": "carved_wood:config",
+      "value": "planks_sets"
+    }
+  ]
 }

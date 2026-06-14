@@ -1,19 +1,19 @@
 {
   "type": "minecraft:crafting_shaped",
   "category": "redstone",
-  "group": "beehive",
+  "group": "wooden_crafters",
   "key": {
-    "C": {
-      "item": "carved_wood:jungle_crafting_table"
-    },
-    "D": {
-      "item": "minecraft:dropper"
-    },
     "I": {
       "item": "minecraft:iron_ingot"
     },
     "R": {
       "item": "minecraft:redstone"
+    },
+    "C": {
+      "item": "carved_wood:jungle_crafting_table"
+    },
+    "D": {
+      "item": "minecraft:dropper"
     }
   },
   "pattern": [
@@ -22,7 +22,19 @@
     "RDR"
   ],
   "result": {
-    "count": 1,
-    "id": "carved_wood:jungle_crafter"
-  }
+    "id": "carved_wood:jungle_crafter",
+    "count": 1
+  },
+  "neoforge:conditions": [
+    {
+      "type": "carved_wood:config",
+      "value": "wooden_crafting_tables"
+    }
+  ],
+  "fabric:load_conditions": [
+    {
+      "condition": "carved_wood:config",
+      "value": "wooden_crafting_tables"
+    }
+  ]
 }

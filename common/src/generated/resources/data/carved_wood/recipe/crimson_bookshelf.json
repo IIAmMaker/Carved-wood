@@ -1,13 +1,13 @@
 {
   "type": "minecraft:crafting_shaped",
   "category": "misc",
-  "group": "bookshelf",
+  "group": "wooden_bookshelves",
   "key": {
-    "B": {
-      "item": "minecraft:book"
-    },
     "P": {
       "item": "minecraft:crimson_planks"
+    },
+    "B": {
+      "item": "minecraft:book"
     }
   },
   "pattern": [
@@ -16,7 +16,19 @@
     "PPP"
   ],
   "result": {
-    "count": 1,
-    "id": "carved_wood:crimson_bookshelf"
-  }
+    "id": "carved_wood:crimson_bookshelf",
+    "count": 1
+  },
+  "neoforge:conditions": [
+    {
+      "type": "carved_wood:config",
+      "value": "wooden_bookshelves"
+    }
+  ],
+  "fabric:load_conditions": [
+    {
+      "condition": "carved_wood:config",
+      "value": "wooden_bookshelves"
+    }
+  ]
 }

@@ -13,7 +13,19 @@
     " # "
   ],
   "result": {
-    "count": 5,
-    "id": "minecraft:jungle_wood"
-  }
+    "id": "minecraft:jungle_wood",
+    "count": 5
+  },
+  "neoforge:conditions": [
+    {
+      "type": "carved_wood:config",
+      "value": "log_bundles"
+    }
+  ],
+  "fabric:load_conditions": [
+    {
+      "condition": "carved_wood:config",
+      "value": "log_bundles"
+    }
+  ]
 }

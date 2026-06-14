@@ -1,7 +1,7 @@
 {
   "type": "minecraft:crafting_shaped",
   "category": "building",
-  "group": "log_bundle",
+  "group": "log_bundles",
   "key": {
     "#": {
       "item": "minecraft:stripped_cherry_log"
@@ -12,7 +12,19 @@
     "##"
   ],
   "result": {
-    "count": 4,
-    "id": "carved_wood:stripped_cherry_log_bundle"
-  }
+    "id": "carved_wood:stripped_cherry_log_bundle",
+    "count": 4
+  },
+  "neoforge:conditions": [
+    {
+      "type": "carved_wood:config",
+      "value": "log_bundles"
+    }
+  ],
+  "fabric:load_conditions": [
+    {
+      "condition": "carved_wood:config",
+      "value": "log_bundles"
+    }
+  ]
 }

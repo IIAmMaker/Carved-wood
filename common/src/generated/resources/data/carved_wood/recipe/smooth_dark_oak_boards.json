@@ -13,7 +13,19 @@
     "###"
   ],
   "result": {
-    "count": 9,
-    "id": "carved_wood:smooth_dark_oak_boards"
-  }
+    "id": "carved_wood:smooth_dark_oak_boards",
+    "count": 9
+  },
+  "neoforge:conditions": [
+    {
+      "type": "carved_wood:config",
+      "value": "planks_sets"
+    }
+  ],
+  "fabric:load_conditions": [
+    {
+      "condition": "carved_wood:config",
+      "value": "planks_sets"
+    }
+  ]
 }

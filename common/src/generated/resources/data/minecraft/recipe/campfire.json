@@ -1,30 +1,39 @@
 {
   "type": "minecraft:crafting_shaped",
   "category": "misc",
-  "group": "campfires",
+  "group": "wooden_campfires",
   "key": {
-    "#": [
-      {
-        "item": "minecraft:oak_log"
-      },
-      {
-        "item": "minecraft:oak_wood"
-      }
-    ],
+    "S": {
+      "item": "minecraft:stick"
+    },
     "C": {
       "tag": "minecraft:coals"
     },
-    "S": {
-      "tag": "c:rods/wooden"
+    "L": {
+      "tag": "minecraft:logs"
     }
   },
   "pattern": [
     " S ",
     "SCS",
-    "###"
+    "LLL"
   ],
   "result": {
-    "count": 1,
-    "id": "minecraft:campfire"
-  }
+    "id": "minecraft:campfire",
+    "count": 1
+  },
+  "neoforge:conditions": [
+    {
+      "type": "carved_wood:config",
+      "value": "wooden_campfires",
+      "inverted": true
+    }
+  ],
+  "fabric:load_conditions": [
+    {
+      "condition": "carved_wood:config",
+      "value": "wooden_campfires",
+      "inverted": true
+    }
+  ]
 }

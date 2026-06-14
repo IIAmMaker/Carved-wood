@@ -1,0 +1,16 @@
+{
+  "type": "carved_wood:crafting_special_crafting_table",
+  "category": "misc",
+  "neoforge:conditions": [
+    {
+      "type": "carved_wood:config",
+      "value": "mixed_crafting_table_crafting"
+    }
+  ],
+  "fabric:load_conditions": [
+    {
+      "condition": "carved_wood:config",
+      "value": "mixed_crafting_table_crafting"
+    }
+  ]
+}

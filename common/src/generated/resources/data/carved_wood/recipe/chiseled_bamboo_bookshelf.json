@@ -1,7 +1,7 @@
 {
   "type": "minecraft:crafting_shaped",
   "category": "building",
-  "group": "chiseled_bookshelf",
+  "group": "wooden_chiseled_bookshelves",
   "key": {
     "P": {
       "item": "minecraft:bamboo_planks"
@@ -16,7 +16,19 @@
     "PPP"
   ],
   "result": {
-    "count": 1,
-    "id": "carved_wood:chiseled_bamboo_bookshelf"
-  }
+    "id": "carved_wood:chiseled_bamboo_bookshelf",
+    "count": 1
+  },
+  "neoforge:conditions": [
+    {
+      "type": "carved_wood:config",
+      "value": "wooden_bookshelves"
+    }
+  ],
+  "fabric:load_conditions": [
+    {
+      "condition": "carved_wood:config",
+      "value": "wooden_bookshelves"
+    }
+  ]
 }
