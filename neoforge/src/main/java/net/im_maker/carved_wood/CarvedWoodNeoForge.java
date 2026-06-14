@@ -1,13 +1,13 @@
 package net.im_maker.carved_wood;
 
 import com.mojang.logging.LogUtils;
+import com.mojang.serialization.MapCodec;
 import com.simibubi.create.AllBlockEntityTypes;
-import net.im_maker.carved_wood.common.registers.CWBlocksNeoForge;
-import net.im_maker.carved_wood.common.registers.CWPoiType;
+import net.im_maker.carved_wood.common.registers.*;
+import net.im_maker.carved_wood.config.ConfigValueCondition;
 import net.im_maker.carved_wood.common.util.AddToCreativeInv;
+import net.im_maker.carved_wood.config.NeoForgeConfig;
 import net.im_maker.carved_wood.platform.*;
-import net.im_maker.carved_wood.common.registers.CWBlockEntityTypes;
-import net.im_maker.carved_wood.common.registers.CWBlocks;
 import net.im_maker.carved_wood.common.block.CWLecternControllerBlock;
 import net.im_maker.carved_wood.compatibility.WoodGood.ModCompat;
 import net.im_maker.carved_wood.compatibility.create.CWCreateCompat;
@@ -17,9 +17,14 @@ import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.entity.BlockEntityType;
 import net.neoforged.fml.ModList;
 import net.neoforged.fml.common.Mod;
+import net.neoforged.fml.config.ModConfig;
 import net.neoforged.neoforge.capabilities.Capabilities.ItemHandler;
 import net.neoforged.neoforge.capabilities.RegisterCapabilitiesEvent;
+import net.neoforged.neoforge.common.conditions.ICondition;
 import net.neoforged.neoforge.items.wrapper.InvWrapper;
+import net.neoforged.neoforge.registries.DeferredHolder;
+import net.neoforged.neoforge.registries.DeferredRegister;
+import net.neoforged.neoforge.registries.NeoForgeRegistries;
 import org.slf4j.Logger;
 
 import net.neoforged.bus.api.IEventBus;
@@ -36,30 +41,34 @@ public class CarvedWoodNeoForge {
 
     public static final Logger LOGGER = LogUtils.getLogger();
 
+    private static final DeferredRegister<MapCodec<? extends ICondition>> CONDITION_CODECS =
+            DeferredRegister.create(NeoForgeRegistries.Keys.CONDITION_CODECS, CarvedWood.MOD_ID);
+
+    public static final DeferredHolder<MapCodec<? extends ICondition>, MapCodec<ConfigValueCondition>> CONFIG_CONDITION =
+            CONDITION_CODECS.register("config", () -> ConfigValueCondition.CODEC);
+
     public CarvedWoodNeoForge(IEventBus modEventBus, ModContainer modContainer) {
         PlatHelper.setInstance(new NeoForgePlatHelper(modEventBus));
+        modContainer.registerConfig(ModConfig.Type.COMMON, NeoForgeConfig.SPEC, "carved_wood-common.toml");
+        CONDITION_CODECS.register(modEventBus);
 
         CWBlocks.registerBlocks();
-        CWBlocksNeoForge.register(modEventBus); //neo Only
-        CWBlockEntityTypes.registerBlockEntities();
-        CWPoiType.init();
+        CWBlocksNeoForge.registerModBlocks();
+        CWBlockEntities.registerBlockEntities();
+        CWRecipes.registerRecipeSerializers();
+        CWPoi.init();
 
-        modEventBus.addListener(this::setup);
         modEventBus.addListener(AddToCreativeInv::addCreative);
         modEventBus.addListener(this::registerCapabilities);
         everyCompatModule();
     }
 
-    private void setup(final FMLCommonSetupEvent event) {
-    }
-
     private void registerCapabilities(RegisterCapabilitiesEvent event) {
-        event.registerBlockEntity(ItemHandler.BLOCK, CWBlockEntityTypes.CHEST.get(), (container, side) -> new InvWrapper(container.getContainer()));
-        event.registerBlockEntity(ItemHandler.BLOCK, CWBlockEntityTypes.TRAPPED_CHEST.get(), (container, side) -> new InvWrapper(container.getContainer()));
-        event.registerBlockEntity(ItemHandler.BLOCK, CWBlockEntityTypes.BARREL.get(), (container, side) -> new InvWrapper(container));
-        event.registerBlockEntity(ItemHandler.BLOCK, CWBlockEntityTypes.CHISELED_BOOKSHELF.get(), (container, side) -> new InvWrapper(container));
+        event.registerBlockEntity(ItemHandler.BLOCK, CWBlockEntities.CHEST.get(), (container, side) -> new InvWrapper(container.getContainer()));
+        event.registerBlockEntity(ItemHandler.BLOCK, CWBlockEntities.TRAPPED_CHEST.get(), (container, side) -> new InvWrapper(container.getContainer()));
+        event.registerBlockEntity(ItemHandler.BLOCK, CWBlockEntities.BARREL.get(), (container, side) -> new InvWrapper(container));
+        event.registerBlockEntity(ItemHandler.BLOCK, CWBlockEntities.CHISELED_BOOKSHELF.get(), (container, side) -> new InvWrapper(container));
     }
-
 
     @EventBusSubscriber(modid = MOD_ID, bus = EventBusSubscriber.Bus.MOD)
     public static class CommonModEvents {

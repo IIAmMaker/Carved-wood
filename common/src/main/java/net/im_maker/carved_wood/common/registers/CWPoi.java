@@ -4,6 +4,7 @@ import net.im_maker.carved_wood.common.block.CWBarrelBlock;
 import net.im_maker.carved_wood.common.block.CWBeehiveBlock;
 import net.im_maker.carved_wood.common.block.CWLecternBlock;
 import net.im_maker.carved_wood.common.util.CWTags;
+import net.im_maker.carved_wood.common.util.ConventionalTags;
 import net.im_maker.carved_wood.platform.PlatHelper;
 import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.tags.BlockTags;
@@ -13,7 +14,7 @@ import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.state.BlockState;
 
-public class CWPoiType {
+public class CWPoi {
     public static void init() {
         PlatHelper.addPOI(poiStatesToType -> {
             PoiType fishermanPoiType = BuiltInRegistries.POINT_OF_INTEREST_TYPE.get(PoiTypes.FISHERMAN.location());
@@ -41,7 +42,7 @@ public class CWPoiType {
     }
 
     private static boolean isInBarrels(Block block) {
-        return block instanceof CWBarrelBlock || block == Blocks.BARREL || block.defaultBlockState().is(CWTags.Blocks.WOODEN_BARRELS);
+        return block instanceof CWBarrelBlock || block == Blocks.BARREL || block.defaultBlockState().is(ConventionalTags.Blocks.WOODEN_BARRELS);
     }
 
     private static boolean isInLectern(Block block) {

@@ -1,12 +1,16 @@
 package net.im_maker.carved_wood.compatibility.WoodGood;
 
 import com.mojang.blaze3d.platform.NativeImage;
+import net.im_maker.carved_wood.CarvedWood;
+import net.im_maker.carved_wood.client.renderer.inventory.CWBlockEntityWithoutLevelRenderer;
 import net.im_maker.carved_wood.common.block.*;
 import net.im_maker.carved_wood.common.block.chiseled_bookshelf.CWChiseledBookShelfBlockType1;
-import net.im_maker.carved_wood.common.registers.CWBlockEntityTypes;
+import net.im_maker.carved_wood.common.registers.CWBlockEntities;
 import net.im_maker.carved_wood.common.registers.CWBlocks;
 import net.im_maker.carved_wood.common.util.CWTags;
 import net.im_maker.carved_wood.common.util.ConventionalTags;
+import net.im_maker.carved_wood.config.CarvedWoodConfig;
+import net.im_maker.carved_wood.platform.PlatHelper;
 import net.mehvahdjukaar.every_compat.EveryCompat;
 import net.mehvahdjukaar.every_compat.api.PaletteStrategies;
 import net.mehvahdjukaar.every_compat.api.RenderLayer;
@@ -28,6 +32,7 @@ import net.mehvahdjukaar.moonlight.api.set.wood.VanillaWoodTypes;
 import net.mehvahdjukaar.moonlight.api.set.wood.WoodType;
 import net.mehvahdjukaar.moonlight.api.util.Utils;
 import net.mehvahdjukaar.moonlight.core.misc.McMetaFile;
+import net.minecraft.client.Minecraft;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.resources.ResourceKey;
@@ -40,6 +45,7 @@ import net.minecraft.world.item.CreativeModeTab;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.SoundType;
+import net.minecraft.world.level.block.entity.BlockEntity;
 import net.minecraft.world.level.block.entity.BlockEntityType;
 import net.minecraft.world.level.block.entity.ChestBlockEntity;
 import net.minecraft.world.level.block.state.BlockBehaviour;
@@ -115,7 +121,7 @@ public class CarvedWoodModule extends SimpleModule {
                 .defaultRecipe()
                 .copyParentDrop()
                 .build();
-        this.addEntry(craftingTables);
+        if (CarvedWoodConfig.isEnabled("wooden_crafting_tables")) this.addEntry(craftingTables);
 
         crafters = SimpleEntrySet.builder(WoodType.class, "crafter",
                         () -> CWBlocks.ACACIA_CRAFTER.get(), () -> VanillaWoodTypes.ACACIA,
@@ -136,12 +142,12 @@ public class CarvedWoodModule extends SimpleModule {
                 .addTag(BlockTags.INCORRECT_FOR_WOODEN_TOOL, Registries.BLOCK)
                 .addTag(BlockTags.INCORRECT_FOR_GOLD_TOOL, Registries.BLOCK)
                 .addTag(BlockTags.NEEDS_STONE_TOOL, Registries.BLOCK)
-                .addTile(() -> CWBlockEntityTypes.CRAFTER.get())
+                .addTile(() -> CWBlockEntities.CRAFTER.get())
                 .setTabKey(tab)
                 .defaultRecipe()
                 .copyParentDrop()
                 .build();
-        this.addEntry(crafters);
+        if (CarvedWoodConfig.isEnabled("wooden_crafting_tables")) this.addEntry(crafters);
 
         chests = SimpleEntrySet.builder(WoodType.class, "chest",
                         getModBlock("oak_chest"), () -> VanillaWoodTypes.OAK,
@@ -155,9 +161,9 @@ public class CarvedWoodModule extends SimpleModule {
                 .addTag(ConventionalTags.Items.WOODEN_CHESTS, Registries.ITEM)
                 .addTile(crwoChestBlockEntity::new)
                 .addCustomItem((w, block, properties) -> new CompatChestItem(block, properties))
-                .defaultRecipe()
+                .addRecipe(CarvedWood.newRL("oak_chest")).defaultRecipe()
                 .build();
-        this.addEntry(chests);
+        if (CarvedWoodConfig.isEnabled("wooden_chests")) this.addEntry(chests);
 
         trappedChests = SimpleEntrySet.builder(WoodType.class, "chest", "trapped",
                         getModBlock("trapped_oak_chest"), () -> VanillaWoodTypes.OAK,
@@ -182,7 +188,7 @@ public class CarvedWoodModule extends SimpleModule {
                 //)
                 .defaultRecipe()
                 .build();
-        this.addEntry(trappedChests);
+        if (CarvedWoodConfig.isEnabled("wooden_chests")) this.addEntry(trappedChests);
 
         barrels = SimpleEntrySet.builder(WoodType.class, "barrel",
                         () -> CWBlocks.OAK_BARREL.get(), () -> VanillaWoodTypes.OAK,
@@ -197,12 +203,13 @@ public class CarvedWoodModule extends SimpleModule {
                 .addTag(BlockTags.GUARDED_BY_PIGLINS, Registries.BLOCK)
                 .addTag(BlockTags.MINEABLE_WITH_AXE, Registries.BLOCK)
                 .addTag(ConventionalTags.Blocks.WOODEN_BARRELS, Registries.BLOCK)
-                .addTile(() -> CWBlockEntityTypes.BARREL.get())
+                .addTag(ConventionalTags.Blocks.BARRELS, Registries.BLOCK)
+                .addTile(() -> CWBlockEntities.BARREL.get())
                 .setTabKey(tab)
                 .defaultRecipe()
                 .copyParentDrop()
                 .build();
-        this.addEntry(barrels);
+        if (CarvedWoodConfig.isEnabled("wooden_barrels")) this.addEntry(barrels);
 
         ladders = SimpleEntrySet.builder(WoodType.class, "ladder",
                         () -> CWBlocks.SPRUCE_LADDER.get(), () -> VanillaWoodTypes.SPRUCE,
@@ -221,7 +228,7 @@ public class CarvedWoodModule extends SimpleModule {
                 .defaultRecipe()
                 .copyParentDrop()
                 .build();
-        this.addEntry(ladders);
+        if (CarvedWoodConfig.isEnabled("wooden_ladders")) this.addEntry(ladders);
 
         beehives = SimpleEntrySet.builder(WoodType.class, "beehive",
                         () -> CWBlocks.SPRUCE_BEEHIVE.get(), () -> VanillaWoodTypes.SPRUCE,
@@ -231,15 +238,15 @@ public class CarvedWoodModule extends SimpleModule {
                 .addTextureM(modRes("block/spruce_beehive_front_honey"), EveryCompat.res("block/crwo/spruce_beehive_front_honey_m"))
                 .addTextureM(modRes("block/spruce_beehive_side"), EveryCompat.res("block/crwo/spruce_beehive_side_m"))
                 .addTag(CWTags.Items.BEEHIVES, Registries.ITEM)
-                .addTag(BlockTags.BEEHIVES, Registries.BLOCK)
+                .addTag(CWTags.Blocks.BEEHIVES, Registries.BLOCK)
                 .addTag(BlockTags.DOES_NOT_BLOCK_HOPPERS, Registries.BLOCK)
                 .addTag(BlockTags.MINEABLE_WITH_AXE, Registries.BLOCK)
-                .addTile(() -> CWBlockEntityTypes.BEEHIVE.get())
+                .addTile(() -> CWBlockEntities.BEEHIVE.get())
                 .setTabKey(tab)
                 .defaultRecipe()
                 .copyParentDrop()
                 .build();
-        this.addEntry(beehives);
+        if (CarvedWoodConfig.isEnabled("wooden_beehives")) this.addEntry(beehives);
 
         lecterns = SimpleEntrySet.builder(WoodType.class, "lectern",
                         () -> CWBlocks.SPRUCE_LECTERN.get(), () -> VanillaWoodTypes.SPRUCE,
@@ -253,33 +260,12 @@ public class CarvedWoodModule extends SimpleModule {
                 .addTag(ConventionalTags.Blocks.VILLAGER_JOB_SITES, Registries.BLOCK)
                 .addTag(CWTags.Blocks.LECTERNS, Registries.BLOCK)
                 .addTag(BlockTags.MINEABLE_WITH_AXE, Registries.BLOCK)
-                .addTile(() -> CWBlockEntityTypes.LECTERN.get())
+                .addTile(() -> CWBlockEntities.LECTERN.get())
                 .setTabKey(tab)
                 .defaultRecipe()
                 .copyParentDrop()
                 .build();
-        this.addEntry(lecterns);
-
-        //if (ModList.get().isLoaded("create")) {
-        //    lecternsControllers = SimpleEntrySet.builder(WoodType.class, "lectern_controller",
-        //                    CWBlocks.SPRUCE_LECTERN_CONTROLLER, () -> VanillaWoodTypes.SPRUCE,
-        //                    w -> new CWLecternControllerBlock(Utils.copyPropertySafe(w.log)))
-        //            .addTexture(modRes("block/spruce_lectern_sides"))
-        //            .addTexture(modRes("block/spruce_lectern_top"))
-        //            .addTextureM(modRes("block/spruce_lectern_base"), EveryCompat.res("block/crwo/spruce_lectern_base_m"))
-        //            .addTextureM(modRes("block/spruce_lectern_front"), EveryCompat.res("block/crwo/spruce_lectern_front_m"))
-        //            //.addTag(CWTags.Items.LECTERNS, Registries.ITEM)
-        //            //.addTag(Tags.Items.VILLAGER_JOB_SITES, Registries.ITEM)
-        //            //.addTag(Tags.Blocks.VILLAGER_JOB_SITES, Registries.BLOCK)
-        //            //.addTag(CWTags.Blocks.LECTERNS, Registries.BLOCK)
-        //            .addTag(BlockTags.MINEABLE_WITH_AXE, Registries.BLOCK)
-        //            .setTabKey(tab)
-        //            .defaultRecipe()
-        //            .copyParentDrop()
-        //            .build();
-        //}else
-        //
-        //this.addEntry(lecternsControllers);
+        if (CarvedWoodConfig.isEnabled("wooden_bookshelves")) this.addEntry(lecterns);
 
         bookshelves = SimpleEntrySet.builder(WoodType.class, "bookshelf",
                         () -> CWBlocks.SPRUCE_BOOKSHELF.get(), () -> VanillaWoodTypes.SPRUCE,
@@ -297,7 +283,7 @@ public class CarvedWoodModule extends SimpleModule {
                 .defaultRecipe()
                 .copyParentDrop()
                 .build();
-        this.addEntry(bookshelves);
+        if (CarvedWoodConfig.isEnabled("wooden_bookshelves")) this.addEntry(bookshelves);
 
         chiseledBookshelves = SimpleEntrySet.builder(WoodType.class, "bookshelf", "chiseled",
                         () -> CWBlocks.CHISELED_SPRUCE_BOOKSHELF.get(), () -> VanillaWoodTypes.SPRUCE,
@@ -317,12 +303,12 @@ public class CarvedWoodModule extends SimpleModule {
                 .addTag(CWTags.Items.CHISELED_BOOKSHELVES, Registries.ITEM)
                 .addTag(CWTags.Blocks.CHISELED_BOOKSHELVES, Registries.BLOCK)
                 .addTag(BlockTags.MINEABLE_WITH_AXE, Registries.BLOCK)
-                .addTile(() -> CWBlockEntityTypes.CHISELED_BOOKSHELF.get())
+                .addTile(() -> CWBlockEntities.CHISELED_BOOKSHELF.get())
                 .setTabKey(tab)
                 .defaultRecipe()
                 .copyParentDrop()
                 .build();
-        this.addEntry(chiseledBookshelves);
+        if (CarvedWoodConfig.isEnabled("wooden_bookshelves")) this.addEntry(chiseledBookshelves);
 
         logBundles = SimpleEntrySet.builder(WoodType.class, "log_bundle",
                         () -> CWBlocks.OAK_LOG_BUNDLE.get(), () -> VanillaWoodTypes.OAK,
@@ -333,7 +319,7 @@ public class CarvedWoodModule extends SimpleModule {
                 .copyParentDrop()
                 .requiresChildren(VanillaWoodChildKeys.LOG)
                 .build();
-        this.addEntry(logBundles);
+        if (CarvedWoodConfig.isEnabled("log_bundles")) this.addEntry(logBundles);
 
         strippedLogBundles = SimpleEntrySet.builder(WoodType.class, "log_bundle", "stripped",
                         () -> CWBlocks.STRIPPED_OAK_LOG_BUNDLE.get(), () -> VanillaWoodTypes.OAK,
@@ -344,7 +330,7 @@ public class CarvedWoodModule extends SimpleModule {
                 .copyParentDrop()
                 .requiresChildren(VanillaWoodChildKeys.STRIPPED_LOG)
                 .build();
-        this.addEntry(strippedLogBundles);
+        if (CarvedWoodConfig.isEnabled("log_bundles")) this.addEntry(strippedLogBundles);
 
         //bambooBundles = SimpleEntrySet.builder(WoodType.class, "bundle",
         //                CWBlocksCommon.BAMBOO_BUNDLE, () -> VanillaWoodTypes.BAMBOO,
@@ -377,12 +363,12 @@ public class CarvedWoodModule extends SimpleModule {
                 .setRenderType(RenderLayer.CUTOUT)
                 .addTag(BlockTags.MINEABLE_WITH_AXE, Registries.BLOCK)
                 .addTag(BlockTags.CAMPFIRES, Registries.BLOCK)
-                .addTile(() -> CWBlockEntityTypes.CAMPFIRE.get())
+                .addTile(() -> CWBlockEntities.CAMPFIRE.get())
                 .setTabKey(tab)
                 .defaultRecipe()
                 .copyParentDrop()
                 .build();
-        this.addEntry(campfires);
+        if (CarvedWoodConfig.isEnabled("wooden_campfires")) this.addEntry(campfires);
 
         soulCampfires = SimpleEntrySet.builder(WoodType.class, "campfire", "soul",
                         () -> CWBlocks.SOUL_SPRUCE_CAMPFIRE.get(), () -> VanillaWoodTypes.SPRUCE,
@@ -393,12 +379,12 @@ public class CarvedWoodModule extends SimpleModule {
                 .addTag(BlockTags.MINEABLE_WITH_AXE, Registries.BLOCK)
                 .addTag(BlockTags.CAMPFIRES, Registries.BLOCK)
                 .addTag(BlockTags.PIGLIN_REPELLENTS, Registries.BLOCK)
-                .addTile(() -> CWBlockEntityTypes.CAMPFIRE.get())
+                .addTile(() -> CWBlockEntities.CAMPFIRE.get())
                 .setTabKey(tab)
                 .defaultRecipe()
                 .copyParentDrop()
                 .build();
-        this.addEntry(soulCampfires);
+        if (CarvedWoodConfig.isEnabled("wooden_campfires")) this.addEntry(soulCampfires);
 
         woodenPanels = SimpleEntrySet.builder(WoodType.class, "panels",
                         () -> CWBlocks.OAK_PANELS.get(), () -> VanillaWoodTypes.OAK,
@@ -410,7 +396,7 @@ public class CarvedWoodModule extends SimpleModule {
                 .defaultRecipe()
                 .copyParentDrop()
                 .build();
-        this.addEntry(woodenPanels);
+        if (CarvedWoodConfig.isEnabled("planks_sets")) this.addEntry(woodenPanels);
 
         woodenBoards = SimpleEntrySet.builder(WoodType.class, "boards",
                         () -> CWBlocks.OAK_BOARDS.get(), () -> VanillaWoodTypes.OAK,
@@ -421,7 +407,7 @@ public class CarvedWoodModule extends SimpleModule {
                 .defaultRecipe()
                 .copyParentDrop()
                 .build();
-        this.addEntry(woodenBoards);
+        if (CarvedWoodConfig.isEnabled("planks_sets")) this.addEntry(woodenBoards);
 
         woodenSmoothBoards = SimpleEntrySet.builder(WoodType.class, "boards", "smooth",
                         () -> CWBlocks.SMOOTH_OAK_BOARDS.get(), () -> VanillaWoodTypes.OAK,
@@ -430,12 +416,13 @@ public class CarvedWoodModule extends SimpleModule {
                     p.reduceDown();
                     p.reduceDown();
                     p.reduceUp();
-                })))                .addTag(BlockTags.MINEABLE_WITH_AXE, Registries.BLOCK)
+                })))
+                .addTag(BlockTags.MINEABLE_WITH_AXE, Registries.BLOCK)
                 .setTabKey(tab)
                 .defaultRecipe()
                 .copyParentDrop()
                 .build();
-        this.addEntry(woodenSmoothBoards);
+        if (CarvedWoodConfig.isEnabled("planks_sets")) this.addEntry(woodenSmoothBoards);
 
         woodenTiles = SimpleEntrySet.builder(WoodType.class, "tiles",
                         () -> CWBlocks.OAK_TILES.get(), () -> VanillaWoodTypes.OAK,
@@ -446,7 +433,7 @@ public class CarvedWoodModule extends SimpleModule {
                 .defaultRecipe()
                 .copyParentDrop()
                 .build();
-        this.addEntry(woodenTiles);
+        if (CarvedWoodConfig.isEnabled("planks_sets")) this.addEntry(woodenTiles);
 
         woodenMosaics = SimpleEntrySet.builder(WoodType.class, "mosaic",
                         () -> CWBlocks.DARK_OAK_MOSAIC.get(), () -> VanillaWoodTypes.DARK_OAK,
@@ -457,7 +444,7 @@ public class CarvedWoodModule extends SimpleModule {
                 .defaultRecipe()
                 .copyParentDrop()
                 .build();
-        this.addEntry(woodenMosaics);
+        if (CarvedWoodConfig.isEnabled("planks_sets")) this.addEntry(woodenMosaics);
 
         woodenPillars = SimpleEntrySet.builder(WoodType.class, "pillar",
                         () -> CWBlocks.OAK_PILLAR.get(), () -> VanillaWoodTypes.OAK,
@@ -469,7 +456,7 @@ public class CarvedWoodModule extends SimpleModule {
                 .defaultRecipe()
                 .copyParentDrop()
                 .build();
-        this.addEntry(woodenPillars);
+        if (CarvedWoodConfig.isEnabled("planks_sets")) this.addEntry(woodenPillars);
 
         carvedPlanks = SimpleEntrySet.builder(WoodType.class, "planks", "carved",
                         () -> CWBlocks.CARVED_OAK_PLANKS.get(), () -> VanillaWoodTypes.OAK,
@@ -481,7 +468,7 @@ public class CarvedWoodModule extends SimpleModule {
                 .defaultRecipe()
                 .copyParentDrop()
                 .build();
-        this.addEntry(carvedPlanks);
+        if (CarvedWoodConfig.isEnabled("planks_sets")) this.addEntry(carvedPlanks);
 
         largeWoodenLanterns = SimpleEntrySet.builder(WoodType.class, "lantern_block",
                         () -> CWBlocks.OAK_LANTERN_BLOCK.get(), () -> VanillaWoodTypes.OAK,
@@ -493,7 +480,7 @@ public class CarvedWoodModule extends SimpleModule {
                 .defaultRecipe()
                 .copyParentDrop()
                 .build();
-        this.addEntry(largeWoodenLanterns);
+        if (CarvedWoodConfig.isEnabled("planks_sets")) this.addEntry(largeWoodenLanterns);
 
         woodenLanterns = SimpleEntrySet.builder(WoodType.class, "lantern",
                         () -> CWBlocks.OAK_LANTERN.get(), () -> VanillaWoodTypes.OAK,
@@ -505,7 +492,7 @@ public class CarvedWoodModule extends SimpleModule {
                 .defaultRecipe()
                 .copyParentDrop()
                 .build();
-        this.addEntry(woodenLanterns);
+        if (CarvedWoodConfig.isEnabled("planks_sets")) this.addEntry(woodenLanterns);
 
         woodenMosaicStairs = SimpleEntrySet.builder(WoodType.class, "mosaic_stairs",
                         () -> CWBlocks.DARK_OAK_MOSAIC_STAIRS.get(), () -> VanillaWoodTypes.DARK_OAK,
@@ -517,7 +504,7 @@ public class CarvedWoodModule extends SimpleModule {
                 .defaultRecipe()
                 .copyParentDrop()
                 .build();
-        this.addEntry(woodenMosaicStairs);
+        if (CarvedWoodConfig.isEnabled("planks_sets")) this.addEntry(woodenMosaicStairs);
 
         woodenTileStairs = SimpleEntrySet.builder(WoodType.class, "tile_stairs",
                         () -> CWBlocks.OAK_TILE_STAIRS.get(), () -> VanillaWoodTypes.OAK,
@@ -529,7 +516,7 @@ public class CarvedWoodModule extends SimpleModule {
                 .defaultRecipe()
                 .copyParentDrop()
                 .build();
-        this.addEntry(woodenTileStairs);
+        if (CarvedWoodConfig.isEnabled("planks_sets")) this.addEntry(woodenTileStairs);
 
         woodenMosaicSlab = SimpleEntrySet.builder(WoodType.class, "mosaic_slab",
                         () -> CWBlocks.DARK_OAK_MOSAIC_SLAB.get(), () -> VanillaWoodTypes.DARK_OAK,
@@ -541,7 +528,7 @@ public class CarvedWoodModule extends SimpleModule {
                 .defaultRecipe()
                 .copyParentDrop()
                 .build();
-        this.addEntry(woodenMosaicSlab);
+        if (CarvedWoodConfig.isEnabled("planks_sets")) this.addEntry(woodenMosaicSlab);
 
         woodenTileSlab = SimpleEntrySet.builder(WoodType.class, "tile_slab",
                         () -> CWBlocks.OAK_TILE_SLAB.get(), () -> VanillaWoodTypes.OAK,
@@ -553,7 +540,7 @@ public class CarvedWoodModule extends SimpleModule {
                 .defaultRecipe()
                 .copyParentDrop()
                 .build();
-        this.addEntry(woodenTileSlab);
+        if (CarvedWoodConfig.isEnabled("planks_sets")) this.addEntry(woodenTileSlab);
 
         //if (PlatHelper.isFabric()) {
         //    simpleAddBlocksToPOI(beehives, PoiTypes.BEEHIVE);
@@ -860,29 +847,57 @@ public class CarvedWoodModule extends SimpleModule {
         //    );
         //}
 
+        //for (Block block : chests.blocks.values()) {
+        //    BlockEntity be = new crwoChestBlockEntity(BlockPos.ZERO, block.defaultBlockState());
+        //    ClientHelper.addItemRenderersRegistration(event -> {
+        //        event.register(block.asItem(), (ItemRenderExtension) new CWBlockEntityWithoutLevelRenderer(Minecraft.getInstance().getBlockEntityRenderDispatcher(),
+        //                Minecraft.getInstance().getEntityModels(), be));
+        //    });
+        //}
+        //for (Block block : trappedChests.blocks.values()) {
+        //    BlockEntity be = new crwoChestBlockEntity(BlockPos.ZERO, block.defaultBlockState());
+        //    ClientHelper.addItemRenderersRegistration(event -> {
+        //        event.register(block.asItem(), (ItemRenderExtension) new CWBlockEntityWithoutLevelRenderer(Minecraft.getInstance().getBlockEntityRenderDispatcher(),
+        //                Minecraft.getInstance().getEntityModels(), be));
+        //    });
+        //}
+        if (!PlatHelper.isNeoForge()) {
+            for (Block block : chests.blocks.values()) {
+                BlockEntity be = new CompatChestBlockEntity(chests.getTile(), new BlockPos(0, 0, 0), block.defaultBlockState());
+                CWBlockEntityWithoutLevelRenderer renderer = new CWBlockEntityWithoutLevelRenderer(
+                        Minecraft.getInstance().getBlockEntityRenderDispatcher(),
+                        Minecraft.getInstance().getEntityModels(), be);
+                PlatHelper.registerItemRenderer(block.asItem(), renderer);
+            }
+
+            for (Block block : trappedChests.blocks.values()) {
+                BlockEntity be = new CompatChestBlockEntity(trappedChests.getTile(), new BlockPos(0, 0, 0), block.defaultBlockState());
+                CWBlockEntityWithoutLevelRenderer renderer = new CWBlockEntityWithoutLevelRenderer(
+                        Minecraft.getInstance().getBlockEntityRenderDispatcher(),
+                        Minecraft.getInstance().getEntityModels(), be);
+                PlatHelper.registerItemRenderer(block.asItem(), renderer);
+            }
+        }
     }
+
+    //public void s(Block block, ClientHelper.ItemRendererEvent event) {
+    //    event.register(block.asItem(), (ItemRenderExtension) new CompatChestBlockRenderer()));
+    //}
 
     @Override
     //@Environment(EnvType.CLIENT)
     public void onClientInit() {
         super.onClientInit();
 
-        //for (Block block : chests.blocks.values()) {
-        //    BlockEntity be = new CompatChestBlockEntity(chests.getTile(), new BlockPos(0, 0, 0), block.defaultBlockState());
-        //    BuiltinItemRendererRegistry.INSTANCE.register(block.asItem(), new CWBlockEntityWithoutLevelRenderer(be));
-        //    System.out.println(be.getBlockState());
-        //}
-//
-        //for (Block block : trappedChests.blocks.values()) {
-        //    BlockEntity be = new CompatChestBlockEntity(trappedChests.getTile(), new BlockPos(0, 0, 0), block.defaultBlockState());
-        //    BuiltinItemRendererRegistry.INSTANCE.register(block.asItem(), new CWBlockEntityWithoutLevelRenderer(be));
-        //    System.out.println(be.getBlockState());
-        //}
+        // Register item renderers for chests
+
+
     }
     //@Override
     //public void onClientInit() {
-    //    BlockEntityRenderers.register(CWBlockEntityTypesCommon.CHEST, CWChestRenderer::new);
-    //    EntityModelLayerRegistry.registerModelLayer(CWModelLayers.CHEST, CWChestRenderer::createSingleBodyLayer);
+    //
+    //    //BlockEntityRenderers.register(CWBlockEntities.CHEST, CWChestRenderer::new);
+    //    //EntityModelLayer.registerModelLayer(CWModelLayers.CHEST, CWChestRenderer::createSingleBodyLayer);
     //}
 
     public BlockBehaviour.Properties campfireProperties(int i) {

@@ -1,7 +1,7 @@
 package net.im_maker.carved_wood.common.block;
 
 import net.im_maker.carved_wood.common.block.entity.CWBeehiveBlockEntity;
-import net.im_maker.carved_wood.common.registers.CWBlockEntityTypes;
+import net.im_maker.carved_wood.common.registers.CWBlockEntities;
 import net.im_maker.carved_wood.platform.PlatHelper;
 import net.minecraft.core.BlockPos;
 import net.minecraft.world.level.Level;
@@ -26,7 +26,7 @@ public class CWBeehiveBlock extends BeehiveBlock {
     @Nullable
     @Override
     public <T extends BlockEntity> BlockEntityTicker<T> getTicker(Level level, BlockState blockState, BlockEntityType<T> type) {
-        return level.isClientSide ? null : createTickerHelper(type, CWBlockEntityTypes.BEEHIVE.get(), CWBeehiveBlockEntity::serverTick);
+        return level.isClientSide ? null : createTickerHelper(type, CWBlockEntities.BEEHIVE.get(), CWBeehiveBlockEntity::serverTick);
     }
 
     @Override

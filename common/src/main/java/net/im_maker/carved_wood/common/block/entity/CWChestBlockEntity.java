@@ -1,6 +1,6 @@
 package net.im_maker.carved_wood.common.block.entity;
 
-import net.im_maker.carved_wood.common.registers.CWBlockEntityTypes;
+import net.im_maker.carved_wood.common.registers.CWBlockEntities;
 import net.minecraft.core.BlockPos;
 import net.minecraft.world.Container;
 import net.minecraft.world.level.block.ChestBlock;
@@ -11,7 +11,7 @@ import net.minecraft.world.level.block.state.BlockState;
 public class CWChestBlockEntity extends ChestBlockEntity {
 
     public CWChestBlockEntity(BlockPos pPos, BlockState pBlockState) {
-        this(CWBlockEntityTypes.CHEST.get(), pPos, pBlockState);
+        this(CWBlockEntities.CHEST.get(), pPos, pBlockState);
     }
 
     public CWChestBlockEntity(BlockEntityType<?> pType, BlockPos pPos, BlockState pBlockState) {
@@ -20,7 +20,7 @@ public class CWChestBlockEntity extends ChestBlockEntity {
 
     @Override
     public BlockEntityType<?> getType() {
-        return CWBlockEntityTypes.CHEST.get();
+        return CWBlockEntities.CHEST.get();
     }
 
     public boolean isValidBlockState(BlockState blockState) {

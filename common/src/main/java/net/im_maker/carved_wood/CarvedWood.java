@@ -62,22 +62,34 @@ public class CarvedWood {
 				.toArray(Block[]::new);
 	}
 
-	public static Block getBlockFromString (String block) {
+	public static Block getBlockFromString(String block) {
 		return getBlockFromString(MOD_ID, block);
 	}
 
-	public static Block getBlockFromString (String nameSpace, String block) {
+	public static Block getBlockFromString(String nameSpace, String block) {
 		ResourceLocation blockLocation = ResourceLocation.fromNamespaceAndPath(nameSpace, block);
 		return BuiltInRegistries.BLOCK.get(blockLocation);
 	}
 
-	public static Item getItemFromString (String item) {
+	public static Item getItemFromString(String item) {
 		return getItemFromString(MOD_ID, item);
 	}
 
-	public static Item getItemFromString (String nameSpace, String item) {
+	public static Item getItemFromString(String nameSpace, String item) {
 		ResourceLocation itemLocation = ResourceLocation.fromNamespaceAndPath(nameSpace, item);
 		return BuiltInRegistries.ITEM.get(itemLocation);
+	}
+
+	public static ResourceLocation getBlockRL(Block block) {
+		return BuiltInRegistries.BLOCK.getKey(block);
+	}
+
+	public static ResourceLocation getItemRL(Item item) {
+		return BuiltInRegistries.ITEM.getKey(item);
+	}
+
+	public static ResourceLocation newRL(String path) {
+		return newRL(MOD_ID, path);
 	}
 
 	public static ResourceLocation newRL(String nameSpace, String path) {

@@ -4,6 +4,7 @@ import net.im_maker.carved_wood.CarvedWood;
 import net.im_maker.carved_wood.CarvedWoodNeoForge;
 import net.im_maker.carved_wood.common.block.CWLecternControllerBlock;
 import net.im_maker.carved_wood.common.registers.CWBlocksNeoForge;
+import net.im_maker.carved_wood.config.CarvedWoodConfig;
 import net.mehvahdjukaar.every_compat.EveryCompat;
 import net.mehvahdjukaar.every_compat.api.SimpleEntrySet;
 import net.mehvahdjukaar.every_compat.api.SimpleModule;
@@ -44,7 +45,7 @@ public class CarvedWoodModuleNeoForge extends SimpleModule {
                     .defaultRecipe()
                     .copyParentDrop()
                     .build();
-            this.addEntry(lecternsControllers);
+            if (CarvedWoodConfig.isEnabled("wooden_bookshelves")) this.addEntry(lecternsControllers);
         }
     }
 

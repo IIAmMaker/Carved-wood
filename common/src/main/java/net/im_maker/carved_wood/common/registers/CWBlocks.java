@@ -440,7 +440,7 @@ public class CWBlocks {
         return (blockState) -> pLightValue;
     }
 
-    private static Supplier<Block> registerWoodenFuelBlock(String name, Supplier<Block> block) {
+    public static Supplier<Block> registerWoodenFuelBlock(String name, Supplier<Block> block) {
         return registerWoodenFuelBlock(name, block, false);
     };
 

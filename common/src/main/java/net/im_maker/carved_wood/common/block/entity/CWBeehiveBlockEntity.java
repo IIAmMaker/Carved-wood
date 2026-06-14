@@ -1,6 +1,6 @@
 package net.im_maker.carved_wood.common.block.entity;
 
-import net.im_maker.carved_wood.common.registers.CWBlockEntityTypes;
+import net.im_maker.carved_wood.common.registers.CWBlockEntities;
 import net.minecraft.core.BlockPos;
 import net.minecraft.world.level.block.entity.BeehiveBlockEntity;
 import net.minecraft.world.level.block.entity.BlockEntityType;
@@ -13,7 +13,7 @@ public class CWBeehiveBlockEntity extends BeehiveBlockEntity {
 
     @Override
     public BlockEntityType<?> getType() {
-        return CWBlockEntityTypes.BEEHIVE.get();
+        return CWBlockEntities.BEEHIVE.get();
     }
 
     public boolean isValidBlockState(BlockState blockState) {

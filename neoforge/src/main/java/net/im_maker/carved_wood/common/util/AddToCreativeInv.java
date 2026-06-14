@@ -2,6 +2,7 @@ package net.im_maker.carved_wood.common.util;
 
 import net.im_maker.carved_wood.CarvedWood;
 import net.im_maker.carved_wood.common.registers.CWBlocks;
+import net.im_maker.carved_wood.config.CarvedWoodConfig;
 import net.minecraft.world.item.CreativeModeTab;
 import net.minecraft.world.item.CreativeModeTabs;
 import net.minecraft.world.item.ItemStack;
@@ -17,132 +18,151 @@ import java.util.List;
 import java.util.function.Function;
 
 public class AddToCreativeInv {
+    private static final Function<ItemLike, ItemStack> FUNCTION = ItemStack::new;
     public static final List<String> WOOD_TYPES  = new ArrayList<>(Arrays.asList(
             "oak","spruce", "birch", "jungle", "acacia", "dark_oak", "mangrove", "cherry", "pale_oak", "bamboo", "crimson", "warped"
     ));
 
-    private static final Function<ItemLike, ItemStack> FUNCTION = ItemStack::new;
 
-    private static void addAfter(BuildCreativeModeTabContentsEvent event, ItemLike after, ItemLike... blocks) {
-        for (int i = blocks.length - 1; i >= 0; i--) {
-            ItemLike block = blocks[i];
-            if (block != Blocks.AIR && after != Blocks.AIR) {
-                event.insertAfter(FUNCTION.apply(after), FUNCTION.apply(block), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
-            }
+    private static void addAfter(BuildCreativeModeTabContentsEvent event, ItemLike after, ItemLike... items) {
+        for (int i = items.length - 1; i >= 0; i--) {
+            if (items[i] == null || after == null) continue;
+            event.insertAfter(FUNCTION.apply(after), FUNCTION.apply(items[i]), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
         }
     }
 
-    private static void addBefore(BuildCreativeModeTabContentsEvent event, ItemLike before, ItemLike... blocks) {
-        for (ItemLike block : blocks) {
-            if (block != Blocks.AIR && before != Blocks.AIR) {
-                event.insertBefore(FUNCTION.apply(before), FUNCTION.apply(block), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
-            }
+    private static void addBefore(BuildCreativeModeTabContentsEvent event, ItemLike before, ItemLike... items) {
+        for (ItemLike item : items) {
+            if (item == null || before == null) continue;
+            event.insertBefore(FUNCTION.apply(before), FUNCTION.apply(item), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
         }
+    }
+
+    private static Block getIfEnabled(String configKey, String blockName) {
+        if (!CarvedWoodConfig.isEnabled(configKey)) return null;
+        Block block = CarvedWood.getBlockFromString(blockName);
+        return (block != Blocks.AIR) ? block : null;
+    }
+
+    private static boolean isPaleOakLocked(String woodType) {
+        return woodType.equals("pale_oak") && !ModList.get().isLoaded("vanillabackport");
+    }
+
+    private static String trunkType(String woodType) {
+        return switch (woodType) {
+            case "crimson", "warped" -> "_stem";
+            case "bamboo" -> "";
+            default -> "_log";
+        };
     }
 
     public static void addCreative(BuildCreativeModeTabContentsEvent event) {
-        if (event.getTabKey() == CreativeModeTabs.BUILDING_BLOCKS) {
-            for (String woodType : WOOD_TYPES) {
-                if (woodType.equals("pale_oak") && !ModList.get().isLoaded("vanillabackport"))
-                    continue;
-                Block planks = CarvedWood.getBlockFromString("minecraft", woodType + "_planks");
-                Block PlanksP = CarvedWood.getBlockFromString(woodType + "_panels");
-                Block bPlanks = CarvedWood.getBlockFromString(woodType + "_boards");
-                Block sPlanks = CarvedWood.getBlockFromString("smooth_" + woodType + "_boards");
-                Block planksTiles = CarvedWood.getBlockFromString(woodType + "_tiles");
-                Block mPlanks = CarvedWood.getBlockFromString(woodType + "_mosaic");
-                Block cPlanks = CarvedWood.getBlockFromString("carved_" + woodType + "_planks");
-                Block lPlanks = CarvedWood.getBlockFromString(woodType + "_lantern_block");
-                Block pPlanks = CarvedWood.getBlockFromString(woodType + "_pillar");
-                Block planksStairs = CarvedWood.getBlockFromString("minecraft", woodType + "_stairs");
-                Block mPlanksStairs = CarvedWood.getBlockFromString(woodType + "_mosaic_stairs");
-                Block tPlanksStairs = CarvedWood.getBlockFromString(woodType + "_tile_stairs");
-                Block planksSlab = CarvedWood.getBlockFromString("minecraft", woodType + "_slab");
-                Block mPlanksSlab = CarvedWood.getBlockFromString(woodType + "_mosaic_slab");
-                Block tPlanksSlab = CarvedWood.getBlockFromString(woodType + "_tile_slab");
-                String trunkType;
-                switch (woodType) {
-                    case "crimson", "warped" -> trunkType = "_stem";
-                    case "bamboo" -> trunkType = "";
-                    default -> trunkType = "_log";
-                }
-                Block log = CarvedWood.getBlockFromString("minecraft", woodType + trunkType);
-                Block strippedLog = CarvedWood.getBlockFromString("minecraft", "stripped_" + woodType + trunkType);
-                Block logBundle = CarvedWood.getBlockFromString(woodType + trunkType + "_bundle");
-                Block strippedLogBundle = CarvedWood.getBlockFromString("stripped_" + woodType + trunkType + "_bundle");
+        if (event.getTabKey() == CreativeModeTabs.BUILDING_BLOCKS) addBuildingBlocks(event);
+        else if (event.getTabKey() == CreativeModeTabs.FUNCTIONAL_BLOCKS) addFunctionalBlocks(event);
+        else if (event.getTabKey() == CreativeModeTabs.REDSTONE_BLOCKS) addRedstoneBlocks(event);
+    }
 
-                switch (woodType) {
-                    case "bamboo" -> {
-                        addAfter(event, Blocks.BAMBOO_BLOCK, logBundle);
-                        addAfter(event, Blocks.STRIPPED_BAMBOO_BLOCK, strippedLogBundle);
-                        addAfter(event, Blocks.BAMBOO_PLANKS, PlanksP);
-                        addAfter(event, Blocks.BAMBOO_MOSAIC, planksTiles, bPlanks, sPlanks, cPlanks, lPlanks, pPlanks);
-                        addAfter(event, Blocks.BAMBOO_MOSAIC_STAIRS, tPlanksStairs);
-                        addAfter(event, Blocks.BAMBOO_MOSAIC_SLAB, tPlanksSlab);
-                    }
-                    case "pale_oak" -> {
-                        addAfter(event, Blocks.CHERRY_BUTTON, logBundle);
-                        addAfter(event, Blocks.CHERRY_BUTTON, strippedLogBundle);
-                        addAfter(event, Blocks.CHERRY_BUTTON, PlanksP, mPlanks, planksTiles, bPlanks, sPlanks, cPlanks, lPlanks, pPlanks);
-                        addAfter(event, Blocks.CHERRY_BUTTON, mPlanksStairs, tPlanksStairs);
-                        addAfter(event, Blocks.CHERRY_BUTTON, mPlanksSlab, tPlanksSlab);
-                    }
-                    default -> {
-                        addAfter(event, log, logBundle);
-                        addAfter(event, strippedLog, strippedLogBundle);
-                        addAfter(event, planks, PlanksP, mPlanks, planksTiles, bPlanks, sPlanks, cPlanks, lPlanks, pPlanks);
-                        addAfter(event, planksStairs, mPlanksStairs, tPlanksStairs);
-                        addAfter(event, planksSlab, mPlanksSlab, tPlanksSlab);
-                    }
+    private static void addBuildingBlocks(BuildCreativeModeTabContentsEvent event) {
+        for (String woodType : WOOD_TYPES) {
+            if (isPaleOakLocked(woodType)) continue;
+
+            Block planks       = CarvedWood.getBlockFromString("minecraft", woodType + "_planks");
+            Block planksStairs = CarvedWood.getBlockFromString("minecraft", woodType + "_stairs");
+            Block planksSlab   = CarvedWood.getBlockFromString("minecraft", woodType + "_slab");
+            String t           = trunkType(woodType);
+            Block log          = CarvedWood.getBlockFromString("minecraft", woodType + t);
+            Block strippedLog  = CarvedWood.getBlockFromString("minecraft", "stripped_" + woodType + t);
+
+            Block logBundle         = getIfEnabled("log_bundles", woodType + t + "_bundle");
+            Block strippedLogBundle = getIfEnabled("log_bundles", "stripped_" + woodType + t + "_bundle");
+
+            Block panels       = getIfEnabled("planks_sets", woodType + "_panels");
+            Block boards       = getIfEnabled("planks_sets", woodType + "_boards");
+            Block smoothBoards = getIfEnabled("planks_sets", "smooth_" + woodType + "_boards");
+            Block tiles        = getIfEnabled("planks_sets", woodType + "_tiles");
+            Block mosaic       = getIfEnabled("planks_sets", woodType + "_mosaic");
+            Block carvedPlanks = getIfEnabled("planks_sets", "carved_" + woodType + "_planks");
+            Block lanternBlock = getIfEnabled("planks_sets", woodType + "_lantern_block");
+            Block pillar       = getIfEnabled("planks_sets", woodType + "_pillar");
+            Block mosaicStairs = getIfEnabled("planks_sets", woodType + "_mosaic_stairs");
+            Block tileStairs   = getIfEnabled("planks_sets", woodType + "_tile_stairs");
+            Block mosaicSlab   = getIfEnabled("planks_sets", woodType + "_mosaic_slab");
+            Block tileSlab     = getIfEnabled("planks_sets", woodType + "_tile_slab");
+
+            switch (woodType) {
+                case "bamboo" -> {
+                    addAfter(event, Blocks.BAMBOO_BLOCK, logBundle);
+                    addAfter(event, Blocks.STRIPPED_BAMBOO_BLOCK, strippedLogBundle);
+                    addAfter(event, Blocks.BAMBOO_PLANKS, panels);
+                    addAfter(event, Blocks.BAMBOO_MOSAIC, tiles, boards, smoothBoards, carvedPlanks, lanternBlock, pillar);
+                    addAfter(event, Blocks.BAMBOO_MOSAIC_STAIRS, tileStairs);
+                    addAfter(event, Blocks.BAMBOO_MOSAIC_SLAB, tileSlab);
+                }
+                case "pale_oak" -> {
+                    addAfter(event, Blocks.CHERRY_BUTTON, logBundle, strippedLogBundle);
+                    addAfter(event, Blocks.CHERRY_BUTTON, panels, mosaic, tiles, boards, smoothBoards, carvedPlanks, lanternBlock, pillar);
+                    addAfter(event, Blocks.CHERRY_BUTTON, mosaicStairs, tileStairs);
+                    addAfter(event, Blocks.CHERRY_BUTTON, mosaicSlab, tileSlab);
+                }
+                default -> {
+                    addAfter(event, log, logBundle);
+                    addAfter(event, strippedLog, strippedLogBundle);
+                    addAfter(event, planks, panels, mosaic, tiles, boards, smoothBoards, carvedPlanks, lanternBlock, pillar);
+                    addAfter(event, planksStairs, mosaicStairs, tileStairs);
+                    addAfter(event, planksSlab, mosaicSlab, tileSlab);
                 }
             }
         }
-        if (event.getTabKey() == CreativeModeTabs.FUNCTIONAL_BLOCKS) {
-            for (String woodType : WOOD_TYPES.reversed()) {
-                if (woodType.equals("pale_oak") && !ModList.get().isLoaded("vanillabackport"))
-                    continue;
-                Block woodenLantern = CarvedWood.getBlockFromString(woodType + "_lantern");
-                addAfter(event, Blocks.SOUL_LANTERN, woodenLantern);
-                if (woodType != "oak") {
-                    Block craftingTable = CarvedWood.getBlockFromString(woodType + "_crafting_table");
-                    Block ladder = CarvedWood.getBlockFromString(woodType + "_ladder");
-                    Block campfire = CarvedWood.getBlockFromString(woodType + "_campfire");
-                    Block soulCampfire = CarvedWood.getBlockFromString("soul_" + woodType + "_campfire");
-                    Block bookshelf = CarvedWood.getBlockFromString(woodType + "_bookshelf");
-                    Block chiseled_bookshelf = CarvedWood.getBlockFromString("chiseled_" + woodType + "_bookshelf");
-                    Block lectern = CarvedWood.getBlockFromString(woodType + "_lectern");
-                    Block beehive = CarvedWood.getBlockFromString(woodType + "_beehive");
-                    addAfter(event, Blocks.CRAFTING_TABLE, craftingTable);
-                    addAfter(event, Blocks.LADDER, ladder);
-                    addAfter(event, Blocks.CAMPFIRE, campfire);
-                    addAfter(event, Blocks.SOUL_CAMPFIRE, soulCampfire);
-                    addAfter(event, Blocks.CHISELED_BOOKSHELF, bookshelf);
-                    addAfter(event, bookshelf, chiseled_bookshelf);
-                    addAfter(event, Blocks.LECTERN, lectern);
-                    addAfter(event, Blocks.BEEHIVE, beehive);
-                }
-                if (woodType != "spruce" && woodType != "oak") {
-                    Block barrel = CarvedWood.getBlockFromString(woodType + "_barrel");
-                    addAfter(event, Blocks.BARREL, barrel);
-                }
-                Block chest = CarvedWood.getBlockFromString(woodType + "_chest");
-                addAfter(event, Blocks.CHEST, chest);
+    }
+
+    private static void addFunctionalBlocks(BuildCreativeModeTabContentsEvent event) {
+        for (String woodType : WOOD_TYPES.reversed()) {
+            if (isPaleOakLocked(woodType)) continue;
+
+            Block lantern       = getIfEnabled("planks_sets", woodType + "_lantern");
+            Block craftingTable = getIfEnabled("wooden_crafting_tables", woodType + "_crafting_table");
+            Block ladder        = getIfEnabled("wooden_ladders", woodType + "_ladder");
+            Block campfire      = getIfEnabled("wooden_campfires", woodType + "_campfire");
+            Block soulCampfire  = getIfEnabled("wooden_campfires", "soul_" + woodType + "_campfire");
+            Block bookshelf     = getIfEnabled("wooden_bookshelves", woodType + "_bookshelf");
+            Block chiseledShelf = getIfEnabled("wooden_bookshelves", "chiseled_" + woodType + "_bookshelf");
+            Block lectern       = getIfEnabled("wooden_bookshelves", woodType + "_lectern");
+            Block beehive       = getIfEnabled("wooden_beehives", woodType + "_beehive");
+            Block barrel        = getIfEnabled("wooden_barrels", woodType + "_barrel");
+            Block chest         = getIfEnabled("wooden_chests", woodType + "_chest");
+
+            addAfter(event, Blocks.SOUL_LANTERN, lantern);
+
+            if (!woodType.equals("oak")) {
+                addAfter(event, Blocks.CRAFTING_TABLE, craftingTable);
+                addAfter(event, Blocks.LADDER, ladder);
+                addAfter(event, Blocks.CAMPFIRE, campfire);
+                addAfter(event, Blocks.SOUL_CAMPFIRE, soulCampfire);
+                addAfter(event, Blocks.CHISELED_BOOKSHELF, bookshelf);
+                addAfter(event, bookshelf, chiseledShelf);
+                addAfter(event, Blocks.LECTERN, lectern);
+                addAfter(event, Blocks.BEEHIVE, beehive);
             }
+            if (!woodType.equals("spruce") && !woodType.equals("oak")) {
+                addAfter(event, Blocks.BARREL, barrel);
+            }
+            addAfter(event, Blocks.CHEST, chest);
+        }
+        if (CarvedWoodConfig.isEnabled("wooden_barrels"))
             addBefore(event, Blocks.BARREL, CWBlocks.OAK_BARREL.get());
-        }
-        if (event.getTabKey() == CreativeModeTabs.REDSTONE_BLOCKS) {
-            for (String woodType : WOOD_TYPES.reversed()) {
-                if (woodType.equals("pale_oak") && !ModList.get().isLoaded("vanillabackport"))
-                    continue;
-                Block chest = CarvedWood.getBlockFromString(woodType + "_chest");
-                addAfter(event, Blocks.CHEST, chest);
-                Block trappedChest = CarvedWood.getBlockFromString("trapped_" + woodType + "_chest");
-                addAfter(event, Blocks.TRAPPED_CHEST, trappedChest);
-                if (!woodType.equals("oak")) {
-                    Block crafter = CarvedWood.getBlockFromString(woodType + "_crafter");
-                    addAfter(event, Blocks.CRAFTER, crafter);
-                }
-            }
+    }
+
+    private static void addRedstoneBlocks(BuildCreativeModeTabContentsEvent event) {
+        for (String woodType : WOOD_TYPES.reversed()) {
+            if (isPaleOakLocked(woodType)) continue;
+
+            Block chest        = getIfEnabled("wooden_chests", woodType + "_chest");
+            Block trappedChest = getIfEnabled("wooden_chests", "trapped_" + woodType + "_chest");
+            Block crafter      = getIfEnabled("wooden_crafting_tables", woodType + "_crafter");
+
+            addAfter(event, Blocks.CHEST, chest);
+            addAfter(event, Blocks.TRAPPED_CHEST, trappedChest);
+            if (!woodType.equals("oak")) addAfter(event, Blocks.CRAFTER, crafter);
         }
     }
 }

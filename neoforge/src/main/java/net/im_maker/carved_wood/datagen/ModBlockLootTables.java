@@ -2,6 +2,8 @@ package net.im_maker.carved_wood.datagen;
 
 import net.im_maker.carved_wood.common.registers.CWBlocksNeoForge;
 import net.im_maker.carved_wood.common.registers.CWBlocks;
+import net.im_maker.carved_wood.platform.NeoForgePlatHelper;
+import net.im_maker.carved_wood.platform.PlatHelper;
 import net.minecraft.core.Holder;
 import net.minecraft.core.HolderLookup;
 import net.minecraft.data.loot.BlockLootSubProvider;
@@ -130,6 +132,18 @@ public class ModBlockLootTables extends BlockLootSubProvider {
         dropSelf(CWBlocks.CRIMSON_LECTERN.get());
         dropSelf(CWBlocks.WARPED_LECTERN.get());
         dropSelf(CWBlocks.BAMBOO_LECTERN.get());
+
+        dropOther(CWBlocksNeoForge.SPRUCE_LECTERN_CONTROLLER.get(), CWBlocks.SPRUCE_LECTERN.get());
+        dropOther(CWBlocksNeoForge.BIRCH_LECTERN_CONTROLLER.get(), CWBlocks.BIRCH_LECTERN.get());
+        dropOther(CWBlocksNeoForge.JUNGLE_LECTERN_CONTROLLER.get(), CWBlocks.JUNGLE_LECTERN.get());
+        dropOther(CWBlocksNeoForge.ACACIA_LECTERN_CONTROLLER.get(), CWBlocks.ACACIA_LECTERN.get());
+        dropOther(CWBlocksNeoForge.DARK_OAK_LECTERN_CONTROLLER.get(), CWBlocks.DARK_OAK_LECTERN.get());
+        dropOther(CWBlocksNeoForge.MANGROVE_LECTERN_CONTROLLER.get(), CWBlocks.MANGROVE_LECTERN.get());
+        dropOther(CWBlocksNeoForge.CHERRY_LECTERN_CONTROLLER.get(), CWBlocks.CHERRY_LECTERN.get());
+        dropOther(CWBlocksNeoForge.PALE_OAK_LECTERN_CONTROLLER.get(), CWBlocks.PALE_OAK_LECTERN.get());
+        dropOther(CWBlocksNeoForge.CRIMSON_LECTERN_CONTROLLER.get(), CWBlocks.CRIMSON_LECTERN.get());
+        dropOther(CWBlocksNeoForge.WARPED_LECTERN_CONTROLLER.get(), CWBlocks.WARPED_LECTERN.get());
+        dropOther(CWBlocksNeoForge.BAMBOO_LECTERN_CONTROLLER.get(), CWBlocks.BAMBOO_LECTERN.get());
 
         dropSelf(CWBlocks.SPRUCE_BEEHIVE.get());
         dropSelf(CWBlocks.BIRCH_BEEHIVE.get());
@@ -391,7 +405,7 @@ public class ModBlockLootTables extends BlockLootSubProvider {
 
     @Override
     protected Iterable<Block> getKnownBlocks() {
-        return CWBlocksNeoForge.BLOCKS.getEntries()
+        return NeoForgePlatHelper.BLOCKS.getEntries()
                 .stream()
                 .map(Holder::value)
                 .collect(java.util.stream.Collectors.toList());

@@ -1,4 +1,4 @@
-package net.im_maker.carved_wood.client.renderer;
+package net.im_maker.carved_wood.client.renderer.inventory;
 
 import com.mojang.blaze3d.vertex.PoseStack;
 import net.fabricmc.fabric.api.client.rendering.v1.BuiltinItemRenderer;

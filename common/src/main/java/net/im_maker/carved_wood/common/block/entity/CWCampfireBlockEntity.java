@@ -1,7 +1,7 @@
 package net.im_maker.carved_wood.common.block.entity;
 
 import net.im_maker.carved_wood.common.block.CWCampfireBlock;
-import net.im_maker.carved_wood.common.registers.CWBlockEntityTypes;
+import net.im_maker.carved_wood.common.registers.CWBlockEntities;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
 import net.minecraft.core.NonNullList;
@@ -54,7 +54,7 @@ public class CWCampfireBlockEntity extends CampfireBlockEntity implements Cleara
 
     @Override
     public BlockEntityType<?> getType() {
-        return CWBlockEntityTypes.CAMPFIRE.get();
+        return CWBlockEntities.CAMPFIRE.get();
     }
 
     public boolean isValidBlockState(BlockState blockState) {

@@ -5,13 +5,17 @@ import net.fabricmc.fabric.api.itemgroup.v1.FabricItemGroupEntries;
 import net.fabricmc.fabric.api.itemgroup.v1.ItemGroupEvents;
 import net.fabricmc.fabric.api.resource.ResourceManagerHelper;
 import net.fabricmc.fabric.api.resource.ResourcePackActivationType;
+import net.fabricmc.fabric.api.resource.conditions.v1.ResourceConditions;
 import net.fabricmc.loader.api.FabricLoader;
 import net.fabricmc.loader.api.ModContainer;
-import net.im_maker.carved_wood.common.registers.CWBlockEntityTypes;
+import net.im_maker.carved_wood.common.registers.CWBlockEntities;
 import net.im_maker.carved_wood.common.registers.CWBlocks;
+import net.im_maker.carved_wood.common.util.AddToCreativeInv;
+import net.im_maker.carved_wood.config.ConfigValueCondition;
+import net.im_maker.carved_wood.config.FabricConfig;
 import net.im_maker.carved_wood.platform.*;
 import net.im_maker.carved_wood.common.registers.CWRecipes;
-import net.im_maker.carved_wood.common.registers.CWPoiType;
+import net.im_maker.carved_wood.common.registers.CWPoi;
 import net.im_maker.carved_wood.common.util.DataPackRegistrar;
 import net.im_maker.carved_wood.compatibility.WoodGood.ModCompat;
 import net.im_maker.carved_wood.platform.PlatHelper;
@@ -30,20 +34,28 @@ public class CarvedWoodFabric implements ModInitializer {
     public void onInitialize() {
         PlatHelper.setInstance(new FabricPlatHelper());
 
-        FabricPlatHelper.isFabric();
+        FabricConfig.load();
+
+        ResourceConditions.register(ConfigValueCondition.TYPE);
+        //Registry.register(
+        //        ConfigValueCondition.TYPE,
+        //        ResourceLocation.fromNamespaceAndPath(CarvedWood.MOD_ID, "config"),
+        //        ConfigValueCondition.TYPE
+        //);
 
         CWBlocks.registerBlocks();
 
-        CWBlockEntityTypes.registerBlockEntities();
+        CWBlockEntities.registerBlockEntities();
 
         DataPackRegistrar.loadBuiltinResourcePacks();
         everyCompatModule();
 
-        CWPoiType.init();
         CWRecipes.registerRecipeSerializers();
-        ItemGroupEvents.modifyEntriesEvent(CreativeModeTabs.BUILDING_BLOCKS).register(CarvedWoodFabric::addToBuildingBlocksTap);
-        ItemGroupEvents.modifyEntriesEvent(CreativeModeTabs.FUNCTIONAL_BLOCKS).register(CarvedWoodFabric::addToFunctionalBlocksTap);
-        ItemGroupEvents.modifyEntriesEvent(CreativeModeTabs.REDSTONE_BLOCKS).register(CarvedWoodFabric::addToRedstoneBlocksTap);
+        CWPoi.init();
+
+        ItemGroupEvents.modifyEntriesEvent(CreativeModeTabs.BUILDING_BLOCKS).register(AddToCreativeInv::addBuildingBlocks);
+        ItemGroupEvents.modifyEntriesEvent(CreativeModeTabs.FUNCTIONAL_BLOCKS).register(AddToCreativeInv::addFunctionalBlocks);
+        ItemGroupEvents.modifyEntriesEvent(CreativeModeTabs.REDSTONE_BLOCKS).register(AddToCreativeInv::addRedstoneBlocks);
         addPackFinders();
     }
 

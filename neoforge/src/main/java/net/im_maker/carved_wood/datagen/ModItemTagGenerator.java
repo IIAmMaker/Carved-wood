@@ -53,6 +53,33 @@ public class ModItemTagGenerator extends ItemTagsProvider {
                 CWBlocks.WARPED_MOSAIC_STAIRS.get().asItem()
         );
 
+        //this.tag(ItemTags.WOODEN_STAIRS).add(
+        //        CWBlocks.OAK_TILE_STAIRS.get().asItem(),
+        //        CWBlocks.SPRUCE_TILE_STAIRS.get().asItem(),
+        //        CWBlocks.BIRCH_TILE_STAIRS.get().asItem(),
+        //        CWBlocks.JUNGLE_TILE_STAIRS.get().asItem(),
+        //        CWBlocks.ACACIA_TILE_STAIRS.get().asItem(),
+        //        CWBlocks.DARK_OAK_TILE_STAIRS.get().asItem(),
+        //        CWBlocks.MANGROVE_TILE_STAIRS.get().asItem(),
+        //        CWBlocks.CHERRY_TILE_STAIRS.get().asItem(),
+        //        CWBlocks.PALE_OAK_TILE_STAIRS.get().asItem(),
+        //        CWBlocks.CRIMSON_TILE_STAIRS.get().asItem(),
+        //        CWBlocks.WARPED_TILE_STAIRS.get().asItem(),
+        //        CWBlocks.BAMBOO_TILE_STAIRS.get().asItem(),
+        //        CWBlocks.OAK_MOSAIC_STAIRS.get().asItem(),
+        //        CWBlocks.SPRUCE_MOSAIC_STAIRS.get().asItem(),
+        //        CWBlocks.BIRCH_MOSAIC_STAIRS.get().asItem(),
+        //        CWBlocks.JUNGLE_MOSAIC_STAIRS.get().asItem(),
+        //        CWBlocks.ACACIA_MOSAIC_STAIRS.get().asItem(),
+        //        CWBlocks.DARK_OAK_MOSAIC_STAIRS.get().asItem(),
+        //        CWBlocks.MANGROVE_MOSAIC_STAIRS.get().asItem(),
+        //        CWBlocks.CHERRY_MOSAIC_STAIRS.get().asItem(),
+        //        CWBlocks.PALE_OAK_MOSAIC_STAIRS.get().asItem(),
+        //        CWBlocks.CRIMSON_MOSAIC_STAIRS.get().asItem(),
+        //        CWBlocks.WARPED_MOSAIC_STAIRS.get().asItem(),
+        //        Blocks.BAMBOO_MOSAIC_STAIRS.asItem()
+        //);
+
         this.tag(ItemTags.SLABS).add(
                 CWBlocks.OAK_TILE_SLAB.get().asItem(),
                 CWBlocks.SPRUCE_TILE_SLAB.get().asItem(),
@@ -79,6 +106,60 @@ public class ModItemTagGenerator extends ItemTagsProvider {
                 CWBlocks.WARPED_MOSAIC_SLAB.get().asItem()
         );
 
+        //this.tag(ItemTags.WOODEN_SLABS).add(
+        //        CWBlocks.OAK_TILE_SLAB.get().asItem(),
+        //        CWBlocks.SPRUCE_TILE_SLAB.get().asItem(),
+        //        CWBlocks.BIRCH_TILE_SLAB.get().asItem(),
+        //        CWBlocks.JUNGLE_TILE_SLAB.get().asItem(),
+        //        CWBlocks.ACACIA_TILE_SLAB.get().asItem(),
+        //        CWBlocks.DARK_OAK_TILE_SLAB.get().asItem(),
+        //        CWBlocks.MANGROVE_TILE_SLAB.get().asItem(),
+        //        CWBlocks.CHERRY_TILE_SLAB.get().asItem(),
+        //        CWBlocks.PALE_OAK_TILE_SLAB.get().asItem(),
+        //        CWBlocks.CRIMSON_TILE_SLAB.get().asItem(),
+        //        CWBlocks.WARPED_TILE_SLAB.get().asItem(),
+        //        CWBlocks.BAMBOO_TILE_SLAB.get().asItem(),
+        //        CWBlocks.OAK_MOSAIC_SLAB.get().asItem(),
+        //        CWBlocks.SPRUCE_MOSAIC_SLAB.get().asItem(),
+        //        CWBlocks.BIRCH_MOSAIC_SLAB.get().asItem(),
+        //        CWBlocks.JUNGLE_MOSAIC_SLAB.get().asItem(),
+        //        CWBlocks.ACACIA_MOSAIC_SLAB.get().asItem(),
+        //        CWBlocks.DARK_OAK_MOSAIC_SLAB.get().asItem(),
+        //        CWBlocks.MANGROVE_MOSAIC_SLAB.get().asItem(),
+        //        CWBlocks.CHERRY_MOSAIC_SLAB.get().asItem(),
+        //        CWBlocks.PALE_OAK_MOSAIC_SLAB.get().asItem(),
+        //        CWBlocks.CRIMSON_MOSAIC_SLAB.get().asItem(),
+        //        CWBlocks.WARPED_MOSAIC_SLAB.get().asItem(),
+        //        Blocks.BAMBOO_SLAB.asItem()
+        //);
+
+        //this.tag(ItemTags.PLANKS).add(
+        //        CWBlocks.OAK_TILES.get().asItem(),
+        //        CWBlocks.SPRUCE_TILES.get().asItem(),
+        //        CWBlocks.BIRCH_TILES.get().asItem(),
+        //        CWBlocks.JUNGLE_TILES.get().asItem(),
+        //        CWBlocks.ACACIA_TILES.get().asItem(),
+        //        CWBlocks.DARK_OAK_TILES.get().asItem(),
+        //        CWBlocks.MANGROVE_TILES.get().asItem(),
+        //        CWBlocks.CHERRY_TILES.get().asItem(),
+        //        CWBlocks.PALE_OAK_TILES.get().asItem(),
+        //        CWBlocks.CRIMSON_TILES.get().asItem(),
+        //        CWBlocks.WARPED_TILES.get().asItem(),
+        //        CWBlocks.BAMBOO_TILES.get().asItem(),
+        //        CWBlocks.OAK_MOSAIC.get().asItem(),
+        //        CWBlocks.SPRUCE_MOSAIC.get().asItem(),
+        //        CWBlocks.BIRCH_MOSAIC.get().asItem(),
+        //        CWBlocks.JUNGLE_MOSAIC.get().asItem(),
+        //        CWBlocks.ACACIA_MOSAIC.get().asItem(),
+        //        CWBlocks.DARK_OAK_MOSAIC.get().asItem(),
+        //        CWBlocks.MANGROVE_MOSAIC.get().asItem(),
+        //        CWBlocks.CHERRY_MOSAIC.get().asItem(),
+        //        CWBlocks.PALE_OAK_MOSAIC.get().asItem(),
+        //        CWBlocks.CRIMSON_MOSAIC.get().asItem(),
+        //        CWBlocks.WARPED_MOSAIC.get().asItem(),
+        //        Blocks.BAMBOO_MOSAIC.asItem()
+        //);
+
         this.tag(CWTags.Items.CRAFTERS).add(
                 Blocks.CRAFTER.asItem(),
                 CWBlocks.SPRUCE_CRAFTER.get().asItem(),
@@ -92,21 +173,6 @@ public class ModItemTagGenerator extends ItemTagsProvider {
                 CWBlocks.CRIMSON_CRAFTER.get().asItem(),
                 CWBlocks.WARPED_CRAFTER.get().asItem(),
                 CWBlocks.BAMBOO_CRAFTER.get().asItem()
-        );
-
-        this.tag(CWTags.Items.FLAG).add(
-                Items.OAK_PLANKS,
-                Items.SPRUCE_PLANKS,
-                Items.BIRCH_PLANKS,
-                Items.JUNGLE_PLANKS,
-                Items.ACACIA_PLANKS,
-                Items.DARK_OAK_PLANKS,
-                Items.MANGROVE_PLANKS,
-                Items.CHERRY_PLANKS,
-                Items.CRIMSON_PLANKS,
-                Items.WARPED_PLANKS,
-                Items.BAMBOO_PLANKS,
-                ModBlocks.PALE_OAK_PLANKS.get().asItem()
         );
 
         this.tag(CWTags.Items.CRAFTING_TABLES).add(
@@ -203,7 +269,7 @@ public class ModItemTagGenerator extends ItemTagsProvider {
         this.copy(CWTags.Blocks.CHISELED_BOOKSHELVES, CWTags.Items.CHISELED_BOOKSHELVES);
         this.copy(CWTags.Blocks.CRAFTING_TABLES, CWTags.Items.CRAFTING_TABLES);
         //this.copy(CWTags.Blocks.COMPOSTER, CWTags.Items.COMPOSTER);
-        this.copy(BlockTags.BEEHIVES, CWTags.Items.BEEHIVES);
+        this.copy(CWTags.Blocks.BEEHIVES, CWTags.Items.BEEHIVES);
         this.copy(CWTags.Blocks.LECTERNS, CWTags.Items.LECTERNS);
         this.copy(CWTags.Blocks.LADDERS, CWTags.Items.LADDERS);
 

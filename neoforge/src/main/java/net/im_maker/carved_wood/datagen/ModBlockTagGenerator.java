@@ -4,6 +4,7 @@ import com.simibubi.create.AllTags;
 import net.im_maker.carved_wood.CarvedWood;
 import net.im_maker.carved_wood.common.registers.CWBlocks;
 import net.im_maker.carved_wood.common.util.CWTags;
+import net.im_maker.carved_wood.common.util.ConventionalTags;
 import net.minecraft.core.HolderLookup;
 import net.minecraft.data.PackOutput;
 import net.minecraft.tags.BlockTags;
@@ -348,21 +349,35 @@ public class ModBlockTagGenerator extends BlockTagsProvider {
                 CWBlocks.CHERRY_MOSAIC_STAIRS.get(),
                 CWBlocks.PALE_OAK_MOSAIC_STAIRS.get(),
                 CWBlocks.CRIMSON_MOSAIC_STAIRS.get(),
-                CWBlocks.WARPED_MOSAIC_STAIRS.get(),
-                Blocks.CRAFTER,
-                CWBlocks.SPRUCE_CRAFTER.get(),
-                CWBlocks.BIRCH_CRAFTER.get(),
-                CWBlocks.JUNGLE_CRAFTER.get(),
-                CWBlocks.ACACIA_CRAFTER.get(),
-                CWBlocks.DARK_OAK_CRAFTER.get(),
-                CWBlocks.MANGROVE_CRAFTER.get(),
-                CWBlocks.CHERRY_CRAFTER.get(),
-                CWBlocks.PALE_OAK_CRAFTER.get(),
-                CWBlocks.CRIMSON_CRAFTER.get(),
-                CWBlocks.WARPED_CRAFTER.get(),
-                CWBlocks.BAMBOO_CRAFTER.get(),
-                CWBlocks.PALE_OAK_CRAFTER.get()
+                CWBlocks.WARPED_MOSAIC_STAIRS.get()
         );
+
+        //this.tag(BlockTags.WOODEN_STAIRS).add(
+        //        CWBlocks.OAK_TILE_STAIRS.get(),
+        //        CWBlocks.SPRUCE_TILE_STAIRS.get(),
+        //        CWBlocks.BIRCH_TILE_STAIRS.get(),
+        //        CWBlocks.JUNGLE_TILE_STAIRS.get(),
+        //        CWBlocks.ACACIA_TILE_STAIRS.get(),
+        //        CWBlocks.DARK_OAK_TILE_STAIRS.get(),
+        //        CWBlocks.MANGROVE_TILE_STAIRS.get(),
+        //        CWBlocks.CHERRY_TILE_STAIRS.get(),
+        //        CWBlocks.PALE_OAK_TILE_STAIRS.get(),
+        //        CWBlocks.CRIMSON_TILE_STAIRS.get(),
+        //        CWBlocks.WARPED_TILE_STAIRS.get(),
+        //        CWBlocks.BAMBOO_TILE_STAIRS.get(),
+        //        CWBlocks.OAK_MOSAIC_STAIRS.get(),
+        //        CWBlocks.SPRUCE_MOSAIC_STAIRS.get(),
+        //        CWBlocks.BIRCH_MOSAIC_STAIRS.get(),
+        //        CWBlocks.JUNGLE_MOSAIC_STAIRS.get(),
+        //        CWBlocks.ACACIA_MOSAIC_STAIRS.get(),
+        //        CWBlocks.DARK_OAK_MOSAIC_STAIRS.get(),
+        //        CWBlocks.MANGROVE_MOSAIC_STAIRS.get(),
+        //        CWBlocks.CHERRY_MOSAIC_STAIRS.get(),
+        //        CWBlocks.PALE_OAK_MOSAIC_STAIRS.get(),
+        //        CWBlocks.CRIMSON_MOSAIC_STAIRS.get(),
+        //        CWBlocks.WARPED_MOSAIC_STAIRS.get(),
+        //        Blocks.BAMBOO_MOSAIC_STAIRS
+        //);
 
         this.tag(BlockTags.SLABS).add(
                 CWBlocks.OAK_TILE_SLAB.get(),
@@ -389,6 +404,60 @@ public class ModBlockTagGenerator extends BlockTagsProvider {
                 CWBlocks.CRIMSON_MOSAIC_SLAB.get(),
                 CWBlocks.WARPED_MOSAIC_SLAB.get()
         );
+
+        //this.tag(BlockTags.WOODEN_SLABS).add(
+        //        CWBlocks.OAK_TILE_SLAB.get(),
+        //        CWBlocks.SPRUCE_TILE_SLAB.get(),
+        //        CWBlocks.BIRCH_TILE_SLAB.get(),
+        //        CWBlocks.JUNGLE_TILE_SLAB.get(),
+        //        CWBlocks.ACACIA_TILE_SLAB.get(),
+        //        CWBlocks.DARK_OAK_TILE_SLAB.get(),
+        //        CWBlocks.MANGROVE_TILE_SLAB.get(),
+        //        CWBlocks.CHERRY_TILE_SLAB.get(),
+        //        CWBlocks.PALE_OAK_TILE_SLAB.get(),
+        //        CWBlocks.CRIMSON_TILE_SLAB.get(),
+        //        CWBlocks.WARPED_TILE_SLAB.get(),
+        //        CWBlocks.BAMBOO_TILE_SLAB.get(),
+        //        CWBlocks.OAK_MOSAIC_SLAB.get(),
+        //        CWBlocks.SPRUCE_MOSAIC_SLAB.get(),
+        //        CWBlocks.BIRCH_MOSAIC_SLAB.get(),
+        //        CWBlocks.JUNGLE_MOSAIC_SLAB.get(),
+        //        CWBlocks.ACACIA_MOSAIC_SLAB.get(),
+        //        CWBlocks.DARK_OAK_MOSAIC_SLAB.get(),
+        //        CWBlocks.MANGROVE_MOSAIC_SLAB.get(),
+        //        CWBlocks.CHERRY_MOSAIC_SLAB.get(),
+        //        CWBlocks.PALE_OAK_MOSAIC_SLAB.get(),
+        //        CWBlocks.CRIMSON_MOSAIC_SLAB.get(),
+        //        CWBlocks.WARPED_MOSAIC_SLAB.get(),
+        //        Blocks.BAMBOO_SLAB
+        //);
+
+        //this.tag(BlockTags.PLANKS).add(
+        //        CWBlocks.OAK_TILES.get(),
+        //        CWBlocks.SPRUCE_TILES.get(),
+        //        CWBlocks.BIRCH_TILES.get(),
+        //        CWBlocks.JUNGLE_TILES.get(),
+        //        CWBlocks.ACACIA_TILES.get(),
+        //        CWBlocks.DARK_OAK_TILES.get(),
+        //        CWBlocks.MANGROVE_TILES.get(),
+        //        CWBlocks.CHERRY_TILES.get(),
+        //        CWBlocks.PALE_OAK_TILES.get(),
+        //        CWBlocks.CRIMSON_TILES.get(),
+        //        CWBlocks.WARPED_TILES.get(),
+        //        CWBlocks.BAMBOO_TILES.get(),
+        //        CWBlocks.OAK_MOSAIC.get(),
+        //        CWBlocks.SPRUCE_MOSAIC.get(),
+        //        CWBlocks.BIRCH_MOSAIC.get(),
+        //        CWBlocks.JUNGLE_MOSAIC.get(),
+        //        CWBlocks.ACACIA_MOSAIC.get(),
+        //        CWBlocks.DARK_OAK_MOSAIC.get(),
+        //        CWBlocks.MANGROVE_MOSAIC.get(),
+        //        CWBlocks.CHERRY_MOSAIC.get(),
+        //        CWBlocks.PALE_OAK_MOSAIC.get(),
+        //        CWBlocks.CRIMSON_MOSAIC.get(),
+        //        CWBlocks.WARPED_MOSAIC.get(),
+        //        Blocks.BAMBOO_MOSAIC
+        //);
 
         this.tag(BlockTags.NEEDS_STONE_TOOL).add(
                 CWBlocks.SPRUCE_CRAFTER.get(),
@@ -436,7 +505,7 @@ public class ModBlockTagGenerator extends BlockTagsProvider {
                 CWBlocks.PALE_OAK_CRAFTER.get()
         );
 
-        this.tag(Tags.Blocks.BOOKSHELVES).add(
+        this.tag(ConventionalTags.Blocks.BOOKSHELVES).add(
                 CWBlocks.SPRUCE_BOOKSHELF.get(),
                 CWBlocks.BIRCH_BOOKSHELF.get(),
                 CWBlocks.JUNGLE_BOOKSHELF.get(),
@@ -523,7 +592,8 @@ public class ModBlockTagGenerator extends BlockTagsProvider {
                 Blocks.LECTERN
         );
 
-        this.tag(BlockTags.BEEHIVES).add(
+        this.tag(CWTags.Blocks.BEEHIVES).add(
+                Blocks.BEEHIVE,
                 CWBlocks.SPRUCE_BEEHIVE.get(),
                 CWBlocks.BIRCH_BEEHIVE.get(),
                 CWBlocks.JUNGLE_BEEHIVE.get(),
@@ -629,7 +699,7 @@ public class ModBlockTagGenerator extends BlockTagsProvider {
                 CWBlocks.BAMBOO_CHEST.get()
         );
 
-        this.tag(Tags.Blocks.CHESTS_WOODEN).add(
+        this.tag(ConventionalTags.Blocks.WOODEN_CHESTS).add(
                 CWBlocks.OAK_CHEST.get(),
                 CWBlocks.SPRUCE_CHEST.get(),
                 CWBlocks.BIRCH_CHEST.get(),
@@ -656,7 +726,7 @@ public class ModBlockTagGenerator extends BlockTagsProvider {
                 CWBlocks.TRAPPED_BAMBOO_CHEST.get()
         );
 
-        this.tag(Tags.Blocks.CHESTS).add(
+        this.tag(ConventionalTags.Blocks.CHESTS).add(
                 CWBlocks.OAK_CHEST.get(),
                 CWBlocks.SPRUCE_CHEST.get(),
                 CWBlocks.BIRCH_CHEST.get(),
@@ -698,7 +768,7 @@ public class ModBlockTagGenerator extends BlockTagsProvider {
                 CWBlocks.BAMBOO_CHEST.get()
         );
 
-        this.tag(Tags.Blocks.CHESTS_TRAPPED).add(
+        this.tag(ConventionalTags.Blocks.TRAPPED_CHESTS).add(
                 CWBlocks.TRAPPED_OAK_CHEST.get(),
                 CWBlocks.TRAPPED_SPRUCE_CHEST.get(),
                 CWBlocks.TRAPPED_BIRCH_CHEST.get(),
@@ -713,7 +783,7 @@ public class ModBlockTagGenerator extends BlockTagsProvider {
                 CWBlocks.TRAPPED_BAMBOO_CHEST.get()
         );
 
-        this.tag(Tags.Blocks.BARRELS_WOODEN).add(
+        this.tag(ConventionalTags.Blocks.WOODEN_CHESTS).add(
                 CWBlocks.OAK_BARREL.get(),
                 CWBlocks.BIRCH_BARREL.get(),
                 CWBlocks.JUNGLE_BARREL.get(),
@@ -727,7 +797,7 @@ public class ModBlockTagGenerator extends BlockTagsProvider {
                 CWBlocks.BAMBOO_BARREL.get()
         );
 
-        this.tag(Tags.Blocks.BARRELS).add(
+        this.tag(ConventionalTags.Blocks.BARRELS).add(
                 CWBlocks.OAK_BARREL.get(),
                 CWBlocks.BIRCH_BARREL.get(),
                 CWBlocks.JUNGLE_BARREL.get(),

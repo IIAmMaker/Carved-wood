@@ -10,16 +10,16 @@ import net.minecraft.world.level.block.Block;
 public class ConventionalTags {
 
     public static class Blocks {
-        public static final TagKey<Block> BARRELS = register("barrels");//
-        public static final TagKey<Block> WOODEN_BARRELS = register("barrels/wooden");//
-        public static final TagKey<Block> BOOKSHELVES = register("bookshelves");//
-        public static final TagKey<Block> CHESTS = register("chests");//
-        public static final TagKey<Block> WOODEN_CHESTS = register("chests/wooden");//
-        public static final TagKey<Block> TRAPPED_CHESTS = register("chests/trapped");//
-        public static final TagKey<Block> VILLAGER_JOB_SITES = register("villager_job_sites");//
-        public static final TagKey<Block> STRIPPED_LOGS = register("stripped_logs");//
-        public static final TagKey<Block> STRIPPED_WOODS = register("stripped_woods");//
-        public static final TagKey<Block> PLAYER_WORKSTATIONS_CRAFTING_TABLES = register("player_workstations/crafting_tables");//
+        public static final TagKey<Block> BARRELS = register("barrels");
+        public static final TagKey<Block> WOODEN_BARRELS = register("barrels/wooden");
+        public static final TagKey<Block> BOOKSHELVES = register("bookshelves");
+        public static final TagKey<Block> CHESTS = register("chests");
+        public static final TagKey<Block> WOODEN_CHESTS = register("chests/wooden");
+        public static final TagKey<Block> TRAPPED_CHESTS = register("chests/trapped");
+        public static final TagKey<Block> VILLAGER_JOB_SITES = register("villager_job_sites");
+        public static final TagKey<Block> STRIPPED_LOGS = register("stripped_logs");
+        public static final TagKey<Block> STRIPPED_WOODS = register("stripped_woods");
+        public static final TagKey<Block> PLAYER_WORKSTATIONS_CRAFTING_TABLES = register("player_workstations/crafting_tables");
 
         public static final TagKey<Block> VILLAGER_FARMLANDS = registerNeo("villager_farmlands");
 
