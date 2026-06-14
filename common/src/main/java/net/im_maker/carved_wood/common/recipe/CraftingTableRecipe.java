@@ -6,10 +6,7 @@ import net.minecraft.core.HolderLookup;
 import net.minecraft.tags.ItemTags;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.Items;
-import net.minecraft.world.item.crafting.CraftingBookCategory;
-import net.minecraft.world.item.crafting.CraftingInput;
-import net.minecraft.world.item.crafting.CustomRecipe;
-import net.minecraft.world.item.crafting.RecipeSerializer;
+import net.minecraft.world.item.crafting.*;
 import net.minecraft.world.level.Level;
 
 public class CraftingTableRecipe extends CustomRecipe {
@@ -19,46 +16,28 @@ public class CraftingTableRecipe extends CustomRecipe {
 
     @Override
     public boolean matches(CraftingInput craftingInput, Level level) {
-        if (craftingInput.width() == 2 && craftingInput.height() == 2) {
-            return isPlanks(craftingInput.getItem(0)) &&
-                   isPlanks(craftingInput.getItem(1)) &&
-                   isPlanks(craftingInput.getItem(2)) &&
-                   isPlanks(craftingInput.getItem(3));
-        }
-
-        if (craftingInput.width() == 3 && craftingInput.height() == 3) {
-            return checkQuadrant(craftingInput, 0, 1, 3, 4) ||
-                    checkQuadrant(craftingInput, 1, 2, 4, 5) ||
-                    checkQuadrant(craftingInput, 3, 4, 6, 7) ||
-                    checkQuadrant(craftingInput, 4, 5, 7, 8);
-        }
-
-        return false;
-    }
-
-    private boolean checkQuadrant(CraftingInput craftingInput, int slot1, int slot2, int slot3, int slot4) {
-        if (!allSlotsArePlanks(craftingInput, slot1, slot2, slot3, slot4)) {
+        if (!canCraftInDimensions(craftingInput.width(), craftingInput.height()))
             return false;
-        }
 
-        for (int i = 0; i < 9; i++) {
-            if (i != slot1 && i != slot2 && i != slot3 && i != slot4) {
-                if (!craftingInput.getItem(i).isEmpty()) {
-                    return false;
-                }
+        ItemStack[][] pattern = new ItemStack[2][2];
+        for (int y = 0; y < 2; y++) {
+            for (int x = 0; x < 2; x++) {
+                pattern[y][x] = craftingInput.getItem(x + y * 2);
             }
         }
 
-        return true;
-    }
+        boolean patternMatches = isPlanks(pattern[0][0]) && isPlanks(pattern[0][1])
+                && isPlanks(pattern[1][0]) && isPlanks(pattern[1][1]);
 
-    private boolean allSlotsArePlanks(CraftingInput craftingInput, int... slots) {
-        for (int slot : slots) {
-            if (!isPlanks(craftingInput.getItem(slot))) {
-                return false;
-            }
-        }
-        return true;
+        if (!patternMatches) return false;
+
+        return level.getRecipeManager().getRecipes().stream()
+                .map(RecipeHolder::value)
+                .filter(recipe -> recipe.getType() == RecipeType.CRAFTING)
+                .filter(recipe -> !recipe.isSpecial())
+                .map(recipe -> (CraftingRecipe) recipe)
+                .noneMatch(recipe -> recipe.matches(craftingInput, level));
+
     }
 
     @Override
@@ -77,6 +56,6 @@ public class CraftingTableRecipe extends CustomRecipe {
     }
 
     private boolean isPlanks(ItemStack stack) {
-        return stack.is(ItemTags.PLANKS) && !stack.is(CWTags.Items.FLAG);
+        return stack.is(ItemTags.PLANKS);
     }
 }

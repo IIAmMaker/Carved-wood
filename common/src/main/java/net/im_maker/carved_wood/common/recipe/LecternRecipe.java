@@ -7,10 +7,7 @@ import net.minecraft.core.HolderLookup;
 import net.minecraft.tags.ItemTags;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.Items;
-import net.minecraft.world.item.crafting.CraftingBookCategory;
-import net.minecraft.world.item.crafting.CraftingInput;
-import net.minecraft.world.item.crafting.CustomRecipe;
-import net.minecraft.world.item.crafting.RecipeSerializer;
+import net.minecraft.world.item.crafting.*;
 import net.minecraft.world.level.Level;
 
 public class LecternRecipe extends CustomRecipe {
@@ -19,28 +16,30 @@ public class LecternRecipe extends CustomRecipe {
     }
 
     @Override
-    public boolean matches(CraftingInput container, Level level) {
-        if (container.width() != 3 || container.height() != 3)
+    public boolean matches(CraftingInput craftingInput, Level level) {
+        if (!canCraftInDimensions(craftingInput.width(), craftingInput.height()))
             return false;
 
         ItemStack[][] pattern = new ItemStack[3][3];
         for (int y = 0; y < 3; y++) {
             for (int x = 0; x < 3; x++) {
-                pattern[y][x] = container.getItem(x + y * 3);
+                pattern[y][x] = craftingInput.getItem(x + y * 3);
             }
         }
 
-        return isWoodenSlab(pattern[0][0])
-                && isWoodenSlab(pattern[0][1])
-                && isWoodenSlab(pattern[0][2])
-                && isBookshelf(pattern[1][1])
-                && isWoodenSlab(pattern[2][1])
-                && pattern[1][0].isEmpty()
-                && pattern[1][2].isEmpty()
-                && pattern[2][0].isEmpty()
-                && pattern[2][2].isEmpty();
-    }
+        boolean patternMatches = isWoodenSlab(pattern[0][0]) && isWoodenSlab(pattern[0][1]) && isWoodenSlab(pattern[0][2])
+                              && pattern[1][0].isEmpty() && isBookshelf(pattern[1][1]) && pattern[1][2].isEmpty()
+                              && pattern[2][0].isEmpty() && isWoodenSlab(pattern[2][1]) && pattern[2][2].isEmpty();
 
+        if (!patternMatches) return false;
+
+        return level.getRecipeManager().getRecipes().stream()
+                .map(RecipeHolder::value)
+                .filter(recipe -> recipe.getType() == RecipeType.CRAFTING)
+                .filter(recipe -> !recipe.isSpecial())
+                .map(recipe -> (CraftingRecipe) recipe)
+                .noneMatch(recipe -> recipe.matches(craftingInput, level));
+    }
     @Override
     public ItemStack assemble(CraftingInput craftingInput, HolderLookup.Provider provider) {
         return new ItemStack(Items.LECTERN);
@@ -48,7 +47,7 @@ public class LecternRecipe extends CustomRecipe {
 
     @Override
     public boolean canCraftInDimensions(int width, int height) {
-        return width >= 3 && height >= 3;
+        return width == 3 && height == 3;
     }
 
     @Override
@@ -61,6 +60,6 @@ public class LecternRecipe extends CustomRecipe {
     }
 
     private boolean isWoodenSlab(ItemStack stack) {
-        return stack.is(ItemTags.WOODEN_SLABS) && ! stack.is(CWTags.Items.FLAG);
+        return stack.is(ItemTags.WOODEN_SLABS);
     }
 }

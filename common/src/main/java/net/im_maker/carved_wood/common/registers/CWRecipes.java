@@ -12,54 +12,55 @@ public class CWRecipes {
 
     public static final Supplier<RecipeSerializer<LecternRecipe>> LECTERN =
             PlatHelper.registerRecipeSerializer(
-                    CarvedWood.newRL(CarvedWood.MOD_ID, "lectern"),
+                    CarvedWood.newRL(CarvedWood.MOD_ID, "crafting_special_lectern"),
                     () -> new SimpleCraftingRecipeSerializer<>(LecternRecipe::new));
 
     public static final Supplier<RecipeSerializer<CraftingTableRecipe>> CRAFTING_TABLE =
             PlatHelper.registerRecipeSerializer(
-                    CarvedWood.newRL(CarvedWood.MOD_ID, "crafting_table"),
+                    CarvedWood.newRL(CarvedWood.MOD_ID, "crafting_special_crafting_table"),
                     () -> new SimpleCraftingRecipeSerializer<>(CraftingTableRecipe::new));
 
     public static final Supplier<RecipeSerializer<ChestRecipe>> CHEST =
             PlatHelper.registerRecipeSerializer(
-                    CarvedWood.newRL(CarvedWood.MOD_ID, "chest"),
+                    CarvedWood.newRL(CarvedWood.MOD_ID, "crafting_special_chest"),
                     () -> new SimpleCraftingRecipeSerializer<>(ChestRecipe::new));
 
     public static final Supplier<RecipeSerializer<BarrelRecipe>> BARREL =
             PlatHelper.registerRecipeSerializer(
-                    CarvedWood.newRL(CarvedWood.MOD_ID, "barrel"),
+                    CarvedWood.newRL(CarvedWood.MOD_ID, "crafting_special_barrel"),
                     () -> new SimpleCraftingRecipeSerializer<>(BarrelRecipe::new));
 
     public static final Supplier<RecipeSerializer<BookshelfRecipe>> BOOKSHELF =
             PlatHelper.registerRecipeSerializer(
-                    CarvedWood.newRL(CarvedWood.MOD_ID, "bookshelf"),
+                    CarvedWood.newRL(CarvedWood.MOD_ID, "crafting_special_bookshelf"),
                     () -> new SimpleCraftingRecipeSerializer<>(BookshelfRecipe::new));
 
     public static final Supplier<RecipeSerializer<ChiseledBookshelfRecipe>> CHISELED_BOOKSHELF =
             PlatHelper.registerRecipeSerializer(
-                    CarvedWood.newRL(CarvedWood.MOD_ID, "chiseled_bookshelf"),
+                    CarvedWood.newRL(CarvedWood.MOD_ID, "crafting_special_chiseled_bookshelf"),
                     () -> new SimpleCraftingRecipeSerializer<>(ChiseledBookshelfRecipe::new));
 
     public static final Supplier<RecipeSerializer<BeehiveRecipe>> BEEHIVE =
             PlatHelper.registerRecipeSerializer(
-                    CarvedWood.newRL(CarvedWood.MOD_ID, "beehive"),
+                    CarvedWood.newRL(CarvedWood.MOD_ID, "crafting_special_beehive"),
                     () -> new SimpleCraftingRecipeSerializer<>(BeehiveRecipe::new));
 
     public static final Supplier<RecipeSerializer<CampfireRecipe>> CAMPFIRE =
             PlatHelper.registerRecipeSerializer(
-                    CarvedWood.newRL(CarvedWood.MOD_ID, "campfire"),
+                    CarvedWood.newRL(CarvedWood.MOD_ID, "crafting_special_campfire"),
                     () -> new SimpleCraftingRecipeSerializer<>(CampfireRecipe::new));
 
     public static final Supplier<RecipeSerializer<SoulCampfireRecipe>> SOUL_CAMPFIRE =
             PlatHelper.registerRecipeSerializer(
-                    CarvedWood.newRL(CarvedWood.MOD_ID, "soul_campfire"),
+                    CarvedWood.newRL(CarvedWood.MOD_ID, "crafting_special_soul_campfire"),
                     () -> new SimpleCraftingRecipeSerializer<>(SoulCampfireRecipe::new));
 
     public static final Supplier<RecipeSerializer<LadderRecipe>> LADDER =
             PlatHelper.registerRecipeSerializer(
-                    CarvedWood.newRL(CarvedWood.MOD_ID, "ladder"),
+                    CarvedWood.newRL(CarvedWood.MOD_ID, "crafting_special_ladder"),
                     () -> new SimpleCraftingRecipeSerializer<>(LadderRecipe::new));
 
     public static void registerRecipeSerializers() {
+        CarvedWood.LOGGER.info("Registering Mod Recipes for " + CarvedWood.MOD_ID);
     }
 }

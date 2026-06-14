@@ -8,10 +8,7 @@ import net.minecraft.tags.ItemTags;
 import net.minecraft.tags.TagKey;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.Items;
-import net.minecraft.world.item.crafting.CraftingBookCategory;
-import net.minecraft.world.item.crafting.CraftingInput;
-import net.minecraft.world.item.crafting.CustomRecipe;
-import net.minecraft.world.item.crafting.RecipeSerializer;
+import net.minecraft.world.item.crafting.*;
 import net.minecraft.world.level.Level;
 
 public class CampfireRecipe extends CustomRecipe {
@@ -21,7 +18,7 @@ public class CampfireRecipe extends CustomRecipe {
 
     @Override
     public boolean matches(CraftingInput craftingInput, Level level) {
-        if (craftingInput.width() != 3 || craftingInput.height() != 3)
+        if (!canCraftInDimensions(craftingInput.width(), craftingInput.height()))
             return false;
 
         ItemStack[][] pattern = new ItemStack[3][3];
@@ -31,15 +28,18 @@ public class CampfireRecipe extends CustomRecipe {
             }
         }
 
-        return isStick(pattern[0][1])
-                && isStick(pattern[1][0])
-                && isCoal(pattern[1][1])
-                && isStick(pattern[1][2])
-                && isLog(pattern[2][0])
-                && isLog(pattern[2][1])
-                && isLog(pattern[2][2])
-                && pattern[0][0].isEmpty()
-                && pattern[0][2].isEmpty();
+        boolean patternMatches = pattern[0][0].isEmpty() && isStick(pattern[0][1]) && pattern[0][2].isEmpty()
+                              && isStick(pattern[1][0]) && isCoal(pattern[1][1]) && isStick(pattern[1][2])
+                              && isLog(pattern[2][0]) && isLog(pattern[2][1]) && isLog(pattern[2][2]);
+
+        if (!patternMatches) return false;
+
+        return level.getRecipeManager().getRecipes().stream()
+                .map(RecipeHolder::value)
+                .filter(recipe -> recipe.getType() == RecipeType.CRAFTING)
+                .filter(recipe -> !recipe.isSpecial())
+                .map(recipe -> (CraftingRecipe) recipe)
+                .noneMatch(recipe -> recipe.matches(craftingInput, level));
     }
 
     @Override
@@ -49,7 +49,7 @@ public class CampfireRecipe extends CustomRecipe {
 
     @Override
     public boolean canCraftInDimensions(int width, int height) {
-        return width >= 3 && height >= 3;
+        return width == 3 && height == 3;
     }
 
     @Override
@@ -66,17 +66,6 @@ public class CampfireRecipe extends CustomRecipe {
     }
 
     private boolean isLog(ItemStack stack) {
-        return stack.is(ItemTags.LOGS)
-                && !stack.is(ItemTags.OAK_LOGS)
-                && !stack.is(ItemTags.SPRUCE_LOGS)
-                && !stack.is(ItemTags.BIRCH_LOGS)
-                && !stack.is(ItemTags.JUNGLE_LOGS)
-                && !stack.is(ItemTags.ACACIA_LOGS)
-                && !stack.is(ItemTags.DARK_OAK_LOGS)
-                && !stack.is(ItemTags.MANGROVE_LOGS)
-                && !stack.is(ItemTags.CHERRY_LOGS)
-                && !stack.is(TagKey.create(Registries.ITEM, CarvedWood.newRL("vanillabackport", "pale_oak_logs")))
-                && !stack.is(ItemTags.CRIMSON_STEMS)
-                && !stack.is(ItemTags.WARPED_STEMS);
+        return stack.is(ItemTags.LOGS);
     }
 }

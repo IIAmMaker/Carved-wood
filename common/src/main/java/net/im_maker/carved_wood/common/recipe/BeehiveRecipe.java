@@ -6,10 +6,7 @@ import net.minecraft.core.HolderLookup;
 import net.minecraft.tags.ItemTags;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.Items;
-import net.minecraft.world.item.crafting.CraftingBookCategory;
-import net.minecraft.world.item.crafting.CraftingInput;
-import net.minecraft.world.item.crafting.CustomRecipe;
-import net.minecraft.world.item.crafting.RecipeSerializer;
+import net.minecraft.world.item.crafting.*;
 import net.minecraft.world.level.Level;
 
 public class BeehiveRecipe extends CustomRecipe {
@@ -19,7 +16,7 @@ public class BeehiveRecipe extends CustomRecipe {
 
     @Override
     public boolean matches(CraftingInput craftingInput, Level level) {
-        if (craftingInput.width() != 3 || craftingInput.height() != 3)
+        if (!canCraftInDimensions(craftingInput.width(), craftingInput.height()))
             return false;
 
         ItemStack[][] pattern = new ItemStack[3][3];
@@ -29,15 +26,18 @@ public class BeehiveRecipe extends CustomRecipe {
             }
         }
 
-        return isPlanks(pattern[0][0])
-                && isPlanks(pattern[0][1])
-                && isPlanks(pattern[0][2])
-                && isHoneycomb(pattern[1][0])
-                && isHoneycomb(pattern[1][1])
-                && isHoneycomb(pattern[1][2])
-                && isPlanks(pattern[2][0])
-                && isPlanks(pattern[2][1])
-                && isPlanks(pattern[2][2]);
+        boolean patternMatches = isPlanks(pattern[0][0]) && isPlanks(pattern[0][1]) && isPlanks(pattern[0][2])
+                && isHoneycomb(pattern[1][0]) && isHoneycomb(pattern[1][1]) && isHoneycomb(pattern[1][2])
+                && isPlanks(pattern[2][0]) && isPlanks(pattern[2][1]) && isPlanks(pattern[2][2]);
+
+        if (!patternMatches) return false;
+
+        return level.getRecipeManager().getRecipes().stream()
+                .map(RecipeHolder::value)
+                .filter(recipe -> recipe.getType() == RecipeType.CRAFTING)
+                .filter(recipe -> !recipe.isSpecial())
+                .map(recipe -> (CraftingRecipe) recipe)
+                .noneMatch(recipe -> recipe.matches(craftingInput, level));
     }
 
     @Override
@@ -47,7 +47,7 @@ public class BeehiveRecipe extends CustomRecipe {
 
     @Override
     public boolean canCraftInDimensions(int width, int height) {
-        return width >= 3 && height >= 3;
+        return width == 3 && height == 3;
     }
 
     @Override
@@ -60,6 +60,6 @@ public class BeehiveRecipe extends CustomRecipe {
     }
 
     private boolean isPlanks(ItemStack stack) {
-        return stack.is(ItemTags.PLANKS) && !stack.is(CWTags.Items.FLAG);
+        return stack.is(ItemTags.PLANKS);
     }
 }

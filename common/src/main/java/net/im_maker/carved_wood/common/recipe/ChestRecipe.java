@@ -1,15 +1,11 @@
 package net.im_maker.carved_wood.common.recipe;
 
 import net.im_maker.carved_wood.common.registers.CWRecipes;
-import net.im_maker.carved_wood.common.util.CWTags;
 import net.minecraft.core.HolderLookup;
 import net.minecraft.tags.ItemTags;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.Items;
-import net.minecraft.world.item.crafting.CraftingBookCategory;
-import net.minecraft.world.item.crafting.CraftingInput;
-import net.minecraft.world.item.crafting.CustomRecipe;
-import net.minecraft.world.item.crafting.RecipeSerializer;
+import net.minecraft.world.item.crafting.*;
 import net.minecraft.world.level.Level;
 
 public class ChestRecipe extends CustomRecipe {
@@ -18,44 +14,47 @@ public class ChestRecipe extends CustomRecipe {
     }
 
     @Override
-    public boolean matches(CraftingInput craftingInput, Level level) {
-        if (craftingInput.width() != 3 || craftingInput.height() != 3)
-            return false;
+	public boolean matches(CraftingInput craftingInput, Level level) {
+		if (!canCraftInDimensions(craftingInput.width(), craftingInput.height()))
+			return false;
 
-        ItemStack[][] pattern = new ItemStack[3][3];
-        for (int y = 0; y < 3; y++) {
-            for (int x = 0; x < 3; x++) {
-                pattern[y][x] = craftingInput.getItem(x + y * 3);
-            }
-        }
+		ItemStack[][] pattern = new ItemStack[3][3];
+		for (int y = 0; y < 3; y++) {
+			for (int x = 0; x < 3; x++) {
+				pattern[y][x] = craftingInput.getItem(x + y * 3);
+			}
+		}
 
-        return isPlanks(pattern[0][0])
-                && isPlanks(pattern[0][1])
-                && isPlanks(pattern[0][2])
-                && isPlanks(pattern[1][0])
-                && isPlanks(pattern[1][2])
-                && isPlanks(pattern[2][0])
-                && isPlanks(pattern[2][1])
-                && isPlanks(pattern[2][2])
-                && pattern[1][1].isEmpty();
-    }
+		boolean patternMatches = isPlanks(pattern[0][0]) && isPlanks(pattern[0][1]) && isPlanks(pattern[0][2])
+							  && isPlanks(pattern[1][0]) && pattern[1][1].isEmpty() && isPlanks(pattern[1][2])
+							  && isPlanks(pattern[2][0]) && isPlanks(pattern[2][1]) && isPlanks(pattern[2][2]);
 
-    @Override
-    public ItemStack assemble(CraftingInput craftingInput, HolderLookup.Provider provider) {
-        return new ItemStack(Items.CHEST);
-    }
+		if (!patternMatches) return false;
 
-    @Override
-    public boolean canCraftInDimensions(int width, int height) {
-        return width >= 3 && height >= 3;
-    }
+		return level.getRecipeManager().getRecipes().stream()
+				.map(RecipeHolder::value)
+				.filter(recipe -> recipe.getType() == RecipeType.CRAFTING)
+				.filter(recipe -> !recipe.isSpecial())
+				.map(recipe -> (CraftingRecipe) recipe)
+				.noneMatch(recipe -> recipe.matches(craftingInput, level));
+	}
+
+	@Override
+	public ItemStack assemble(CraftingInput input, HolderLookup.Provider registries) {
+		return new ItemStack(Items.CHEST);
+	}
+
+	@Override
+	public boolean canCraftInDimensions(int width, int height) {
+		return width == 3 && height == 3;
+	}
 
     @Override
     public RecipeSerializer<?> getSerializer() {
         return CWRecipes.CHEST.get();
     }
 
-    private boolean isPlanks(ItemStack stack) {
-        return stack.is(ItemTags.PLANKS) && !stack.is(CWTags.Items.FLAG);
-    }
+	private boolean isPlanks(ItemStack stack) {
+		return stack.is(ItemTags.PLANKS);
+	}
 }
