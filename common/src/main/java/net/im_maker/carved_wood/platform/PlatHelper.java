@@ -1,5 +1,7 @@
 package net.im_maker.carved_wood.platform;
 
+import net.im_maker.carved_wood.client.renderer.inventory.CWBlockEntityWithoutLevelRenderer;
+import net.minecraft.client.renderer.BlockEntityWithoutLevelRenderer;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Holder;
 import net.minecraft.resources.ResourceLocation;
@@ -30,7 +32,6 @@ public class PlatHelper {
         @NotNull T create(BlockPos pos, BlockState state);
     }
 
-    // Block registration
     public static Supplier<Block> registerBlock(ResourceLocation id, Supplier<Block> supplier) {
         return INSTANCE.registerBlockImpl(id, supplier);
     }
@@ -39,7 +40,6 @@ public class PlatHelper {
         throw new AssertionError("Platform implementation not set!");
     }
 
-    // Item registration
     public static Supplier<Item> registerItem(ResourceLocation id, Supplier<Item> supplier) {
         return INSTANCE.registerItemImpl(id, supplier);
     }
@@ -48,7 +48,6 @@ public class PlatHelper {
         throw new AssertionError("Platform implementation not set!");
     }
 
-    // Block Entity Type registration
     public static <T extends BlockEntity> Supplier<BlockEntityType<T>> newBlockEntityType(
             ResourceLocation id, BlockEntitySupplier<T> supplier, Supplier<Block[]> validBlocksSupplier) {
         return INSTANCE.newBlockEntityTypeImpl(id, supplier, validBlocksSupplier);
@@ -59,7 +58,6 @@ public class PlatHelper {
         throw new AssertionError("Platform implementation not set!");
     }
 
-    // POI registration
     public static void addPOI(Consumer<Map<BlockState, Holder<PoiType>>> poiRegistrar) {
         INSTANCE.addPOIImpl(poiRegistrar);
     }
@@ -68,7 +66,6 @@ public class PlatHelper {
         throw new AssertionError("Platform implementation not set!");
     }
 
-    // Recipe Serializer registration
     public static <T extends RecipeSerializer<?>> Supplier<T> registerRecipeSerializer(
             ResourceLocation id, Supplier<T> serializer) {
         return INSTANCE.registerRecipeSerializerImpl(id, serializer);
@@ -108,6 +105,14 @@ public class PlatHelper {
     }
 
     protected boolean isModLoadedImpl(String modId) {
+        throw new AssertionError("Platform implementation not set!");
+    }
+
+    public static void registerItemRenderer(ItemLike item, CWBlockEntityWithoutLevelRenderer renderer) {
+        INSTANCE.registerItemRendererImpl(item, renderer);
+    }
+
+    protected void registerItemRendererImpl(ItemLike item, CWBlockEntityWithoutLevelRenderer renderer) {
         throw new AssertionError("Platform implementation not set!");
     }
 }

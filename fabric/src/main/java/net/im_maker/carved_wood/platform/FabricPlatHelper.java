@@ -1,8 +1,11 @@
 package net.im_maker.carved_wood.platform;
 
+import net.fabricmc.fabric.api.client.rendering.v1.BuiltinItemRendererRegistry;
 import net.fabricmc.fabric.api.registry.FlammableBlockRegistry;
 import net.fabricmc.fabric.api.registry.FuelRegistry;
+import net.im_maker.carved_wood.client.renderer.inventory.CWBlockEntityWithoutLevelRenderer;
 import net.im_maker.carved_wood.mixin.PoiTypesAccessor;
+import net.minecraft.client.renderer.BlockEntityWithoutLevelRenderer;
 import net.minecraft.core.Holder;
 import net.minecraft.core.Registry;
 import net.minecraft.core.registries.BuiltInRegistries;
@@ -75,5 +78,12 @@ public class FabricPlatHelper extends PlatHelper {
     @Override
     protected boolean isModLoadedImpl(String modId) {
         return net.fabricmc.loader.api.FabricLoader.getInstance().isModLoaded(modId);
+    }
+
+    @Override
+    protected void registerItemRendererImpl(ItemLike item, CWBlockEntityWithoutLevelRenderer renderer) {
+        BuiltinItemRendererRegistry.INSTANCE.register(item.asItem(), (stack, mode, matrices, vertexConsumers, light, overlay) -> {
+            renderer.renderByItem(stack, mode, matrices, vertexConsumers, light, overlay);
+        });
     }
 }

@@ -1,6 +1,7 @@
 package net.im_maker.carved_wood.platform;
 
 import net.im_maker.carved_wood.CarvedWood;
+import net.im_maker.carved_wood.mixin.PoiTypesAccessor;
 import net.minecraft.core.Holder;
 import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.resources.ResourceLocation;
@@ -67,7 +68,7 @@ public class NeoForgePlatHelper extends PlatHelper {
 
     @Override
     protected void addPOIImpl(Consumer<Map<BlockState, Holder<PoiType>>> poiRegistrar) {
-        poiRegistrar.accept(net.im_maker.carved_wood.mixin.PoiTypesAccessor.getPoiStatesToType());
+        poiRegistrar.accept(PoiTypesAccessor.getPoiStatesToType());
     }
 
     @Override
