@@ -1,0 +1,33 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "group": "wooden_chests",
+  "key": {
+    "P": {
+      "tag": "minecraft:planks"
+    }
+  },
+  "pattern": [
+    "PPP",
+    "P P",
+    "PPP"
+  ],
+  "result": {
+    "id": "minecraft:chest",
+    "count": 1
+  },
+  "neoforge:conditions": [
+    {
+      "type": "carved_wood:config",
+      "value": "wooden_chests",
+      "inverted": true
+    }
+  ],
+  "fabric:load_conditions": [
+    {
+      "condition": "carved_wood:config",
+      "value": "wooden_chests",
+      "inverted": true
+    }
+  ]
+}

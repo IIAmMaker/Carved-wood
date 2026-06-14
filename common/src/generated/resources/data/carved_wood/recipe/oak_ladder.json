@@ -1,0 +1,34 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "group": "wooden_ladders",
+  "key": {
+    "#": {
+      "item": "minecraft:oak_planks"
+    },
+    "S": {
+      "item": "minecraft:stick"
+    }
+  },
+  "pattern": [
+    "S S",
+    "S#S",
+    "S S"
+  ],
+  "result": {
+    "id": "minecraft:ladder",
+    "count": 3
+  },
+  "neoforge:conditions": [
+    {
+      "type": "carved_wood:config",
+      "value": "wooden_ladders"
+    }
+  ],
+  "fabric:load_conditions": [
+    {
+      "condition": "carved_wood:config",
+      "value": "wooden_ladders"
+    }
+  ]
+}

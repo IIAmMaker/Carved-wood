@@ -1,0 +1,30 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "group": "wooden_crafting_tables",
+  "key": {
+    "#": {
+      "item": "minecraft:oak_planks"
+    }
+  },
+  "pattern": [
+    "##",
+    "##"
+  ],
+  "result": {
+    "id": "minecraft:crafting_table",
+    "count": 1
+  },
+  "neoforge:conditions": [
+    {
+      "type": "carved_wood:config",
+      "value": "wooden_crafting_tables"
+    }
+  ],
+  "fabric:load_conditions": [
+    {
+      "condition": "carved_wood:config",
+      "value": "wooden_crafting_tables"
+    }
+  ]
+}

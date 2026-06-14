@@ -1,0 +1,34 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "group": "wooden_beehives",
+  "key": {
+    "P": {
+      "item": "minecraft:oak_planks"
+    },
+    "#": {
+      "item": "minecraft:honeycomb"
+    }
+  },
+  "pattern": [
+    "PPP",
+    "###",
+    "PPP"
+  ],
+  "result": {
+    "id": "minecraft:beehive",
+    "count": 1
+  },
+  "neoforge:conditions": [
+    {
+      "type": "carved_wood:config",
+      "value": "wooden_beehives"
+    }
+  ],
+  "fabric:load_conditions": [
+    {
+      "condition": "carved_wood:config",
+      "value": "wooden_beehives"
+    }
+  ]
+}
