@@ -8,7 +8,7 @@ import net.im_maker.carved_wood.common.block.CWChestBlock;
 import net.im_maker.carved_wood.common.block.CWTrappedChestBlock;
 import net.im_maker.carved_wood.common.block.entity.CWChestBlockEntity;
 import net.im_maker.carved_wood.common.block.entity.CWTrappedChestBlockEntity;
-import net.im_maker.carved_wood.common.registers.CWBlockEntityTypes;
+import net.im_maker.carved_wood.common.registers.CWBlockEntities;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.renderer.BlockEntityWithoutLevelRenderer;
 import net.minecraft.client.renderer.ItemBlockRenderTypes;
@@ -36,10 +36,10 @@ public class CarvedWoodClient {
     }
     @SubscribeEvent
     public static void onClientSetup(FMLClientSetupEvent event) {
-        BlockEntityRenderers.register(CWBlockEntityTypes.CHEST.get(), CWChestRenderer::new);
-        BlockEntityRenderers.register(CWBlockEntityTypes.TRAPPED_CHEST.get(), CWChestRenderer::new);
-        BlockEntityRenderers.register(CWBlockEntityTypes.CAMPFIRE.get(), CWCampfireRenderer::new);
-        BlockEntityRenderers.register(CWBlockEntityTypes.LECTERN.get(), LecternRenderer::new);
+        BlockEntityRenderers.register(CWBlockEntities.CHEST.get(), CWChestRenderer::new);
+        BlockEntityRenderers.register(CWBlockEntities.TRAPPED_CHEST.get(), CWChestRenderer::new);
+        BlockEntityRenderers.register(CWBlockEntities.CAMPFIRE.get(), CWCampfireRenderer::new);
+        BlockEntityRenderers.register(CWBlockEntities.LECTERN.get(), LecternRenderer::new);
         for (String woodType : CarvedWood.WOOD_TYPES) {
             ItemBlockRenderTypes.setRenderLayer(CarvedWood.getBlockFromString(woodType + "_lantern"), RenderType.cutout());
             ItemBlockRenderTypes.setRenderLayer(CarvedWood.getBlockFromString(woodType + "_campfire"), RenderType.cutout());

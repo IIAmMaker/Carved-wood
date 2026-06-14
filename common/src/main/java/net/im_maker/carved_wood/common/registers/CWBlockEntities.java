@@ -9,7 +9,7 @@ import net.minecraft.world.level.block.entity.BlockEntityType;
 
 import java.util.function.Supplier;
 
-public class CWBlockEntityTypes {
+public class CWBlockEntities {
     public static Supplier<BlockEntityType<CWChestBlockEntity>> CHEST;
     public static Supplier<BlockEntityType<CWTrappedChestBlockEntity>> TRAPPED_CHEST;
     public static Supplier<BlockEntityType<CWCampfireBlockEntity>> CAMPFIRE;

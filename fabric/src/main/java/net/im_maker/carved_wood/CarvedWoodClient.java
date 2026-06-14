@@ -5,7 +5,7 @@ import net.fabricmc.fabric.api.blockrenderlayer.v1.BlockRenderLayerMap;
 import net.fabricmc.fabric.api.client.rendering.v1.BuiltinItemRendererRegistry;
 import net.fabricmc.fabric.api.client.rendering.v1.EntityModelLayerRegistry;
 import net.im_maker.carved_wood.client.renderer.CWModelLayers;
-import net.im_maker.carved_wood.client.renderer.FabricCWItemRenderer;
+import net.im_maker.carved_wood.client.renderer.inventory.FabricCWItemRenderer;
 import net.im_maker.carved_wood.client.renderer.block.CWCampfireRenderer;
 import net.im_maker.carved_wood.client.renderer.block.CWChestRenderer;
 import net.im_maker.carved_wood.client.renderer.block.CWLecternRenderer;
@@ -14,7 +14,7 @@ import net.im_maker.carved_wood.common.block.CWChestBlock;
 import net.im_maker.carved_wood.common.block.CWTrappedChestBlock;
 import net.im_maker.carved_wood.common.block.entity.CWChestBlockEntity;
 import net.im_maker.carved_wood.common.block.entity.CWTrappedChestBlockEntity;
-import net.im_maker.carved_wood.common.registers.CWBlockEntityTypes;
+import net.im_maker.carved_wood.common.registers.CWBlockEntities;
 import net.im_maker.carved_wood.common.registers.CWBlocks;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.renderer.RenderType;
@@ -84,10 +84,10 @@ public class CarvedWoodClient implements ClientModInitializer {
         EntityModelLayerRegistry.registerModelLayer(CWModelLayers.DOUBLE_CHEST_LEFT, CWChestRenderer::createDoubleBodyLeftLayer);
         EntityModelLayerRegistry.registerModelLayer(CWModelLayers.DOUBLE_CHEST_RIGHT, CWChestRenderer::createDoubleBodyRightLayer);
 
-        BlockEntityRenderers.register(CWBlockEntityTypes.CHEST.get(), CWChestRenderer::new);
-        BlockEntityRenderers.register(CWBlockEntityTypes.TRAPPED_CHEST.get(), CWChestRenderer::new);
-        BlockEntityRenderers.register(CWBlockEntityTypes.CAMPFIRE.get(), CWCampfireRenderer::new);
-        BlockEntityRenderers.register(CWBlockEntityTypes.LECTERN.get(), CWLecternRenderer::new);
+        BlockEntityRenderers.register(CWBlockEntities.CHEST.get(), CWChestRenderer::new);
+        BlockEntityRenderers.register(CWBlockEntities.TRAPPED_CHEST.get(), CWChestRenderer::new);
+        BlockEntityRenderers.register(CWBlockEntities.CAMPFIRE.get(), CWCampfireRenderer::new);
+        BlockEntityRenderers.register(CWBlockEntities.LECTERN.get(), CWLecternRenderer::new);
 
         //MixinEnvironment.getDefaultEnvironment().addConfiguration("carved_wood.fabric.mixins.json");
 
