@@ -52,11 +52,11 @@ public class CarvedWoodNeoForge {
         modContainer.registerConfig(ModConfig.Type.COMMON, NeoForgeConfig.SPEC, "carved_wood-common.toml");
         CONDITION_CODECS.register(modEventBus);
 
-        CWBlocks.registerBlocks();
-        CWBlocksNeoForge.registerModBlocks();
-        CWBlockEntities.registerBlockEntities();
-        CWRecipes.registerRecipeSerializers();
-        CWPoi.init();
+        CWBlocks.register();
+        CWBlocksNeoForge.register();
+        CWBlockEntities.register();
+        CWRecipes.register();
+        CWPoi.register();
 
         modEventBus.addListener(AddToCreativeInv::addCreative);
         modEventBus.addListener(this::registerCapabilities);

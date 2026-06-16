@@ -19,7 +19,7 @@ public class CWBlockEntities {
     public static Supplier<BlockEntityType<CWBeehiveBlockEntity>> BEEHIVE;
     public static Supplier<BlockEntityType<CWCrafterBlockEntity>> CRAFTER;
 
-    public static void registerBlockEntities() {
+    public static void register() {
         CarvedWood.LOGGER.info("Registering Mod Block Entities for " + CarvedWood.MOD_ID);
 
         CHEST = PlatHelper.newBlockEntityType(

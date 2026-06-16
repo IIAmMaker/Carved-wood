@@ -48,4 +48,8 @@ public class CWLecternControllerBlock extends LecternControllerBlock {
         requiredItems.add(new ItemStack(AllItems.LINKED_CONTROLLER.get()));
         return new ItemRequirement(ItemRequirement.ItemUseType.CONSUME, requiredItems);
     }
+
+    public Block getDefaultLectern() {
+        return block.get();
+    }
 }

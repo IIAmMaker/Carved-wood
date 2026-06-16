@@ -5,6 +5,7 @@ import net.fabricmc.fabric.api.resource.ResourcePackActivationType;
 import net.fabricmc.loader.api.FabricLoader;
 import net.fabricmc.loader.api.ModContainer;
 import net.im_maker.carved_wood.CarvedWood;
+import net.minecraft.resources.ResourceLocation;
 
 import java.util.Optional;
 
@@ -19,12 +20,20 @@ public class DataPackRegistrar {
         );
     }
 
-    public static void loadBuiltinResourcePacks() {
+    public static void addPackFinders() {
+        ModContainer create = FabricLoader.getInstance().getModContainer(CarvedWood.MOD_ID)
+                .orElseThrow(() -> new IllegalStateException("CarvedWood's ModContainer couldn't be found!"));
+        ResourceLocation packId = CarvedWood.newRL(CarvedWood.MOD_ID, "recarved");
+        ResourceManagerHelper.registerBuiltinResourcePack(packId, create, "Recarved", ResourcePackActivationType.NORMAL);
+    }
+
+    public static void register() {
         Optional<ModContainer> modContainer = FabricLoader.getInstance().getModContainer(CarvedWood.MOD_ID);
         if (modContainer.isPresent()) {
             if (FabricLoader.getInstance().isModLoaded("vanillabackport")) {
                 registerBuiltinVanillaBackportDataPack(modContainer.get(), "carvedwood_vanillabackport_compat");
             }
         }
+        addPackFinders();
     }
 }

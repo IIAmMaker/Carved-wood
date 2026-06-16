@@ -21,7 +21,7 @@ public class CWBlocksNeoForge {
     public static final Supplier<Block> WARPED_LECTERN_CONTROLLER = CWBlocks.registerWoodenFuelBlock("warped_lectern_controller", !PlatHelper.isModLoaded("create") ? () -> new Block(BlockBehaviour.Properties.of().noLootTable()) : () -> CWCreateBlocks.WARPED);
     public static final Supplier<Block> BAMBOO_LECTERN_CONTROLLER = CWBlocks.registerWoodenFuelBlock("bamboo_lectern_controller", !PlatHelper.isModLoaded("create") ? () -> new Block(BlockBehaviour.Properties.of().noLootTable()) : () -> CWCreateBlocks.BAMBOO);
 
-    public static void  registerModBlocks() {
+    public static void register() {
         CarvedWood.LOGGER.info("Registering Mod Blocks for " + CarvedWood.MOD_ID);
     }
 }

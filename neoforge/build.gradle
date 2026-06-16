@@ -130,7 +130,3 @@ tasks.named('jar', Jar) {
 }
 
 sourceSets.main.resources { srcDir 'src/generated/resources' }
-
-tasks.withType(Javadoc).configureEach {
-    enabled = false
-}

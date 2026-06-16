@@ -15,7 +15,7 @@ import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.state.BlockState;
 
 public class CWPoi {
-    public static void init() {
+    public static void register() {
         PlatHelper.addPOI(poiStatesToType -> {
             PoiType fishermanPoiType = BuiltInRegistries.POINT_OF_INTEREST_TYPE.get(PoiTypes.FISHERMAN.location());
             PoiType librarianPoiType = BuiltInRegistries.POINT_OF_INTEREST_TYPE.get(PoiTypes.LIBRARIAN.location());

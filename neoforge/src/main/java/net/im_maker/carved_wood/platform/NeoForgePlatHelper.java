@@ -15,7 +15,10 @@ import net.minecraft.world.level.block.FireBlock;
 import net.minecraft.world.level.block.entity.BlockEntity;
 import net.minecraft.world.level.block.entity.BlockEntityType;
 import net.minecraft.world.level.block.state.BlockState;
+import net.neoforged.bus.api.EventPriority;
 import net.neoforged.bus.api.IEventBus;
+import net.neoforged.fml.ModList;
+import net.neoforged.fml.event.lifecycle.FMLCommonSetupEvent;
 import net.neoforged.neoforge.common.NeoForge;
 import net.neoforged.neoforge.event.furnace.FurnaceFuelBurnTimeEvent;
 import net.neoforged.neoforge.registries.DeferredRegister;
@@ -39,6 +42,8 @@ public class NeoForgePlatHelper extends PlatHelper {
 
     private static final List<FuelEntry> FUEL_ENTRIES = new ArrayList<>();
 
+    private static Consumer<Map<BlockState, Holder<PoiType>>> poiRegistrar;
+
     public NeoForgePlatHelper(IEventBus eventBus) {
         BLOCKS.register(eventBus);
         ITEMS.register(eventBus);
@@ -46,6 +51,16 @@ public class NeoForgePlatHelper extends PlatHelper {
         RECIPE_SERIALIZERS.register(eventBus);
         //eventBus.addListener(NeoForgePlatHelper::registerFuels);
         NeoForge.EVENT_BUS.addListener(NeoForgePlatHelper::registerFuels);
+
+        eventBus.addListener(EventPriority.LOW, this::onCommonSetup);
+    }
+
+    private void onCommonSetup(FMLCommonSetupEvent event) {
+        event.enqueueWork(() -> {
+            if (poiRegistrar != null) {
+                poiRegistrar.accept(PoiTypesAccessor.getPoiStatesToType());
+            }
+        });
     }
 
     @Override
@@ -67,8 +82,8 @@ public class NeoForgePlatHelper extends PlatHelper {
     }
 
     @Override
-    protected void addPOIImpl(Consumer<Map<BlockState, Holder<PoiType>>> poiRegistrar) {
-        poiRegistrar.accept(PoiTypesAccessor.getPoiStatesToType());
+    protected void addPOIImpl(Consumer<Map<BlockState, Holder<PoiType>>> registrar) {
+        NeoForgePlatHelper.poiRegistrar = registrar;
     }
 
     @Override
@@ -90,7 +105,7 @@ public class NeoForgePlatHelper extends PlatHelper {
 
     public static void registerFuels(FurnaceFuelBurnTimeEvent event) {
         for (FuelEntry entry : FUEL_ENTRIES) {
-            if (event.getItemStack().is(entry.item.get().asItem())) {  // .get() here, during event
+            if (event.getItemStack().is(entry.item.get().asItem())) {
                 event.setBurnTime(entry.burnTime);
             }
         }
@@ -98,11 +113,11 @@ public class NeoForgePlatHelper extends PlatHelper {
 
     @Override
     protected boolean isModLoadedImpl(String modId) {
-        return net.neoforged.fml.ModList.get().isLoaded(modId);
+        return ModList.get().isLoaded(modId);
     }
 
     private static class FuelEntry {
-        final Supplier<? extends ItemLike> item;  // Changed to Supplier
+        final Supplier<? extends ItemLike> item;
         final int burnTime;
 
         FuelEntry(Supplier<? extends ItemLike> item, int burnTime) {

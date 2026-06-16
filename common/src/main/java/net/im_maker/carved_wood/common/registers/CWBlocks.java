@@ -484,7 +484,7 @@ public class CWBlocks {
         return toReturn;
     }
 
-    public static void  registerBlocks() {
+    public static void register() {
         CarvedWood.LOGGER.info("Registering Mod Blocks for " + CarvedWood.MOD_ID);
     }
 }

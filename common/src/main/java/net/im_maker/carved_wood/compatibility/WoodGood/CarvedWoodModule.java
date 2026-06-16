@@ -41,6 +41,7 @@ import net.minecraft.server.packs.resources.ResourceManager;
 import net.minecraft.tags.BlockTags;
 import net.minecraft.tags.ItemTags;
 import net.minecraft.world.entity.ai.village.poi.PoiType;
+import net.minecraft.world.entity.ai.village.poi.PoiTypes;
 import net.minecraft.world.item.CreativeModeTab;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.Blocks;
@@ -542,11 +543,11 @@ public class CarvedWoodModule extends SimpleModule {
                 .build();
         if (CarvedWoodConfig.isEnabled("planks_sets")) this.addEntry(woodenTileSlab);
 
-        //if (PlatHelper.isFabric()) {
-        //    simpleAddBlocksToPOI(beehives, PoiTypes.BEEHIVE);
-        //    simpleAddBlocksToPOI(barrels, PoiTypes.FISHERMAN);
-        //    simpleAddBlocksToPOI(lecterns, PoiTypes.LIBRARIAN);
-        //}
+        if (!PlatHelper.isNeoForge()) {
+            simpleAddBlocksToPOI(beehives, PoiTypes.BEEHIVE);
+            simpleAddBlocksToPOI(barrels, PoiTypes.FISHERMAN);
+            simpleAddBlocksToPOI(lecterns, PoiTypes.LIBRARIAN);
+        }
     }
 
     public static void simpleAddBlocksToPOI(SimpleEntrySet<WoodType, Block> entrySet, ResourceKey<PoiType> poiType) {

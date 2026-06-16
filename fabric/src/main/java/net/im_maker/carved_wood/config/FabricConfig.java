@@ -10,7 +10,7 @@ import java.nio.file.Path;
 
 public class FabricConfig {
     private static final Gson GSON = new GsonBuilder().setPrettyPrinting().create();
-    private static final Path CONFIG_PATH = FabricLoader.getInstance().getConfigDir().resolve("carved_wood_config.json");
+    private static final Path CONFIG_PATH = FabricLoader.getInstance().getConfigDir().resolve("carved_wood-common.json");
 
     public static void load() {
         if (CONFIG_PATH.toFile().exists()) {

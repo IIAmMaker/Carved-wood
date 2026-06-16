@@ -60,7 +60,7 @@ public class CWRecipes {
                     CarvedWood.newRL(CarvedWood.MOD_ID, "crafting_special_ladder"),
                     () -> new SimpleCraftingRecipeSerializer<>(LadderRecipe::new));
 
-    public static void registerRecipeSerializers() {
+    public static void register() {
         CarvedWood.LOGGER.info("Registering Mod Recipes for " + CarvedWood.MOD_ID);
     }
 }
